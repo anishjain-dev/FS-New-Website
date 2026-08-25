@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Great Place to Work Certified | Fountainhead Schools</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.art-page-hero { position:relative; height:70vh; min-height:480px; overflow:hidden; }
+.art-page-hero img { width:100%; height:100%; object-fit:cover; display:block; }
+.art-page-hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.65) 100%); }
+.art-page-hero-content { position:absolute; bottom:0; left:0; right:0; padding:60px; color:white; }
+.art-body { max-width:760px; margin:0 auto; padding:80px 24px; }
+.art-body p { color:var(--mid); line-height:1.9; font-size:0.96rem; margin-bottom:20px; }
+.campus-tag { font-size:0.6rem; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; padding:4px 10px; background:var(--dark); color:white; display:inline-block; }
+.art-date { font-size:0.7rem; color:rgba(255,255,255,0.6); font-weight:500; letter-spacing:0.06em; text-transform:uppercase; }
+.art-meta { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.art-back { display:inline-flex; align-items:center; gap:8px; font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--dark); border-bottom:1px solid var(--dark); padding-bottom:2px; text-decoration:none; margin-bottom:48px; }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar" style="background:transparent;position:absolute;z-index:100;width:100%;">
+  <a href="../index.html" class="nav-logo">
+    <div class="mark">FS</div>
+    <span class="name">Fountainhead Schools</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../news.html" style="font-weight:700;">News &amp; Happenings</a></li>
+    <li><a href="../fsk/index.html" class="nav-inquire">Enquire</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="art-page-hero">
+  <img src="../images/fsk-facade.jpg" alt="Great Place to Work Certified">
+  <div class="art-page-hero-overlay"></div>
+  <div class="art-page-hero-content">
+    <div class="breadcrumb-ois" style="margin-bottom:16px;">
+      <a href="../news.html">News &amp; Happenings</a><span>›</span><span>Great Place to Work</span>
+    </div>
+    <div class="art-meta">
+      <span class="campus-tag">Group-Wide</span>
+      <span class="art-date">Certified</span>
+    </div>
+    <h1 style="color:white;font-size:clamp(1.8rem,4vw,3rem);max-width:700px;line-height:1.2;">Fountainhead Schools — Great Place to Work Certified</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="art-body">
+    <a href="../news.html" class="art-back">← Back to News &amp; Happenings</a>
+
+    <p>Fountainhead Schools has been officially certified as a Great Place to Work — a recognition that reflects our commitment to building a workplace where educators feel valued, respected, supported, and inspired to do their best work.</p>
+
+    <p>The Great Place to Work certification is based on a rigorous survey of our faculty and staff across all campuses, measuring dimensions including trust, fairness, camaraderie, credibility, and pride. Earning this certification means that our people — our teachers, administrators, and support staff — themselves affirm that Fountainhead is a great place to work.</p>
+
+    <p>We believe that a thriving faculty creates thriving students. When teachers are happy, supported in their professional growth, and part of a collaborative community, that energy flows directly into classrooms and into the lives of the children they teach.</p>
+
+    <p>We are proud of this certification and deeply grateful to our entire team for making Fountainhead what it is. This award belongs to every person who has contributed to our culture of care, curiosity, and continuous growth.</p>
+
+    <div style="margin-top:56px;padding:40px;background:var(--light-gray);border-left:4px solid var(--gold);">
+      <span class="label">About Great Place to Work</span>
+      <p style="margin-top:12px;margin-bottom:0;">Great Place to Work is the global authority on workplace culture, measuring employee trust and experience across organisations in 170+ countries. Certification is granted based on anonymous employee survey results.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <div><h2>Join Our Team</h2><p>We're always looking for passionate educators. Reach out to learn about opportunities at Fountainhead.</p></div>
+      <a href="../fsk/index.html" class="btn-cta-white">Contact FSK →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="padding:24px 0;">
+      <span>© 2026 Fountainhead Schools. All rights reserved.</span>
+      <div class="footer-policies"><a href="../news.html">All News</a><a href="../index.html">FS Group Home</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const nb = document.getElementById('navbar');
+  if(window.scrollY > 80) { nb.style.background='white'; nb.style.position='fixed'; nb.classList.add('scrolled'); }
+  else { nb.style.background='transparent'; nb.style.position='absolute'; nb.classList.remove('scrolled'); }
+});
+</script>
+</body>
+</html>
+

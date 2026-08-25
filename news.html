@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News &amp; Happenings � Fountainhead Schools</title>
+<meta name="description" content="Stories, accolades, events, and news from across all Fountainhead School campuses.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* --- CHILD PROTECTION BAR --- */
+.cp-bar {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 8px 0;
+}
+.cp-bar a { color: rgba(242,196,24,0.9); text-decoration: none; }
+
+/* --- NEWS PAGE HERO --- */
+.news-page-hero {
+  padding: 140px 0 64px;
+  border-bottom: 1px solid var(--border);
+  background: white;
+}
+.news-page-hero .label { display: flex; }
+.news-page-hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); margin: 12px 0 16px; }
+.news-page-hero p { font-size: 1rem; color: var(--mid); max-width: 560px; }
+
+/* --- FILTER BAR --- */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 24px 0 0;
+  margin-top: 24px;
+}
+.filter-btn {
+  padding: 6px 14px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--dark);
+  color: white;
+  border-color: var(--dark);
+}
+
+/* --- FEATURED ARTICLE --- */
+.featured-article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  margin: 56px 0 64px;
+  overflow: hidden;
+}
+.featured-article-img {
+  height: 420px;
+  overflow: hidden;
+}
+.featured-article-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.featured-article-body {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+.featured-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.campus-tag {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--dark);
+  color: white;
+}
+.campus-tag.kunkni { background: var(--fs-yellow); }
+.campus-tag.fwgs { background: var(--fs-blue); }
+.campus-tag.falh { background: #2d6a4f; }
+.campus-tag.fsm { background: #444; }
+.campus-tag.fpa { background: #8B6914; }
+.campus-tag.fpv { background: #555; }
+.campus-tag.group { background: var(--dark); }
+.art-date { font-size: 0.7rem; color: var(--gray); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+.featured-article-body h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.25; margin-bottom: 16px; }
+.featured-article-body p { color: var(--mid); font-size: 0.9rem; line-height: 1.7; margin-bottom: 28px; }
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  border-bottom: 2px solid var(--dark);
+  padding-bottom: 3px;
+  text-decoration: none;
+  transition: gap 0.2s;
+  width: fit-content;
+}
+.read-more-btn:hover { gap: 14px; }
+
+/* --- ARTICLE GRID --- */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin-bottom: 80px;
+}
+.article-card {
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.article-card-img {
+  height: 200px;
+  overflow: hidden;
+  background: var(--light-gray);
+}
+.article-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.article-card:hover .article-card-img img { transform: scale(1.04); }
+.article-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.article-card-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.article-card-body h3 { font-size: 0.95rem; line-height: 1.35; margin-bottom: 10px; flex: 1; }
+.article-card-body p { font-size: 0.8rem; color: var(--mid); line-height: 1.6; margin-bottom: 16px; }
+.article-card-link {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 2px;
+  text-decoration: none;
+  margin-top: auto;
+  width: fit-content;
+}
+
+/* --- ARTICLE DETAIL (for full article sections) --- */
+.article-detail {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+.article-detail h1 { font-size: clamp(1.8rem,3.5vw,3rem); margin-bottom: 24px; }
+.article-detail p { color: var(--mid); line-height: 1.85; font-size: 0.95rem; margin-bottom: 20px; }
+.article-detail h3 { margin-top: 40px; margin-bottom: 12px; }
+.article-detail ul { padding-left: 24px; color: var(--mid); line-height: 2.2; font-size: 0.9rem; }
+.article-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom:2px; margin-bottom: 40px; text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .featured-article { grid-template-columns: 1fr; }
+  .featured-article-img { height: 260px; }
+  .articles-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .articles-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Child Protection Bar -->
+<div class="cp-bar">
+  <a href="fsk/index.html#" onclick="window.location.href='fsk/index.html'">Child Protection Policy</a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" style="background:white;border-bottom:1px solid var(--border);">
+  <a href="index.html" class="nav-logo" style="color:var(--dark);">
+    <div class="mark" style="background:var(--dark);color:white;">FS</div>
+    <span class="name" style="color:var(--dark);">Fountainhead Schools</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about" style="color:var(--dark);">About Us</a></li>
+    <li><a href="index.html#schools" style="color:var(--dark);">Our Schools</a></li>
+    <li><a href="index.html#academics" style="color:var(--dark);">Academics</a></li>
+    <li><a href="index.html#admissions" style="color:var(--dark);">Admissions</a></li>
+    <li><a href="news.html" style="color:var(--dark);font-weight:700;border-bottom:2px solid var(--dark);">News &amp; Happenings</a></li>
+    <li><a href="index.html#accolades" style="color:var(--dark);">Accolades</a></li>
+    <li><a href="fsk/index.html#" onclick="showTab ? showTab('contact-tab',6) : null" style="color:var(--dark);" class="nav-inquire">Enquire</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span style="background:var(--dark);"></span><span style="background:var(--dark);"></span><span style="background:var(--dark);"></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="news-page-hero">
+  <div class="container">
+    <span class="label">Fountainhead Group</span>
+    <h1>News &amp; Happenings</h1>
+    <p>Stories, accolades, events, and moments from across the Fountainhead campuses.</p>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterNews('all',this)">All</button>
+      <button class="filter-btn" onclick="filterNews('kunkni',this)">FSK � Kunkni</button>
+      <button class="filter-btn" onclick="filterNews('fwgs',this)">FWGS</button>
+      <button class="filter-btn" onclick="filterNews('falh',this)">FALH</button>
+      <button class="filter-btn" onclick="filterNews('group',this)">Group-Wide</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<div class="container">
+  <div class="featured-article news-item" data-campus="kunkni">
+    <div class="featured-article-img">
+      <img src="images/fsk-facade.jpg" alt="FSK Ranks 4th Nationally">
+    </div>
+    <div class="featured-article-body">
+      <div class="featured-article-meta">
+        <span class="campus-tag kunkni">Kunkni</span>
+        <span class="art-date">20 Jul 2026</span>
+      </div>
+      <h2>Fountainhead School Kunkni, Surat Ranks 4th Nationally</h2>
+      <p>STOP PRESS � Fountainhead School Kunkni ranks 4th nationally in the Cfore 2026 School Rankings. Up from 5th last year. In Pedagogy and Curriculum, no school in India scored above FSK.</p>
+      <a href="news/cfore-2026.html" class="read-more-btn">Read Full Story ?</a>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLES GRID -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="articles-grid">
+
+      <!-- IDA Awards 2025 -->
+      <div class="article-card news-item" data-campus="group">
+        <div class="article-card-img">
+          <img src="images/fsk-ground.jpg" alt="IDA Awards 2025">
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag group">Group-Wide</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">18 Jul 2026</span>
+          </div>
+          <h3>Fountainhead School Honoured at the IDA Awards 2025</h3>
+          <p>Recognised for excellence in wellbeing, engagement, and capacity building in the foundational years.</p>
+          <a href="news/ida-awards-2025.html" class="article-card-link">Read More ?</a>
+        </div>
+      </div>
+
+      <!-- Cfore 2025 -->
+      <div class="article-card news-item" data-campus="kunkni">
+        <div class="article-card-img">
+          <img src="images/fsk-facade.jpg" alt="Cfore 2025">
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag kunkni">Kunkni</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">5 Jul 2025</span>
+          </div>
+          <h3>FSK Ranks 5th in India � Cfore 2025</h3>
+          <p>Fountainhead School ranks 5th in India under Co-Ed Day Schools (International Curriculum) in Cfore 2025.</p>
+          <a href="news/cfore-2025.html" class="article-card-link">Read More ?</a>
+        </div>
+      </div>
+
+      <!-- ScooNews 2023 -->
+      <div class="article-card news-item" data-campus="kunkni">
+        <div class="article-card-img" style="background:var(--light-gray);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:4rem;">??</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag kunkni">Kunkni</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">28 Jun 2023</span>
+          </div>
+          <h3>Best Skill Development Initiative 2023 � ScooNews Global</h3>
+          <p>Maverick Learning Centre felicitated at ScooNews Global Educators Fest, Jaipur with 700+ school leaders.</p>
+          <a href="news/scoonews-2023.html" class="article-card-link">Read More ?</a>
+        </div>
+      </div>
+
+      <!-- Career ChangeMakers 2021 -->
+      <div class="article-card news-item" data-campus="kunkni">
+        <div class="article-card-img" style="background:var(--dark);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:4rem;">???</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag kunkni">Kunkni</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">17 Apr 2021</span>
+          </div>
+          <h3>Top Career Development Cell � Career ChangeMakers Award 2021</h3>
+          <p>Anish Nair, Career Counselor, received the award at the Career ChangeMakers ceremony on April 17, 2021.</p>
+          <a href="news/career-changemakers-2021.html" class="article-card-link">Read More ?</a>
+        </div>
+      </div>
+
+      <!-- Great Place to Work -->
+      <div class="article-card news-item" data-campus="group">
+        <div class="article-card-img" style="background:var(--light-gray);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:4rem;">??</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag group">Group-Wide</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">2024�25</span>
+          </div>
+          <h3>Fountainhead Schools � Certified Great Place to Work</h3>
+          <p>Recognised as a Certified Great Place to Work � honouring our commitment to a positive, empowering environment for every staff member.</p>
+          <a href="news/gptw.html" class="article-card-link">Read More ?</a>
+        </div>
+      </div>
+
+      <!-- FALH Reel -->
+      <div class="article-card news-item" data-campus="falh">
+        <div class="article-card-img">
+          <img src="images/falh-profile.png" alt="FALH" style="object-fit:contain;background:var(--dark);padding:16px;">
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag falh">FALH</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">Aug 2026</span>
+          </div>
+          <h3>Fountainhead After Learning Hub � New Reel</h3>
+          <p>See FALH in action � the unique preschool and after-school enrichment hub in Vapi, Gujarat.</p>
+          <a href="falh/index.html" class="article-card-link">Visit FALH ?</a>
+        </div>
+      </div>
+
+      <!-- FWGS Media -->
+      <div class="article-card news-item" data-campus="fwgs">
+        <div class="article-card-img">
+          <img src="images/fsk-facade.jpg" alt="FWGS">
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag fwgs">FWGS</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">2026</span>
+          </div>
+          <h3>FWGS � Full IB Continuum Campus</h3>
+          <p>Fountainhead Wockhardt Global School � EY through Diploma. Inquiry-based, internationally-minded education in Surat.</p>
+          <a href="fwgs/index.html" class="article-card-link">Visit FWGS ?</a>
+        </div>
+      </div>
+
+      <!-- FS Got Talent -->
+      <div class="article-card news-item" data-campus="kunkni">
+        <div class="article-card-img">
+          <img src="images/fsk-ground.jpg" alt="FS Got Talent">
+        </div>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="campus-tag kunkni">Kunkni</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">2026</span>
+          </div>
+          <h3>FS Got Talent � Annual Celebration of Student Creativity</h3>
+          <p>Music, dance, drama, spoken word, and more � FS Got Talent is one of the highlights of the FSK calendar.</p>
+          <a href="fsk/index.html#" onclick="setTimeout(()=>showTab&&showTab('media-tab',5),300)" class="article-card-link">Watch Video ?</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2>Stay Connected with Fountainhead</h2>
+        <p>Follow us on Instagram, LinkedIn, and YouTube for the latest from our campuses.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+        <a href="https://instagram.com/fountainheadschoolkunkni" target="_blank" class="btn-cta-white">?? Instagram</a>
+        <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="btn-cta-white" style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:white;">? YouTube</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo">
+          <div class="f-mark">FS</div>
+          <span class="f-name">Fountainhead Schools</span>
+        </div>
+        <p>Nurturing Leaders with Character and Competence. IB continuum schools in Surat and Vapi, Gujarat.</p>
+      </div>
+      <div>
+        <h6>Campuses</h6>
+        <ul>
+          <li><a href="fsk/index.html">FSK � Kunkni</a></li>
+          <li><a href="fwgs/index.html">FWGS � Wockhardt</a></li>
+          <li><a href="fsm/index.html">FSM � Miri</a></li>
+          <li><a href="falh/index.html">FALH � Vapi</a></li>
+          <li><a href="fpa/index.html">FPA � Adajan</a></li>
+          <li><a href="fpv/index.html">FPV � Vesu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="news.html">News &amp; Happenings</a></li>
+          <li><a href="index.html#accolades">Accolades</a></li>
+          <li><a href="fsk/index.html#admissions">Admissions</a></li>
+          <li><a href="fsk/index.html#" onclick="window.location.href='fsk/index.html'">Child Protection Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="tel:+918000130031">8000-130-031</a></li>
+          <li><a href="tel:+912613501300">0261-3501300</a></li>
+          <li><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></li>
+          <li><a href="https://wa.me/918000130031">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>� 2026 Fountainhead Schools. All rights reserved.</span>
+      <div class="footer-policies">
+        <a href="fsk/index.html#" onclick="window.location.href='fsk/index.html'">Child Protection Policy</a>
+        <a href="#">DPDP 2023</a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+function filterNews(campus, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.news-item').forEach(item => {
+    if (campus === 'all' || item.dataset.campus === campus) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
+

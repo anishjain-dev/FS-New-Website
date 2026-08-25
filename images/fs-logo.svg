@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 260" role="img" aria-label="Fountainhead Schools Logo">
+  <!-- BLUE FIGURE — teacher / guide (larger, left) -->
+  <!-- Head -->
+  <circle cx="80" cy="40" r="26" fill="#005BAA"/>
+  <!-- Raised left arm (going UP-LEFT) -->
+  <path d="M62 62 C50 50 34 32 14 14 C7 8 2 17 8 23 C18 32 40 48 62 66 Z" fill="#005BAA"/>
+  <!-- Body core -->
+  <path d="M62 66 C60 80 56 100 50 124 C46 138 42 156 40 172 C38 182 52 186 56 174 C60 160 64 142 70 126 C74 144 78 162 80 178 C82 190 96 188 94 176 C90 158 86 138 82 120 C90 100 100 80 106 62 C110 50 104 42 94 46 Z" fill="#005BAA"/>
+  <!-- Right arm reaching toward child -->
+  <path d="M94 58 C100 68 112 80 126 92 C134 98 132 108 122 106 C110 104 100 94 90 80 Z" fill="#005BAA"/>
+
+  <!-- RED FIGURE — child / student (smaller, right) -->
+  <!-- Head -->
+  <circle cx="162" cy="96" r="18" fill="#B8292F"/>
+  <!-- Ponytail -->
+  <path d="M176 84 C182 76 190 72 192 80 C192 88 184 90 174 86 Z" fill="#B8292F"/>
+  <!-- Right arm raised UP-RIGHT -->
+  <path d="M170 112 C180 96 196 78 212 64 C218 58 224 68 218 74 C206 86 190 104 172 120 Z" fill="#B8292F"/>
+  <!-- Body and legs -->
+  <path d="M154 114 C150 130 144 148 140 166 C138 176 148 180 152 170 C156 156 160 140 164 124 C168 142 172 160 174 174 C176 186 188 184 186 172 C182 156 176 138 170 122 C168 112 158 108 154 114 Z" fill="#B8292F"/>
+</svg>
