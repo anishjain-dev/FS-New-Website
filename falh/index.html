@@ -9,23 +9,34 @@
 </head>
 <body>
 
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="utility-link">Child Protection Policy</a>
+    <div class="util-right">
+      <span class="utility-link">&#9990; +91 261 350 1300</span>
+      <a href="mailto:info@fountainheadschools.org" class="utility-link">info@fountainheadschools.org</a>
+    </div>
+  </div>
+</div>
+<!-- NAVBAR -->
 <nav class="navbar dark-nav" id="navbar">
-  <a href="../index.html" class="nav-logo">
-        <img src="../images/fs-logo.svg" alt="Fountainhead Schools" class="fs-logo-svg" style="height:44px;width:auto;">
-    <span class="name">FALH · Vapi</span>
+  <a href="../index.html" class="nav-logo" style="display:flex;align-items:center;gap:12px;">
+    <img src="../images/falh-logo-official.png" alt="Fountainhead Al-Habib" style="height:64px;width:auto;display:block;">
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#programmes">Programmes</a></li>
-    <li><a href="#admissions">Admissions</a></li>
-    <li><a href="#contact" class="nav-inquire">Enquire</a></li>
+    <li><a href="#" onclick="showTab('about-tab',0)">About</a></li>
+    <li><a href="#" onclick="showTab('programme-tab',1)">Programme</a></li>
+    <li><a href="#" onclick="showTab('admissions-tab',2)">Admissions</a></li>
+    <li><a href="#" onclick="showTab('policies-tab',3)">Policies</a></li>
+    <li><a href="#" onclick="showTab('contact-tab',4)" class="nav-inquire">Enquire</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- HERO -->
+<!-- CAMPUS HERO -->
 <section class="campus-hero-ois" style="min-height:70vh;">
-  <img src="images/FALH Logo - Colour - JPEG.jpg" alt="FALH Logo" style="object-fit:contain;background:var(--dark);padding:60px;">
+  <img src="../images/falh-logo.jpg" alt="FALH Logo" style="object-fit:contain;background:var(--dark);padding:60px;">
   <div class="campus-hero-ois-overlay"></div>
   <div class="container">
     <div class="campus-hero-ois-content">
@@ -37,8 +48,8 @@
       <h1>Fountainhead Avadh Learning Hub</h1>
       <p>A unique combination of IB-aligned preschool and after-school enrichment hub — in Vapi, Gujarat.</p>
       <div class="campus-hero-actions">
-        <a href="#about" class="btn-hero-primary">Explore FALH ↓</a>
-        <a href="#admissions" class="btn-hero-outline">Enquire Now</a>
+        <a href="#content" class="btn-hero-primary">Explore FALH ↓</a>
+        <a href="#" onclick="showTab('admissions-tab',2)" class="btn-hero-outline">Enquire Now</a>
       </div>
     </div>
   </div>
@@ -56,174 +67,325 @@
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="section" id="about">
+<!-- MAIN CONTENT -->
+<section class="section" id="content">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <span class="label">About FALH</span>
-        <h2>Fountainhead Avadh Learning Hub</h2>
-        <p>The Fountainhead Avadh Learning Hub (FALH) is something new and exciting — a dual-purpose educational space in Vapi, Gujarat. FALH combines a warm, IB-aligned preschool for young learners aged 3–6 with a vibrant after-school enrichment hub for older children.</p>
-        <p>Built on the same Fountainhead learning philosophy that powers India's 4th ranked school, FALH brings exceptional early years and enrichment education to the Vapi community — close to home, and connected to the world.</p>
-      </div>
-      <div class="about-img">
-        <img src="images/FALH Logo - Colour - JPEG.jpg" alt="FALH Logo" style="width:100%;object-fit:contain;background:var(--light-gray);padding:32px;">
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- REEL VIDEO -->
-<div style="background:var(--dark);padding:80px 0;">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:40px;">
-      <span class="label" style="color:var(--gold);display:flex;justify-content:center;">FALH Reel</span>
-      <h2 style="color:white;">See FALH in Action</h2>
+    <!-- TAB BAR -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showTab('about-tab',0)">About FALH</button>
+      <button class="tab-btn" onclick="showTab('programme-tab',1)">Programme</button>
+      <button class="tab-btn" onclick="showTab('admissions-tab',2)">Admissions</button>
+      <button class="tab-btn" onclick="showTab('policies-tab',3)">Policies</button>
+      <button class="tab-btn" onclick="showTab('contact-tab',4)">Contact</button>
     </div>
-    <div class="video-wrap" style="max-width:700px;margin:0 auto;">
-      <video controls style="width:100%;">
-        <source src="images/FALH Reel.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</div>
 
-<!-- PROGRAMMES -->
-<section class="section" id="programmes">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="label" style="display:flex;justify-content:center;">Programmes</span>
-      <h2>What We Offer at FALH</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
-      <div style="background:white;padding:40px;border-top:3px solid var(--dark);">
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Preschool · Ages 3–6</span>
-        <h3 style="margin:10px 0 16px;">IB-Aligned Preschool</h3>
-        <p>A warm, play-based preschool rooted in the IB learning philosophy. Every child is a curious, capable learner from the very first day.</p>
-        <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
-          <li>Inquiry-based learning through play</li>
-          <li>Learner agency and social-emotional development</li>
-          <li>Environment as the third teacher</li>
-          <li>Small class sizes for personalised attention</li>
-        </ul>
+    <!-- ═══ ABOUT ═══ -->
+    <div class="tab-panel active" id="about-tab">
+      <div class="about-grid" style="margin-bottom:80px;">
+        <div class="about-text">
+          <span class="label">About FALH</span>
+          <h2>Fountainhead Avadh Learning Hub</h2>
+          <p>The Fountainhead Avadh Learning Hub (FALH) is something new and exciting — a dual-purpose educational space in Vapi, Gujarat. FALH combines a warm, IB-aligned preschool for young learners aged 3–6 with a vibrant after-school enrichment hub for older children.</p>
+          <p>Built on the same Fountainhead learning philosophy that powers India's 4th ranked school, FALH brings exceptional early years and enrichment education to the Vapi community — close to home, and connected to the world.</p>
+          <a href="images/FALH-Flyer-August-2026.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">⬇ Download FALH Flyer (PDF)</a>
+        </div>
+        <div class="about-img">
+          <img src="../images/falh-logo.jpg" alt="FALH Logo" style="width:100%;object-fit:contain;background:var(--light-gray);padding:32px;">
+          <div class="about-img-caption">Fountainhead Avadh Learning Hub · Vapi, Gujarat</div>
+        </div>
       </div>
-      <div style="background:white;padding:40px;border-top:3px solid var(--gold);">
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">After-School Hub</span>
-        <h3 style="margin:10px 0 16px;">After-School Enrichment</h3>
-        <p>An enrichment hub for school-age children — structured activities, guided learning, and creative exploration after school hours.</p>
-        <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
-          <li>Homework support and academic enrichment</li>
-          <li>Arts, music, movement</li>
-          <li>STEM and creative thinking activities</li>
-          <li>Social-emotional learning and wellbeing</li>
-        </ul>
+
+      <!-- FALH Reel -->
+      <div class="divider"></div>
+      <div style="padding-top:80px;">
+        <span class="label">FALH Reel</span>
+        <h2 style="margin-bottom:32px;">See FALH in Action</h2>
+        <div class="video-wrap" style="max-width:700px;">
+          <video controls style="width:100%;">
+            <source src="images/FALH Reel.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ADMISSIONS -->
-<section class="section" style="background:var(--light-gray);" id="admissions">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="label" style="display:flex;justify-content:center;">Admissions</span>
-      <h2>Join FALH</h2>
+    <!-- ═══ PROGRAMME ═══ -->
+    <div class="tab-panel" id="programme-tab">
+      <span class="label">Programmes</span>
+      <h2 style="margin-bottom:48px;">What We Offer at FALH</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:60px;">
+        <div style="background:white;padding:40px;border-top:3px solid var(--dark);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Preschool · Ages 3–6</span>
+          <h3 style="margin:10px 0 16px;">IB-Aligned Preschool</h3>
+          <p>A warm, play-based preschool rooted in the IB learning philosophy. Every child is a curious, capable learner from the very first day.</p>
+          <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
+            <li>Inquiry-based learning through play</li>
+            <li>Learner agency and social-emotional development</li>
+            <li>Environment as the third teacher</li>
+            <li>Small class sizes for personalised attention</li>
+          </ul>
+        </div>
+        <div style="background:white;padding:40px;border-top:3px solid var(--gold);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">After-School Hub</span>
+          <h3 style="margin:10px 0 16px;">After-School Enrichment</h3>
+          <p>An enrichment hub for school-age children — structured activities, guided learning, and creative exploration after school hours.</p>
+          <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
+            <li>Homework support and academic enrichment</li>
+            <li>Arts, music, movement</li>
+            <li>STEM and creative thinking activities</li>
+            <li>Social-emotional learning and wellbeing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IB Learner Profile -->
+      <div style="padding:40px;background:var(--dark);margin-bottom:60px;">
+        <span class="label" style="color:var(--gold);">The IB Learner Profile</span>
+        <h3 style="color:white;margin:12px 0 24px;">What We Develop in Every Child at FALH</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Inquirers</span>
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Knowledgeable</span>
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Thinkers</span>
+          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Communicators</span>
+          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Principled</span>
+          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Open-Minded</span>
+          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Caring</span>
+          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Risk-Takers</span>
+          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Balanced</span>
+          <span style="background:#444;color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Reflective</span>
+        </div>
+      </div>
+
+      <div style="padding:40px;background:var(--light-gray);border:1px solid var(--border);">
+        <span class="label">Learning Resource</span>
+        <h3>Download the FS Learning Model</h3>
+        <p style="font-size:0.88rem;color:var(--mid);">Understand the pedagogical foundation that underpins FALH and all Fountainhead campuses.</p>
+        <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">⬇ FS Learning Model (PDF)</a>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
-      <div>
-        <div class="admission-steps-ois">
-          <div class="admission-step-ois">
-            <div class="step-circle">P</div>
-            <div class="step-body">
-              <h4>Pre-Admission</h4>
-              <p>Contact us or visit FALH. Meet our team and discover the learning environment we've created.</p>
+
+    <!-- ═══ ADMISSIONS ═══ -->
+    <div class="tab-panel" id="admissions-tab">
+      <span class="label">Admissions</span>
+      <h2 style="margin-bottom:12px;">Join FALH</h2>
+      <p style="margin-bottom:60px;font-size:1rem;">Our PAE process — three steps. Simple, welcoming, centred on your child.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+        <div>
+          <div class="admission-steps-ois">
+            <div class="admission-step-ois">
+              <div class="step-circle">P</div>
+              <div class="step-body">
+                <h4>Pre-Admission</h4>
+                <p>Contact us or visit FALH. Meet our team and discover the learning environment we've created for your child.</p>
+              </div>
+            </div>
+            <div class="admission-step-ois">
+              <div class="step-circle">A</div>
+              <div class="step-body">
+                <h4>Assessment</h4>
+                <p>A gentle, age-appropriate interaction to understand your child and discuss your family's needs and aspirations.</p>
+              </div>
+            </div>
+            <div class="admission-step-ois">
+              <div class="step-circle">E</div>
+              <div class="step-body">
+                <h4>Enrolment</h4>
+                <p>Welcome to FALH — complete documentation and get ready for an enriching journey in Vapi.</p>
+              </div>
             </div>
           </div>
-          <div class="admission-step-ois">
-            <div class="step-circle">A</div>
-            <div class="step-body">
-              <h4>Assessment</h4>
-              <p>A gentle, age-appropriate interaction to understand your child and discuss your needs.</p>
-            </div>
+
+          <div style="margin-top:48px;padding:32px;background:var(--light-gray);">
+            <span class="label">August 2026 Flyer</span>
+            <h4 style="margin:8px 0 12px;">Download the FALH Flyer</h4>
+            <p style="font-size:0.88rem;color:var(--mid);">Get all the details about FALH — programmes, schedule, and how to enrol.</p>
+            <a href="images/FALH-Flyer-August-2026.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:12px 20px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">⬇ Download Flyer (PDF)</a>
           </div>
-          <div class="admission-step-ois">
-            <div class="step-circle">E</div>
-            <div class="step-body">
-              <h4>Enrolment</h4>
-              <p>Welcome to FALH — complete documentation and get ready for an enriching journey.</p>
+        </div>
+
+        <div>
+          <div style="background:var(--dark);padding:40px;margin-bottom:24px;">
+            <span class="label" style="color:var(--gold);">Contact Admissions</span>
+            <h3 style="color:white;margin-bottom:24px;">Reach FALH</h3>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">📍</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">Location</h5><p style="color:white;">Vapi, Gujarat, India</p></div>
+            </div>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">📞</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">Phone</h5><p><a href="tel:+918000130031" style="color:white;">8000-130-031</a></p></div>
+            </div>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">✉️</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">Email</h5><p><a href="mailto:vapi@fountainheadschools.org" style="color:white;">vapi@fountainheadschools.org</a></p></div>
+            </div>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">💬</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">WhatsApp</h5><p><a href="https://wa.me/918000130031" style="color:white;">+91 8000-130-031</a></p></div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <div style="background:var(--dark);padding:40px;">
-          <span class="label" style="color:var(--gold);">Contact Admissions</span>
-          <h3 style="color:white;margin-bottom:24px;">Reach FALH</h3>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+    </div>
+
+    <!-- ═══ POLICIES ═══ -->
+    <div class="tab-panel" id="policies-tab">
+      <span class="label">Download Policies</span>
+      <h2 style="margin-bottom:8px;">FALH School Policies</h2>
+      <p style="margin-bottom:0;">Click any policy below to open the PDF in a new tab.</p>
+      <div class="policies-grid">
+        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Child Protection Policy</span></a>
+        <a href="../policies/FSK Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Admission Policy</span></a>
+        <a href="../policies/FSK Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Assessment Policy</span></a>
+        <a href="../policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Canteen &amp; Pantry Guidelines</span></a>
+        <a href="../policies/FSK Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Discipline Policy</span></a>
+        <a href="../policies/FSK Food policy (Parents &amp; Students).pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Food Policy</span></a>
+        <a href="../policies/FSK Health Exclusion Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Health Exclusion Policy</span></a>
+        <a href="../policies/FSK Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Language Policy</span></a>
+        <a href="../policies/FSK Learning Diversity &amp; Inclusion Policy .pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Learning Diversity &amp; Inclusion</span></a>
+        <a href="../policies/FSK Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Academic Integrity Policy</span></a>
+      </div>
+      <div class="divider" style="margin:60px 0 48px;"></div>
+      <div class="policy-layout">
+        <div class="policy-sidebar">
+          <h5>All Policies</h5>
+          <ul>
+            <li><a href="#falh-child">Child Protection</a></li>
+            <li><a href="#falh-integrity">Academic Integrity</a></li>
+            <li><a href="#falh-admission">Admission Policy</a></li>
+            <li><a href="#falh-health">Health Exclusion</a></li>
+            <li><a href="#falh-parent">Parent Role</a></li>
+          </ul>
+        </div>
+        <div class="policy-content-area">
+
+          <div class="policy-block" id="falh-child">
+            <span class="policy-meta">Safeguarding Policy</span>
+            <h2>Child Protection Policy</h2>
+            <p>The safety and wellbeing of every child at Fountainhead Avadh Learning Hub is our highest priority. We are committed to creating a safe, secure, and nurturing environment where every child can flourish.</p>
+            <h3>Key Commitments</h3>
+            <ul>
+              <li>All staff undergo mandatory Child Protection training</li>
+              <li>A designated Child Protection Officer (CPO) is available at all times</li>
+              <li>Any concerns about a child's welfare are reported immediately and investigated</li>
+              <li>We follow POCSO (Protection of Children from Sexual Offences) Act guidelines</li>
+              <li>All allegations are treated seriously, impartially, and confidentially</li>
+            </ul>
+            <h3>Reporting Concerns</h3>
+            <p>If you have any concerns about a child's safety, please contact us at <a href="mailto:vapi@fountainheadschools.org" style="color:var(--gold);">vapi@fountainheadschools.org</a> immediately. All concerns will be acted upon within 24 hours.</p>
+          </div>
+
+          <div class="policy-block" id="falh-integrity">
+            <span class="policy-meta">Academic Policy</span>
+            <h2>Academic Integrity Policy</h2>
+            <p>FALH is committed to honest, authentic learning. All work must be the student's own genuine effort. We value the process of learning as much as the outcome, and we encourage children to take pride in their own thinking and creativity.</p>
+            <h3>Key Principles</h3>
+            <ul>
+              <li>Original, authentic effort is celebrated at all stages</li>
+              <li>Students learn to attribute ideas and work to their sources</li>
+              <li>Collaboration is guided by teachers to develop learning, not replace it</li>
+            </ul>
+          </div>
+
+          <div class="policy-block" id="falh-admission">
+            <span class="policy-meta">Administrative Policy</span>
+            <h2>Admission Policy</h2>
+            <p>FALH admits children through a welcoming, transparent process. We welcome learners from all backgrounds who are ready to grow, explore, and be part of our vibrant learning community.</p>
+            <h3>Eligibility</h3>
+            <ul>
+              <li>Preschool: Children aged 3–6 years</li>
+              <li>After-School Hub: School-age children of relevant age</li>
+              <li>An informal interaction with the child is part of the process</li>
+            </ul>
+            <h3>Documents Required</h3>
+            <ul>
+              <li>Birth certificate / Age proof</li>
+              <li>Passport-size photographs</li>
+              <li>Residential address proof</li>
+              <li>Aadhar card (child and parents)</li>
+            </ul>
+          </div>
+
+          <div class="policy-block" id="falh-health">
+            <span class="policy-meta">Health Policy</span>
+            <h2>Health Exclusion Policy</h2>
+            <p>To protect the health of all children and staff, FALH follows a Health Exclusion Policy specifying when children should be kept home and when they may return.</p>
+            <h3>When to Keep Your Child at Home</h3>
+            <ul>
+              <li><strong>Fever</strong> (above 100°F / 37.8°C) — child must be fever-free for 24 hours before returning</li>
+              <li><strong>Vomiting or diarrhoea</strong> — must be symptom-free for 24 hours</li>
+              <li><strong>Chickenpox</strong> — until all blisters have crusted over</li>
+              <li><strong>Pink eye (Conjunctivitis)</strong> — until treatment has begun and discharge has stopped</li>
+            </ul>
+          </div>
+
+          <div class="policy-block" id="falh-parent">
+            <span class="policy-meta">Partnership Policy</span>
+            <h2>Parent Role in Education</h2>
+            <p>FALH believes that a child's learning is best when home and school work together. Parents are our strongest partners.</p>
+            <h3>How Parents Can Help</h3>
+            <ul>
+              <li>Attend orientation sessions to understand the FALH learning approach</li>
+              <li>Maintain regular communication with teachers</li>
+              <li>Encourage your child's curiosity and questions at home</li>
+              <li>Support your child's independence — guide, don't do it for them</li>
+              <li>Foster a reading culture and love of learning at home</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ CONTACT ═══ -->
+    <div class="tab-panel" id="contact-tab">
+      <span class="label">Contact</span>
+      <h2 style="margin-bottom:48px;">Reach Fountainhead Avadh Learning Hub</h2>
+
+      <div class="contact-grid-ois">
+        <div>
+          <div class="contact-item-ois">
             <div class="contact-icon-ois">📍</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">Location</h5><p style="color:white;">Vapi, Gujarat, India</p></div>
+            <div><h5>Location</h5><p>Vapi, Gujarat, India</p></div>
           </div>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+          <div class="contact-item-ois">
             <div class="contact-icon-ois">📞</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">Phone</h5><p><a href="tel:+918000130031" style="color:white;">8000-130-031</a></p></div>
+            <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a></p></div>
           </div>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+          <div class="contact-item-ois">
             <div class="contact-icon-ois">✉️</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">Email</h5><p><a href="mailto:vapi@fountainheadschools.org" style="color:white;">vapi@fountainheadschools.org</a></p></div>
+            <div><h5>Email</h5><p><a href="mailto:vapi@fountainheadschools.org">vapi@fountainheadschools.org</a></p></div>
           </div>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+          <div class="contact-item-ois">
             <div class="contact-icon-ois">💬</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">WhatsApp</h5><p><a href="https://wa.me/918000130031" style="color:white;">+91 8000-130-031</a></p></div>
+            <div><h5>WhatsApp</h5><p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="label" style="display:flex;justify-content:center;">Contact</span>
-      <h2>Reach FALH</h2>
-    </div>
-    <div class="contact-grid-ois">
-      <div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">📍</div>
-          <div><h5>Location</h5><p>Vapi, Gujarat, India</p></div>
-        </div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">📞</div>
-          <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a></p></div>
-        </div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">✉️</div>
-          <div><h5>Email</h5><p><a href="mailto:vapi@fountainheadschools.org">vapi@fountainheadschools.org</a></p></div>
-        </div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">🌐</div>
-          <div>
-            <h5>Follow FALH</h5>
-            <div class="social-row">
-              <a href="#" class="soc-btn">📸 Instagram</a>
-              <a href="#" class="soc-btn">👍 Facebook</a>
+          <div class="contact-item-ois">
+            <div class="contact-icon-ois">🌐</div>
+            <div>
+              <h5>Follow FALH</h5>
+              <div class="social-row">
+                <a href="#" class="soc-btn">📸 Instagram</a>
+                <a href="#" class="soc-btn">👍 Facebook</a>
+                <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="soc-btn">▶ YouTube</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="map-box">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729!2d72.91!3d20.37!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDIyJzEyLjAiTiA3MsKwNTQnMzYuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
+        <div>
+          <div class="map-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729!2d72.91!3d20.37!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDIyJzEyLjAiTiA3MsKwNTQnMzYuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <a href="https://goo.gl/maps" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">📍 Open in Google Maps</a>
         </div>
-        <a href="https://goo.gl/maps" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">📍 Open in Google Maps</a>
       </div>
     </div>
-  </div>
-</section>
 
+  </div><!-- container -->
+</section>
 
 <!-- LATEST NEWS -->
 <section style="padding:80px 0;background:var(--light-gray);">
@@ -242,7 +404,7 @@
           <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">28 Jul 2026</span>
         </div>
         <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">FALH Reading Guild Hits 10,000 Books Read</h4>
-        <p style="font-size:0.82rem;color:var(--mid);">The FALH Reading Guild has crossed a remarkable milestone — 10,000 books read by students since the programme began. A testament to our love of reading.</p>
+        <p style="font-size:0.82rem;color:var(--mid);">The FALH Reading Guild has crossed a remarkable milestone — 10,000 books read by students since the programme began.</p>
       </div>
       <div style="background:white;padding:32px;">
         <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
@@ -271,9 +433,9 @@
     </div>
   </div>
 </section>
-<!-- CTA BAND -->
-<!-- FALH Flyer Download -->
-<section class="section" style="padding:48px 0;background:var(--light-gray);border-top:1px solid var(--border);">
+
+<!-- FALH Flyer -->
+<section class="section" style="padding:48px 0;background:white;border-top:1px solid var(--border);">
   <div class="container" style="text-align:center;">
     <span class="label">August 2026</span>
     <h3 style="margin:8px 0 16px;">Download the FALH Flyer</h3>
@@ -282,6 +444,7 @@
   </div>
 </section>
 
+<!-- CTA BAND -->
 <div class="cta-band">
   <div class="container">
     <div class="cta-inner">
@@ -289,7 +452,7 @@
         <h2>Discover FALH</h2>
         <p>The best way to understand Fountainhead Avadh Learning Hub is to visit us in person.</p>
       </div>
-      <a href="#admissions" class="btn-cta-white">Book a Visit →</a>
+      <a href="#" onclick="showTab('admissions-tab',2)" class="btn-cta-white">Book a Visit →</a>
     </div>
   </div>
 </div>
@@ -300,28 +463,46 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <div class="f-mark">FALH</div>
-          <span class="f-name">Fountainhead Avadh Learning Hub</span>
+          <img src="../images/falh-logo-official.png" alt="Fountainhead Avadh Learning Hub" style="height:120px;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
         </div>
         <p>IB-aligned preschool and after-school enrichment hub in Vapi, Gujarat. Part of the Fountainhead Schools group.</p>
         <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
       </div>
       <div>
         <h6>Programmes</h6>
-        <ul><li><a href="#programmes">IB Preschool</a></li><li><a href="#programmes">After-School Hub</a></li></ul>
+        <ul>
+          <li><a href="#" onclick="showTab('programme-tab',1)">IB Preschool</a></li>
+          <li><a href="#" onclick="showTab('programme-tab',1)">After-School Hub</a></li>
+        </ul>
       </div>
       <div>
-        <h6>Quick Links</h6>
-        <ul><li><a href="#admissions">Admissions</a></li><li><a href="../fsk/index.html">FSK – Main Campus</a></li><li><a href="../index.html">FS Group Home</a></li></ul>
+        <h6>Campus Links</h6>
+        <ul>
+          <li><a href="../fsk/index.html">FSK — Kunkni</a></li>
+          <li><a href="../fwgs/index.html">FWGS — Wockhardt</a></li>
+          <li><a href="../fsm/index.html">FSM — Malgama</a></li>
+          <li><a href="../fpa/index.html">FPA — Adajan</a></li>
+          <li><a href="../fpv/index.html">FPV — Vesu</a></li>
+          <li><a href="../index.html">FS Group Home</a></li>
+        </ul>
       </div>
       <div>
         <h6>Contact</h6>
-        <ul><li><a href="tel:+918000130031">8000-130-031</a></li><li><a href="mailto:vapi@fountainheadschools.org">vapi@fountainheadschools.org</a></li></ul>
+        <ul>
+          <li><a href="tel:+918000130031">8000-130-031</a></li>
+          <li><a href="mailto:vapi@fountainheadschools.org">vapi@fountainheadschools.org</a></li>
+          <li><a href="https://wa.me/918000130031">WhatsApp Us</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Fountainhead Avadh Learning Hub. All rights reserved.</span>
-      <div class="footer-policies"><a href="#">Child Protection Policy</a><a href="#">DPDP 2023</a></div>
+      <div class="footer-policies">
+        <a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection Policy</a>
+        <a href="#">DPDP 2023</a>
+        <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+        <a href="../index.html">FS Group Home</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -331,12 +512,23 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab'];
+function showTab(id, idx) {
+  tabs.forEach(t => { document.getElementById(t).classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+  document.getElementById('content').scrollIntoView({behavior:'smooth'});
+}
+
+const h = window.location.hash;
+if(h==='#admissions') showTab('admissions-tab',2);
+else if(h==='#programme') showTab('programme-tab',1);
+else if(h==='#policies') showTab('policies-tab',3);
+else if(h==='#contact') showTab('contact-tab',4);
 </script>
 </body>
 </html>
-
-
-
-
 
 

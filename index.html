@@ -9,19 +9,54 @@
 </head>
 <body>
 
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
+    <div class="util-right">
+      <a href="tel:+912612345678">+91 261 234 5678</a>
+      <a href="mailto:info@fountainheadschools.org">info@fountainheadschools.org</a>
+    </div>
+  </div>
+</div>
+
 <!-- NAVBAR -->
 <nav class="navbar dark-nav" id="navbar">
   <a href="index.html" class="nav-logo">
-    <img src="images/fs-logo.svg" alt="Fountainhead Schools" class="fs-logo-svg" style="height:44px;width:auto;">
-    <span class="name">Fountainhead Schools</span>
+    <img src="images/fs-main-logo.png" alt="Fountainhead Schools" style="height:72px;width:auto;display:block;">
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About Us</a></li>
-    <li><a href="#campuses">Our Schools</a></li>
-    <li><a href="#academics">Academics</a></li>
-    <li><a href="news.html">News &amp; Happenings</a></li>
-    <li><a href="#accolades">Accolades &amp; Certifications</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
+    <li class="nav-group">
+      <details class="nav-group" name="primary-nav">
+        <summary>Our Schools</summary>
+        <div class="nav-submenu">
+          <a href="#campuses">All Campuses</a>
+          <a href="fsk/index.html">FSK · Kunkni (Flagship)</a>
+          <a href="fsm/index.html">FSM · Malgama</a>
+          <a href="fwgs/index.html">FWGS · Wockhardt</a>
+          <a href="falh/index.html">FALH · Avadh Hub</a>
+          <a href="fpa/index.html">FPA · Preschool Adajan</a>
+          <a href="fpv/index.html">FPV · Preschool Vesu</a>
+        </div>
+      </details>
+    </li>
+    <li class="nav-group">
+      <details class="nav-group" name="primary-nav">
+        <summary>Academics</summary>
+        <div class="nav-submenu">
+          <a href="#academics">IB Programmes</a>
+          <a href="fsk/index.html#academics">Early Years (EYP)</a>
+          <a href="fsk/index.html#academics">Primary (PYP)</a>
+          <a href="fsk/index.html#academics">Middle Years (MYP)</a>
+          <a href="fsk/index.html#academics">Diploma (DP)</a>
+          <a href="fsk/index.html#academics">Maverick Learning Centre</a>
+        </div>
+      </details>
+    </li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="#accolades">Accolades</a></li>
+    <li><a href="#timeline">Our Journey</a></li>
     <li><a href="#connect" class="nav-inquire">Enquire</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
@@ -164,8 +199,8 @@
         </div>
       </div>
 
-      <div class="campus-ois" onclick="window.open('fwgs/index.html','_blank')" style="background:linear-gradient(135deg,#003d7a 0%,var(--gold) 60%,#0070cc 100%);">
-        <div class="campus-ois-overlay">
+      <div class="campus-ois" onclick="window.open('fwgs/index.html','_blank')" style="background:linear-gradient(135deg,#003d7a 0%,#005BAA 60%,#0070cc 100%);">
+        <div class="campus-ois-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,30,80,0.5) 100%);">
           <div class="campus-ois-city">📍 Chhatrapati Sambhajinagar, Maharashtra</div>
           <h3>Fountainhead Wockhardt Global School</h3>
           <p>The FS × Wockhardt campus. IB EY, PYP, MYP and DP. Chhatrapati Sambhajinagar.</p>
@@ -173,9 +208,9 @@
         </div>
       </div>
 
-      <div class="campus-ois" onclick="window.open('falh/index.html','_blank')" style="background:#111;">
-        <img src="images/falh-logo.jpg" alt="FALH" style="opacity:0.25;object-fit:contain;padding:40px;">
-        <div class="campus-ois-overlay">
+      <div class="campus-ois" onclick="window.open('falh/index.html','_blank')" style="background:#0a1628;">
+        <img src="images/falh-logo.jpg" alt="FALH" style="opacity:0.55;object-fit:contain;padding:30px;">
+        <div class="campus-ois-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.4) 60%);">
           <div class="campus-ois-city">📍 Vapi, Gujarat</div>
           <h3>Fountainhead Avadh Learning Hub</h3>
           <p>Preschool and after-school learning centre in Vapi. Robotics, reading guild, and a full preschool day.</p>
@@ -342,6 +377,139 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- TIMELINE SECTION -->
+<section class="section" id="timeline" style="background:var(--light-gray);padding:80px 0;">
+  <div class="container">
+    <span class="label">Our Journey</span>
+    <h2 style="margin-bottom:12px;">The FS Timeline</h2>
+    <p style="color:var(--mid);margin-bottom:48px;max-width:600px;">From 6 students in Adajan to 6 campuses across India — two decades of building schools around how children actually learn.</p>
+  </div>
+  <div style="overflow-x:auto;padding-bottom:24px;">
+    <div style="display:flex;gap:0;min-width:max-content;padding:0 40px;align-items:flex-start;">
+
+      <!-- 2005 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;position:relative;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2005</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Founded with 6 students under the brand The Fountainhead Preschool, Adajan</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="position:absolute;top:calc(40px + 24px + 1px);right:-1px;width:50%;height:1px;background:#005BAA;top:auto;"></div>
+      </div>
+      <div style="width:1px;background:#005BAA;align-self:stretch;margin-top:calc(40px + 16px + 24px);flex-shrink:0;height:1px;background:#005BAA;flex-grow:0;width:0;"></div>
+
+      <!-- 2008 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2008</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Established Fountainhead School, Kunkni</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+      <!-- 2011 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2011</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Authorized for IB PYP</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+      <!-- 2014 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2014</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Ankita conferred with the Global Teacher Accreditation award by British Council · Authorized for IB DP</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+      <!-- 2016 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2016</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">1st Graduating Class of Fountainhead School</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+      <!-- 2017 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#005BAA;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2017</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #B8292F;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Opened 2nd Fountainhead Preschool, Vesu</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+      </div>
+
+      <!-- 2018 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#005BAA;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2018</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #B8292F;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Authorized for IB MYP</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+      </div>
+
+      <!-- 2019 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#005BAA;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2019</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #B8292F;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">In-house project based 'Maverick Learning Centre' established</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+      </div>
+
+      <!-- 2020 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#005BAA;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2020</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #B8292F;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Accredited by MSA-CESS for offering American High School Diploma</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+      </div>
+
+      <!-- 2023 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#005BAA;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2023</div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #B8292F;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Ranked Best International School in Surat (EW) · Vardan authored <em>Reimagining Indian Education</em></div>
+        <div style="width:1px;height:24px;background:#B8292F;"></div>
+      </div>
+
+      <!-- 2024 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2024</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Great Place To Work® Certified</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+      <!-- 2025 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2025</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Stands proudly among India's Top Schools — Ranked 5th Nationwide (Cfore) · Opened 2nd Fountainhead School, Malgama K12 IB School</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+      <!-- 2026 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#B8292F;color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2026</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #005BAA;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">Fountainhead joined hands with Wockhardt Global School, Chhatrapati Sambhajinagar · Opened 3rd Fountainhead Preschool, Vapi · Ranked 4th Nationwide (Cfore)</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+      <!-- 2027 -->
+      <div style="display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;">
+        <div style="background:#F2C418;color:#111;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;padding:6px 18px;border-radius:20px;margin-bottom:16px;white-space:nowrap;">2027</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+        <div style="background:white;border:1px solid var(--border);border-top:3px solid #F2C418;padding:20px;width:100%;box-sizing:border-box;font-size:0.82rem;line-height:1.5;color:#111;">K12 IB School — Next Chapter, Vapi</div>
+        <div style="width:1px;height:24px;background:#005BAA;"></div>
+      </div>
+
+    </div>
+  </div>
+  <style>
+  @media(max-width:768px){
+    #timeline .container p { margin-bottom:32px; }
+  }
+  </style>
 </section>
 
 <!-- PEOPLE -->
@@ -519,7 +687,7 @@
             <label style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);display:block;margin-bottom:8px;">Brief Description</label>
             <textarea name="message" rows="4" placeholder="Please write briefly about the reason selected above..." style="width:100%;box-sizing:border-box;padding:12px 14px;border:1.5px solid #e0e4eb;font-family:'Nunito',sans-serif;font-size:0.9rem;color:var(--dark);outline:none;resize:vertical;transition:border 0.2s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='#e0e4eb'"></textarea>
           </div>
-          <button type="submit" style="width:100%;background:var(--fs-blue);color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;padding:16px 24px;border:none;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#004a8f'" onmouseout="this.style.background='var(--gold)'">Send Message →</button>
+          <button type="submit" style="width:100%;background:var(--fs-blue);color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;padding:16px 24px;border:none;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#004a8f'" onmouseout="this.style.background='var(--fs-blue)'">Send Message →</button>
           <div id="fs-form-msg" style="margin-top:16px;font-family:'Nunito',sans-serif;font-size:0.9rem;display:none;"></div>
         </form>
       </div>
@@ -613,19 +781,7 @@ function handleFSForm(e) {
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <svg width="48" height="48" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-            <circle cx="32" cy="14" r="9" fill="var(--gold)"/>
-            <path d="M18 60 Q20 35 32 30 Q38 28 44 32 L52 55 L36 62 Z" fill="var(--gold)"/>
-            <path d="M44 32 Q60 18 72 22" stroke="var(--gold)" stroke-width="6" fill="none" stroke-linecap="round"/>
-            <path d="M36 62 L30 85" stroke="var(--gold)" stroke-width="7" stroke-linecap="round"/>
-            <path d="M50 57 L56 82" stroke="var(--gold)" stroke-width="7" stroke-linecap="round"/>
-            <circle cx="70" cy="32" r="7" fill="var(--gold)"/>
-            <path d="M60 75 Q62 55 70 50 Q76 47 80 52 L86 68 L72 74 Z" fill="var(--gold)"/>
-            <path d="M80 52 Q90 40 95 44" stroke="var(--gold)" stroke-width="5" fill="none" stroke-linecap="round"/>
-            <path d="M72 74 L68 92" stroke="var(--gold)" stroke-width="6" stroke-linecap="round"/>
-            <path d="M82 70 L86 90" stroke="var(--gold)" stroke-width="6" stroke-linecap="round"/>
-          </svg>
-          <span class="f-name">Fountainhead Schools</span>
+          <img src="images/fs-main-logo.png" alt="Fountainhead Schools" style="height:80px;width:auto;display:block;margin-bottom:8px;">
         </div>
         <p>An IB School Group with six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Nurturing leaders with character and competence since 2007.</p>
         <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">

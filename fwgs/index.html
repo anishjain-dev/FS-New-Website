@@ -9,10 +9,19 @@
 </head>
 <body>
 
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="utility-link">Child Protection Policy</a>
+    <div class="util-right">
+      <span class="utility-link">&#9990; +91 261 350 1300</span>
+      <a href="mailto:info@fountainheadschools.org" class="utility-link">info@fountainheadschools.org</a>
+    </div>
+  </div>
+</div>
 <nav class="navbar dark-nav" id="navbar">
-  <a href="../index.html" class="nav-logo">
-        <img src="../images/fs-logo.svg" alt="Fountainhead Schools" class="fs-logo-svg" style="height:44px;width:auto;">
-    <span class="name">FWGS · Wockhardt</span>
+  <a href="../index.html" class="nav-logo" style="display:flex;align-items:center;gap:12px;">
+    <img src="../images/fwgs-logo.png" alt="Fountainhead World Geo School" style="height:64px;width:auto;display:block;">
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#" onclick="showTab('about-tab',0)">About</a></li>
@@ -20,15 +29,15 @@
     <li><a href="#" onclick="showTab('academics-tab',2)">Academics</a></li>
     <li><a href="#" onclick="showTab('admissions-tab',3)">Admissions</a></li>
     <li><a href="#" onclick="showTab('policies-tab',4)">Policies</a></li>
-    <li><a href="#" onclick="showTab('contact-tab',5)" class="nav-inquire">Enquire</a></li>
+    <li><a href="#" onclick="showTab('life-tab',5)">Student Life</a></li>
+    <li><a href="#" onclick="showTab('contact-tab',6)" class="nav-inquire">Enquire</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- HERO -->
-<section class="campus-hero-ois">
-  <img src="../images/fwgs-hero.jpg" alt="Fountainhead Wockhardt Global School" onerror="this.style.display='none'">
-  <div class="campus-hero-ois-overlay"></div>
+<section class="campus-hero-ois" style="background:linear-gradient(135deg,#003d7a 0%,#005BAA 50%,#0070cc 100%);">
+  <div class="campus-hero-ois-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.1) 60%);"></div>
   <div class="container">
     <div class="campus-hero-ois-content">
       <div class="breadcrumb-ois">
@@ -53,7 +62,7 @@
       <div class="campus-stat"><span class="cnum">EY–DP</span><p>Full IB Continuum</p></div>
       <div class="campus-stat"><span class="cnum">IB</span><p>Authorised School</p></div>
       <div class="campus-stat"><span class="cnum">4</span><p>IB Programmes</p></div>
-      <div class="campus-stat"><span class="cnum">Aurangabad</span><p>Maharashtra, India</p></div>
+      <div class="campus-stat"><span class="cnum">Chhatrapati Sambhajinagar</span><p>Maharashtra, India</p></div>
       <div class="campus-stat"><span class="cnum">FS Group</span><p>Flagship Pedagogy</p></div>
     </div>
   </div>
@@ -70,7 +79,8 @@
       <button class="tab-btn" onclick="showTab('academics-tab',2)">Academics</button>
       <button class="tab-btn" onclick="showTab('admissions-tab',3)">Admissions</button>
       <button class="tab-btn" onclick="showTab('policies-tab',4)">Policies</button>
-      <button class="tab-btn" onclick="showTab('contact-tab',5)">Contact</button>
+      <button class="tab-btn" onclick="showTab('life-tab',5)">Student Life</button>
+      <button class="tab-btn" onclick="showTab('contact-tab',6)">Contact</button>
     </div>
 
     <!-- ═══ ABOUT ═══ -->
@@ -83,7 +93,8 @@
           <p>The school is committed to nurturing leaders with character and competence — graduates who are globally-minded, locally grounded, and ready for the challenges and opportunities of the 21st century.</p>
         </div>
         <div class="about-img">
-          <img src="../images/fsk-facade.jpg" alt="FWGS Campus">
+          <img src="../images/fwgs-logo.png" alt="Fountainhead Wockhardt Global School" style="width:100%;max-width:400px;margin:auto;display:block;padding:40px;background:#005BAA;border-radius:8px;">
+          <div class="about-img-caption">Fountainhead Wockhardt Global School · Chhatrapati Sambhajinagar</div>
         </div>
       </div>
 
@@ -306,8 +317,22 @@
 
     <!-- ═══ POLICIES ═══ -->
     <div class="tab-panel" id="policies-tab">
-      <span class="label">School Policies</span>
-      <h2 style="margin-bottom:48px;">FWGS Policies</h2>
+      <span class="label">Download Policies</span>
+      <h2 style="margin-bottom:8px;">FWGS School Policies</h2>
+      <p style="margin-bottom:0;">Click any policy below to open the PDF in a new tab.</p>
+      <div class="policies-grid">
+        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Child Protection Policy</span></a>
+        <a href="../policies/FSK Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Admission Policy</span></a>
+        <a href="../policies/FSK Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Assessment Policy</span></a>
+        <a href="../policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Canteen &amp; Pantry Guidelines</span></a>
+        <a href="../policies/FSK Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Discipline Policy</span></a>
+        <a href="../policies/FSK Food policy (Parents &amp; Students).pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Food Policy</span></a>
+        <a href="../policies/FSK Health Exclusion Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Health Exclusion Policy</span></a>
+        <a href="../policies/FSK Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Language Policy</span></a>
+        <a href="../policies/FSK Learning Diversity &amp; Inclusion Policy .pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Learning Diversity &amp; Inclusion</span></a>
+        <a href="../policies/FSK Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Academic Integrity Policy</span></a>
+      </div>
+      <div class="divider" style="margin:60px 0 48px;"></div>
 
       <div class="policy-layout">
         <div class="policy-sidebar">
@@ -359,6 +384,89 @@
             <p>Assessment at FWGS is varied, meaningful, and growth-oriented. We use formative and summative assessment across all programmes. Progress is reported termly through the Nucleus portal and communicated at Parent-Teacher Conferences.</p>
           </div>
 
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ STUDENT LIFE ═══ -->
+    <div class="tab-panel" id="life-tab">
+      <span class="label">Student Life</span>
+      <h2 style="margin-bottom:48px;">Life at FWGS</h2>
+
+      <!-- Sports -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:80px;">
+        <div>
+          <span class="label">Sports &amp; Physical Education</span>
+          <h3>Active Minds, Active Bodies</h3>
+          <p>FWGS is committed to the physical development of every student alongside academic achievement. Sports and physical education are integral to the school day — not an add-on.</p>
+          <div class="sport-tags" style="margin-top:20px;">
+            <span class="sport-tag">⚽ Football</span>
+            <span class="sport-tag">🏏 Cricket</span>
+            <span class="sport-tag">🏀 Basketball</span>
+            <span class="sport-tag">🏸 Badminton</span>
+            <span class="sport-tag">🏃 Athletics</span>
+            <span class="sport-tag">🤸 Gymnastics</span>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,#005BAA,#0070cc);min-height:280px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:rgba(255,255,255,0.2);font-size:5rem;font-weight:900;font-family:'Montserrat',sans-serif;">FWGS</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Arts + Clubs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:80px 0;">
+        <div>
+          <span class="label">Performing Arts</span>
+          <h3>Music, Drama &amp; Dance</h3>
+          <p>FWGS students perform, express, and create through music, drama, and dance. Annual performances and inter-school events give students platforms to share their talent with the world.</p>
+          <p>The arts are not extra-curricular at FWGS — they are central to the development of the whole person the IB seeks to grow.</p>
+        </div>
+        <div>
+          <span class="label">Clubs &amp; Activities</span>
+          <h3>Beyond the Classroom</h3>
+          <p>Robotics, Model United Nations, Debate, Photography, Coding, Environmental Action — FWGS students engage in a wide range of clubs and activities that build skills, friendships, and purpose beyond the curriculum.</p>
+          <p>All clubs align with the IB's Action strand — students are encouraged to connect their learning to real-world impact.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Wellbeing -->
+      <div style="padding:80px 0;">
+        <span class="label">Wellbeing</span>
+        <h3 style="margin-bottom:24px;">Student Support at FWGS</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+          <div style="padding:32px;border:1px solid var(--border);">
+            <h4>Counselling</h4>
+            <p>Dedicated counsellors support students' academic choices, university applications, and personal wellbeing throughout their time at FWGS.</p>
+          </div>
+          <div style="padding:32px;border:1px solid var(--border);">
+            <h4>Parent Portal — Nucleus</h4>
+            <p>FWGS parents have access to Nucleus — for progress tracking, communication, calendars, and school updates. Available on web and iOS.</p>
+            <a href="https://parents.fountainheadschools.org/Login" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);">Nucleus Portal →</a>
+          </div>
+          <div style="padding:32px;border:1px solid var(--border);">
+            <h4>CAS — Creativity, Activity, Service</h4>
+            <p>All IB Diploma students engage in CAS — a core component that develops students as compassionate, active citizens through real-world projects and community service.</p>
+          </div>
+          <div style="padding:32px;border:1px solid var(--border);">
+            <h4>International Mindedness</h4>
+            <p>FWGS's location and community bring genuine diversity. Students learn to think across cultures, engage with global issues, and act with empathy and understanding.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div style="padding-top:20px;">
+        <span class="label">Resources</span>
+        <h3 style="margin-bottom:8px;">Quick Links for Students &amp; Parents</h3>
+        <div class="qlinks">
+          <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink"><span>🖥️</span>Nucleus Web Portal</a>
+          <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink"><span>📱</span>Nucleus App (iOS)</a>
+          <a href="https://curricle.io" target="_blank" class="qlink"><span>📅</span>School Calendar</a>
+          <a href="../images/FS Learning Model.pdf" download class="qlink"><span>📘</span>FS Learning Model</a>
         </div>
       </div>
     </div>
@@ -478,7 +586,7 @@
         <h2>Visit FWGS</h2>
         <p>The best way to understand Fountainhead is to walk through it on a school day.</p>
       </div>
-      <a href="#" onclick="showTab('contact-tab',5)" class="btn-cta-white">Book a Campus Visit →</a>
+      <a href="#" onclick="showTab('contact-tab',6)" class="btn-cta-white">Book a Campus Visit →</a>
     </div>
   </div>
 </div>
@@ -489,8 +597,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <div class="f-mark">FWGS</div>
-          <span class="f-name">Fountainhead Wockhardt Global School</span>
+          <img src="../images/fwgs-logo.png" alt="Fountainhead Wockhardt Global School" style="height:120px;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
         </div>
         <p>Full IB continuum — EYP, PYP, MYP, Diploma. Chhatrapati Sambhajinagar, Maharashtra. Part of the Fountainhead Schools group.</p>
         <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
@@ -503,11 +610,13 @@
         </ul>
       </div>
       <div>
-        <h6>Quick Links</h6>
+        <h6>Campus Links</h6>
         <ul>
-          <li><a href="#" onclick="showTab('admissions-tab',3)">Admissions</a></li>
-          <li><a href="#" onclick="showTab('policies-tab',4)">Policies</a></li>
-          <li><a href="../fsk/index.html">FSK – Main Campus</a></li>
+          <li><a href="../fsk/index.html">FSK — Kunkni</a></li>
+          <li><a href="../fsm/index.html">FSM — Malgama</a></li>
+          <li><a href="../falh/index.html">FALH — Vapi</a></li>
+          <li><a href="../fpa/index.html">FPA — Adajan</a></li>
+          <li><a href="../fpv/index.html">FPV — Vesu</a></li>
           <li><a href="../index.html">FS Group Home</a></li>
         </ul>
       </div>
@@ -525,7 +634,7 @@
       <div class="footer-policies">
         <a href="#">Child Protection Policy</a>
         <a href="#">DPDP 2023</a>
-        <a href="#" onclick="showTab('contact-tab',5)">Contact Us</a>
+        <a href="#" onclick="showTab('contact-tab',6)">Contact Us</a>
         <a href="../index.html">FS Group Home</a>
       </div>
     </div>
@@ -538,7 +647,7 @@ window.addEventListener('scroll', () => {
 });
 function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 
-const tabs = ['about-tab','eyp-tab','academics-tab','admissions-tab','policies-tab','contact-tab'];
+const tabs = ['about-tab','eyp-tab','academics-tab','admissions-tab','policies-tab','life-tab','contact-tab'];
 function showTab(id, idx) {
   tabs.forEach(t => { document.getElementById(t).classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -551,10 +660,13 @@ const h = window.location.hash;
 if(h==='#admissions') showTab('admissions-tab',3);
 else if(h==='#academics') showTab('academics-tab',2);
 else if(h==='#eyp') showTab('eyp-tab',1);
-else if(h==='#contact') showTab('contact-tab',5);
+else if(h==='#student-life') showTab('life-tab',5);
+else if(h==='#contact') showTab('contact-tab',6);
 </script>
 </body>
 </html>
+
+
 
 
 

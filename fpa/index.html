@@ -9,23 +9,34 @@
 </head>
 <body>
 
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="utility-link">Child Protection Policy</a>
+    <div class="util-right">
+      <span class="utility-link">&#9990; +91 261 350 1300</span>
+      <a href="mailto:info@fountainheadschools.org" class="utility-link">info@fountainheadschools.org</a>
+    </div>
+  </div>
+</div>
+<!-- NAVBAR -->
 <nav class="navbar dark-nav" id="navbar">
-  <a href="../index.html" class="nav-logo">
-        <img src="../images/fs-logo.svg" alt="Fountainhead Schools" class="fs-logo-svg" style="height:44px;width:auto;">
-    <span class="name">FPA · Adajan</span>
+  <a href="../index.html" class="nav-logo" style="display:flex;align-items:center;gap:12px;">
+    <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Academy" style="height:64px;width:auto;display:block;">
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#programmes">Programmes</a></li>
-    <li><a href="#admissions">Admissions</a></li>
-    <li><a href="#contact" class="nav-inquire">Enquire</a></li>
+    <li><a href="#" onclick="showTab('about-tab',0)">About</a></li>
+    <li><a href="#" onclick="showTab('programme-tab',1)">Programme</a></li>
+    <li><a href="#" onclick="showTab('admissions-tab',2)">Admissions</a></li>
+    <li><a href="#" onclick="showTab('policies-tab',3)">Policies</a></li>
+    <li><a href="#" onclick="showTab('contact-tab',4)" class="nav-inquire">Enquire</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- HERO -->
+<!-- CAMPUS HERO -->
 <section class="campus-hero-ois">
-  <img src="images/FPA Front Facade.jpeg" alt="Fountainhead Preschool Adajan">
+  <img src="../images/fpa-hero.jpg" alt="Fountainhead Preschool Adajan">
   <div class="campus-hero-ois-overlay"></div>
   <div class="container">
     <div class="campus-hero-ois-content">
@@ -37,8 +48,8 @@
       <h1>Fountainhead Preschool Adajan</h1>
       <p>Early years in Adajan, Surat — nurturing young minds with play-based IB PYP learning in a warm, safe environment.</p>
       <div class="campus-hero-actions">
-        <a href="#about" class="btn-hero-primary">Explore FPA ↓</a>
-        <a href="#admissions" class="btn-hero-outline">Enquire Now</a>
+        <a href="#content" class="btn-hero-primary">Explore FPA ↓</a>
+        <a href="#" onclick="showTab('admissions-tab',2)" class="btn-hero-outline">Enquire Now</a>
       </div>
     </div>
   </div>
@@ -56,168 +67,417 @@
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="section" id="about">
+<!-- MAIN CONTENT -->
+<section class="section" id="content">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <span class="label">About FPA</span>
-        <h2>Fountainhead Preschool Adajan</h2>
-        <p>Fountainhead Preschool Adajan (FPA) brings the renowned Fountainhead early years experience to the heart of Adajan, Surat. With the same IB PYP-aligned philosophy that underpins FSK and all FS Group campuses, FPA is the ideal starting point for a child's lifelong love of learning.</p>
-        <p>At FPA, every child's curiosity is celebrated. Our warm, nurturing environment is designed to help young learners discover who they are, how they express themselves, and how the world works — through inquiry, play, and collaboration.</p>
-        <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">⬇ FS Learning Model (PDF)</a>
+
+    <!-- TAB BAR -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showTab('about-tab',0)">About FPA</button>
+      <button class="tab-btn" onclick="showTab('programme-tab',1)">Programme</button>
+      <button class="tab-btn" onclick="showTab('admissions-tab',2)">Admissions</button>
+      <button class="tab-btn" onclick="showTab('policies-tab',3)">Policies</button>
+      <button class="tab-btn" onclick="showTab('contact-tab',4)">Contact</button>
+    </div>
+
+    <!-- ═══ ABOUT ═══ -->
+    <div class="tab-panel active" id="about-tab">
+      <div class="about-grid" style="margin-bottom:80px;">
+        <div class="about-text">
+          <span class="label">About FPA</span>
+          <h2>Fountainhead Preschool Adajan</h2>
+          <p>Fountainhead Preschool Adajan (FPA) brings the renowned Fountainhead early years experience to the heart of Adajan, Surat. With the same IB PYP-aligned philosophy that underpins FSK and all FS Group campuses, FPA is the ideal starting point for a child's lifelong love of learning.</p>
+          <p>At FPA, every child's curiosity is celebrated. Our warm, nurturing environment is designed to help young learners discover who they are, how they express themselves, and how the world works — through inquiry, play, and collaboration.</p>
+          <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">⬇ FS Learning Model (PDF)</a>
+        </div>
+        <div class="about-img">
+          <img src="../images/fpa-hero.jpg" alt="FPA Campus">
+          <div class="about-img-caption">Fountainhead Preschool Adajan · Surat</div>
+        </div>
       </div>
-      <div class="about-img">
-        <img src="images/FPA Front Facade.jpeg" alt="FPA Campus">
+
+      <div class="divider"></div>
+
+      <div style="padding-top:80px;">
+        <div style="text-align:center;margin-bottom:56px;">
+          <span class="label" style="display:flex;justify-content:center;">Our Philosophy</span>
+          <h2>How We Learn at FPA</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+          <div style="padding:32px;border:1px solid var(--border);">
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🌱</span>
+            <h4>Learner Agency</h4>
+            <p>Children are active agents of their own learning — with genuine choice, voice, and ownership from the very first day at FPA.</p>
+          </div>
+          <div style="padding:32px;border:1px solid var(--border);">
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🔍</span>
+            <h4>Inquiry Through Play</h4>
+            <p>Play is the most powerful form of learning in early childhood. Every activity at FPA provokes curiosity and exploration.</p>
+          </div>
+          <div style="padding:32px;border:1px solid var(--border);">
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">💛</span>
+            <h4>Social-Emotional Resilience</h4>
+            <p>We develop emotional vocabulary and the resilience children need to navigate relationships and the world around them.</p>
+          </div>
+          <div style="padding:32px;border:1px solid var(--border);">
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🌿</span>
+            <h4>Environment as Third Teacher</h4>
+            <p>FPA classrooms are designed intentionally — spaces that invite exploration, ground children, and extend their thinking.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- ═══ PROGRAMME ═══ -->
+    <div class="tab-panel" id="programme-tab">
+      <span class="label">Programmes</span>
+      <h2 style="margin-bottom:48px;">Learning at FPA</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:60px;">
+        <div style="background:white;padding:40px;border-top:3px solid var(--dark);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Ages 3–6</span>
+          <h3 style="margin:10px 0 16px;">IB PYP Early Years</h3>
+          <p>IB Primary Years Programme-aligned early childhood education. Four pillars: Learner Agency, Inquiry-Based Play, Social-Emotional Resilience, and the Environment as Third Teacher.</p>
+          <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
+            <li>Who We Are</li>
+            <li>How We Express Ourselves</li>
+            <li>How the World Works</li>
+            <li>How We Organise Ourselves</li>
+            <li>Sharing the Planet</li>
+            <li>Where We Are in Place &amp; Time</li>
+          </ul>
+        </div>
+        <div style="background:white;padding:40px;border-top:3px solid var(--gold);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Enrichment</span>
+          <h3 style="margin:10px 0 16px;">Enrichment Activities</h3>
+          <p>Beyond inquiry-based learning, FPA offers rich enrichment that develops the whole child — not just academic skills.</p>
+          <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
+            <li>Visual Arts &amp; Craft</li>
+            <li>Music &amp; Movement</li>
+            <li>Yoga &amp; Mindfulness</li>
+            <li>Storytelling &amp; Drama</li>
+            <li>Outdoor Play &amp; Exploration</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IB Learner Profile -->
+      <div style="padding:40px;background:var(--dark);margin-bottom:60px;">
+        <span class="label" style="color:var(--gold);">The IB Learner Profile</span>
+        <h3 style="color:white;margin:12px 0 24px;">What We Develop in Every Child at FPA</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Inquirers</span>
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Knowledgeable</span>
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Thinkers</span>
+          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Communicators</span>
+          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Principled</span>
+          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Open-Minded</span>
+          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Caring</span>
+          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Risk-Takers</span>
+          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Balanced</span>
+          <span style="background:#444;color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;">Reflective</span>
+        </div>
+      </div>
+
+      <div style="padding:40px;background:var(--light-gray);border:1px solid var(--border);">
+        <span class="label">Campus Life</span>
+        <h3>What a Day at FPA Looks Like</h3>
+        <p>Mornings begin with an inquiry provocation — a question, an object, a problem to explore. Children move through planned and child-led activities, spending time outdoors, in the arts corner, in the library, and in conversation with each other and their teachers. No two days look exactly alike — and that's the point.</p>
+      </div>
+    </div>
+
+    <!-- ═══ ADMISSIONS ═══ -->
+    <div class="tab-panel" id="admissions-tab">
+      <span class="label">Admissions</span>
+      <h2 style="margin-bottom:12px;">Join FPA</h2>
+      <p style="margin-bottom:60px;font-size:1rem;">Our PAE process — three steps. Warm, welcoming, and centred on your child.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+        <div>
+          <div class="admission-steps-ois">
+            <div class="admission-step-ois">
+              <div class="step-circle">P</div>
+              <div class="step-body">
+                <h4>Pre-Admission</h4>
+                <p>Visit FPA, meet the teachers, and experience the warm Fountainhead environment firsthand. Ask every question you have.</p>
+              </div>
+            </div>
+            <div class="admission-step-ois">
+              <div class="step-circle">A</div>
+              <div class="step-body">
+                <h4>Assessment</h4>
+                <p>A gentle, play-based interaction to understand your child and answer all your questions. Relaxed, friendly, and child-centred.</p>
+              </div>
+            </div>
+            <div class="admission-step-ois">
+              <div class="step-circle">E</div>
+              <div class="step-body">
+                <h4>Enrolment</h4>
+                <p>Welcome to FPA — documentation, orientation day, and your child's first steps at Fountainhead.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:48px;padding:32px;background:var(--light-gray);">
+            <span class="label">Documents Required</span>
+            <ul style="padding-left:20px;color:var(--mid);line-height:2.2;font-size:0.9rem;">
+              <li>Birth certificate / Age proof</li>
+              <li>Passport-size photographs (4 copies)</li>
+              <li>Residential address proof</li>
+              <li>Aadhar card (child and parents)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div style="background:var(--dark);padding:40px;margin-bottom:24px;">
+            <span class="label" style="color:var(--gold);">Contact Admissions</span>
+            <h3 style="color:white;margin-bottom:24px;">Reach FPA</h3>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">📍</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">Address</h5><p style="color:white;">Adajan, Surat, Gujarat, India</p></div>
+            </div>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">📞</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">Phone</h5><p><a href="tel:+918000130031" style="color:white;">8000-130-031</a></p></div>
+            </div>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">✉️</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">Email</h5><p><a href="mailto:adajan@fountainheadschools.org" style="color:white;">adajan@fountainheadschools.org</a></p></div>
+            </div>
+            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
+              <div class="contact-icon-ois">💬</div>
+              <div><h5 style="color:rgba(255,255,255,0.5);">WhatsApp</h5><p><a href="https://wa.me/918000130031" style="color:white;">+91 8000-130-031</a></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ POLICIES ═══ -->
+    <div class="tab-panel" id="policies-tab">
+      <span class="label">Download Policies</span>
+      <h2 style="margin-bottom:8px;">FPA School Policies</h2>
+      <p style="margin-bottom:0;">Click any policy below to open the PDF in a new tab.</p>
+      <div class="policies-grid">
+        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Child Protection Policy</span></a>
+        <a href="../policies/FSK Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Admission Policy</span></a>
+        <a href="../policies/FSK Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Assessment Policy</span></a>
+        <a href="../policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Canteen &amp; Pantry Guidelines</span></a>
+        <a href="../policies/FSK Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Discipline Policy</span></a>
+        <a href="../policies/FSK Food policy (Parents &amp; Students).pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Food Policy</span></a>
+        <a href="../policies/FSK Health Exclusion Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Health Exclusion Policy</span></a>
+        <a href="../policies/FSK Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Language Policy</span></a>
+        <a href="../policies/FSK Learning Diversity &amp; Inclusion Policy .pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Learning Diversity &amp; Inclusion</span></a>
+        <a href="../policies/FSK Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Academic Integrity Policy</span></a>
+      </div>
+      <div class="divider" style="margin:60px 0 48px;"></div>
+      <div class="policy-layout">
+        <div class="policy-sidebar">
+          <h5>All Policies</h5>
+          <ul>
+            <li><a href="#fpa-child">Child Protection</a></li>
+            <li><a href="#fpa-integrity">Academic Integrity</a></li>
+            <li><a href="#fpa-language">Language Policy</a></li>
+            <li><a href="#fpa-admission">Admission Policy</a></li>
+            <li><a href="#fpa-health">Health Exclusion</a></li>
+            <li><a href="#fpa-parent">Parent Role</a></li>
+          </ul>
+        </div>
+        <div class="policy-content-area">
+
+          <div class="policy-block" id="fpa-child">
+            <span class="policy-meta">Safeguarding Policy</span>
+            <h2>Child Protection Policy</h2>
+            <p>The safety and wellbeing of every child at Fountainhead Preschool Adajan is our highest priority. We are committed to creating a safe, secure, and nurturing environment where every child can flourish.</p>
+            <h3>Key Commitments</h3>
+            <ul>
+              <li>All staff undergo mandatory Child Protection training</li>
+              <li>A designated Child Protection Officer (CPO) is available at all times</li>
+              <li>Any concerns about a child's welfare are reported immediately and investigated</li>
+              <li>We follow POCSO (Protection of Children from Sexual Offences) Act guidelines</li>
+              <li>All allegations are treated seriously, impartially, and confidentially</li>
+            </ul>
+            <h3>Reporting Concerns</h3>
+            <p>If you have any concerns about a child's safety, please contact us at <a href="mailto:adajan@fountainheadschools.org" style="color:var(--gold);">adajan@fountainheadschools.org</a> immediately. All concerns will be acted upon within 24 hours.</p>
+          </div>
+
+          <div class="policy-block" id="fpa-integrity">
+            <span class="policy-meta">Academic Policy</span>
+            <h2>Academic Integrity Policy</h2>
+            <p>FPA is committed to authentic, honest learning from the earliest age. We value original thinking, genuine curiosity, and the courage to try. Every child's work is their own — and that ownership is celebrated.</p>
+            <h3>Key Principles</h3>
+            <ul>
+              <li>Authentic effort and original expression are celebrated at all stages</li>
+              <li>Children learn to share ideas openly and attribute them to their source</li>
+              <li>Teachers guide collaborative activities to ensure learning rather than copying</li>
+            </ul>
+          </div>
+
+          <div class="policy-block" id="fpa-language">
+            <span class="policy-meta">Academic Policy</span>
+            <h2>Language Policy</h2>
+            <p>Language is central to all learning at FPA. We are committed to multilingualism and believe that all adults in the school are language role models.</p>
+            <h3>Language of Instruction</h3>
+            <ul>
+              <li>English is the primary language of instruction</li>
+              <li>Mother tongue language support is provided and celebrated</li>
+              <li>Children are encouraged to maintain and develop their home language</li>
+              <li>EAL (English as an Additional Language) support is available</li>
+            </ul>
+          </div>
+
+          <div class="policy-block" id="fpa-admission">
+            <span class="policy-meta">Administrative Policy</span>
+            <h2>Admission Policy</h2>
+            <p>FPA admits children through a welcoming, transparent process. We admit children aged 3–6 to our Early Years programme.</p>
+            <h3>Eligibility</h3>
+            <ul>
+              <li>Children must be aged 3 years or above at the time of admission</li>
+              <li>A warm, play-based interaction is part of the process</li>
+              <li>We welcome children from all backgrounds</li>
+            </ul>
+            <h3>Documents Required</h3>
+            <ul>
+              <li>Birth certificate / Age proof</li>
+              <li>Passport-size photographs</li>
+              <li>Residential address proof</li>
+              <li>Aadhar card (child and parents)</li>
+            </ul>
+          </div>
+
+          <div class="policy-block" id="fpa-health">
+            <span class="policy-meta">Health Policy</span>
+            <h2>Health Exclusion Policy</h2>
+            <p>To protect the health of all children and staff, FPA follows a Health Exclusion Policy specifying when children should be kept home and when they may return.</p>
+            <h3>When to Keep Your Child at Home</h3>
+            <ul>
+              <li><strong>Fever</strong> (above 100°F / 37.8°C) — child must be fever-free for 24 hours before returning</li>
+              <li><strong>Vomiting or diarrhoea</strong> — must be symptom-free for 24 hours</li>
+              <li><strong>Chickenpox</strong> — until all blisters have crusted over</li>
+              <li><strong>Pink eye (Conjunctivitis)</strong> — until treatment has begun and discharge has stopped</li>
+            </ul>
+          </div>
+
+          <div class="policy-block" id="fpa-parent">
+            <span class="policy-meta">Partnership Policy</span>
+            <h2>Parent Role in Education</h2>
+            <p>FPA believes that a child's early years are shaped most powerfully by the partnership between home and school. Parents are our most important partners in learning.</p>
+            <h3>How Parents Can Help</h3>
+            <ul>
+              <li>Attend orientation sessions to understand the FPA learning approach</li>
+              <li>Stay curious with your child — ask open questions, not just "what did you do today?"</li>
+              <li>Build a reading culture at home from an early age</li>
+              <li>Encourage independence in small daily tasks</li>
+              <li>Avoid over-scheduling — children need unstructured time to simply be</li>
+              <li>Participate in school events, exhibitions, and parent conferences</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ CONTACT ═══ -->
+    <div class="tab-panel" id="contact-tab">
+      <span class="label">Contact</span>
+      <h2 style="margin-bottom:48px;">Reach Fountainhead Preschool Adajan</h2>
+
+      <div class="contact-grid-ois">
+        <div>
+          <div class="contact-item-ois">
+            <div class="contact-icon-ois">📍</div>
+            <div><h5>Address</h5><p>Adajan, Surat, Gujarat, India</p></div>
+          </div>
+          <div class="contact-item-ois">
+            <div class="contact-icon-ois">📞</div>
+            <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a></p></div>
+          </div>
+          <div class="contact-item-ois">
+            <div class="contact-icon-ois">✉️</div>
+            <div><h5>Email</h5><p><a href="mailto:adajan@fountainheadschools.org">adajan@fountainheadschools.org</a></p></div>
+          </div>
+          <div class="contact-item-ois">
+            <div class="contact-icon-ois">💬</div>
+            <div><h5>WhatsApp</h5><p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p></div>
+          </div>
+          <div class="contact-item-ois">
+            <div class="contact-icon-ois">🌐</div>
+            <div>
+              <h5>Follow FPA</h5>
+              <div class="social-row">
+                <a href="#" class="soc-btn">📸 Instagram</a>
+                <a href="#" class="soc-btn">👍 Facebook</a>
+                <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="soc-btn">▶ YouTube</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="map-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720!2d72.82!3d21.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEwJzA0LjgiTiA3MsKwNDknMTMuMiJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <a href="https://goo.gl/maps" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">📍 Open in Google Maps</a>
+        </div>
+      </div>
+
+      <div style="margin-top:64px;">
+        <span class="label">Parent Resources</span>
+        <h3 style="margin-bottom:8px;">Quick Links</h3>
+        <div class="qlinks">
+          <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink"><span>🖥️</span>Nucleus Web Portal</a>
+          <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink"><span>📱</span>Nucleus App (iOS)</a>
+          <a href="https://curricle.io" target="_blank" class="qlink"><span>📅</span>School Calendar</a>
+          <a href="../images/FS Learning Model.pdf" download class="qlink"><span>📘</span>FS Learning Model</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- container -->
 </section>
 
-<div class="divider-section"></div>
-
-<!-- CAMPUS PHOTO -->
-<section style="padding:60px 0;background:#f5f7fa;">
+<!-- LATEST NEWS -->
+<section style="padding:80px 0;background:var(--light-gray);">
   <div class="container">
-    <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">The Campus</span>
-    <h2 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:2rem;margin-bottom:32px;">Fountainhead Preschool Adajan</h2>
-    <img src="images/FPA Front Facade.jpeg" alt="FPA Campus Front Facade" style="width:100%;height:400px;object-fit:cover;display:block;">
-  </div>
-</section>
-
-<div class="divider-section"></div>
-
-<!-- PROGRAMMES -->
-<section class="section" id="programmes">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="label" style="display:flex;justify-content:center;">Programmes</span>
-      <h2>Learning at FPA</h2>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;">
+      <div>
+        <span class="label">News &amp; Happenings</span>
+        <h2>Latest from FPA</h2>
+      </div>
+      <a href="../index.html#news" style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">All News →</a>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
-      <div style="background:white;padding:40px;border-top:3px solid var(--dark);">
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Ages 3–6</span>
-        <h3 style="margin:10px 0 16px;">IB PYP Early Years</h3>
-        <p>IB Primary Years Programme-aligned early childhood education. Four pillars: Learner Agency, Inquiry-Based Play, Social-Emotional Resilience, and the Environment as Third Teacher.</p>
-        <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
-          <li>Who We Are</li>
-          <li>How We Express Ourselves</li>
-          <li>How the World Works</li>
-          <li>Sharing the Planet</li>
-        </ul>
+      <div style="background:white;padding:32px;">
+        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
+          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--gold);color:white;">FPA</span>
+          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">10 Aug 2026</span>
+        </div>
+        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">FPA PYP Exhibition 2026 — Young Learners Lead the Way</h4>
+        <p style="font-size:0.82rem;color:var(--mid);">FPA students showcased their PYP inquiry projects at the annual exhibition, presenting their research and ideas to proud parents and the community.</p>
       </div>
-      <div style="background:white;padding:40px;border-top:3px solid var(--gold);">
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Enrichment</span>
-        <h3 style="margin:10px 0 16px;">Enrichment Activities</h3>
-        <p>Beyond inquiry-based learning, FPA offers rich enrichment including:</p>
-        <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
-          <li>Visual Arts &amp; Craft</li>
-          <li>Music &amp; Movement</li>
-          <li>Yoga &amp; Mindfulness</li>
-          <li>Storytelling &amp; Drama</li>
-          <li>Outdoor Play &amp; Exploration</li>
-        </ul>
+      <div style="background:white;padding:32px;">
+        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
+          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--gold);color:white;">FPA</span>
+          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">10 Jul 2026</span>
+        </div>
+        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Annual Day 2026 — A Celebration of Creativity</h4>
+        <p style="font-size:0.82rem;color:var(--mid);">FPA's Annual Day brought together young performers, enthusiastic parents, and dedicated teachers for a joyful celebration of learning and creativity.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ADMISSIONS -->
-<section class="section" id="admissions" style="background:var(--light-gray);">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="label" style="display:flex;justify-content:center;">Admissions</span>
-      <h2>Join FPA</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
-      <div>
-        <div class="admission-steps-ois">
-          <div class="admission-step-ois">
-            <div class="step-circle">P</div>
-            <div class="step-body">
-              <h4>Pre-Admission</h4>
-              <p>Visit FPA, meet the teachers, and experience the warm Fountainhead environment firsthand.</p>
-            </div>
-          </div>
-          <div class="admission-step-ois">
-            <div class="step-circle">A</div>
-            <div class="step-body">
-              <h4>Assessment</h4>
-              <p>A gentle, play-based interaction to understand your child and answer all your questions.</p>
-            </div>
-          </div>
-          <div class="admission-step-ois">
-            <div class="step-circle">E</div>
-            <div class="step-body">
-              <h4>Enrolment</h4>
-              <p>Welcome to FPA — documentation, orientation day, and your child's first steps at Fountainhead.</p>
-            </div>
-          </div>
+      <div style="background:white;padding:32px;">
+        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
+          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--dark);color:white;">Group</span>
+          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">15 Jun 2026</span>
         </div>
+        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Group Sports Day 2026 — All Five Campuses Compete</h4>
+        <p style="font-size:0.82rem;color:var(--mid);">An inter-campus sports day bringing together students from all five campuses for a day of healthy competition and community spirit.</p>
       </div>
-      <div>
-        <div style="background:var(--dark);padding:40px;">
-          <span class="label" style="color:var(--gold);">Contact Admissions</span>
-          <h3 style="color:white;margin-bottom:24px;">Reach FPA</h3>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-            <div class="contact-icon-ois">📍</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">Address</h5><p style="color:white;">Adajan, Surat, Gujarat, India</p></div>
-          </div>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-            <div class="contact-icon-ois">📞</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">Phone</h5><p><a href="tel:+918000130031" style="color:white;">8000-130-031</a></p></div>
-          </div>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-            <div class="contact-icon-ois">✉️</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">Email</h5><p><a href="mailto:adajan@fountainheadschools.org" style="color:white;">adajan@fountainheadschools.org</a></p></div>
-          </div>
-          <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-            <div class="contact-icon-ois">💬</div>
-            <div><h5 style="color:rgba(255,255,255,0.5);">WhatsApp</h5><p><a href="https://wa.me/918000130031" style="color:white;">+91 8000-130-031</a></p></div>
-          </div>
+      <div style="background:white;padding:32px;">
+        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
+          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--dark);color:white;">Group</span>
+          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">1 Sept 2025</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="label" style="display:flex;justify-content:center;">Contact</span>
-      <h2>Reach FPA</h2>
-    </div>
-    <div class="contact-grid-ois">
-      <div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">📍</div>
-          <div><h5>Address</h5><p>Adajan, Surat, Gujarat, India</p></div>
-        </div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">📞</div>
-          <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a></p></div>
-        </div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">✉️</div>
-          <div><h5>Email</h5><p><a href="mailto:adajan@fountainheadschools.org">adajan@fountainheadschools.org</a></p></div>
-        </div>
-        <div class="contact-item-ois">
-          <div class="contact-icon-ois">🌐</div>
-          <div>
-            <h5>Follow FPA</h5>
-            <div class="social-row">
-              <a href="#" class="soc-btn">📸 Instagram</a>
-              <a href="#" class="soc-btn">👍 Facebook</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="map-box">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720!2d72.82!3d21.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEwJzA0LjgiTiA3MsKwNDknMTMuMiJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <a href="https://goo.gl/maps" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">📍 Open in Google Maps</a>
+        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Fountainhead Schools Certified as Great Place to Work</h4>
+        <p style="font-size:0.82rem;color:var(--mid);">Fountainhead Schools has been officially certified as a Great Place to Work — recognition of our commitment to our staff and learning community.</p>
       </div>
     </div>
   </div>
@@ -231,7 +491,7 @@
         <h2>Visit FPA</h2>
         <p>Come meet our teachers and see the space where your child will flourish.</p>
       </div>
-      <a href="#admissions" class="btn-cta-white">Book a Visit →</a>
+      <a href="#" onclick="showTab('admissions-tab',2)" class="btn-cta-white">Book a Visit →</a>
     </div>
   </div>
 </div>
@@ -242,28 +502,46 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <div class="f-mark">FPA</div>
-          <span class="f-name">Fountainhead Preschool Adajan</span>
+          <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Academy" style="height:120px;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
         </div>
         <p>IB PYP early years school in Adajan, Surat. Part of the Fountainhead Schools group.</p>
         <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
       </div>
       <div>
         <h6>Programmes</h6>
-        <ul><li><a href="#programmes">IB PYP Early Years</a></li><li><a href="#programmes">Enrichment Activities</a></li></ul>
+        <ul>
+          <li><a href="#" onclick="showTab('programme-tab',1)">IB PYP Early Years</a></li>
+          <li><a href="#" onclick="showTab('programme-tab',1)">Enrichment Activities</a></li>
+        </ul>
       </div>
       <div>
-        <h6>Quick Links</h6>
-        <ul><li><a href="#admissions">Admissions</a></li><li><a href="../fsk/index.html">FSK – Main Campus</a></li><li><a href="../index.html">FS Group Home</a></li></ul>
+        <h6>Campus Links</h6>
+        <ul>
+          <li><a href="../fsk/index.html">FSK — Kunkni</a></li>
+          <li><a href="../fwgs/index.html">FWGS — Wockhardt</a></li>
+          <li><a href="../fsm/index.html">FSM — Malgama</a></li>
+          <li><a href="../falh/index.html">FALH — Vapi</a></li>
+          <li><a href="../fpv/index.html">FPV — Vesu</a></li>
+          <li><a href="../index.html">FS Group Home</a></li>
+        </ul>
       </div>
       <div>
         <h6>Contact</h6>
-        <ul><li><a href="tel:+918000130031">8000-130-031</a></li><li><a href="mailto:adajan@fountainheadschools.org">adajan@fountainheadschools.org</a></li></ul>
+        <ul>
+          <li><a href="tel:+918000130031">8000-130-031</a></li>
+          <li><a href="mailto:adajan@fountainheadschools.org">adajan@fountainheadschools.org</a></li>
+          <li><a href="https://wa.me/918000130031">WhatsApp Us</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Fountainhead Preschool Adajan. All rights reserved.</span>
-      <div class="footer-policies"><a href="#">Child Protection Policy</a><a href="#">DPDP 2023</a></div>
+      <div class="footer-policies">
+        <a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection Policy</a>
+        <a href="#">DPDP 2023</a>
+        <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+        <a href="../index.html">FS Group Home</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -273,10 +551,23 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab'];
+function showTab(id, idx) {
+  tabs.forEach(t => { document.getElementById(t).classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+  document.getElementById('content').scrollIntoView({behavior:'smooth'});
+}
+
+const h = window.location.hash;
+if(h==='#admissions') showTab('admissions-tab',2);
+else if(h==='#programme') showTab('programme-tab',1);
+else if(h==='#policies') showTab('policies-tab',3);
+else if(h==='#contact') showTab('contact-tab',4);
 </script>
 </body>
 </html>
-
-
 
 
