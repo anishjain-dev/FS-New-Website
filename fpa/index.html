@@ -12,26 +12,59 @@
 <!-- UTILITY BAR -->
 <div class="utility-bar">
   <div class="utility-inner">
-    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="utility-link">Child Protection Policy</a>
+    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
     <div class="util-right">
-      <span class="utility-link">&#9990; +91 261 350 1300</span>
-      <a href="mailto:info@fountainheadschools.org" class="utility-link">info@fountainheadschools.org</a>
+      <a href="tel:+912613501300">+91 261 350 1300</a>
+      <a href="mailto:info@fountainheadschools.org">info@fountainheadschools.org</a>
     </div>
   </div>
 </div>
-<!-- NAVBAR -->
-<nav class="navbar dark-nav" id="navbar">
-  <a href="../index.html" class="nav-logo" style="display:flex;align-items:center;gap:12px;">
-    <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Academy" style="height:64px;width:auto;display:block;">
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#" onclick="showTab('about-tab',0)">About</a></li>
-    <li><a href="#" onclick="showTab('programme-tab',1)">Programme</a></li>
-    <li><a href="#" onclick="showTab('admissions-tab',2)">Admissions</a></li>
-    <li><a href="#" onclick="showTab('policies-tab',3)">Policies</a></li>
-    <li><a href="#" onclick="showTab('contact-tab',4)" class="nav-inquire">Enquire</a></li>
-  </ul>
-  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+
+<!-- HEADER -->
+<header class="site-header" id="navbar">
+  <div class="header-row">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/fs-main-logo.png" alt="Fountainhead Preschool Adajan" style="height:3rem;width:auto;display:block;">
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <details class="nav-group" name="primary-nav">
+        <summary>About FPA</summary>
+        <div class="nav-submenu">
+          <a href="#" onclick="showTab('about-tab',0)">About FPA</a>
+          <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
+          <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
+        </div>
+      </details>
+      <a href="#" onclick="showTab('programme-tab',1)">Programmes</a>
+      <a href="#" onclick="showTab('admissions-tab',2)">Admissions</a>
+      <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+      <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
+    </nav>
+
+    <a class="nav-inquire" href="#" onclick="showTab('admissions-tab',2)">Enquire</a>
+
+    <button class="hamburger" popovertarget="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV PANEL -->
+<nav id="site-nav" class="nav-panel" popover aria-label="Primary, mobile">
+  <details class="panel-group" name="mobile-nav">
+    <summary>About FPA</summary>
+    <div class="panel-submenu">
+      <a href="#" onclick="showTab('about-tab',0)">About FPA</a>
+      <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
+      <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
+    </div>
+  </details>
+  <a href="#" onclick="showTab('programme-tab',1)">Programmes</a>
+  <a href="#" onclick="showTab('admissions-tab',2)">Admissions</a>
+  <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+  <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
+  <a href="#" onclick="showTab('admissions-tab',2)" class="panel-enquire">Enquire</a>
 </nav>
 
 <!-- CAMPUS HERO -->
@@ -502,7 +535,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Academy" style="height:120px;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
+          <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Academy" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
         </div>
         <p>IB PYP early years school in Adajan, Surat. Part of the Fountainhead Schools group.</p>
         <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
@@ -547,10 +580,6 @@
 </footer>
 
 <script>
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-});
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 
 const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab'];
 function showTab(id, idx) {

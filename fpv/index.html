@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fountainhead Preschool Vesu (FPV) — IB PYP Early Years, Surat</title>
-<meta name="description" content="Fountainhead Preschool Vesu — IB PYP-aligned early years education in Vesu, Surat. Ages 3–6.">
+<title>Fountainhead Preschool Vesu (FPV) � IB PYP Early Years, Surat</title>
+<meta name="description" content="Fountainhead Preschool Vesu � IB PYP-aligned early years education in Vesu, Surat. Ages 3�6.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -12,26 +12,59 @@
 <!-- UTILITY BAR -->
 <div class="utility-bar">
   <div class="utility-inner">
-    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="utility-link">Child Protection Policy</a>
+    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
     <div class="util-right">
-      <span class="utility-link">&#9990; +91 261 350 1300</span>
-      <a href="mailto:info@fountainheadschools.org" class="utility-link">info@fountainheadschools.org</a>
+      <a href="tel:+912613501300">+91 261 350 1300</a>
+      <a href="mailto:info@fountainheadschools.org">info@fountainheadschools.org</a>
     </div>
   </div>
 </div>
-<!-- NAVBAR -->
-<nav class="navbar dark-nav" id="navbar">
-  <a href="../index.html" class="nav-logo" style="display:flex;align-items:center;gap:12px;">
-    <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Vidyanagari" style="height:64px;width:auto;display:block;">
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#" onclick="showTab('about-tab',0)">About</a></li>
-    <li><a href="#" onclick="showTab('programme-tab',1)">Programme</a></li>
-    <li><a href="#" onclick="showTab('admissions-tab',2)">Admissions</a></li>
-    <li><a href="#" onclick="showTab('policies-tab',3)">Policies</a></li>
-    <li><a href="#" onclick="showTab('contact-tab',4)" class="nav-inquire">Enquire</a></li>
-  </ul>
-  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+
+<!-- HEADER -->
+<header class="site-header" id="navbar">
+  <div class="header-row">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/fs-main-logo.png" alt="Fountainhead Preschool Vesu" style="height:3rem;width:auto;display:block;">
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <details class="nav-group" name="primary-nav">
+        <summary>About FPV</summary>
+        <div class="nav-submenu">
+          <a href="#" onclick="showTab('about-tab',0)">About FPV</a>
+          <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
+          <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
+        </div>
+      </details>
+      <a href="#" onclick="showTab('programme-tab',1)">Programmes</a>
+      <a href="#" onclick="showTab('admissions-tab',2)">Admissions</a>
+      <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+      <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
+    </nav>
+
+    <a class="nav-inquire" href="#" onclick="showTab('admissions-tab',2)">Enquire</a>
+
+    <button class="hamburger" popovertarget="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV PANEL -->
+<nav id="site-nav" class="nav-panel" popover aria-label="Primary, mobile">
+  <details class="panel-group" name="mobile-nav">
+    <summary>About FPV</summary>
+    <div class="panel-submenu">
+      <a href="#" onclick="showTab('about-tab',0)">About FPV</a>
+      <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
+      <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
+    </div>
+  </details>
+  <a href="#" onclick="showTab('programme-tab',1)">Programmes</a>
+  <a href="#" onclick="showTab('admissions-tab',2)">Admissions</a>
+  <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+  <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
+  <a href="#" onclick="showTab('admissions-tab',2)" class="panel-enquire">Enquire</a>
 </nav>
 
 <!-- CAMPUS HERO -->
@@ -42,13 +75,13 @@
     <div class="campus-hero-ois-content">
       <div class="breadcrumb-ois">
         <a href="../index.html">FS Group</a>
-        <span>›</span>
+        <span>�</span>
         <span>Fountainhead Preschool Vesu</span>
       </div>
       <h1>Fountainhead Preschool Vesu</h1>
-      <p>Early years in Vesu, Surat — a warm community of curious young learners taking their first steps in IB education.</p>
+      <p>Early years in Vesu, Surat � a warm community of curious young learners taking their first steps in IB education.</p>
       <div class="campus-hero-actions">
-        <a href="#content" class="btn-hero-primary">Explore FPV ↓</a>
+        <a href="#content" class="btn-hero-primary">Explore FPV ?</a>
         <a href="#" onclick="showTab('admissions-tab',2)" class="btn-hero-outline">Enquire Now</a>
       </div>
     </div>
@@ -61,7 +94,7 @@
     <div class="campus-stats-inner">
       <div class="campus-stat"><span class="cnum">Vesu</span><p>Surat, Gujarat</p></div>
       <div class="campus-stat"><span class="cnum">IB PYP</span><p>International Baccalaureate</p></div>
-      <div class="campus-stat"><span class="cnum">3–6</span><p>Years (Early Years)</p></div>
+      <div class="campus-stat"><span class="cnum">3�6</span><p>Years (Early Years)</p></div>
       <div class="campus-stat"><span class="cnum">FS Group</span><p>Flagship Learning Model</p></div>
     </div>
   </div>
@@ -80,19 +113,19 @@
       <button class="tab-btn" onclick="showTab('contact-tab',4)">Contact</button>
     </div>
 
-    <!-- ═══ ABOUT ═══ -->
+    <!-- --- ABOUT --- -->
     <div class="tab-panel active" id="about-tab">
       <div class="about-grid" style="margin-bottom:80px;">
         <div class="about-text">
           <span class="label">About FPV</span>
           <h2>Fountainhead Preschool Vesu</h2>
-          <p>Fountainhead Preschool Vesu (FPV) is the Fountainhead early years experience for families in the Vesu area of Surat. Backed by the same IB PYP philosophy and the Fountainhead learning model, FPV creates a warm, safe, and intellectually stimulating space for children aged 3–6.</p>
-          <p>At FPV, children are not just cared for — they are inspired. Every day is an inquiry. Every moment is an opportunity to grow, explore, and discover who they are and how the world around them works.</p>
-          <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">⬇ FS Learning Model (PDF)</a>
+          <p>Fountainhead Preschool Vesu (FPV) is the Fountainhead early years experience for families in the Vesu area of Surat. Backed by the same IB PYP philosophy and the Fountainhead learning model, FPV creates a warm, safe, and intellectually stimulating space for children aged 3�6.</p>
+          <p>At FPV, children are not just cared for � they are inspired. Every day is an inquiry. Every moment is an opportunity to grow, explore, and discover who they are and how the world around them works.</p>
+          <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">? FS Learning Model (PDF)</a>
         </div>
         <div class="about-img">
           <img src="../images/fpv-hero.jpg" alt="FPV Campus">
-          <div class="about-img-caption">Fountainhead Preschool Vesu · Surat</div>
+          <div class="about-img-caption">Fountainhead Preschool Vesu � Surat</div>
         </div>
       </div>
 
@@ -105,37 +138,37 @@
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
           <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🌱</span>
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">??</span>
             <h4>Learner Agency</h4>
-            <p>Every child at FPV has genuine choice, voice, and ownership of their learning journey — from the very beginning.</p>
+            <p>Every child at FPV has genuine choice, voice, and ownership of their learning journey � from the very beginning.</p>
           </div>
           <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🔍</span>
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">??</span>
             <h4>Inquiry Through Play</h4>
             <p>Play is learning. Every activity at FPV is designed to provoke curiosity, encourage exploration, and develop critical thinking.</p>
           </div>
           <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">💛</span>
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">??</span>
             <h4>Social-Emotional Resilience</h4>
             <p>We develop emotional vocabulary and the resilience children need to navigate their world with confidence and care.</p>
           </div>
           <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🌿</span>
+            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">??</span>
             <h4>Environment as Third Teacher</h4>
-            <p>FPV spaces are intentionally designed — with materials that invite exploration and displays that reflect children's thinking.</p>
+            <p>FPV spaces are intentionally designed � with materials that invite exploration and displays that reflect children's thinking.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ═══ PROGRAMME ═══ -->
+    <!-- --- PROGRAMME --- -->
     <div class="tab-panel" id="programme-tab">
       <span class="label">Programmes</span>
       <h2 style="margin-bottom:48px;">Learning at FPV</h2>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:60px;">
         <div style="background:white;padding:40px;border-top:3px solid var(--dark);">
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Ages 3–6</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Ages 3�6</span>
           <h3 style="margin:10px 0 16px;">IB PYP Early Years</h3>
           <p>Inquiry-based, play-led, IB PYP-aligned early childhood education. Developing curious, caring, and courageous young learners through six transdisciplinary themes.</p>
           <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
@@ -150,7 +183,7 @@
         <div style="background:white;padding:40px;border-top:3px solid var(--gold);">
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Holistic Development</span>
           <h3 style="margin:10px 0 16px;">Whole-Child Learning</h3>
-          <p>Arts, music, movement, outdoor play, and social-emotional learning — developing the whole child, not just academic skills.</p>
+          <p>Arts, music, movement, outdoor play, and social-emotional learning � developing the whole child, not just academic skills.</p>
           <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
             <li>Visual Arts &amp; Creative Expression</li>
             <li>Music &amp; Movement</li>
@@ -182,15 +215,15 @@
       <div style="padding:40px;background:var(--light-gray);border:1px solid var(--border);">
         <span class="label">Our Spaces</span>
         <h3>The FPV Environment</h3>
-        <p>FPV classrooms are carefully prepared environments — with natural light, inviting learning corners, and materials that prompt exploration. Every inch of the space is designed with the child in mind.</p>
+        <p>FPV classrooms are carefully prepared environments � with natural light, inviting learning corners, and materials that prompt exploration. Every inch of the space is designed with the child in mind.</p>
       </div>
     </div>
 
-    <!-- ═══ ADMISSIONS ═══ -->
+    <!-- --- ADMISSIONS --- -->
     <div class="tab-panel" id="admissions-tab">
       <span class="label">Admissions</span>
       <h2 style="margin-bottom:12px;">Join FPV</h2>
-      <p style="margin-bottom:60px;font-size:1rem;">Our PAE process — three steps. Relaxed, child-friendly, and focused on your family.</p>
+      <p style="margin-bottom:60px;font-size:1rem;">Our PAE process � three steps. Relaxed, child-friendly, and focused on your family.</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
         <div>
@@ -206,7 +239,7 @@
               <div class="step-circle">A</div>
               <div class="step-body">
                 <h4>Assessment</h4>
-                <p>Play-based interaction — relaxed, child-friendly, and focused on getting to know your little one. Not a test.</p>
+                <p>Play-based interaction � relaxed, child-friendly, and focused on getting to know your little one. Not a test.</p>
               </div>
             </div>
             <div class="admission-step-ois">
@@ -234,19 +267,19 @@
             <span class="label" style="color:var(--gold);">Contact Admissions</span>
             <h3 style="color:white;margin-bottom:24px;">Reach FPV</h3>
             <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-              <div class="contact-icon-ois">📍</div>
+              <div class="contact-icon-ois">??</div>
               <div><h5 style="color:rgba(255,255,255,0.5);">Address</h5><p style="color:white;">Vesu, Surat, Gujarat, India</p></div>
             </div>
             <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-              <div class="contact-icon-ois">📞</div>
+              <div class="contact-icon-ois">??</div>
               <div><h5 style="color:rgba(255,255,255,0.5);">Phone</h5><p><a href="tel:+918000130031" style="color:white;">8000-130-031</a></p></div>
             </div>
             <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-              <div class="contact-icon-ois">✉️</div>
+              <div class="contact-icon-ois">??</div>
               <div><h5 style="color:rgba(255,255,255,0.5);">Email</h5><p><a href="mailto:vesu@fountainheadschools.org" style="color:white;">vesu@fountainheadschools.org</a></p></div>
             </div>
             <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-              <div class="contact-icon-ois">💬</div>
+              <div class="contact-icon-ois">??</div>
               <div><h5 style="color:rgba(255,255,255,0.5);">WhatsApp</h5><p><a href="https://wa.me/918000130031" style="color:white;">+91 8000-130-031</a></p></div>
             </div>
           </div>
@@ -254,22 +287,22 @@
       </div>
     </div>
 
-    <!-- ═══ POLICIES ═══ -->
+    <!-- --- POLICIES --- -->
     <div class="tab-panel" id="policies-tab">
       <span class="label">Download Policies</span>
       <h2 style="margin-bottom:8px;">FPV School Policies</h2>
       <p style="margin-bottom:0;">Click any policy below to open the PDF in a new tab.</p>
       <div class="policies-grid">
-        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Child Protection Policy</span></a>
-        <a href="../policies/FSK Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Admission Policy</span></a>
-        <a href="../policies/FSK Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Assessment Policy</span></a>
-        <a href="../policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Canteen &amp; Pantry Guidelines</span></a>
-        <a href="../policies/FSK Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Discipline Policy</span></a>
-        <a href="../policies/FSK Food policy (Parents &amp; Students).pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Food Policy</span></a>
-        <a href="../policies/FSK Health Exclusion Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Health Exclusion Policy</span></a>
-        <a href="../policies/FSK Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Language Policy</span></a>
-        <a href="../policies/FSK Learning Diversity &amp; Inclusion Policy .pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Learning Diversity &amp; Inclusion</span></a>
-        <a href="../policies/FSK Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">📋</div><span>Academic Integrity Policy</span></a>
+        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Child Protection Policy</span></a>
+        <a href="../policies/FSK Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Admission Policy</span></a>
+        <a href="../policies/FSK Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Assessment Policy</span></a>
+        <a href="../policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Canteen &amp; Pantry Guidelines</span></a>
+        <a href="../policies/FSK Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Discipline Policy</span></a>
+        <a href="../policies/FSK Food policy (Parents &amp; Students).pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Food Policy</span></a>
+        <a href="../policies/FSK Health Exclusion Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Health Exclusion Policy</span></a>
+        <a href="../policies/FSK Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Language Policy</span></a>
+        <a href="../policies/FSK Learning Diversity &amp; Inclusion Policy .pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Learning Diversity &amp; Inclusion</span></a>
+        <a href="../policies/FSK Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">??</div><span>Academic Integrity Policy</span></a>
       </div>
       <div class="divider" style="margin:60px 0 48px;"></div>
       <div class="policy-layout">
@@ -305,7 +338,7 @@
           <div class="policy-block" id="fpv-integrity">
             <span class="policy-meta">Academic Policy</span>
             <h2>Academic Integrity Policy</h2>
-            <p>FPV values authentic, honest learning. We celebrate original thinking and genuine effort. Every child's ideas and creations are their own — and we protect that from the very beginning.</p>
+            <p>FPV values authentic, honest learning. We celebrate original thinking and genuine effort. Every child's ideas and creations are their own � and we protect that from the very beginning.</p>
             <h3>Key Principles</h3>
             <ul>
               <li>Original effort and creativity are celebrated at all stages</li>
@@ -330,7 +363,7 @@
           <div class="policy-block" id="fpv-admission">
             <span class="policy-meta">Administrative Policy</span>
             <h2>Admission Policy</h2>
-            <p>FPV admits children through a welcoming, transparent process. We welcome learners from all backgrounds aged 3–6 years.</p>
+            <p>FPV admits children through a welcoming, transparent process. We welcome learners from all backgrounds aged 3�6 years.</p>
             <h3>Eligibility</h3>
             <ul>
               <li>Children must be aged 3 years or above at the time of admission</li>
@@ -352,10 +385,10 @@
             <p>To protect the health of all children and staff, FPV follows a Health Exclusion Policy specifying when children should be kept home and when they may return.</p>
             <h3>When to Keep Your Child at Home</h3>
             <ul>
-              <li><strong>Fever</strong> (above 100°F / 37.8°C) — child must be fever-free for 24 hours before returning</li>
-              <li><strong>Vomiting or diarrhoea</strong> — must be symptom-free for 24 hours</li>
-              <li><strong>Chickenpox</strong> — until all blisters have crusted over</li>
-              <li><strong>Pink eye (Conjunctivitis)</strong> — until treatment has begun and discharge has stopped</li>
+              <li><strong>Fever</strong> (above 100�F / 37.8�C) � child must be fever-free for 24 hours before returning</li>
+              <li><strong>Vomiting or diarrhoea</strong> � must be symptom-free for 24 hours</li>
+              <li><strong>Chickenpox</strong> � until all blisters have crusted over</li>
+              <li><strong>Pink eye (Conjunctivitis)</strong> � until treatment has begun and discharge has stopped</li>
             </ul>
           </div>
 
@@ -368,7 +401,7 @@
               <li>Attend orientation sessions to understand the FPV approach</li>
               <li>Ask open questions at home: "What did you wonder about today?"</li>
               <li>Read aloud to your child every day</li>
-              <li>Foster independence — let children struggle productively before jumping in</li>
+              <li>Foster independence � let children struggle productively before jumping in</li>
               <li>Attend Parent-Teacher meetings and school events</li>
               <li>Share your own curiosity and love of learning with your child</li>
             </ul>
@@ -378,7 +411,7 @@
       </div>
     </div>
 
-    <!-- ═══ CONTACT ═══ -->
+    <!-- --- CONTACT --- -->
     <div class="tab-panel" id="contact-tab">
       <span class="label">Contact</span>
       <h2 style="margin-bottom:48px;">Reach Fountainhead Preschool Vesu</h2>
@@ -386,29 +419,29 @@
       <div class="contact-grid-ois">
         <div>
           <div class="contact-item-ois">
-            <div class="contact-icon-ois">📍</div>
+            <div class="contact-icon-ois">??</div>
             <div><h5>Address</h5><p>Vesu, Surat, Gujarat, India</p></div>
           </div>
           <div class="contact-item-ois">
-            <div class="contact-icon-ois">📞</div>
+            <div class="contact-icon-ois">??</div>
             <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a></p></div>
           </div>
           <div class="contact-item-ois">
-            <div class="contact-icon-ois">✉️</div>
+            <div class="contact-icon-ois">??</div>
             <div><h5>Email</h5><p><a href="mailto:vesu@fountainheadschools.org">vesu@fountainheadschools.org</a></p></div>
           </div>
           <div class="contact-item-ois">
-            <div class="contact-icon-ois">💬</div>
+            <div class="contact-icon-ois">??</div>
             <div><h5>WhatsApp</h5><p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p></div>
           </div>
           <div class="contact-item-ois">
-            <div class="contact-icon-ois">🌐</div>
+            <div class="contact-icon-ois">??</div>
             <div>
               <h5>Follow FPV</h5>
               <div class="social-row">
-                <a href="#" class="soc-btn">📸 Instagram</a>
-                <a href="#" class="soc-btn">👍 Facebook</a>
-                <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="soc-btn">▶ YouTube</a>
+                <a href="#" class="soc-btn">?? Instagram</a>
+                <a href="#" class="soc-btn">?? Facebook</a>
+                <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="soc-btn">? YouTube</a>
               </div>
             </div>
           </div>
@@ -417,7 +450,7 @@
           <div class="map-box">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721!2d72.79!3d21.16!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA5JzM2LjAiTiA3MsKwNDcnMjQuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
           </div>
-          <a href="https://goo.gl/maps" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">📍 Open in Google Maps</a>
+          <a href="https://goo.gl/maps" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">?? Open in Google Maps</a>
         </div>
       </div>
 
@@ -425,10 +458,10 @@
         <span class="label">Parent Resources</span>
         <h3 style="margin-bottom:8px;">Quick Links</h3>
         <div class="qlinks">
-          <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink"><span>🖥️</span>Nucleus Web Portal</a>
-          <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink"><span>📱</span>Nucleus App (iOS)</a>
-          <a href="https://curricle.io" target="_blank" class="qlink"><span>📅</span>School Calendar</a>
-          <a href="../images/FS Learning Model.pdf" download class="qlink"><span>📘</span>FS Learning Model</a>
+          <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink"><span>???</span>Nucleus Web Portal</a>
+          <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink"><span>??</span>Nucleus App (iOS)</a>
+          <a href="https://curricle.io" target="_blank" class="qlink"><span>??</span>School Calendar</a>
+          <a href="../images/FS Learning Model.pdf" download class="qlink"><span>??</span>FS Learning Model</a>
         </div>
       </div>
     </div>
@@ -444,7 +477,7 @@
         <span class="label">News &amp; Happenings</span>
         <h2>Latest from FPV</h2>
       </div>
-      <a href="../index.html#news" style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">All News →</a>
+      <a href="../index.html#news" style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">All News ?</a>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
       <div style="background:white;padding:32px;">
@@ -452,7 +485,7 @@
           <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--gold);color:white;">FPV</span>
           <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">10 Aug 2026</span>
         </div>
-        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">FPV PYP Exhibition 2026 — Young Minds, Big Ideas</h4>
+        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">FPV PYP Exhibition 2026 � Young Minds, Big Ideas</h4>
         <p style="font-size:0.82rem;color:var(--mid);">FPV students showcased their PYP inquiry projects at the annual exhibition, presenting their thinking to proud parents and the wider community.</p>
       </div>
       <div style="background:white;padding:32px;">
@@ -460,7 +493,7 @@
           <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--gold);color:white;">FPV</span>
           <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">5 Jul 2026</span>
         </div>
-        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Annual Day 2026 — Creativity, Movement, and Joy</h4>
+        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Annual Day 2026 � Creativity, Movement, and Joy</h4>
         <p style="font-size:0.82rem;color:var(--mid);">FPV's Annual Day brought together young performers, enthusiastic parents, and dedicated teachers for a joyful day of performance and celebration.</p>
       </div>
       <div style="background:white;padding:32px;">
@@ -468,7 +501,7 @@
           <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--dark);color:white;">Group</span>
           <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">15 Jun 2026</span>
         </div>
-        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Group Sports Day 2026 — All Five Campuses Compete</h4>
+        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Group Sports Day 2026 � All Five Campuses Compete</h4>
         <p style="font-size:0.82rem;color:var(--mid);">An inter-campus sports day bringing together students from all five campuses for a day of healthy competition and community spirit.</p>
       </div>
       <div style="background:white;padding:32px;">
@@ -477,7 +510,7 @@
           <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">1 Sept 2025</span>
         </div>
         <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Fountainhead Schools Certified as Great Place to Work</h4>
-        <p style="font-size:0.82rem;color:var(--mid);">Fountainhead Schools has been officially certified as a Great Place to Work — recognition of our commitment to our staff and learning community.</p>
+        <p style="font-size:0.82rem;color:var(--mid);">Fountainhead Schools has been officially certified as a Great Place to Work � recognition of our commitment to our staff and learning community.</p>
       </div>
     </div>
   </div>
@@ -491,7 +524,7 @@
         <h2>Visit FPV</h2>
         <p>Come meet our teachers and see the space where your child will flourish.</p>
       </div>
-      <a href="#" onclick="showTab('admissions-tab',2)" class="btn-cta-white">Book a Visit →</a>
+      <a href="#" onclick="showTab('admissions-tab',2)" class="btn-cta-white">Book a Visit ?</a>
     </div>
   </div>
 </div>
@@ -502,10 +535,10 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Vidyanagari" style="height:120px;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
+          <img src="../images/fs-main-logo.png" alt="Fountainhead Primary Vidyanagari" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
         </div>
         <p>IB PYP early years school in Vesu, Surat. Part of the Fountainhead Schools group.</p>
-        <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
+        <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group ?</a></div>
       </div>
       <div>
         <h6>Programmes</h6>
@@ -517,11 +550,11 @@
       <div>
         <h6>Campus Links</h6>
         <ul>
-          <li><a href="../fsk/index.html">FSK — Kunkni</a></li>
-          <li><a href="../fwgs/index.html">FWGS — Wockhardt</a></li>
-          <li><a href="../fsm/index.html">FSM — Malgama</a></li>
-          <li><a href="../falh/index.html">FALH — Vapi</a></li>
-          <li><a href="../fpa/index.html">FPA — Adajan</a></li>
+          <li><a href="../fsk/index.html">FSK � Kunkni</a></li>
+          <li><a href="../fwgs/index.html">FWGS � Wockhardt</a></li>
+          <li><a href="../fsm/index.html">FSM � Malgama</a></li>
+          <li><a href="../falh/index.html">FALH � Vapi</a></li>
+          <li><a href="../fpa/index.html">FPA � Adajan</a></li>
           <li><a href="../index.html">FS Group Home</a></li>
         </ul>
       </div>
@@ -535,7 +568,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Fountainhead Preschool Vesu. All rights reserved.</span>
+      <span>� 2026 Fountainhead Preschool Vesu. All rights reserved.</span>
       <div class="footer-policies">
         <a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection Policy</a>
         <a href="#">DPDP 2023</a>
@@ -547,10 +580,6 @@
 </footer>
 
 <script>
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-});
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 
 const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab'];
 function showTab(id, idx) {

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News &amp; Happenings � Fountainhead Schools</title>
+<title>News &amp; Happenings &mdash; Fountainhead Schools</title>
 <meta name="description" content="Stories, accolades, events, and news from across all Fountainhead School campuses.">
 <link rel="stylesheet" href="css/style.css">
 <style>
@@ -191,27 +191,118 @@
 </head>
 <body>
 
-<!-- Child Protection Bar -->
-<div class="cp-bar">
-  <a href="fsk/index.html#" onclick="window.location.href='fsk/index.html'">Child Protection Policy</a>
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <a href="fsk/index.html#policies">Child Protection Policy</a>
+    <div class="util-right">
+      <a href="tel:+918000130031">8000-130-031</a>
+      <a href="mailto:info@fountainheadschools.org">info@fountainheadschools.org</a>
+    </div>
+  </div>
 </div>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar" style="background:white;border-bottom:1px solid var(--border);">
-  <a href="index.html" class="nav-logo" style="color:var(--dark);">
-    <div class="mark" style="background:var(--dark);color:white;">FS</div>
-    <span class="name" style="color:var(--dark);">Fountainhead Schools</span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html#about" style="color:var(--dark);">About Us</a></li>
-    <li><a href="index.html#schools" style="color:var(--dark);">Our Schools</a></li>
-    <li><a href="index.html#academics" style="color:var(--dark);">Academics</a></li>
-    <li><a href="index.html#admissions" style="color:var(--dark);">Admissions</a></li>
-    <li><a href="news.html" style="color:var(--dark);font-weight:700;border-bottom:2px solid var(--dark);">News &amp; Happenings</a></li>
-    <li><a href="index.html#accolades" style="color:var(--dark);">Accolades</a></li>
-    <li><a href="fsk/index.html#" onclick="showTab ? showTab('contact-tab',6) : null" style="color:var(--dark);" class="nav-inquire">Enquire</a></li>
-  </ul>
-  <div class="hamburger" onclick="toggleNav()"><span style="background:var(--dark);"></span><span style="background:var(--dark);"></span><span style="background:var(--dark);"></span></div>
+<!-- HEADER -->
+<header class="site-header" id="navbar">
+  <div class="header-row">
+    <a href="index.html" class="nav-logo">
+      <img src="images/fs-main-logo.png" alt="Fountainhead Schools" style="height:3rem;width:auto;display:block;">
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <details class="nav-group" name="primary-nav">
+        <summary>About Us</summary>
+        <div class="nav-submenu">
+          <a href="index.html#about">About Us Overview</a>
+          <a href="index.html#about">Our Story &amp; Founders</a>
+          <a href="index.html#about">Values, Mission &amp; Philosophy</a>
+          <a href="index.html#about">IB Mission Statement</a>
+        </div>
+      </details>
+      <details class="nav-group" name="primary-nav">
+        <summary>Our Schools</summary>
+        <div class="nav-submenu">
+          <a href="index.html#campuses">All Campuses</a>
+          <a href="fsk/index.html">Fountainhead School Kunkni</a>
+          <a href="fsm/index.html">Fountainhead School Malgama</a>
+          <a href="fwgs/index.html">Fountainhead Wockhardt Global School</a>
+          <a href="falh/index.html">Fountainhead Avadh Learning Hub</a>
+          <a href="fpa/index.html">Fountainhead Preschool Adajan</a>
+          <a href="fpv/index.html">Fountainhead Preschool Vesu</a>
+        </div>
+      </details>
+      <details class="nav-group" name="primary-nav">
+        <summary>Academics</summary>
+        <div class="nav-submenu">
+          <a href="index.html#academics">Academics Overview</a>
+          <a href="index.html#academics">Learning Model</a>
+          <a href="index.html#academics">IB &amp; Parents' Role in Education</a>
+          <a href="index.html#academics">Primary Years Programme</a>
+          <a href="index.html#academics">Middle Years Programme</a>
+          <a href="index.html#academics">Diploma Programme</a>
+          <a href="index.html#academics">Fountainhead High School Diploma</a>
+          <a href="index.html#academics">Demystifying IB Myths</a>
+        </div>
+      </details>
+      <a href="index.html#connect">Admissions</a>
+      <a href="news.html" aria-current="page">News &amp; Happenings</a>
+      <a href="index.html#accolades">Accolades &amp; Certifications</a>
+      <a href="index.html#about">Testimonials</a>
+      <a href="index.html#accolades">Results &amp; University Destinations</a>
+      <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Policies</a>
+    </nav>
+
+    <a class="nav-inquire" href="index.html#connect">Enquire</a>
+
+    <button class="hamburger" popovertarget="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV PANEL -->
+<nav id="site-nav" class="nav-panel" popover aria-label="Primary, mobile">
+  <details class="panel-group" name="mobile-nav">
+    <summary>About Us</summary>
+    <div class="panel-submenu">
+      <a href="index.html#about">About Us Overview</a>
+      <a href="index.html#about">Our Story &amp; Founders</a>
+      <a href="index.html#about">Values, Mission &amp; Philosophy</a>
+      <a href="index.html#about">IB Mission Statement</a>
+    </div>
+  </details>
+  <details class="panel-group" name="mobile-nav">
+    <summary>Our Schools</summary>
+    <div class="panel-submenu">
+      <a href="index.html#campuses">All Campuses</a>
+      <a href="fsk/index.html">Fountainhead School Kunkni</a>
+      <a href="fsm/index.html">Fountainhead School Malgama</a>
+      <a href="fwgs/index.html">Fountainhead Wockhardt Global School</a>
+      <a href="falh/index.html">Fountainhead Avadh Learning Hub</a>
+      <a href="fpa/index.html">Fountainhead Preschool Adajan</a>
+      <a href="fpv/index.html">Fountainhead Preschool Vesu</a>
+    </div>
+  </details>
+  <details class="panel-group" name="mobile-nav">
+    <summary>Academics</summary>
+    <div class="panel-submenu">
+      <a href="index.html#academics">Academics Overview</a>
+      <a href="index.html#academics">Learning Model</a>
+      <a href="index.html#academics">IB &amp; Parents' Role in Education</a>
+      <a href="index.html#academics">Primary Years Programme</a>
+      <a href="index.html#academics">Middle Years Programme</a>
+      <a href="index.html#academics">Diploma Programme</a>
+      <a href="index.html#academics">Fountainhead High School Diploma</a>
+      <a href="index.html#academics">Demystifying IB Myths</a>
+    </div>
+  </details>
+  <a href="index.html#connect">Admissions</a>
+  <a href="news.html" aria-current="page">News &amp; Happenings</a>
+  <a href="index.html#accolades">Accolades &amp; Certifications</a>
+  <a href="index.html#about">Testimonials</a>
+  <a href="index.html#accolades">Results &amp; University Destinations</a>
+  <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Policies</a>
+  <a class="panel-enquire" href="index.html#connect">Enquire</a>
 </nav>
 
 <!-- PAGE HERO -->
@@ -222,7 +313,7 @@
     <p>Stories, accolades, events, and moments from across the Fountainhead campuses.</p>
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filterNews('all',this)">All</button>
-      <button class="filter-btn" onclick="filterNews('kunkni',this)">FSK � Kunkni</button>
+      <button class="filter-btn" onclick="filterNews('kunkni',this)">FSK &mdash; Kunkni</button>
       <button class="filter-btn" onclick="filterNews('fwgs',this)">FWGS</button>
       <button class="filter-btn" onclick="filterNews('falh',this)">FALH</button>
       <button class="filter-btn" onclick="filterNews('group',this)">Group-Wide</button>
@@ -242,8 +333,8 @@
         <span class="art-date">20 Jul 2026</span>
       </div>
       <h2>Fountainhead School Kunkni, Surat Ranks 4th Nationally</h2>
-      <p>STOP PRESS � Fountainhead School Kunkni ranks 4th nationally in the Cfore 2026 School Rankings. Up from 5th last year. In Pedagogy and Curriculum, no school in India scored above FSK.</p>
-      <a href="news/cfore-2026.html" class="read-more-btn">Read Full Story ?</a>
+      <p>STOP PRESS &mdash; Fountainhead School Kunkni ranks 4th nationally in the Cfore 2026 School Rankings. Up from 5th last year. In Pedagogy and Curriculum, no school in India scored above FSK.</p>
+      <a href="news/cfore-2026.html" class="read-more-btn">Read Full Story &rarr;</a>
     </div>
   </div>
 </div>
@@ -256,7 +347,7 @@
       <!-- IDA Awards 2025 -->
       <div class="article-card news-item" data-campus="group">
         <div class="article-card-img">
-          <img src="images/fsk-ground.jpg" alt="IDA Awards 2025">
+          <img src="images/ida-awards-2025-wellbeing-team.png" alt="IDA Awards 2025">
         </div>
         <div class="article-card-body">
           <div class="article-card-meta">
@@ -265,7 +356,7 @@
           </div>
           <h3>Fountainhead School Honoured at the IDA Awards 2025</h3>
           <p>Recognised for excellence in wellbeing, engagement, and capacity building in the foundational years.</p>
-          <a href="news/ida-awards-2025.html" class="article-card-link">Read More ?</a>
+          <a href="news/ida-awards-2025.html" class="article-card-link">Read More &rarr;</a>
         </div>
       </div>
 
@@ -279,57 +370,57 @@
             <span class="campus-tag kunkni">Kunkni</span>
             <span class="art-date" style="font-size:0.65rem;color:var(--gray);">5 Jul 2025</span>
           </div>
-          <h3>FSK Ranks 5th in India � Cfore 2025</h3>
+          <h3>FSK Ranks 5th in India &mdash; Cfore 2025</h3>
           <p>Fountainhead School ranks 5th in India under Co-Ed Day Schools (International Curriculum) in Cfore 2025.</p>
-          <a href="news/cfore-2025.html" class="article-card-link">Read More ?</a>
+          <a href="news/cfore-2025.html" class="article-card-link">Read More &rarr;</a>
         </div>
       </div>
 
       <!-- ScooNews 2023 -->
       <div class="article-card news-item" data-campus="kunkni">
-        <div class="article-card-img" style="background:var(--light-gray);display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:4rem;">??</span>
+        <div class="article-card-img">
+          <img src="images/scoonews-2023-award.png" alt="ScooNews Global 2023">
         </div>
         <div class="article-card-body">
           <div class="article-card-meta">
             <span class="campus-tag kunkni">Kunkni</span>
             <span class="art-date" style="font-size:0.65rem;color:var(--gray);">28 Jun 2023</span>
           </div>
-          <h3>Best Skill Development Initiative 2023 � ScooNews Global</h3>
+          <h3>Best Skill Development Initiative 2023 &mdash; ScooNews Global</h3>
           <p>Maverick Learning Centre felicitated at ScooNews Global Educators Fest, Jaipur with 700+ school leaders.</p>
-          <a href="news/scoonews-2023.html" class="article-card-link">Read More ?</a>
+          <a href="news/scoonews-2023.html" class="article-card-link">Read More &rarr;</a>
         </div>
       </div>
 
       <!-- Career ChangeMakers 2021 -->
       <div class="article-card news-item" data-campus="kunkni">
-        <div class="article-card-img" style="background:var(--dark);display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:4rem;">???</span>
+        <div class="article-card-img">
+          <img src="images/news/careers.jpg" alt="Career ChangeMakers Award 2021">
         </div>
         <div class="article-card-body">
           <div class="article-card-meta">
             <span class="campus-tag kunkni">Kunkni</span>
             <span class="art-date" style="font-size:0.65rem;color:var(--gray);">17 Apr 2021</span>
           </div>
-          <h3>Top Career Development Cell � Career ChangeMakers Award 2021</h3>
+          <h3>Top Career Development Cell &mdash; Career ChangeMakers Award 2021</h3>
           <p>Anish Nair, Career Counselor, received the award at the Career ChangeMakers ceremony on April 17, 2021.</p>
-          <a href="news/career-changemakers-2021.html" class="article-card-link">Read More ?</a>
+          <a href="news/career-changemakers-2021.html" class="article-card-link">Read More &rarr;</a>
         </div>
       </div>
 
       <!-- Great Place to Work -->
       <div class="article-card news-item" data-campus="group">
-        <div class="article-card-img" style="background:var(--light-gray);display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:4rem;">??</span>
+        <div class="article-card-img" style="background:var(--dark);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:5rem;line-height:1;">&#127942;</span>
         </div>
         <div class="article-card-body">
           <div class="article-card-meta">
             <span class="campus-tag group">Group-Wide</span>
-            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">2024�25</span>
+            <span class="art-date" style="font-size:0.65rem;color:var(--gray);">2024&ndash;25</span>
           </div>
-          <h3>Fountainhead Schools � Certified Great Place to Work</h3>
-          <p>Recognised as a Certified Great Place to Work � honouring our commitment to a positive, empowering environment for every staff member.</p>
-          <a href="news/gptw.html" class="article-card-link">Read More ?</a>
+          <h3>Fountainhead Schools &mdash; Certified Great Place to Work</h3>
+          <p>Recognised as a Certified Great Place to Work &mdash; honouring our commitment to a positive, empowering environment for every staff member.</p>
+          <a href="news/gptw.html" class="article-card-link">Read More &rarr;</a>
         </div>
       </div>
 
@@ -343,41 +434,41 @@
             <span class="campus-tag falh">FALH</span>
             <span class="art-date" style="font-size:0.65rem;color:var(--gray);">Aug 2026</span>
           </div>
-          <h3>Fountainhead After Learning Hub � New Reel</h3>
-          <p>See FALH in action � the unique preschool and after-school enrichment hub in Vapi, Gujarat.</p>
-          <a href="falh/index.html" class="article-card-link">Visit FALH ?</a>
+          <h3>Fountainhead After Learning Hub &mdash; New Reel</h3>
+          <p>See FALH in action &mdash; the unique preschool and after-school enrichment hub in Vapi, Gujarat.</p>
+          <a href="falh/index.html" class="article-card-link">Visit FALH &rarr;</a>
         </div>
       </div>
 
       <!-- FWGS Media -->
       <div class="article-card news-item" data-campus="fwgs">
         <div class="article-card-img">
-          <img src="images/fsk-facade.jpg" alt="FWGS">
+          <img src="images/fwgs-logo.png" alt="FWGS" style="object-fit:contain;background:#003E74;padding:24px;">
         </div>
         <div class="article-card-body">
           <div class="article-card-meta">
             <span class="campus-tag fwgs">FWGS</span>
             <span class="art-date" style="font-size:0.65rem;color:var(--gray);">2026</span>
           </div>
-          <h3>FWGS � Full IB Continuum Campus</h3>
-          <p>Fountainhead Wockhardt Global School � EY through Diploma. Inquiry-based, internationally-minded education in Surat.</p>
-          <a href="fwgs/index.html" class="article-card-link">Visit FWGS ?</a>
+          <h3>FWGS &mdash; Full IB Continuum Campus</h3>
+          <p>Fountainhead Wockhardt Global School &mdash; EY through Diploma. Inquiry-based, internationally-minded education in Chhatrapati Sambhajinagar, Maharashtra.</p>
+          <a href="fwgs/index.html" class="article-card-link">Visit FWGS &rarr;</a>
         </div>
       </div>
 
       <!-- FS Got Talent -->
       <div class="article-card news-item" data-campus="kunkni">
         <div class="article-card-img">
-          <img src="images/fsk-ground.jpg" alt="FS Got Talent">
+          <img src="images/fsk-facade.jpg" alt="FS Got Talent">
         </div>
         <div class="article-card-body">
           <div class="article-card-meta">
             <span class="campus-tag kunkni">Kunkni</span>
             <span class="art-date" style="font-size:0.65rem;color:var(--gray);">2026</span>
           </div>
-          <h3>FS Got Talent � Annual Celebration of Student Creativity</h3>
-          <p>Music, dance, drama, spoken word, and more � FS Got Talent is one of the highlights of the FSK calendar.</p>
-          <a href="fsk/index.html#" onclick="setTimeout(()=>showTab&&showTab('media-tab',5),300)" class="article-card-link">Watch Video ?</a>
+          <h3>FS Got Talent &mdash; Annual Celebration of Student Creativity</h3>
+          <p>Music, dance, drama, spoken word, and more &mdash; FS Got Talent is one of the highlights of the FSK calendar.</p>
+          <a href="fsk/index.html#" onclick="setTimeout(()=>showTab&&showTab('media-tab',5),300)" class="article-card-link">Watch Video &rarr;</a>
         </div>
       </div>
 
@@ -394,8 +485,8 @@
         <p>Follow us on Instagram, LinkedIn, and YouTube for the latest from our campuses.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-        <a href="https://instagram.com/fountainheadschoolkunkni" target="_blank" class="btn-cta-white">?? Instagram</a>
-        <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="btn-cta-white" style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:white;">? YouTube</a>
+        <a href="https://instagram.com/fountainheadschools" target="_blank" class="btn-cta-white">&#128248; Instagram</a>
+        <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="btn-cta-white" style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:white;">&#9654; YouTube</a>
       </div>
     </div>
   </div>
@@ -407,20 +498,19 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <div class="f-mark">FS</div>
-          <span class="f-name">Fountainhead Schools</span>
+          <img src="images/fs-main-logo.png" alt="Fountainhead Schools" style="height:3rem;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:8px;">
         </div>
-        <p>Nurturing Leaders with Character and Competence. IB continuum schools in Surat and Vapi, Gujarat.</p>
+        <p>Nurturing Leaders with Character and Competence. IB continuum schools across Surat, Vapi and Chhatrapati Sambhajinagar.</p>
       </div>
       <div>
         <h6>Campuses</h6>
         <ul>
-          <li><a href="fsk/index.html">FSK � Kunkni</a></li>
-          <li><a href="fwgs/index.html">FWGS � Wockhardt</a></li>
-          <li><a href="fsm/index.html">FSM � Miri</a></li>
-          <li><a href="falh/index.html">FALH � Vapi</a></li>
-          <li><a href="fpa/index.html">FPA � Adajan</a></li>
-          <li><a href="fpv/index.html">FPV � Vesu</a></li>
+          <li><a href="fsk/index.html">FSK &mdash; Kunkni</a></li>
+          <li><a href="fwgs/index.html">FWGS &mdash; Wockhardt</a></li>
+          <li><a href="fsm/index.html">FSM &mdash; Malgama</a></li>
+          <li><a href="falh/index.html">FALH &mdash; Vapi</a></li>
+          <li><a href="fpa/index.html">FPA &mdash; Adajan</a></li>
+          <li><a href="fpv/index.html">FPV &mdash; Vesu</a></li>
         </ul>
       </div>
       <div>
@@ -443,7 +533,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>� 2026 Fountainhead Schools. All rights reserved.</span>
+      <span>&copy; 2026 Fountainhead Schools. All rights reserved.</span>
       <div class="footer-policies">
         <a href="fsk/index.html#" onclick="window.location.href='fsk/index.html'">Child Protection Policy</a>
         <a href="#">DPDP 2023</a>
@@ -454,10 +544,6 @@
 </footer>
 
 <script>
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-});
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 
 function filterNews(campus, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
