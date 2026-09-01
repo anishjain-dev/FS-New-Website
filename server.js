@@ -10,6 +10,7 @@ const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const { generateCampusHTML, DEFAULT_SECTIONS } = require('./template');
+const { generateMainHTML } = require('./template-main');
 
 // ── Auth config (loaded from .env) ───────────────────────────────────────────
 const GOOGLE_CLIENT_ID     = process.env.GOOGLE_CLIENT_ID     || '';
@@ -20,19 +21,10 @@ const BASE_URL             = process.env.BASE_URL             || 'http://localho
 // Auth enabled only when real credentials are present
 const AUTH_ENABLED = GOOGLE_CLIENT_ID !== 'PASTE_YOUR_CLIENT_ID_HERE';
 
-// Multer storage: save to campus folder or images/ subfolder
+// Multer storage: all campus images save to root images/ so ../images/filename works from any campus subfolder
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    const id = req.params.id;
-    const campusFile = path.join(__dirname, 'data', `${id}.json`);
-    let folder = path.join(__dirname, id);
-    if (fs.existsSync(campusFile)) {
-      try {
-        const d = JSON.parse(fs.readFileSync(campusFile, 'utf8'));
-        folder = path.join(__dirname, d.folder || id);
-      } catch {}
-    }
-    const imgDir = path.join(folder, 'images');
+    const imgDir = path.join(ROOT, 'images');
     if (!fs.existsSync(imgDir)) fs.mkdirSync(imgDir, { recursive: true });
     cb(null, imgDir);
   },
@@ -314,9 +306,11 @@ app.post('/api/campus/:id', requireLogin, requireCampusAccess, (req, res) => {
     // Write updated JSON
     fs.writeFileSync(campusFile, JSON.stringify(campusData, null, 2), 'utf8');
 
-    // Main FS website has a hand-coded index.html — skip template regeneration
+    // Main FS website — regenerate index.html from template-main.js
     if (campusData.isMain) {
-      return res.json({ success: true, id, message: 'Main site data saved. HTML not regenerated (hand-coded template).' });
+      const mainHtml = generateMainHTML(campusData);
+      fs.writeFileSync(path.join(ROOT, 'index.html'), mainHtml, 'utf8');
+      return res.json({ success: true, id, message: 'Main site saved and index.html regenerated.' });
     }
 
     // Regenerate HTML for campus sites
@@ -350,7 +344,7 @@ app.post('/api/upload/:id', requireLogin, requireCampusAccess, upload.single('im
     if (fs.existsSync(campusFile)) {
       try { folder = JSON.parse(fs.readFileSync(campusFile, 'utf8')).folder || id; } catch {}
     }
-    const url = `/${folder}/images/${req.file.filename}`;
+    const url = `/images/${req.file.filename}`;
     res.json({ success: true, url, filename: req.file.filename });
   } catch (e) {
     res.status(500).json({ error: e.message });
@@ -386,7 +380,7 @@ app.delete('/api/campus/:id', requireAdmin, (req, res) => {
   }
 });
 
-// GET /api/campus/:id/images — list image files in campus images folder
+// GET /api/campus/:id/images — list image files from root images/ AND campus images/ folder
 app.get('/api/campus/:id/images', requireLogin, requireCampusAccess, (req, res) => {
   const id = req.params.id;
   const campusFile = path.join(DATA, `${id}.json`);
@@ -394,11 +388,26 @@ app.get('/api/campus/:id/images', requireLogin, requireCampusAccess, (req, res) 
   if (fs.existsSync(campusFile)) {
     try { folder = JSON.parse(fs.readFileSync(campusFile, 'utf8')).folder || id; } catch {}
   }
-  const imgDir = path.join(ROOT, folder, 'images');
-  if (!fs.existsSync(imgDir)) return res.json({ files: [] });
   const IMAGE_EXT = /\.(jpe?g|png|gif|webp|svg|avif)$/i;
-  const files = fs.readdirSync(imgDir).filter(f => IMAGE_EXT.test(f));
-  res.json({ files });
+  const results = [];
+
+  // Root images/ folder (shared across all campuses)
+  const rootImgDir = path.join(ROOT, 'images');
+  if (fs.existsSync(rootImgDir)) {
+    fs.readdirSync(rootImgDir)
+      .filter(f => IMAGE_EXT.test(f))
+      .forEach(f => results.push({ filename: f, url: `/images/${encodeURIComponent(f)}` }));
+  }
+
+  // Campus-specific images/ subfolder (skip if same as root — e.g. folder='.')
+  const campusImgDir = path.join(ROOT, folder, 'images');
+  if (folder !== '.' && fs.existsSync(campusImgDir)) {
+    fs.readdirSync(campusImgDir)
+      .filter(f => IMAGE_EXT.test(f))
+      .forEach(f => results.push({ filename: f, url: `/${folder}/images/${encodeURIComponent(f)}` }));
+  }
+
+  res.json({ files: results });
 });
 
 app.listen(PORT, () => {

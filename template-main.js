@@ -1,10 +1,38 @@
-<!DOCTYPE html>
+'use strict';
+
+function generateMainHTML(d) {
+  const h   = d.hero    || {};
+  const a   = d.about   || {};
+  const ct  = d.ctaBand || {};
+  const con = d.contact || {};
+  const ft  = d.footer  || {};
+  const dp  = (d.results || {}).dp  || {};
+  const myp = (d.results || {}).myp || {};
+  const tagline = d.tagline || 'To Nurture Leaders with Character and Competence';
+
+  const phone1 = con.phone1 || '8000-130-031';
+  const phone2 = con.phone2 || '0261-3501300';
+  const email  = con.email  || 'surat@fountainheadschools.org';
+  const wa     = con.whatsapp || '918000130031';
+  const addr   = con.address  || 'Opp. Ambetha Water Tank, Nr. Village Kunkni, Rander–Dandi Road, Surat – 395005';
+
+  const footerYear = ft.year || new Date().getFullYear().toString();
+  const footerTag  = ft.tagline || 'An IB School Group with six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Nurturing leaders with character and competence since 2005.';
+
+  // If image value is just a filename (no /), prefix with images/ for root-level index.html
+  const imgPath = v => v ? (v.includes('/') ? v : `images/${v}`) : '';
+
+  const heroImgSrc = imgPath(h.image || d.heroImage || '');
+  const heroImg = heroImgSrc ? `<img src="${heroImgSrc}" alt="Fountainhead School" class="hero-bg">` : '';
+  const aboutImgSrc = imgPath(a.image || '');
+
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fountainhead Schools — An IB School Group</title>
-<meta name="description" content="Fountainhead Schools is India&#39;s leading IB School Group — six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Ranked 4th nationally by Cfore 2026.">
+<title>${escHtml(d.metaTitle || 'Fountainhead Schools — An IB School Group')}</title>
+<meta name="description" content="${escAttr(d.metaDescription || '')}">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,8 +42,8 @@
   <div class="utility-inner">
     <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
     <div class="util-right">
-      <a href="tel:+918000130031">  8000-130-031</a>
-      <a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a>
+      <a href="tel:+91${phone1.replace(/[^0-9]/g,'')}">  ${escHtml(phone1)}</a>
+      <a href="mailto:${escAttr(email)}">${escHtml(email)}</a>
     </div>
   </div>
 </div>
@@ -135,16 +163,16 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/fsk-hero.jpg" alt="Fountainhead School" class="hero-bg">
+  ${heroImg}
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">An IB School Group · 6 Campuses · 3 Cities</div>
-      <h1>Schools Built Around How Children Actually Learn</h1>
-      <p class="hero-sub">Six campuses across Surat, Vapi and Chhatrapati Sambhajinagar — one conviction: children flourish when curiosity leads and the IB continuum gives it direction.</p>
+      <div class="hero-eyebrow">${escHtml(h.eyebrow || 'An IB School Group · 6 Campuses · 3 Cities')}</div>
+      <h1>${escHtml(h.heading || 'Schools Built Around How Children Actually Learn')}</h1>
+      <p class="hero-sub">${escHtml(h.subtext || '')}</p>
       <div class="hero-actions">
-        <a href="#campuses" class="btn-hero-primary">Explore Admissions</a>
-        <a href="#about" class="btn-hero-outline">Our Philosophy</a>
+        <a href="#campuses" class="btn-hero-primary">${escHtml(h.btnPrimary || 'Explore Admissions')}</a>
+        <a href="#about" class="btn-hero-outline">${escHtml(h.btnSecondary || 'Our Philosophy')}</a>
       </div>
     </div>
   </div>
@@ -157,7 +185,7 @@
 <!-- TAGLINE BAND -->
 <div class="tagline-band">
   <div class="container">
-    <h2>"To Nurture Leaders with Character and Competence"</h2>
+    <h2>"${escHtml(tagline)}"</h2>
   </div>
 </div>
 
@@ -167,17 +195,17 @@
     <div class="about-grid">
       <div class="about-text">
         <span class="label">The Group</span>
-        <h2>One conviction, every campus</h2>
-        <p>Founded in 2005 with six students and one belief — that children learn best when they are curious, not compliant — Fountainhead has grown into a group of six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Our mission has not changed: to nurture leaders with character and competence.</p>
-        <p>Ranked 4th nationally — Cfore 2026. Highest in Pedagogy and Curriculum in the country.</p>
+        <h2>${escHtml(a.heading || 'One conviction, every campus')}</h2>
+        <p>${escHtml(a.body || '')}</p>
+        <p>${escHtml(a.subtext || '')}</p>
         <div style="margin-top:36px; display:flex; gap:16px; flex-wrap:wrap;">
           <a href="#campuses" class="btn-hero-primary" style="background:var(--dark);">Find Your Campus →</a>
           <a href="fsk/index.html#admissions" style="display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">Apply for Admission</a>
         </div>
       </div>
       <div class="about-img">
-        <img src="images/fsk-ground.jpg" alt="One conviction, every campus">
-        <div class="about-img-caption">Khelangan · FSK Sports Ground · Surat</div>
+        ${aboutImgSrc ? `<img src="${escAttr(aboutImgSrc)}" alt="${escAttr(a.heading || 'Fountainhead School Campus')}">` : ''}
+        <div class="about-img-caption">${escHtml(a.imageCaption || '')}</div>
       </div>
     </div>
   </div>
@@ -213,31 +241,17 @@
       <h2>Uniquely Fountainhead</h2>
     </div>
     <div class="stats-grid-ois">
-  <div class="stat-ois">
-    <span class="stat-label-top">Cfore 2026</span>
-    <span class="num">4th</span>
-    <p>Ranked 4th Best Co-Ed Day School in India. Highest nationally in both Pedagogy and Curriculum.</p>
-  </div>
-  <div class="stat-ois">
-    <span class="stat-label-top">Campuses</span>
-    <span class="num">6</span>
-    <p>Six campuses across Surat, Vapi and Chhatrapati Sambhajinagar.</p>
-  </div>
-  <div class="stat-ois">
-    <span class="stat-label-top">IB Continuum</span>
-    <span class="num">IB</span>
-    <p>Full EY→Diploma continuum across all campuses.</p>
-  </div>
-  <div class="stat-ois">
-    <span class="stat-label-top">Philosophy</span>
-    <span class="num">1</span>
-    <p>One shared philosophy of learning — IB world schools.</p>
-  </div>
-  <div class="stat-ois">
-    <span class="stat-label-top">Years of IB</span>
-    <span class="num">20</span>
-    <p>Twenty years of IB education in India.</p>
-  </div>
+${(d.stats || [
+  {label:'Cfore 2026',num:'4th',desc:'Ranked 4th Best Co-Ed Day School in India. Highest nationally in both Pedagogy and Curriculum.'},
+  {label:'Campuses',num:'6',desc:'Six campuses across Surat, Vapi and Chhatrapati Sambhajinagar.'},
+  {label:'IB Continuum',num:'IB',desc:'Full EY→Diploma continuum across all campuses.'},
+  {label:'Philosophy',num:'1',desc:'One shared philosophy of learning — IB world schools.'},
+  {label:'Years of IB',num:'20',desc:'Twenty years of IB education in India.'}
+]).map(s=>`  <div class="stat-ois">
+    <span class="stat-label-top">${escHtml(s.label)}</span>
+    <span class="num">${escHtml(s.num)}</span>
+    <p>${escHtml(s.desc)}</p>
+  </div>`).join('\n')}
     </div>
   </div>
 </section>
@@ -494,11 +508,11 @@
         <div style="display:flex;flex-direction:column;gap:16px;">
           <div style="display:flex;gap:16px;align-items:flex-start;">
             <div style="width:40px;height:40px;background:var(--fs-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6.5 6.5l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);margin-bottom:4px;">Phone</div><a href="tel:+918000130031" style="font-family:'Nunito',sans-serif;font-size:0.95rem;color:var(--gray);text-decoration:none;">8000-130-031</a></div>
+            <div><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);margin-bottom:4px;">Phone</div><a href="tel:+91${phone1.replace(/[^0-9]/g,'')}" style="font-family:'Nunito',sans-serif;font-size:0.95rem;color:var(--gray);text-decoration:none;">${escHtml(phone1)}</a></div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
             <div style="width:40px;height:40px;background:var(--fs-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
-            <div><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);margin-bottom:4px;">Email</div><a href="mailto:surat@fountainheadschools.org" style="font-family:'Nunito',sans-serif;font-size:0.95rem;color:var(--gray);text-decoration:none;">surat@fountainheadschools.org</a></div>
+            <div><div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);margin-bottom:4px;">Email</div><a href="mailto:${escAttr(email)}" style="font-family:'Nunito',sans-serif;font-size:0.95rem;color:var(--gray);text-decoration:none;">${escHtml(email)}</a></div>
           </div>
         </div>
       </div>
@@ -562,24 +576,24 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:64px;"><span class="label" style="justify-content:center;display:flex;">IB Results</span><h2>What Our Students Achieve</h2><p style="color:var(--mid);max-width:560px;margin:16px auto 0;">Consistent, genuine outcomes &mdash; not a good year, but a pattern.</p></div>
 
-    <h3 style="margin-bottom:24px;font-size:1.1rem;">IB Diploma 2026 &mdash; Fountainhead School Kunkni</h3>
+    <h3 style="margin-bottom:24px;font-size:1.1rem;">IB Diploma ${escHtml(dp.year || '2026')} &mdash; Fountainhead School Kunkni</h3>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-bottom:48px;">
-      <div style="background:var(--dark);color:white;padding:36px;text-align:center;"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--gold);">32.97</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);">School Average<br><span style="font-weight:400;">World avg: 30.9</span></p></div>
-      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--gold);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">157</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Students</p></div>
-      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--fs-blue);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">115</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Full Diplomas</p></div>
-      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--dark);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">44</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Highest Score</p></div>
+      <div style="background:var(--dark);color:white;padding:36px;text-align:center;"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--gold);">${escHtml(dp.average || '32.97')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);">School Average<br><span style="font-weight:400;">World avg: 30.9</span></p></div>
+      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--gold);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">${escHtml(dp.students || '157')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Students</p></div>
+      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--fs-blue);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">${escHtml(dp.diplomas || '115')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Full Diplomas</p></div>
+      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--dark);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">${escHtml(dp.highest || '44')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Highest Score</p></div>
     </div>
 
-    <h3 style="margin-bottom:24px;font-size:1.1rem;">IB MYP 2025 &mdash; Fountainhead School Kunkni</h3>
+    <h3 style="margin-bottom:24px;font-size:1.1rem;">IB MYP ${escHtml(myp.year || '2025')} &mdash; Fountainhead School Kunkni</h3>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-bottom:48px;">
-      <div style="background:var(--dark);color:white;padding:36px;text-align:center;"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--gold);">45.68</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);">School Average<br><span style="font-weight:400;">World avg: 37.71</span></p></div>
-      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--gold);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">157</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Students</p></div>
-      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--fs-blue);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">128</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Scored 40+</p></div>
-      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--dark);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">55</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Highest Score</p></div>
+      <div style="background:var(--dark);color:white;padding:36px;text-align:center;"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--gold);">${escHtml(myp.average || '45.68')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);">School Average<br><span style="font-weight:400;">World avg: 37.71</span></p></div>
+      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--gold);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">${escHtml(myp.students || '157')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Students</p></div>
+      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--fs-blue);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">${escHtml(myp.scored40 || '128')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Scored 40+</p></div>
+      <div style="background:white;padding:36px;text-align:center;border-top:3px solid var(--dark);"><span style="font-size:2.6rem;font-weight:900;font-family:'Montserrat',sans-serif;color:var(--dark);">${escHtml(myp.highest || '55')}</span><p style="margin:8px 0 0;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);">Highest Score</p></div>
     </div>
 
     <div style="background:var(--dark);padding:64px;text-align:center;margin-bottom:48px;">
-      <span class="label" style="justify-content:center;display:flex;color:var(--gold);">Class of 2026 &mdash; 157 Students</span>
+      <span class="label" style="justify-content:center;display:flex;color:var(--gold);">Class of ${escHtml(dp.year || '2026')} &mdash; ${escHtml(dp.students || '157')} Students</span>
       <h3 style="color:white;margin:16px 0 8px;">University Destinations</h3>
       <p style="color:rgba(255,255,255,0.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;">Where FSK graduates go</p>
       <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:40px;">
@@ -626,10 +640,10 @@
   <div class="container">
     <div class="cta-inner">
       <div>
-        <h2>See a campus for yourself</h2>
-        <p>The best way to understand Fountainhead is to walk through it on a school day.</p>
+        <h2>${escHtml(ct.heading || 'See a campus for yourself')}</h2>
+        <p>${escHtml(ct.subtext || 'The best way to understand Fountainhead is to walk through it on a school day.')}</p>
       </div>
-      <a href="#connect" class="btn-cta-white">Book a Visit →</a>
+      <a href="#connect" class="btn-cta-white">${escHtml(ct.button || 'Book a Visit →')}</a>
     </div>
   </div>
 </div>
@@ -640,20 +654,20 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo"><img src="images/fs-main-logo.png" alt="Fountainhead Schools" style="height:3rem;width:auto;display:block;margin-bottom:8px;"></div>
-        <p>An IB School Group with six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Nurturing leaders with character and competence since 2005.</p>
+        <p>${escHtml(footerTag)}</p>
         <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
           <a href="https://instagram.com/fountainheadschools" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">Instagram</a>
           <a href="https://linkedin.com/company/fountainheadschools" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">LinkedIn</a>
           <a href="https://www.youtube.com/@fountainheadschools" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">YouTube</a>
-          <a href="https://wa.me/918000130031" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">WhatsApp</a>
+          <a href="https://wa.me/${escAttr(wa)}" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">WhatsApp</a>
         </div>
       </div>
       <div><h6>Our Schools</h6><ul><li><a href="fsk/index.html" target="_blank">FSK — Surat (Kunkni)</a></li><li><a href="fsm/index.html" target="_blank">FSM — Surat (Malgama)</a></li><li><a href="fwgs/index.html" target="_blank">FWGS — Chh. Sambhajinagar</a></li><li><a href="falh/index.html" target="_blank">FALH — Vapi</a></li><li><a href="fpa/index.html" target="_blank">FPA — Adajan, Surat</a></li><li><a href="fpv/index.html" target="_blank">FPV — Vesu, Surat</a></li></ul></div>
       <div><h6>Quick Links</h6><ul><li><a href="#academics">IB Programmes</a></li><li><a href="#accolades">Accolades</a></li><li><a href="fsk/index.html#policies">School Policies</a></li><li><a href="fsk/index.html#admissions">Admissions</a></li><li><a href="https://parents.fountainheadschools.org/Login" target="_blank">Nucleus Portal</a></li><li><a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank">Nucleus App (iOS)</a></li></ul></div>
-      <div><h6>Contact</h6><ul><li><a href="tel:+918000130031">8000-130-031</a></li><li><a href="tel:+9102613501300">0261-3501300</a></li><li><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></li><li><a href="https://wa.me/918000130031">WhatsApp</a></li><li style="color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:12px;line-height:1.7;">Opp. Ambetha Water Tank,<br>Nr. Village Kunkni,<br>Rander–Dandi Road,<br>Surat – 395005</li></ul></div>
+      <div><h6>Contact</h6><ul><li><a href="tel:+91${phone1.replace(/[^0-9]/g,'')}">${escHtml(phone1)}</a></li><li><a href="tel:+91${phone2.replace(/[^0-9]/g,'')}">${escHtml(phone2)}</a></li><li><a href="mailto:${escAttr(email)}">${escHtml(email)}</a></li><li><a href="https://wa.me/${escAttr(wa)}">WhatsApp</a></li><li style="color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:12px;line-height:1.7;">${escHtml(addr).replace(/,\s*/g,',<br>')}</li></ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Fountainhead Schools. All rights reserved.</span>
+      <span>© ${escHtml(footerYear)} Fountainhead Schools. All rights reserved.</span>
       <div class="footer-policies"><a href="fsk/index.html#policies">Child Protection Policy</a><a href="fsk/index.html#policies">DPDP 2023</a><a href="#connect">Contact Us</a><a href="#">Careers</a></div>
     </div>
   </div>
@@ -661,4 +675,14 @@
 
 <script src="js/main.js" defer></script>
 </body>
-</html>
+</html>`;
+}
+
+function escHtml(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escAttr(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+module.exports = { generateMainHTML };

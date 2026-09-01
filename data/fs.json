@@ -3,24 +3,29 @@
   "folder": ".",
   "name": "Fountainhead Schools — Main Website",
   "shortCode": "FS",
+  "tagline": "To Nurture Leaders with Character and Competence",
   "color": "#F2C418",
   "launched": true,
   "isMain": true,
+  "logo": "fs-main-logo.png",
+  "heroImage": "fsk-hero.jpg",
+  "metaTitle": "Fountainhead Schools — An IB School Group",
+  "metaDescription": "Fountainhead Schools is India's leading IB School Group — six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Ranked 4th nationally by Cfore 2026.",
   "hero": {
     "eyebrow": "An IB School Group · 6 Campuses · 3 Cities",
     "heading": "Schools Built Around How Children Actually Learn",
     "subtext": "Six campuses across Surat, Vapi and Chhatrapati Sambhajinagar — one conviction: children flourish when curiosity leads and the IB continuum gives it direction.",
-    "image": "fsk/images/FSK Front Facade Image.jpg",
+    "image": "fsk-hero.jpg",
     "btnPrimary": "Explore Admissions",
     "btnSecondary": "Our Philosophy"
   },
-  "tagline": "To Nurture Leaders with Character and Competence",
   "about": {
     "heading": "One conviction, every campus",
     "body": "Founded in 2005 with six students and one belief — that children learn best when they are curious, not compliant — Fountainhead has grown into a group of six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Our mission has not changed: to nurture leaders with character and competence.",
     "subtext": "Ranked 4th nationally — Cfore 2026. Highest in Pedagogy and Curriculum in the country.",
-    "image": "fsk/images/FSK Ground.jpg",
-    "imageCaption": "Khelangan · FSK Sports Ground · Surat"
+    "image": "fsk-ground.jpg",
+    "imageCaption": "Khelangan · FSK Sports Ground · Surat",
+    "leaders": []
   },
   "stats": [
     { "label": "Cfore 2026", "num": "4th", "desc": "Ranked 4th Best Co-Ed Day School in India. Highest nationally in both Pedagogy and Curriculum." },
@@ -34,7 +39,9 @@
     "phone2": "0261-3501300",
     "email": "surat@fountainheadschools.org",
     "whatsapp": "918000130031",
-    "address": "Opp. Ambetha Water Tank, Nr. Village Kunkni, Rander–Dandi Road, Surat – 395005"
+    "address": "Opp. Ambetha Water Tank, Nr. Village Kunkni, Rander–Dandi Road, Surat – 395005",
+    "phones": ["8000-130-031", "0261-3501300"],
+    "mapEmbed": ""
   },
   "results": {
     "dp": {
@@ -61,6 +68,19 @@
     "subtext": "The best way to understand Fountainhead is to walk through it on a school day.",
     "button": "Book a Visit →"
   },
-  "metaTitle": "Fountainhead Schools — An IB School Group",
-  "metaDescription": "Fountainhead Schools is India's leading IB School Group — six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Ranked 4th nationally by Cfore 2026."
+  "sections": [
+    { "type": "hero-banner",   "order": 1,  "visible": true, "content": { "heading": "Schools Built Around How Children Actually Learn", "eyebrow": "An IB School Group · 6 Campuses · 3 Cities", "body": "Six campuses across Surat, Vapi and Chhatrapati Sambhajinagar." } },
+    { "type": "stats-band",    "order": 2,  "visible": true, "content": { "heading": "Uniquely Fountainhead" } },
+    { "type": "about",         "order": 3,  "visible": true, "content": { "heading": "One conviction, every campus", "body": "Founded in 2005 with six students and one belief." } },
+    { "type": "academics",     "order": 4,  "visible": true, "content": { "heading": "Philosophy & Academics" } },
+    { "type": "admissions",    "order": 5,  "visible": true, "content": { "heading": "How Admissions Works" } },
+    { "type": "contact",       "order": 6,  "visible": true, "content": { "heading": "Connect With Us" } },
+    { "type": "cta-band",      "order": 7,  "visible": true, "content": { "heading": "See a campus for yourself", "body": "The best way to understand Fountainhead is to walk through it on a school day.", "btnLabel": "Book a Visit →" } },
+    { "type": "footer",        "order": 8,  "visible": true, "content": { "heading": "Fountainhead Schools" } }
+  ],
+  "utilBar": {
+    "phones": ["8000-130-031"],
+    "email": "surat@fountainheadschools.org",
+    "visible": true
+  }
 }

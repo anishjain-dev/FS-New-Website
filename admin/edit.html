@@ -297,7 +297,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
             <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">Hero Section</h3>
             <div class="form-row">
               <div class="form-group"><label>Eyebrow</label><input type="text" id="fs-hero-eyebrow"></div>
-              <div class="form-group"><label>Hero Image Path</label><input type="text" id="fs-hero-image" placeholder="fsk/images/FSK Front Facade Image.jpg"></div>
+              <div class="form-group"><label>Hero Image</label><div class="img-widget" id="widget-fs-hero-image"></div><input type="hidden" id="fs-hero-image"></div>
             </div>
             <div class="form-row">
               <div class="form-group"><label>Heading</label><input type="text" id="fs-hero-heading"></div>
@@ -321,7 +321,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
               <div class="form-group"><label>Subtext (awards, ranks)</label><input type="text" id="fs-about-subtext"></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label>Image Path</label><input type="text" id="fs-about-image" placeholder="fsk/images/FSK Ground.jpg"></div>
+              <div class="form-group"><label>About Image</label><div class="img-widget" id="widget-fs-about-image"></div><input type="hidden" id="fs-about-image"></div>
               <div class="form-group"><label>Image Caption</label><input type="text" id="fs-about-caption"></div>
             </div>
 
@@ -729,7 +729,8 @@ function buildImageWidget(containerId, fieldId, campusFolder, initialFilename) {
 
   function render(filename) {
     const hasImg = !!filename;
-    const imgUrl = hasImg ? `/${campusFolder}/images/${filename}` : '';
+    // If filename already contains '/', use as-is; otherwise images are in root /images/
+    const imgUrl = hasImg ? (filename.includes('/') ? filename : `/images/${filename}`) : '';
     container.innerHTML = `
       <div class="img-widget-preview">
         ${hasImg
@@ -829,8 +830,8 @@ function populateForm(data) {
   updateStatusBadge(String(data.launched));
   document.querySelector('[data-field="launched"]').value = String(data.launched);
 
-  // Image widgets
-  const f = data.folder || data.id;
+  // Image widgets — use data.id for browse API (/api/campus/:id/images), not folder
+  const f = data.id || data.folder;
   buildImageWidget('widget-logo', 'field-logo', f, data.logo || '');
   buildImageWidget('widget-heroImage', 'field-heroImage', f, data.heroImage || '');
   buildImageWidget('widget-about-image', 'field-about-image', f, (data.about && data.about.image) || '');
@@ -895,7 +896,7 @@ function renderLeaderItem(l, i) {
   </div>`;
   // Build image widget after element is in DOM
   setTimeout(() => {
-    const f = campusData && (campusData.folder || campusData.id);
+    const f = campusData && (campusData.id || campusData.folder);
     if (f && document.getElementById(leaderWidgetId)) {
       buildImageWidget(leaderWidgetId, leaderFieldId, f, l.photo || '');
     }
@@ -1044,7 +1045,7 @@ async function saveForm() {
   btn.textContent = 'Saving…';
   btn.disabled = true;
   try {
-    const payload = campusData.isMain ? collectMainForm() : collectForm();
+    const payload = campusData.isMain ? collectMainFormFull() : collectForm();
     const res = await fetch(`/api/campus/${campusId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1361,7 +1362,7 @@ async function browseImages(fieldId, containerId, campusFolder) {
     const data = await r.json();
     files = data.files || [];
   } catch {}
-  if (!files.length) { showToast('No images found in this campus folder. Upload one first.', 'error'); return; }
+  if (!files.length) { showToast('No images found. Upload one first.', 'error'); return; }
 
   // Build modal
   let existing = document.getElementById('img-browse-modal');
@@ -1371,18 +1372,20 @@ async function browseImages(fieldId, containerId, campusFolder) {
   modal.id = 'img-browse-modal';
   modal.className = 'modal-overlay2 open';
   modal.innerHTML = `
-    <div class="modal2" style="max-width:560px;">
+    <div class="modal2" style="max-width:620px;">
       <h2 style="margin-bottom:4px;font-size:1rem;">Browse Images</h2>
       <p style="font-size:0.8rem;color:var(--mid);margin-bottom:16px;">Click an image to select it</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;max-height:360px;overflow-y:auto;">
-        ${files.map(f => `
-          <div onclick="selectBrowsedImage('${fieldId}','${containerId}','${campusFolder}','${f.replace(/'/g,"\\'")}');document.getElementById('img-browse-modal').remove()"
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;max-height:400px;overflow-y:auto;">
+        ${files.map(f => {
+          const fname = typeof f === 'object' ? f.filename : f;
+          const furl  = typeof f === 'object' ? f.url : `/${campusFolder}/images/${encodeURIComponent(f)}`;
+          return `<div onclick="selectBrowsedImage('${fieldId}','${containerId}','${furl.replace(/'/g,"\\'")}','${fname.replace(/'/g,"\\'")}');document.getElementById('img-browse-modal').remove()"
                style="cursor:pointer;border:2px solid var(--border);border-radius:6px;overflow:hidden;transition:0.15s;"
                onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border)'">
-            <img src="/${campusFolder}/images/${encodeURIComponent(f)}" style="width:100%;height:80px;object-fit:cover;display:block;" onerror="this.style.display='none'">
-            <div style="padding:4px 6px;font-size:0.65rem;font-family:Montserrat,sans-serif;font-weight:700;color:var(--mid);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${f}</div>
-          </div>
-        `).join('')}
+            <img src="${furl}" style="width:100%;height:80px;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            <div style="padding:4px 6px;font-size:0.65rem;font-family:Montserrat,sans-serif;font-weight:700;color:var(--mid);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${fname}</div>
+          </div>`;
+        }).join('')}
       </div>
       <div style="text-align:right;margin-top:16px;"><button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('img-browse-modal').remove()">Cancel</button></div>
     </div>`;
@@ -1390,11 +1393,10 @@ async function browseImages(fieldId, containerId, campusFolder) {
   modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
 }
 
-function selectBrowsedImage(fieldId, containerId, campusFolder, filename) {
+function selectBrowsedImage(fieldId, containerId, imgUrl, filename) {
   document.getElementById(fieldId).value = filename;
   // Re-render widget with new image
   const container = document.getElementById(containerId);
-  const imgUrl = `/${campusFolder}/images/${encodeURIComponent(filename)}`;
   const preview = container.querySelector('.img-widget-preview');
   if (preview) {
     preview.innerHTML = `<img src="${imgUrl}" style="max-height:160px;width:100%;object-fit:cover;display:block;">`;
@@ -1404,7 +1406,123 @@ function selectBrowsedImage(fieldId, containerId, campusFolder, filename) {
   markUnsaved();
 }
 
-// ── Main site populate / collect ───────────────────────────────────────────────
+// ── Main site extra fields (FS Settings card) ─────────────────────────────────
+function populateMainExtraForm(d) {
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ''; };
+  set('fs-name', d.name);
+  set('fs-shortcode', d.shortCode);
+  set('fs-tagline', d.tagline);
+  const colorEl = document.getElementById('fs-color');
+  const colorTextEl = document.getElementById('fs-color-text');
+  if (colorEl) colorEl.value = d.color || '#F2C418';
+  if (colorTextEl) colorTextEl.value = d.color || '#F2C418';
+  if (d.color) document.documentElement.style.setProperty('--campus-color', d.color);
+  const launchedEl = document.getElementById('fs-launched');
+  if (launchedEl) launchedEl.value = d.launched ? 'true' : 'false';
+  set('fs-meta-title', d.metaTitle);
+  set('fs-meta-desc', d.metaDescription);
+  const h = d.hero || {};
+  set('fs-hero-eyebrow', h.eyebrow);
+  set('fs-hero-heading', h.heading);
+  set('fs-hero-subtext', h.subtext);
+  buildImageWidget('widget-fs-hero-image', 'fs-hero-image', 'fs', h.image || '');
+  set('fs-hero-btn1', h.btnPrimary);
+  set('fs-hero-btn2', h.btnSecondary);
+  const a = d.about || {};
+  set('fs-about-heading', a.heading);
+  set('fs-about-body', a.body);
+  set('fs-about-subtext', a.subtext);
+  buildImageWidget('widget-fs-about-image', 'fs-about-image', 'fs', a.image || '');
+  set('fs-about-caption', a.imageCaption);
+  const ct = d.ctaBand || {};
+  set('fs-cta-heading', ct.heading);
+  set('fs-cta-subtext', ct.subtext);
+  set('fs-cta-button', ct.button);
+  const c = d.contact || {};
+  set('fs-phone1', c.phone1);
+  set('fs-phone2', c.phone2);
+  set('fs-email', c.email);
+  set('fs-whatsapp', c.whatsapp);
+  set('fs-address', c.address);
+  const dp = (d.results || {}).dp || {};
+  set('fs-dp-year', dp.year);
+  set('fs-dp-avg', dp.average);
+  set('fs-dp-students', dp.students);
+  set('fs-dp-diplomas', dp.diplomas);
+  set('fs-dp-highest', dp.highest);
+  const myp = (d.results || {}).myp || {};
+  set('fs-myp-year', myp.year);
+  set('fs-myp-avg', myp.average);
+  set('fs-myp-students', myp.students);
+  set('fs-myp-scored40', myp.scored40);
+  set('fs-myp-highest', myp.highest);
+  const ft = d.footer || {};
+  set('fs-footer-tagline', ft.tagline);
+  set('fs-footer-year', ft.year);
+}
+
+// collectMainFormFull: standard form data merged with FS-specific extras
+function collectMainFormFull() {
+  const base = collectForm(); // gets name, shortCode, tagline, color, launched, heroImage, logo, sections etc
+  const get = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  return {
+    ...base,
+    isMain: true,
+    metaTitle: get('fs-meta-title') || base.metaTitle || campusData.metaTitle,
+    metaDescription: get('fs-meta-desc') || base.metaDescription || campusData.metaDescription,
+    hero: {
+      eyebrow: get('fs-hero-eyebrow'),
+      heading: get('fs-hero-heading'),
+      subtext: get('fs-hero-subtext'),
+      image: get('fs-hero-image'),
+      btnPrimary: get('fs-hero-btn1'),
+      btnSecondary: get('fs-hero-btn2')
+    },
+    about: {
+      ...(campusData.about || {}),
+      heading: get('fs-about-heading') || base.about && base.about.heading,
+      body: get('fs-about-body') || base.about && base.about.body,
+      subtext: get('fs-about-subtext'),
+      image: get('fs-about-image'),
+      imageCaption: get('fs-about-caption')
+    },
+    ctaBand: {
+      heading: get('fs-cta-heading'),
+      subtext: get('fs-cta-subtext'),
+      button: get('fs-cta-button')
+    },
+    contact: {
+      phone1: get('fs-phone1'),
+      phone2: get('fs-phone2'),
+      email: get('fs-email'),
+      whatsapp: get('fs-whatsapp'),
+      address: get('fs-address'),
+      phones: [get('fs-phone1'), get('fs-phone2')].filter(Boolean)
+    },
+    results: {
+      dp: {
+        year: get('fs-dp-year'),
+        average: get('fs-dp-avg'),
+        students: get('fs-dp-students'),
+        diplomas: get('fs-dp-diplomas'),
+        highest: get('fs-dp-highest')
+      },
+      myp: {
+        year: get('fs-myp-year'),
+        average: get('fs-myp-avg'),
+        students: get('fs-myp-students'),
+        scored40: get('fs-myp-scored40'),
+        highest: get('fs-myp-highest')
+      }
+    },
+    footer: {
+      tagline: get('fs-footer-tagline'),
+      year: get('fs-footer-year')
+    }
+  };
+}
+
+// ── Main site populate / collect (legacy — kept for compatibility) ──────────────
 function populateMainForm(d) {
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ''; };
   // Header fields
@@ -1425,14 +1543,14 @@ function populateMainForm(d) {
   set('fs-hero-eyebrow', h.eyebrow);
   set('fs-hero-heading', h.heading);
   set('fs-hero-subtext', h.subtext);
-  set('fs-hero-image', h.image);
+  buildImageWidget('widget-fs-hero-image', 'fs-hero-image', 'fs', h.image || '');
   set('fs-hero-btn1', h.btnPrimary);
   set('fs-hero-btn2', h.btnSecondary);
   const a = d.about || {};
   set('fs-about-heading', a.heading);
   set('fs-about-body', a.body);
   set('fs-about-subtext', a.subtext);
-  set('fs-about-image', a.image);
+  buildImageWidget('widget-fs-about-image', 'fs-about-image', 'fs', a.image || '');
   set('fs-about-caption', a.imageCaption);
   const ct = d.ctaBand || {};
   set('fs-cta-heading', ct.heading);
@@ -1544,19 +1662,25 @@ async function loadCampus() {
     document.title = `Edit ${campusData.shortCode} — FS CMS`;
 
     if (campusData.isMain) {
-      // Show main-site editor, hide campus-specific sections
-      document.getElementById('sec-main').classList.remove('hidden');
-      document.getElementById('sidebar-main').style.display = '';
-      ['sec-builder','sec-header','sec-basic','sec-hero','sec-utilbar','sec-nav','sec-about',
-       'sec-academics','sec-admissions','sec-contact','sec-life','sec-footer'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
-      document.querySelectorAll('.sidebar-nav a:not(#sidebar-main)').forEach(a => a.style.display = 'none');
+      // FS main site — show same campus editor sections + FS Settings extras
       document.getElementById('page-sub').textContent = 'Editing main FS homepage · Ctrl+S to save · Changes saved to data/fs.json';
       // Hide delete button for main site
       document.querySelector('[onclick="deleteCampus()"]').style.display = 'none';
-      populateMainForm(campusData);
+      // Show FS Settings sidebar link, hide sections that don't apply to FS main
+      document.getElementById('sidebar-main').style.display = '';
+      document.getElementById('sidebar-main').textContent = '⚙ FS Settings';
+      document.getElementById('sidebar-main').href = '#sec-main';
+      // Hide nav/academics/admissions/student-life sidebar links for FS (not used)
+      ['sec-nav','sec-life','sec-admissions'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      document.querySelectorAll('.sidebar-nav a[href="#sec-nav"], .sidebar-nav a[href="#sec-life"], .sidebar-nav a[href="#sec-admissions"]').forEach(a => a.style.display = 'none');
+      // Show FS Settings card
+      document.getElementById('sec-main').classList.remove('hidden');
+      populateForm(campusData);
+      // Also populate FS-specific extras (contact details, results, ctaBand)
+      populateMainExtraForm(campusData);
     } else {
       populateForm(campusData);
     }
