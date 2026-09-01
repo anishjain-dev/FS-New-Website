@@ -1,0 +1,200 @@
+{
+  "id": "fwgs",
+  "folder": "fwgs",
+  "name": "Fountainhead Wockhardt Global School",
+  "shortCode": "FWGS",
+  "color": "#005BAA",
+  "launched": true,
+  "metaTitle": "Fountainhead Wockhardt Global School (FWGS) — IB Continuum, Chhatrapati Sambhajinagar",
+  "metaDescription": "Fountainhead Wockhardt Global School (FWGS) — Full IB continuum: EYP, PYP, MYP, Diploma. Progressive, inquiry-based education in Chhatrapati Sambhajinagar, Maharashtra.",
+  "logo": "fwgs-logo.png",
+  "heroImage": "https://fwgs.in/wp-content/uploads/2026/04/FWGS-Poster-1-2-scaled.jpg",
+  "heroHeading": "Fountainhead Wockhardt Global School",
+  "heroSubtext": "IB World School — EYP to Diploma Programme. Chhatrapati Sambhajinagar, Maharashtra.",
+  "heroButtonPrimary": "Explore FWGS",
+  "heroButtonSecondary": "Apply for Admission",
+  "utilBar": {
+    "policyLabel": "Child Protection Policy",
+    "policyFile": "FSK Child Protection Policy.pdf",
+    "phones": ["8000-130-031"],
+    "email": "info@fwgs.in"
+  },
+  "nav": {
+    "about": { "label": "About FWGS" },
+    "academics": { "label": "Academics at FWGS" },
+    "admissions": { "label": "Admissions at FWGS" },
+    "campusLife": { "label": "Parent Essentials" },
+    "contact": { "label": "Contact Us" },
+    "policies": { "label": "Policies" }
+  },
+  "tabs": [
+    {"id":"about-tab","label":"About FWGS"},
+    {"id":"eyp-tab","label":"Early Years"},
+    {"id":"academics-tab","label":"Academics"},
+    {"id":"admissions-tab","label":"Admissions"},
+    {"id":"policies-tab","label":"Policies"},
+    {"id":"life-tab","label":"Student Life"},
+    {"id":"contact-tab","label":"Contact"}
+  ],
+  "stats": [
+    {"value":"EYP→DP","label":"Full IB Continuum"},
+    {"value":"Maharashtra","label":"Chhatrapati Sambhajinagar"},
+    {"value":"IB","label":"Authorised School"}
+  ],
+  "about": {
+    "sectionLabel": "About FWGS",
+    "heading": "A School With a Vision Forward",
+    "intro": "Fountainhead Wockhardt Global School (FWGS) is the product of a unique partnership — where the values of an established institution meet the progressive pedagogy of Fountainhead Schools. Today, FWGS is a full IB continuum school offering Early Years, PYP, MYP, and the IB Diploma Programme. The school is committed to nurturing leaders with character and competence — graduates who are globally-minded, locally grounded, and ready for the challenges and opportunities of the 21st century.",
+    "image": "fwgs-logo.png",
+    "imageCaption": "Fountainhead Wockhardt Global School — Chhatrapati Sambhajinagar",
+    "leadershipHeading": "The FWGS Timeline",
+    "leadershipLabel": "Our Story",
+    "leaders": [],
+    "timeline": [
+      {
+        "tag": "Foundation",
+        "title": "Wockhardt Global School Established",
+        "body": "The Wockhardt Group establishes Wockhardt Global School in Surat — a forward-thinking institution with a vision for global education."
+      },
+      {
+        "tag": "Partnership",
+        "title": "Fountainhead Schools Joins",
+        "body": "Fountainhead Schools partners with Wockhardt Global School, bringing its award-winning IB pedagogy, curriculum expertise, and learning philosophy to the campus — creating Fountainhead Wockhardt Global School (FWGS)."
+      },
+      {
+        "tag": "Vision Forward",
+        "title": "Full IB Continuum & Growing",
+        "body": "FWGS now offers the complete IB continuum — Early Years, PYP, MYP, and the Diploma Programme — with a focus on inquiry, international-mindedness, and graduate excellence."
+      }
+    ]
+  },
+  "earlyYears": {
+    "sectionLabel": "Early Years Programme",
+    "heading": "The EYP at FWGS",
+    "intro": "The Early Years Programme at FWGS is a carefully designed introduction to learning — rooted in the IB philosophy, driven by inquiry, and centred on the whole child.",
+    "pillarsHeading": "The Four Pillars of EYP at FWGS",
+    "pillars": [
+      {
+        "title": "PYP Learner Agency",
+        "body": "Children are not passive recipients of knowledge — they are active agents of their own learning. At FWGS, we design experiences that give children genuine choice, voice, and ownership of their learning journey from the very beginning."
+      },
+      {
+        "title": "Inquiry-Based Play",
+        "body": "Play is not a break from learning — it is the most powerful form of learning in early childhood. Every activity at FWGS is designed to provoke curiosity, encourage exploration, and develop critical thinking through hands-on, meaningful play."
+      },
+      {
+        "title": "Social-Emotional Resilience",
+        "body": "We develop the emotional vocabulary and resilience that children need to navigate relationships, setbacks, and the complexity of the world. Social-emotional learning is woven into every moment of the school day — not treated as a separate subject."
+      },
+      {
+        "title": "Environment as Third Teacher",
+        "body": "The classroom itself is a learning tool. We design our spaces intentionally — with materials that invite exploration, natural elements that ground children, and displays that reflect and extend their thinking. The environment teaches alongside the teacher."
+      }
+    ],
+    "transdisciplinaryThemes": [
+      {"theme":"Who We Are","focus":"Identity, relationships, health, beliefs","examples":"What makes me unique? How do I connect with others?"},
+      {"theme":"How We Express Ourselves","focus":"Creativity, expression, culture, aesthetics","examples":"How do we communicate our ideas? What is art?"},
+      {"theme":"How the World Works","focus":"Natural world, science, systems","examples":"Why do things change? How do forces work?"},
+      {"theme":"How We Organise Ourselves","focus":"Communities, systems, organisations","examples":"How do communities work together? What are rules for?"},
+      {"theme":"Sharing the Planet","focus":"Rights, environment, coexistence","examples":"How do we share resources? Why is the environment important?"},
+      {"theme":"Where We Are in Place & Time","focus":"History, geography, culture, heritage","examples":"How have people lived before us? What connects us?"}
+    ],
+    "ibLearnerProfile": ["Inquirers","Knowledgeable","Thinkers","Communicators","Principled","Open-Minded","Caring","Risk-Takers","Balanced","Reflective"]
+  },
+  "academics": {
+    "sectionLabel": "Academics",
+    "heading": "Academic Programmes at FWGS",
+    "programmes": [
+      {"ages":"Ages 3—6","title":"Early Years Programme","body":"Four pillars: PYP Learner Agency, Inquiry-Based Play, Social-Emotional Resilience, and Environment as Third Teacher."},
+      {"ages":"Grades 1—5","title":"Primary Years Programme","body":"Six transdisciplinary units of inquiry per year. Collaborative, concept-driven learning through real-world connections."},
+      {"ages":"Grades 6—10","title":"Middle Years Programme","body":"Eight subject groups with global context. Critical thinking, intercultural awareness, and community service as action."},
+      {"ages":"Grades 11—12","title":"IB Diploma Programme","body":"Internationally recognised university preparation. Six subject groups, Theory of Knowledge, Extended Essay, and CAS."}
+    ],
+    "learningModelHeading": "The FS Learning Model",
+    "learningModelLabel": "Learning Philosophy",
+    "learningModelQuote": "",
+    "learningModelText1": "",
+    "learningModelText2": "",
+    "mythsHeading": "",
+    "mythsLabel": "",
+    "myths": [],
+    "brochures": [
+      {"label":"PYP Brochure","file":"images/FWGS-PYP-Brochure.pdf"},
+      {"label":"MYP Brochure","file":"images/FWGS-MYP-Brochure.pdf"},
+      {"label":"DP Brochure","file":"images/FWGS-DP-Brochure.pdf"}
+    ]
+  },
+  "admissions": {
+    "sectionLabel": "Admissions",
+    "heading": "Joining FWGS — The FS Way",
+    "subheading": "Our admission process — PAE — is transparent, fair, and centred on the child.",
+    "processHeading": "The PAE Process",
+    "steps": [
+      {"letter":"P","title":"Pre-Admission","body":"Initial enquiry and campus tour. Meet our admissions team to learn about our programmes, facilities, and the IB continuum."},
+      {"letter":"A","title":"Assessment","body":"Age-appropriate interaction. For younger grades, a warm play-based session. For older grades, a casual conversation with our academic team."},
+      {"letter":"E","title":"Enrolment","body":"Offer of admission, documentation, fee payment, and welcome orientation. Your child joins the Fountainhead family."}
+    ],
+    "docsRequired": [
+      "Child & parent photograph (grey background, as on Aadhaar)",
+      "Family photograph (parents, child & siblings)",
+      "Child's birth certificate",
+      "Vaccination card (mandatory till Grade 2)",
+      "Report cards for previous two grades",
+      "School undertaking (hard copy)",
+      "No-due certificate (hard copy; not for EY)",
+      "International applicants: passport & visa copies",
+      "Original School Leaving Certificate once admission is confirmed"
+    ]
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "heading": "Reach Fountainhead Wockhardt Global School",
+    "phones": ["8000-130-031"],
+    "email": "info@fwgs.in",
+    "whatsapp": "+918000130031",
+    "address": "1, SEZ, Five Star, E-1/NP, Shendra MIDC Industrial Estate,\nShendra, Chhatrapati Sambhajinagar — 431154, Maharashtra",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720!2d72.82!3d21.20!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzAwLjAiTiA3MsKwNDknMTIuMCJF!5e0!3m2!1sen!2sin!4v1",
+    "instagram": "https://instagram.com/fountainheadschoolkunkni",
+    "facebook": "",
+    "youtube": "https://www.youtube.com/@fountainheadschools",
+    "linkedin": "https://linkedin.com/company/fountainheadschools"
+  },
+  "studentLife": {
+    "sectionLabel": "Student Life",
+    "heading": "Life at FWGS",
+    "sportsLabel": "Sports & Physical Education",
+    "sportsHeading": "Active Minds, Active Bodies",
+    "sportsBody": "FWGS is committed to the physical development of every student alongside academic achievement. Sports and physical education are integral to the school day — not an add-on.",
+    "sportsTags": ["Football","Cricket","Basketball","Badminton","Athletics","Gymnastics"],
+    "hdpHeading": "",
+    "hdpBody": "",
+    "artsLabel": "Performing Arts",
+    "artsHeading": "Music, Drama & Dance",
+    "artsBody": "FWGS students perform, express, and create through music, drama, and dance. Annual performances and inter-school events give students platforms to share their talent with the world. The arts are not extra-curricular at FWGS — they are central to the development of the whole person the IB seeks to grow.",
+    "clubsLabel": "Clubs & Activities",
+    "clubsHeading": "Beyond the Classroom",
+    "clubsBody": "Robotics, Model United Nations, Debate, Photography, Coding, Environmental Action — FWGS students engage in a wide range of clubs and activities that build skills, friendships, and purpose beyond the curriculum. All clubs align with the IB's Action strand — students are encouraged to connect their learning to real-world impact.",
+    "wellbeingItems": [
+      {"title":"Counselling","body":"Dedicated counsellors support students' academic choices, university applications, and personal wellbeing throughout their time at FWGS."},
+      {"title":"Parent Portal — Nucleus","body":"FWGS parents have access to Nucleus — for progress tracking, communication, calendars, and school updates. Available on web and iOS."},
+      {"title":"CAS — Creativity, Activity, Service","body":"All IB Diploma students engage in CAS — a core component that develops students as compassionate, active citizens through real-world projects and community service."},
+      {"title":"International Mindedness","body":"FWGS's location and community bring genuine diversity. Students learn to think across cultures, engage with global issues, and act with empathy and understanding."}
+    ],
+    "uniforms": {
+      "vendor": "Big Rajasaab, Tilak Road, Chhatrapati Sambhajinagar",
+      "items": [
+        {"name":"T-Shirts","price":"₹425 – ₹575"},
+        {"name":"Track Pants","price":"₹310 – ₹570"}
+      ]
+    }
+  },
+  "footer": {
+    "description": "Full IB continuum — EYP, PYP, MYP, Diploma. Chhatrapati Sambhajinagar, Maharashtra. Part of the Fountainhead Schools group.",
+    "year": "2026"
+  },
+  "ctaBand": {
+    "heading": "Visit FWGS",
+    "subtext": "The best way to understand Fountainhead is to walk through it on a school day.",
+    "buttonLabel": "Book a Campus Visit"
+  }
+}

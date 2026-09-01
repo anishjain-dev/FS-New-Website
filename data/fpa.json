@@ -1,0 +1,165 @@
+{
+  "id": "fpa",
+  "folder": "fpa",
+  "name": "Fountainhead Preschool Adajan",
+  "shortCode": "FPA",
+  "color": "#005BAA",
+  "launched": true,
+  "metaTitle": "Fountainhead Preschool Adajan (FPA) — IB PYP Early Years, Surat",
+  "metaDescription": "Fountainhead Preschool Adajan — IB PYP-aligned early years education in Adajan, Surat. Ages 3–6.",
+  "logo": "fs-main-logo.png",
+  "heroImage": "fpa-hero.jpg",
+  "heroHeading": "Fountainhead Preschool Adajan",
+  "heroSubtext": "Early years for ages 2–6, Adajan, Surat.",
+  "heroButtonPrimary": "Explore FPA",
+  "heroButtonSecondary": "Enquire Now",
+  "utilBar": {
+    "policyLabel": "Child Protection Policy",
+    "policyFile": "FSK Child Protection Policy.pdf",
+    "phones": ["+91 92270 18880"],
+    "email": "fpa.info@fountainheadpreschools.org"
+  },
+  "nav": {
+    "about": { "label": "About FPA" },
+    "academics": { "label": "Programmes" },
+    "admissions": { "label": "Admissions" },
+    "campusLife": { "label": "" },
+    "contact": { "label": "Contact Us" },
+    "policies": { "label": "Policies" }
+  },
+  "tabs": [
+    {"id":"about-tab","label":"About FPA"},
+    {"id":"programme-tab","label":"Programme"},
+    {"id":"admissions-tab","label":"Admissions"},
+    {"id":"policies-tab","label":"Policies"},
+    {"id":"contact-tab","label":"Contact"}
+  ],
+  "stats": [
+    {"value":"Adajan","label":"Surat, Gujarat"},
+    {"value":"IB PYP","label":"International Baccalaureate"},
+    {"value":"3–6","label":"Years (Early Years)"},
+    {"value":"FS Group","label":"Flagship Learning Model"}
+  ],
+  "about": {
+    "sectionLabel": "About FPA",
+    "heading": "Fountainhead Preschool Adajan",
+    "intro": "Fountainhead Preschool Adajan (FPA) brings the renowned Fountainhead early years experience to the heart of Adajan, Surat. With the same IB PYP-aligned philosophy that underpins FSK and all FS Group campuses, FPA is the ideal starting point for a child's lifelong love of learning. At FPA, every child's curiosity is celebrated. Our warm, nurturing environment is designed to help young learners discover who they are, how they express themselves, and how the world works — through inquiry, play, and collaboration.",
+    "image": "fpa-hero.jpg",
+    "imageCaption": "Fountainhead Preschool Adajan · Surat",
+    "leadershipHeading": "How We Learn at FPA",
+    "leadershipLabel": "Our Philosophy",
+    "leaders": [],
+    "learningPillars": [
+      {
+        "icon": "leaf",
+        "title": "Learner Agency",
+        "body": "Children are active agents of their own learning — with genuine choice, voice, and ownership from the very first day at FPA."
+      },
+      {
+        "icon": "search",
+        "title": "Inquiry Through Play",
+        "body": "Play is the most powerful form of learning in early childhood. Every activity at FPA provokes curiosity and exploration."
+      },
+      {
+        "icon": "heart",
+        "title": "Social-Emotional Resilience",
+        "body": "We develop emotional vocabulary and the resilience children need to navigate relationships and the world around them."
+      },
+      {
+        "icon": "plant",
+        "title": "Environment as Third Teacher",
+        "body": "FPA classrooms are designed intentionally — spaces that invite exploration, ground children, and extend their thinking."
+      }
+    ]
+  },
+  "academics": {
+    "sectionLabel": "Programmes",
+    "heading": "Learning at FPA",
+    "programmes": [
+      {"ages":"Ages 2–3","title":"Playgroup","body":"Mon–Fri, 2h 30m. Play-based introduction to learning."},
+      {"ages":"Ages 3–4","title":"Pre Nursery","body":"Mon–Fri, 3h. Foundation inquiry learning."},
+      {"ages":"Ages 3–4.5","title":"Nursery","body":"Mon–Fri, 3h. Developing social and academic readiness."},
+      {"ages":"Ages 4–6","title":"Mixed Age Kindergarten","body":"Mon–Fri, 5h. IB PYP-aligned full programme for pre-primary children. Staff ratio: 1:10."}
+    ],
+    "learningModelHeading": "IB PYP Early Years",
+    "learningModelLabel": "Programme",
+    "learningModelQuote": "",
+    "learningModelText1": "IB Primary Years Programme-aligned early childhood education. Four pillars: Learner Agency, Inquiry-Based Play, Social-Emotional Resilience, and the Environment as Third Teacher.",
+    "learningModelText2": "Mornings begin with an inquiry provocation — a question, an object, a problem to explore. Children move through planned and child-led activities, spending time outdoors, in the arts corner, in the library, and in conversation with each other and their teachers. No two days look exactly alike — and that's the point.",
+    "mythsHeading": "",
+    "mythsLabel": "",
+    "myths": [],
+    "ibLearnerProfile": ["Inquirers","Knowledgeable","Thinkers","Communicators","Principled","Open-Minded","Caring","Risk-Takers","Balanced","Reflective"],
+    "transdisciplinaryThemes": [
+      "Who We Are",
+      "How We Express Ourselves",
+      "How the World Works",
+      "How We Organise Ourselves",
+      "Sharing the Planet",
+      "Where We Are in Place & Time"
+    ],
+    "enrichmentActivities": [
+      "Visual Arts & Craft",
+      "Music & Movement",
+      "Yoga & Mindfulness",
+      "Storytelling & Drama",
+      "Outdoor Play & Exploration"
+    ],
+    "programmeSchedule": [
+      {"programme":"Playgroup","age":"2 – 3 years","duration":"2 h 30 min","days":"Mon – Fri"},
+      {"programme":"Pre Nursery","age":"3 – 4 years","duration":"3 h","days":"Mon – Fri"},
+      {"programme":"Nursery","age":"3 – 4.5 years","duration":"3 h","days":"Mon – Fri"},
+      {"programme":"Mixed Age Kindergarten","age":"4 – 6 years","duration":"5 h","days":"Mon – Fri"}
+    ],
+    "staffRatio": "1:10"
+  },
+  "admissions": {
+    "sectionLabel": "Admissions",
+    "heading": "Join FPA",
+    "subheading": "Our PAE process — three steps. Warm, welcoming, and centred on your child.",
+    "processHeading": "The PAE Process",
+    "steps": [
+      {"letter":"P","title":"Pre-Admission","body":"Visit FPA, meet the teachers, and experience the warm Fountainhead environment firsthand. Ask every question you have."},
+      {"letter":"A","title":"Assessment","body":"A gentle, play-based interaction to understand your child and answer all your questions. Relaxed, friendly, and child-centred."},
+      {"letter":"E","title":"Enrolment","body":"Welcome to FPA — documentation, orientation day, and your child's first steps at Fountainhead."}
+    ],
+    "docsRequired": [
+      "Birth certificate / Age proof",
+      "Passport-size photographs (4 copies)",
+      "Residential address proof",
+      "Aadhar card (child and parents)"
+    ]
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "heading": "Reach Fountainhead Preschool Adajan",
+    "phones": ["+91 92270 18880"],
+    "email": "fpa.info@fountainheadpreschools.org",
+    "whatsapp": "+919227018880",
+    "address": "3, Madhuvilla Bungalow, Madhubha Park,\nAdajan, Surat — 395007, Gujarat",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720!2d72.82!3d21.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEwJzA0LjgiTiA3MsKwNDknMTMuMiJF!5e0!3m2!1sen!2sin!4v1",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "https://www.youtube.com/@fountainheadschools",
+    "linkedin": ""
+  },
+  "studentLife": {
+    "sectionLabel": "Student Life",
+    "heading": "Life at FPA",
+    "sportsLabel": "",
+    "sportsHeading": "",
+    "sportsBody": "",
+    "sportsTags": [],
+    "hdpHeading": "",
+    "hdpBody": ""
+  },
+  "footer": {
+    "description": "IB PYP early years school in Adajan, Surat. Part of the Fountainhead Schools group.",
+    "year": "2026"
+  },
+  "ctaBand": {
+    "heading": "Visit FPA",
+    "subtext": "Come meet our teachers and see the space where your child will flourish.",
+    "buttonLabel": "Book a Visit"
+  }
+}

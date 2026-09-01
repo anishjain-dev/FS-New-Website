@@ -271,23 +271,52 @@ async function loadCampuses() {
       return;
     }
     grid.innerHTML = campuses.map(c => `
-      <div class="campus-card">
+      <div class="campus-card" id="card-${c.id}">
         <div class="campus-card-top" style="background:${c.color || '#005BAA'};"></div>
         <div class="campus-card-body">
           <div class="campus-card-header">
             <span class="campus-shortcode" style="color:${c.color || '#005BAA'};">${c.shortCode}</span>
-            <span class="status-badge ${c.launched ? 'launched' : 'draft'}">${c.launched ? 'Launched' : 'Draft'}</span>
+            <span class="status-badge ${c.launched ? 'launched' : 'draft'}" id="badge-${c.id}">${c.launched ? 'Launched' : 'Draft'}</span>
           </div>
           <div class="campus-name">${c.name}</div>
         </div>
-        <div class="campus-card-footer">
+        <div class="campus-card-footer" style="flex-wrap:wrap;gap:8px;">
           <a href="edit.html?id=${c.id}" class="btn btn-primary btn-sm">Edit</a>
           <a href="/${c.folder}/index.html" target="_blank" class="btn btn-outline btn-sm">Preview ↗</a>
+          <button class="btn btn-sm" id="toggle-btn-${c.id}"
+            style="${c.launched ? 'background:#fef3c7;color:#92400e;border:1.5px solid #f59e0b;' : 'background:#dcfce7;color:#166534;border:1.5px solid #22c55e;'}"
+            onclick="toggleStatus('${c.id}', ${c.launched})">
+            ${c.launched ? '⏸ Set Draft' : '🚀 Launch'}
+          </button>
         </div>
       </div>
     `).join('');
   } catch (e) {
     document.getElementById('campus-grid').innerHTML = `<div class="loading">Error: ${e.message}</div>`;
+  }
+}
+
+async function toggleStatus(id, currentlyLaunched) {
+  const newStatus = !currentlyLaunched;
+  const label = newStatus ? 'Launch' : 'set to Draft';
+  if (!confirm(`${label} campus "${id}"?`)) return;
+  try {
+    // Fetch current campus data
+    const r1 = await fetch(`/api/campus/${id}`);
+    const data = await r1.json();
+    data.launched = newStatus;
+    // Save back
+    const r2 = await fetch(`/api/campus/${id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const res = await r2.json();
+    if (!r2.ok) throw new Error(res.error || 'Failed');
+    showToast(`Campus "${id}" ${newStatus ? 'launched!' : 'set to Draft.'}`, 'success');
+    loadCampuses(); // Refresh cards
+  } catch (e) {
+    showToast('Error: ' + e.message, 'error');
   }
 }
 

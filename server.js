@@ -3,7 +3,31 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 const { generateCampusHTML } = require('./template');
+
+// Multer storage: save to campus folder or images/ subfolder
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    const id = req.params.id;
+    const campusFile = path.join(__dirname, 'data', `${id}.json`);
+    let folder = path.join(__dirname, id);
+    if (fs.existsSync(campusFile)) {
+      try {
+        const d = JSON.parse(fs.readFileSync(campusFile, 'utf8'));
+        folder = path.join(__dirname, d.folder || id);
+      } catch {}
+    }
+    const imgDir = path.join(folder, 'images');
+    if (!fs.existsSync(imgDir)) fs.mkdirSync(imgDir, { recursive: true });
+    cb(null, imgDir);
+  },
+  filename(req, file, cb) {
+    // Keep original filename
+    cb(null, file.originalname);
+  }
+});
+const upload = multer({ storage, limits: { fileSize: 20 * 1024 * 1024 } });
 
 const app = express();
 const PORT = 3000;
@@ -145,6 +169,52 @@ app.post('/api/campus/:id', (req, res) => {
     fs.writeFileSync(campusesFile, JSON.stringify(campuses, null, 2), 'utf8');
 
     res.json({ success: true, id, message: `Campus ${id} updated and HTML regenerated.` });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// POST /api/upload/:id — upload image for a campus
+app.post('/api/upload/:id', upload.single('image'), (req, res) => {
+  try {
+    if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+    const id = req.params.id;
+    const campusFile = path.join(__dirname, 'data', `${id}.json`);
+    let folder = id;
+    if (fs.existsSync(campusFile)) {
+      try { folder = JSON.parse(fs.readFileSync(campusFile, 'utf8')).folder || id; } catch {}
+    }
+    const url = `/${folder}/images/${req.file.filename}`;
+    res.json({ success: true, url, filename: req.file.filename });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// DELETE /api/campus/:id — delete campus
+app.delete('/api/campus/:id', (req, res) => {
+  try {
+    const id = req.params.id;
+    const campusFile = path.join(DATA, `${id}.json`);
+    if (!fs.existsSync(campusFile)) return res.status(404).json({ error: 'Campus not found' });
+
+    // Read campus data to get folder name
+    const campusData = JSON.parse(fs.readFileSync(campusFile, 'utf8'));
+    const folder = path.join(ROOT, campusData.folder || id);
+
+    // Delete JSON file
+    fs.unlinkSync(campusFile);
+
+    // Delete HTML folder recursively
+    if (fs.existsSync(folder)) fs.rmSync(folder, { recursive: true, force: true });
+
+    // Remove from campuses.json
+    const campusesFile = path.join(DATA, 'campuses.json');
+    const campuses = JSON.parse(fs.readFileSync(campusesFile, 'utf8'));
+    const updated = campuses.filter(c => c.id !== id);
+    fs.writeFileSync(campusesFile, JSON.stringify(updated, null, 2), 'utf8');
+
+    res.json({ success: true, message: `Campus ${id} deleted.` });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }

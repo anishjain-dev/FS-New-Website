@@ -8,75 +8,71 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --blue: #005BAA;
+  --blue: #005BAA; --blue-dark: #004a8c;
   --red: #B8292F;
   --gold: #F2C418;
   --dark: #0C1920;
-  --bg: #f4f6f8;
+  --bg: #f0f2f5;
   --white: #ffffff;
-  --border: #e2e6ea;
+  --border: #dde2ea;
   --text: #1a2530;
-  --mid: #556370;
+  --mid: #5a6878;
   --radius: 8px;
-  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  --green: #16a34a;
 }
-body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); }
+body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
 
+/* ── Top nav ── */
 .topnav {
-  background: var(--dark);
-  padding: 0 32px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 60px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  background: var(--dark); padding: 0 28px;
+  display: flex; align-items: center; gap: 14px;
+  height: 58px; position: sticky; top: 0; z-index: 200;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
 }
-.topnav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.fs-star { width: 32px; height: 32px; background: var(--gold); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); flex-shrink: 0; }
-.topnav-title { color: white; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; }
+.topnav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.fs-star { width: 30px; height: 30px; background: var(--gold); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+.topnav-title { color: white; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 0.88rem; }
 .topnav-title span { color: var(--gold); }
-.topnav-sep { margin-left: auto; }
-.topnav a.nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; font-weight: 600; padding: 6px 12px; border-radius: 4px; transition: 0.15s; }
+.topnav-sep { color: rgba(255,255,255,0.25); }
+.campus-label { color: var(--gold); font-size: 0.82rem; font-weight: 700; font-family: 'Montserrat',sans-serif; }
+.status-badge { padding: 3px 9px; border-radius: 20px; font-size: 0.68rem; font-weight: 700; font-family: 'Montserrat',sans-serif; letter-spacing: 0.05em; text-transform: uppercase; }
+.status-badge.launched { background: #16a34a; color: white; }
+.status-badge.draft { background: #94a3b8; color: white; }
+.topnav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.topnav a.nav-link { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.78rem; font-weight: 600; padding: 5px 10px; border-radius: 4px; transition: 0.15s; }
 .topnav a.nav-link:hover { color: white; background: rgba(255,255,255,0.1); }
-.topnav span.campus-label { color: var(--gold); font-size: 0.82rem; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+#unsaved-dot { display: none; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+#unsaved-dot.visible { display: block; }
 
-/* Layout */
-.page { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
-.page-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 36px; flex-wrap: wrap; }
-.page-top-left h1 { font-size: 1.4rem; font-weight: 800; }
-.page-top-left p { color: var(--mid); font-size: 0.85rem; margin-top: 4px; }
-.page-top-right { display: flex; gap: 10px; align-items: center; }
+/* ── Layout ── */
+.layout { display: flex; gap: 0; max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
+.sidebar { width: 200px; flex-shrink: 0; position: sticky; top: 74px; align-self: flex-start; margin-right: 24px; }
+.sidebar-nav { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); }
+.sidebar-nav a { display: block; padding: 9px 14px; font-size: 0.75rem; font-weight: 700; font-family: 'Montserrat',sans-serif; text-transform: uppercase; letter-spacing: 0.05em; color: var(--mid); text-decoration: none; border-left: 3px solid transparent; transition: 0.12s; }
+.sidebar-nav a:hover { background: #f4f6f8; color: var(--blue); border-left-color: var(--blue); }
+.sidebar-nav a.active { background: #eef4fb; color: var(--blue); border-left-color: var(--blue); }
+.main { flex: 1; min-width: 0; }
 
-/* Section card */
-.section-card {
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-  margin-bottom: 24px;
-  overflow: hidden;
-}
-.section-card-header {
-  padding: 18px 24px;
-  background: var(--dark);
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.section-card-header h2 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); }
-.section-card-body { padding: 24px; }
+/* ── Action bar ── */
+.action-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+.action-bar-left h1 { font-size: 1.3rem; font-weight: 800; }
+.action-bar-left p { color: var(--mid); font-size: 0.82rem; margin-top: 3px; }
+.action-bar-right { margin-left: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
-/* Form */
-.form-group { margin-bottom: 18px; }
-.form-group label {
-  display: block; font-size: 0.73rem; font-weight: 700;
-  color: var(--mid); margin-bottom: 6px;
-  font-family: 'Montserrat', sans-serif; letter-spacing: 0.06em; text-transform: uppercase;
+/* ── Section card ── */
+.section-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 20px; overflow: hidden; scroll-margin-top: 74px; }
+.section-card-header { padding: 14px 20px; background: var(--dark); display: flex; align-items: center; gap: 8px; }
+.section-card-header h2 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gold); }
+.section-card-body { padding: 20px; }
+
+/* ── Form ── */
+.form-group { margin-bottom: 16px; }
+.form-group > label.field-label {
+  display: block; font-size: 0.7rem; font-weight: 700;
+  color: var(--mid); margin-bottom: 5px;
+  font-family: 'Montserrat',sans-serif; letter-spacing: 0.07em; text-transform: uppercase;
 }
 .form-group input[type="text"],
 .form-group input[type="email"],
@@ -84,55 +80,76 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
 .form-group input[type="color"],
 .form-group select,
 .form-group textarea {
-  width: 100%; padding: 10px 12px; border: 1.5px solid var(--border);
-  border-radius: 4px; font-family: 'Nunito', sans-serif; font-size: 0.88rem;
-  color: var(--text); background: white; transition: border-color 0.15s;
-  appearance: none;
+  width: 100%; padding: 9px 11px; border: 1.5px solid var(--border);
+  border-radius: 5px; font-family: 'Nunito',sans-serif; font-size: 0.87rem;
+  color: var(--text); background: white; transition: border-color 0.15s; appearance: none;
 }
-.form-group textarea { resize: vertical; min-height: 80px; }
-.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--blue); }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.form-group textarea { resize: vertical; min-height: 75px; }
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus { outline: none; border-color: var(--blue); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
 
-/* Dynamic list */
-.dynamic-list { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
-.dynamic-item { padding: 16px; border-bottom: 1px solid var(--border); background: #fafbfc; }
+/* ── Image widget ── */
+.img-widget { border: 1.5px dashed var(--border); border-radius: 7px; overflow: hidden; background: #f8f9fb; transition: border-color 0.15s; }
+.img-widget:hover { border-color: var(--blue); }
+.img-widget-preview { position: relative; min-height: 130px; display: flex; align-items: center; justify-content: center; background: #eef0f4; }
+.img-widget-preview img { max-width: 100%; max-height: 180px; object-fit: contain; display: block; }
+.img-widget-preview .no-img { text-align: center; padding: 28px 16px; color: var(--mid); }
+.img-widget-preview .no-img svg { opacity: 0.35; margin-bottom: 8px; display: block; margin: 0 auto 8px; }
+.img-widget-preview .no-img span { font-size: 0.75rem; font-family: 'Montserrat',sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.img-widget-actions { display: flex; align-items: center; gap: 0; border-top: 1px solid var(--border); }
+.img-widget-filename { flex: 1; padding: 8px 12px; font-size: 0.78rem; color: var(--mid); font-family: 'Montserrat',sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.img-upload-btn { display: inline-flex; align-items: center; gap: 5px; background: var(--blue); color: white; padding: 8px 14px; cursor: pointer; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; border: none; transition: 0.15s; flex-shrink: 0; }
+.img-upload-btn:hover { background: var(--blue-dark); }
+.img-upload-btn input[type="file"] { display: none; }
+.img-remove-btn { background: none; border: none; border-left: 1px solid var(--border); padding: 8px 10px; cursor: pointer; color: var(--red); font-size: 0.75rem; font-weight: 700; font-family: 'Montserrat',sans-serif; transition: 0.15s; flex-shrink: 0; }
+.img-remove-btn:hover { background: #fff0f0; }
+
+/* ── Dynamic list ── */
+.dynamic-list { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 10px; }
+.dynamic-item { padding: 14px 16px; border-bottom: 1px solid var(--border); background: #fafbfc; }
 .dynamic-item:last-child { border-bottom: none; }
 .dynamic-item-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.dynamic-item-label { font-size: 0.75rem; font-weight: 700; color: var(--mid); font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
-.btn-remove { background: none; border: 1.5px solid var(--red); color: var(--red); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.7rem; font-weight: 700; font-family: 'Montserrat', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; }
+.dynamic-item-label { font-size: 0.72rem; font-weight: 700; color: var(--mid); font-family: 'Montserrat',sans-serif; text-transform: uppercase; letter-spacing: 0.07em; }
+.btn-remove { background: none; border: 1.5px solid var(--red); color: var(--red); padding: 3px 9px; border-radius: 4px; cursor: pointer; font-size: 0.68rem; font-weight: 700; font-family: 'Montserrat',sans-serif; letter-spacing: 0.06em; text-transform: uppercase; transition: 0.12s; }
 .btn-remove:hover { background: var(--red); color: white; }
-.btn-add { background: none; border: 1.5px dashed var(--border); color: var(--mid); padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 700; font-family: 'Montserrat', sans-serif; width: 100%; text-align: center; transition: 0.15s; }
+.btn-add { background: none; border: 1.5px dashed #c8d0dc; color: var(--mid); padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 0.76rem; font-weight: 700; font-family: 'Montserrat',sans-serif; width: 100%; text-align: center; transition: 0.15s; margin-top: 4px; }
 .btn-add:hover { border-color: var(--blue); color: var(--blue); }
 
-/* Buttons */
-.btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; transition: 0.15s; }
+/* ── Buttons ── */
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; transition: 0.15s; }
 .btn-primary { background: var(--blue); color: white; }
-.btn-primary:hover { background: #004a8c; }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-success { background: var(--green); color: white; }
+.btn-success:hover { background: #15803d; }
 .btn-outline { background: transparent; color: var(--dark); border: 1.5px solid var(--border); }
-.btn-outline:hover { border-color: var(--dark); }
+.btn-outline:hover { border-color: #8a95a3; }
+.btn-danger { background: #fff0f0; color: var(--red); border: 1.5px solid var(--red); }
+.btn-danger:hover { background: var(--red); color: white; }
 .btn-gold { background: var(--gold); color: var(--dark); }
 
-/* Tags input */
-.tags-note { font-size: 0.75rem; color: var(--mid); margin-top: 4px; }
-
-/* Toast */
-.toast {
-  position: fixed; bottom: 24px; right: 24px;
-  background: var(--dark); color: white;
-  padding: 14px 20px; border-radius: var(--radius);
-  font-size: 0.85rem; font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  transform: translateY(80px); opacity: 0;
-  transition: all 0.3s; z-index: 9999;
-}
+/* ── Toast ── */
+.toast { position: fixed; bottom: 22px; right: 22px; background: var(--dark); color: white; padding: 12px 18px; border-radius: var(--radius); font-size: 0.84rem; font-weight: 600; box-shadow: 0 4px 20px rgba(0,0,0,0.22); transform: translateY(80px); opacity: 0; transition: all 0.28s; z-index: 9999; max-width: 320px; }
 .toast.show { transform: translateY(0); opacity: 1; }
 .toast.success { border-left: 4px solid #22c55e; }
 .toast.error { border-left: 4px solid var(--red); }
+.toast.info { border-left: 4px solid var(--gold); }
 
-/* Loading */
-.loading { text-align: center; padding: 60px; color: var(--mid); }
+/* ── Tags note ── */
+.field-note { font-size: 0.72rem; color: var(--mid); margin-top: 4px; }
+
+/* ── Loading ── */
+.loading { text-align: center; padding: 80px; color: var(--mid); }
 .hidden { display: none; }
+
+/* ── Section divider ── */
+.section-divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .layout { padding: 16px 12px 60px; }
+  .form-row, .form-row-3 { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -142,339 +159,319 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
     <div class="fs-star"></div>
     <span class="topnav-title">Fountainhead <span>CMS</span></span>
   </a>
-  <span style="color:rgba(255,255,255,0.3);">/</span>
+  <span class="topnav-sep">/</span>
   <span class="campus-label" id="topnav-campus">Loading…</span>
-  <div class="topnav-sep"></div>
-  <a href="/admin" class="nav-link">← All Campuses</a>
+  <span class="status-badge draft" id="topnav-status">Draft</span>
+  <div id="unsaved-dot" title="Unsaved changes"></div>
+  <div class="topnav-right">
+    <a href="/admin" class="nav-link">← All Campuses</a>
+  </div>
 </nav>
 
-<div class="page">
-  <div id="loading" class="loading">Loading campus data…</div>
-  <div id="editor" class="hidden">
-    <div class="page-top">
-      <div class="page-top-left">
-        <h1 id="page-title">Edit Campus</h1>
-        <p id="page-sub">Changes are saved to the data file and HTML is regenerated.</p>
+<div class="layout">
+  <!-- Sidebar nav -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <a href="#sec-basic">Basic Info</a>
+      <a href="#sec-hero">Hero</a>
+      <a href="#sec-utilbar">Utility Bar</a>
+      <a href="#sec-nav">Navigation</a>
+      <a href="#sec-stats">Stats</a>
+      <a href="#sec-about">About</a>
+      <a href="#sec-academics">Academics</a>
+      <a href="#sec-admissions">Admissions</a>
+      <a href="#sec-contact">Contact</a>
+      <a href="#sec-life">Student Life</a>
+      <a href="#sec-cta">CTA & Footer</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <div id="loading" class="loading">Loading campus data…</div>
+    <div id="editor" class="hidden">
+
+      <!-- Action bar -->
+      <div class="action-bar">
+        <div class="action-bar-left">
+          <h1 id="page-title">Edit Campus</h1>
+          <p id="page-sub">Ctrl+S to save · Changes regenerate HTML automatically</p>
+        </div>
+        <div class="action-bar-right">
+          <button class="btn btn-danger" onclick="deleteCampus()">Delete</button>
+          <a id="preview-btn" href="#" target="_blank" class="btn btn-outline">Preview ↗</a>
+          <button class="btn btn-primary" onclick="saveForm()" id="save-btn">Save Changes</button>
+        </div>
       </div>
-      <div class="page-top-right">
-        <a id="preview-btn" href="#" target="_blank" class="btn btn-outline">Preview ↗</a>
+
+      <form id="campus-form">
+
+        <!-- BASIC INFO -->
+        <div class="section-card" id="sec-basic">
+          <div class="section-card-header"><h2>Basic Info</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Campus Name</label><input type="text" data-field="name"></div>
+              <div class="form-group"><label class="field-label">Short Code</label><input type="text" data-field="shortCode"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Folder / ID</label><input type="text" data-field="folder"></div>
+              <div class="form-group"><label class="field-label">Brand Color</label><input type="color" data-field="color"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Meta Title</label><input type="text" data-field="metaTitle"></div>
+              <div class="form-group">
+                <label class="field-label">Status</label>
+                <select data-field="launched" onchange="updateStatusBadge(this.value)">
+                  <option value="false">Draft — Not visible on website</option>
+                  <option value="true">Launched — Live on website</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group"><label class="field-label">Meta Description</label><textarea data-field="metaDescription" rows="2"></textarea></div>
+
+            <hr class="section-divider">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="field-label">Logo</label>
+                <div class="img-widget" id="widget-logo"></div>
+                <input type="hidden" data-field="logo" id="field-logo">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO -->
+        <div class="section-card" id="sec-hero">
+          <div class="section-card-header"><h2>Hero Section</h2></div>
+          <div class="section-card-body">
+            <div class="form-group">
+              <label class="field-label">Hero / Banner Image</label>
+              <div class="img-widget" id="widget-heroImage"></div>
+              <input type="hidden" data-field="heroImage" id="field-heroImage">
+            </div>
+            <div class="form-group"><label class="field-label">Hero Heading (H1)</label><input type="text" data-field="heroHeading"></div>
+            <div class="form-group"><label class="field-label">Hero Subtext</label><textarea data-field="heroSubtext" rows="2"></textarea></div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Primary Button Label</label><input type="text" data-field="heroButtonPrimary"></div>
+              <div class="form-group"><label class="field-label">Secondary Button Label</label><input type="text" data-field="heroButtonSecondary"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UTILITY BAR -->
+        <div class="section-card" id="sec-utilbar">
+          <div class="section-card-header"><h2>Utility Bar (Top strip)</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Policy Label</label><input type="text" data-path="utilBar.policyLabel"></div>
+              <div class="form-group"><label class="field-label">Policy PDF Filename</label><input type="text" data-path="utilBar.policyFile"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Phone Numbers (comma-separated)</label><input type="text" id="utilbar-phones" placeholder="8000-130-031, 0261-350-1300"></div>
+              <div class="form-group"><label class="field-label">Email</label><input type="email" data-path="utilBar.email"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NAV -->
+        <div class="section-card" id="sec-nav">
+          <div class="section-card-header"><h2>Navigation Labels</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">About</label><input type="text" data-path="nav.about.label"></div>
+              <div class="form-group"><label class="field-label">Academics</label><input type="text" data-path="nav.academics.label"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Admissions</label><input type="text" data-path="nav.admissions.label"></div>
+              <div class="form-group"><label class="field-label">Campus Life</label><input type="text" data-path="nav.campusLife.label"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Contact</label><input type="text" data-path="nav.contact.label"></div>
+              <div class="form-group"><label class="field-label">Policies</label><input type="text" data-path="nav.policies.label"></div>
+            </div>
+            <hr class="section-divider">
+            <p style="font-size:0.78rem;color:var(--mid);margin-bottom:10px;font-family:Montserrat,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Tab Labels</p>
+            <div id="tabs-section"></div>
+          </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="section-card" id="sec-stats">
+          <div class="section-card-header"><h2>Stats Band</h2></div>
+          <div class="section-card-body">
+            <div id="stats-list"></div>
+            <button type="button" class="btn-add" onclick="addStat()">+ Add Stat</button>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="section-card" id="sec-about">
+          <div class="section-card-header"><h2>About Section</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Section Label</label><input type="text" data-path="about.sectionLabel"></div>
+              <div class="form-group"><label class="field-label">Heading</label><input type="text" data-path="about.heading"></div>
+            </div>
+            <div class="form-group"><label class="field-label">Intro Text</label><textarea data-path="about.intro" rows="4"></textarea></div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="field-label">About / Campus Image</label>
+                <div class="img-widget" id="widget-about-image"></div>
+                <input type="hidden" data-path="about.image" id="field-about-image">
+              </div>
+              <div class="form-group"><label class="field-label">Image Caption</label><input type="text" data-path="about.imageCaption"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Leadership Heading</label><input type="text" data-path="about.leadershipHeading"></div>
+              <div class="form-group"><label class="field-label">Leadership Label</label><input type="text" data-path="about.leadershipLabel"></div>
+            </div>
+            <div id="leaders-list"></div>
+            <button type="button" class="btn-add" onclick="addLeader()">+ Add Leader / Staff</button>
+          </div>
+        </div>
+
+        <!-- ACADEMICS -->
+        <div class="section-card" id="sec-academics">
+          <div class="section-card-header"><h2>Academics Section</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Section Label</label><input type="text" data-path="academics.sectionLabel"></div>
+              <div class="form-group"><label class="field-label">Heading</label><input type="text" data-path="academics.heading"></div>
+            </div>
+            <div id="programmes-list"></div>
+            <button type="button" class="btn-add" onclick="addProgramme()" style="margin-bottom:20px;">+ Add Programme</button>
+            <hr class="section-divider">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Learning Model Label</label><input type="text" data-path="academics.learningModelLabel"></div>
+              <div class="form-group"><label class="field-label">Learning Model Heading</label><input type="text" data-path="academics.learningModelHeading"></div>
+            </div>
+            <div class="form-group"><label class="field-label">Learning Model Quote</label><textarea data-path="academics.learningModelQuote" rows="2"></textarea></div>
+            <div class="form-group"><label class="field-label">Learning Model Text 1</label><textarea data-path="academics.learningModelText1" rows="2"></textarea></div>
+            <div class="form-group"><label class="field-label">Learning Model Text 2</label><textarea data-path="academics.learningModelText2" rows="2"></textarea></div>
+            <hr class="section-divider">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Myths Label</label><input type="text" data-path="academics.mythsLabel"></div>
+              <div class="form-group"><label class="field-label">Myths Heading</label><input type="text" data-path="academics.mythsHeading"></div>
+            </div>
+            <div id="myths-list"></div>
+            <button type="button" class="btn-add" onclick="addMyth()">+ Add Myth / FAQ</button>
+          </div>
+        </div>
+
+        <!-- ADMISSIONS -->
+        <div class="section-card" id="sec-admissions">
+          <div class="section-card-header"><h2>Admissions Section</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Section Label</label><input type="text" data-path="admissions.sectionLabel"></div>
+              <div class="form-group"><label class="field-label">Process Heading</label><input type="text" data-path="admissions.processHeading"></div>
+            </div>
+            <div class="form-group"><label class="field-label">Heading</label><input type="text" data-path="admissions.heading"></div>
+            <div class="form-group"><label class="field-label">Subheading</label><input type="text" data-path="admissions.subheading"></div>
+            <div id="steps-list"></div>
+            <button type="button" class="btn-add" onclick="addStep()" style="margin-bottom:16px;">+ Add Step</button>
+            <div class="form-group">
+              <label class="field-label">Documents Required (one per line)</label>
+              <textarea id="docs-textarea" rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="section-card" id="sec-contact">
+          <div class="section-card-header"><h2>Contact Section</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Section Label</label><input type="text" data-path="contact.sectionLabel"></div>
+              <div class="form-group"><label class="field-label">Heading</label><input type="text" data-path="contact.heading"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Phone Numbers (comma-separated)</label><input type="text" id="contact-phones"></div>
+              <div class="form-group"><label class="field-label">Email</label><input type="email" data-path="contact.email"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">WhatsApp Number</label><input type="text" data-path="contact.whatsapp"></div>
+            </div>
+            <div class="form-group"><label class="field-label">Address</label><textarea data-path="contact.address" rows="2"></textarea></div>
+            <div class="form-group"><label class="field-label">Google Maps Embed URL</label><input type="url" data-path="contact.mapEmbed"></div>
+            <hr class="section-divider">
+            <p style="font-size:0.7rem;color:var(--mid);font-family:Montserrat,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Social Media Links</p>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Instagram URL</label><input type="url" data-path="contact.instagram"></div>
+              <div class="form-group"><label class="field-label">Facebook URL</label><input type="url" data-path="contact.facebook"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">YouTube URL</label><input type="url" data-path="contact.youtube"></div>
+              <div class="form-group"><label class="field-label">LinkedIn URL</label><input type="url" data-path="contact.linkedin"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDENT LIFE -->
+        <div class="section-card" id="sec-life">
+          <div class="section-card-header"><h2>Student Life Section</h2></div>
+          <div class="section-card-body">
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Section Label</label><input type="text" data-path="studentLife.sectionLabel"></div>
+              <div class="form-group"><label class="field-label">Heading</label><input type="text" data-path="studentLife.heading"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Sports Label</label><input type="text" data-path="studentLife.sportsLabel"></div>
+              <div class="form-group"><label class="field-label">Sports Heading</label><input type="text" data-path="studentLife.sportsHeading"></div>
+            </div>
+            <div class="form-group"><label class="field-label">Sports Body</label><textarea data-path="studentLife.sportsBody" rows="2"></textarea></div>
+            <div class="form-group">
+              <label class="field-label">Sports Tags (comma-separated)</label>
+              <input type="text" id="sports-tags" placeholder="Football, Cricket, Basketball">
+              <div class="field-note">e.g. Football, Cricket Nets, Basketball</div>
+            </div>
+            <div class="form-group"><label class="field-label">HDP Heading</label><input type="text" data-path="studentLife.hdpHeading"></div>
+            <div class="form-group"><label class="field-label">HDP Body</label><textarea data-path="studentLife.hdpBody" rows="2"></textarea></div>
+          </div>
+        </div>
+
+        <!-- CTA + FOOTER -->
+        <div class="section-card" id="sec-cta">
+          <div class="section-card-header"><h2>CTA Band & Footer</h2></div>
+          <div class="section-card-body">
+            <p style="font-size:0.7rem;color:var(--mid);font-family:Montserrat,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">CTA Band</p>
+            <div class="form-row">
+              <div class="form-group"><label class="field-label">Heading</label><input type="text" data-path="ctaBand.heading"></div>
+              <div class="form-group"><label class="field-label">Button Label</label><input type="text" data-path="ctaBand.buttonLabel"></div>
+            </div>
+            <div class="form-group"><label class="field-label">Subtext</label><textarea data-path="ctaBand.subtext" rows="2"></textarea></div>
+            <hr class="section-divider">
+            <p style="font-size:0.7rem;color:var(--mid);font-family:Montserrat,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Footer</p>
+            <div class="form-group"><label class="field-label">Footer Description</label><textarea data-path="footer.description" rows="2"></textarea></div>
+            <div class="form-group" style="max-width:160px;"><label class="field-label">Year</label><input type="text" data-path="footer.year"></div>
+          </div>
+        </div>
+
+      </form>
+
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
+        <a id="preview-btn-bottom" href="#" target="_blank" class="btn btn-outline">Preview ↗</a>
         <button class="btn btn-primary" onclick="saveForm()">Save Changes</button>
       </div>
     </div>
-
-    <form id="campus-form">
-
-      <!-- BASIC INFO -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Basic Info</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Campus Name</label>
-              <input type="text" data-field="name">
-            </div>
-            <div class="form-group">
-              <label>Short Code</label>
-              <input type="text" data-field="shortCode">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Folder / ID</label>
-              <input type="text" data-field="folder">
-            </div>
-            <div class="form-group">
-              <label>Brand Color</label>
-              <input type="color" data-field="color">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Meta Title</label>
-              <input type="text" data-field="metaTitle">
-            </div>
-            <div class="form-group">
-              <label>Status</label>
-              <select data-field="launched">
-                <option value="false">Draft</option>
-                <option value="true">Launched</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Meta Description</label>
-            <textarea data-field="metaDescription" rows="2"></textarea>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Logo Filename</label>
-              <input type="text" data-field="logo">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- HERO -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Hero Section</h2></div>
-        <div class="section-card-body">
-          <div class="form-group">
-            <label>Hero Image Filename</label>
-            <input type="text" data-field="heroImage">
-          </div>
-          <div class="form-group">
-            <label>Hero Heading (H1)</label>
-            <input type="text" data-field="heroHeading">
-          </div>
-          <div class="form-group">
-            <label>Hero Subtext</label>
-            <textarea data-field="heroSubtext" rows="2"></textarea>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Primary Button Label</label>
-              <input type="text" data-field="heroButtonPrimary">
-            </div>
-            <div class="form-group">
-              <label>Secondary Button Label</label>
-              <input type="text" data-field="heroButtonSecondary">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- UTILITY BAR -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Utility Bar</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Policy Label</label>
-              <input type="text" data-path="utilBar.policyLabel">
-            </div>
-            <div class="form-group">
-              <label>Policy PDF Filename</label>
-              <input type="text" data-path="utilBar.policyFile">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Phones (comma-separated)</label>
-              <input type="text" id="utilbar-phones" placeholder="8000-130-031, 0261-350-1300">
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" data-path="utilBar.email">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NAV LABELS -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Navigation Labels</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group"><label>About Label</label><input type="text" data-path="nav.about.label"></div>
-            <div class="form-group"><label>Academics Label</label><input type="text" data-path="nav.academics.label"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>Admissions Label</label><input type="text" data-path="nav.admissions.label"></div>
-            <div class="form-group"><label>Campus Life Label</label><input type="text" data-path="nav.campusLife.label"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>Contact Label</label><input type="text" data-path="nav.contact.label"></div>
-            <div class="form-group"><label>Policies Label</label><input type="text" data-path="nav.policies.label"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TAB LABELS -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Tab Labels</h2></div>
-        <div class="section-card-body" id="tabs-section">
-          <!-- rendered by JS -->
-        </div>
-      </div>
-
-      <!-- STATS BAND -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Stats Band</h2></div>
-        <div class="section-card-body">
-          <div id="stats-list"></div>
-          <button type="button" class="btn-add" onclick="addStat()">+ Add Stat</button>
-        </div>
-      </div>
-
-      <!-- ABOUT -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>About Section</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group"><label>Section Label</label><input type="text" data-path="about.sectionLabel"></div>
-            <div class="form-group"><label>Heading</label><input type="text" data-path="about.heading"></div>
-          </div>
-          <div class="form-group"><label>Intro Text</label><textarea data-path="about.intro" rows="4"></textarea></div>
-          <div class="form-row">
-            <div class="form-group"><label>Image Filename</label><input type="text" data-path="about.image"></div>
-            <div class="form-group"><label>Image Caption</label><input type="text" data-path="about.imageCaption"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>Leadership Heading</label><input type="text" data-path="about.leadershipHeading"></div>
-            <div class="form-group"><label>Leadership Label</label><input type="text" data-path="about.leadershipLabel"></div>
-          </div>
-          <div style="margin-top:8px;">
-            <div id="leaders-list"></div>
-            <button type="button" class="btn-add" onclick="addLeader()">+ Add Leader</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ACADEMICS -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Academics Section</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group"><label>Section Label</label><input type="text" data-path="academics.sectionLabel"></div>
-            <div class="form-group"><label>Heading</label><input type="text" data-path="academics.heading"></div>
-          </div>
-          <div id="programmes-list"></div>
-          <button type="button" class="btn-add" onclick="addProgramme()" style="margin-bottom:24px;">+ Add Programme</button>
-
-          <div class="form-row" style="margin-top:16px;">
-            <div class="form-group"><label>Learning Model Label</label><input type="text" data-path="academics.learningModelLabel"></div>
-            <div class="form-group"><label>Learning Model Heading</label><input type="text" data-path="academics.learningModelHeading"></div>
-          </div>
-          <div class="form-group"><label>Learning Model Quote</label><textarea data-path="academics.learningModelQuote" rows="2"></textarea></div>
-          <div class="form-group"><label>Learning Model Text 1</label><textarea data-path="academics.learningModelText1" rows="2"></textarea></div>
-          <div class="form-group"><label>Learning Model Text 2</label><textarea data-path="academics.learningModelText2" rows="2"></textarea></div>
-
-          <div class="form-row" style="margin-top:16px;">
-            <div class="form-group"><label>Myths Label</label><input type="text" data-path="academics.mythsLabel"></div>
-            <div class="form-group"><label>Myths Heading</label><input type="text" data-path="academics.mythsHeading"></div>
-          </div>
-          <div id="myths-list"></div>
-          <button type="button" class="btn-add" onclick="addMyth()">+ Add Myth</button>
-        </div>
-      </div>
-
-      <!-- ADMISSIONS -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Admissions Section</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group"><label>Section Label</label><input type="text" data-path="admissions.sectionLabel"></div>
-            <div class="form-group"><label>Process Heading</label><input type="text" data-path="admissions.processHeading"></div>
-          </div>
-          <div class="form-group"><label>Heading</label><input type="text" data-path="admissions.heading"></div>
-          <div class="form-group"><label>Subheading</label><input type="text" data-path="admissions.subheading"></div>
-
-          <div id="steps-list"></div>
-          <button type="button" class="btn-add" onclick="addStep()" style="margin-bottom:16px;">+ Add Step</button>
-
-          <div class="form-group" style="margin-top:8px;">
-            <label>Documents Required (one per line)</label>
-            <textarea id="docs-textarea" rows="6"></textarea>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONTACT -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Contact Section</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group"><label>Section Label</label><input type="text" data-path="contact.sectionLabel"></div>
-            <div class="form-group"><label>Heading</label><input type="text" data-path="contact.heading"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>Phones (comma-separated)</label><input type="text" id="contact-phones"></div>
-            <div class="form-group"><label>Email</label><input type="email" data-path="contact.email"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>WhatsApp Number</label><input type="text" data-path="contact.whatsapp"></div>
-          </div>
-          <div class="form-group"><label>Address</label><textarea data-path="contact.address" rows="2"></textarea></div>
-          <div class="form-group"><label>Map Embed URL</label><input type="url" data-path="contact.mapEmbed"></div>
-          <div class="form-row">
-            <div class="form-group"><label>Instagram URL</label><input type="url" data-path="contact.instagram"></div>
-            <div class="form-group"><label>Facebook URL</label><input type="url" data-path="contact.facebook"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>YouTube URL</label><input type="url" data-path="contact.youtube"></div>
-            <div class="form-group"><label>LinkedIn URL</label><input type="url" data-path="contact.linkedin"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STUDENT LIFE -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Student Life Section</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group"><label>Section Label</label><input type="text" data-path="studentLife.sectionLabel"></div>
-            <div class="form-group"><label>Heading</label><input type="text" data-path="studentLife.heading"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>Sports Label</label><input type="text" data-path="studentLife.sportsLabel"></div>
-            <div class="form-group"><label>Sports Heading</label><input type="text" data-path="studentLife.sportsHeading"></div>
-          </div>
-          <div class="form-group"><label>Sports Body</label><textarea data-path="studentLife.sportsBody" rows="2"></textarea></div>
-          <div class="form-group">
-            <label>Sports Tags (comma-separated)</label>
-            <input type="text" id="sports-tags">
-            <div class="tags-note">e.g. Football, Cricket Nets, Basketball</div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>HDP Heading</label><input type="text" data-path="studentLife.hdpHeading"></div>
-          </div>
-          <div class="form-group"><label>HDP Body</label><textarea data-path="studentLife.hdpBody" rows="2"></textarea></div>
-        </div>
-      </div>
-
-      <!-- CTA BAND -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>CTA Band</h2></div>
-        <div class="section-card-body">
-          <div class="form-row">
-            <div class="form-group"><label>Heading</label><input type="text" data-path="ctaBand.heading"></div>
-            <div class="form-group"><label>Button Label</label><input type="text" data-path="ctaBand.buttonLabel"></div>
-          </div>
-          <div class="form-group"><label>Subtext</label><textarea data-path="ctaBand.subtext" rows="2"></textarea></div>
-        </div>
-      </div>
-
-      <!-- FOOTER -->
-      <div class="section-card">
-        <div class="section-card-header"><h2>Footer</h2></div>
-        <div class="section-card-body">
-          <div class="form-group"><label>Footer Description</label><textarea data-path="footer.description" rows="2"></textarea></div>
-          <div class="form-group" style="max-width:200px;"><label>Year</label><input type="text" data-path="footer.year"></div>
-        </div>
-      </div>
-
-    </form><!-- /campus-form -->
-
-    <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px;">
-      <a id="preview-btn-bottom" href="#" target="_blank" class="btn btn-outline">Preview ↗</a>
-      <button class="btn btn-primary" onclick="saveForm()">Save Changes</button>
-    </div>
-  </div><!-- /editor -->
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ── State ─────────────────────────────────────────────────────────────────────
 const qs = new URLSearchParams(location.search);
 const campusId = qs.get('id');
 let campusData = null;
+let hasUnsaved = false;
 
+// ── Helpers ───────────────────────────────────────────────────────────────────
 function showToast(msg, type = 'success') {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.className = `toast ${type} show`;
-  setTimeout(() => t.classList.remove('show'), 3500);
+  setTimeout(() => t.classList.remove('show'), 3800);
 }
 
 function getPath(obj, path) {
@@ -490,48 +487,126 @@ function setPath(obj, path, val) {
   cur[parts[parts.length - 1]] = val;
 }
 
-// ── Populate form ─────────────────────────────────────────────────────────────
+function markUnsaved() {
+  hasUnsaved = true;
+  document.getElementById('unsaved-dot').classList.add('visible');
+}
+function markSaved() {
+  hasUnsaved = false;
+  document.getElementById('unsaved-dot').classList.remove('visible');
+}
+
+// ── Image Widget ──────────────────────────────────────────────────────────────
+function buildImageWidget(containerId, fieldId, campusFolder, initialFilename) {
+  const container = document.getElementById(containerId);
+  const hiddenInput = document.getElementById(fieldId);
+
+  function render(filename) {
+    const hasImg = !!filename;
+    const imgUrl = hasImg ? `/${campusFolder}/images/${filename}` : '';
+    container.innerHTML = `
+      <div class="img-widget-preview">
+        ${hasImg
+          ? `<img src="${imgUrl}" alt="preview" onerror="this.parentElement.innerHTML='<div class=\\'no-img\\'><svg width=\\'32\\' height=\\'32\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1.5\\'><rect x=\\'3\\' y=\\'3\\' width=\\'18\\' height=\\'18\\' rx=\\'2\\'/><circle cx=\\'8.5\\' cy=\\'8.5\\' r=\\'1.5\\'/><path d=\\'m21 15-5-5L5 21\\'/></svg><span>Image not found</span></div>'">`
+          : `<div class="no-img">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="m21 15-5-5L5 21"/>
+              </svg>
+              <span>No image</span>
+            </div>`}
+      </div>
+      <div class="img-widget-actions">
+        <span class="img-widget-filename">${filename || 'No image uploaded'}</span>
+        <label class="img-upload-btn">
+          <input type="file" accept="image/*" onchange="handleImgUpload(this,'${fieldId}','${containerId}','${campusFolder}')">
+          ${hasImg ? 'Replace' : 'Upload'}
+        </label>
+        ${hasImg ? `<button type="button" class="img-remove-btn" onclick="removeImage('${fieldId}','${containerId}','${campusFolder}')" title="Remove image">✕</button>` : ''}
+      </div>`;
+  }
+
+  render(initialFilename);
+}
+
+async function handleImgUpload(input, fieldId, containerId, campusFolder) {
+  if (!input.files || !input.files[0]) return;
+  const file = input.files[0];
+  const formData = new FormData();
+  formData.append('image', file);
+  showToast('Uploading…', 'info');
+  try {
+    const res = await fetch(`/api/upload/${campusId}`, { method: 'POST', body: formData });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Upload failed');
+    document.getElementById(fieldId).value = json.filename;
+    buildImageWidget(containerId, fieldId, campusFolder, json.filename);
+    markUnsaved();
+    showToast('✓ Uploaded: ' + json.filename, 'success');
+  } catch (e) {
+    showToast('Upload error: ' + e.message, 'error');
+  }
+}
+
+function removeImage(fieldId, containerId, campusFolder) {
+  if (!confirm('Remove this image?')) return;
+  document.getElementById(fieldId).value = '';
+  buildImageWidget(containerId, fieldId, campusFolder, '');
+  markUnsaved();
+}
+
+// ── Status badge ──────────────────────────────────────────────────────────────
+function updateStatusBadge(val) {
+  const badge = document.getElementById('topnav-status');
+  if (val === 'true') {
+    badge.textContent = 'Launched';
+    badge.className = 'status-badge launched';
+  } else {
+    badge.textContent = 'Draft';
+    badge.className = 'status-badge draft';
+  }
+  markUnsaved();
+}
+
+// ── Populate ──────────────────────────────────────────────────────────────────
 function populateForm(data) {
-  // Simple fields
+  // Simple data-field inputs
   document.querySelectorAll('[data-field]').forEach(el => {
     const v = data[el.dataset.field];
     if (el.tagName === 'SELECT') el.value = String(v);
     else el.value = v !== undefined ? v : '';
   });
-  // Path fields
+  // data-path inputs
   document.querySelectorAll('[data-path]').forEach(el => {
     el.value = getPath(data, el.dataset.path) || '';
   });
 
-  // Utility bar phones
+  // Array fields
   document.getElementById('utilbar-phones').value = (data.utilBar && data.utilBar.phones || []).join(', ');
-
-  // Contact phones
   document.getElementById('contact-phones').value = (data.contact && data.contact.phones || []).join(', ');
-
-  // Sports tags
   document.getElementById('sports-tags').value = (data.studentLife && data.studentLife.sportsTags || []).join(', ');
-
-  // Docs textarea
   document.getElementById('docs-textarea').value = (data.admissions && data.admissions.docsRequired || []).join('\n');
 
   // Tabs
   renderTabs(data.tabs || []);
 
-  // Stats
+  // Dynamic lists
   renderList('stats-list', data.stats || [], renderStatItem);
+  renderList('leaders-list', (data.about && data.about.leaders) || [], renderLeaderItem);
+  renderList('programmes-list', (data.academics && data.academics.programmes) || [], renderProgrammeItem);
+  renderList('myths-list', (data.academics && data.academics.myths) || [], renderMythItem);
+  renderList('steps-list', (data.admissions && data.admissions.steps) || [], renderStepItem);
 
-  // Leaders
-  renderList('leaders-list', data.about.leaders || [], renderLeaderItem);
+  // Status badge
+  updateStatusBadge(String(data.launched));
+  document.querySelector('[data-field="launched"]').value = String(data.launched);
 
-  // Programmes
-  renderList('programmes-list', data.academics.programmes || [], renderProgrammeItem);
-
-  // Myths
-  renderList('myths-list', data.academics.myths || [], renderMythItem);
-
-  // Steps
-  renderList('steps-list', data.admissions.steps || [], renderStepItem);
+  // Image widgets
+  const f = data.folder || data.id;
+  buildImageWidget('widget-logo', 'field-logo', f, data.logo || '');
+  buildImageWidget('widget-heroImage', 'field-heroImage', f, data.heroImage || '');
+  buildImageWidget('widget-about-image', 'field-about-image', f, (data.about && data.about.image) || '');
 }
 
 // ── Dynamic renderers ─────────────────────────────────────────────────────────
@@ -541,31 +616,17 @@ function renderList(containerId, items, renderFn) {
   items.forEach((item, i) => c.appendChild(renderFn(item, i)));
 }
 
-function makeItem(labelText, removeFn, innerHTML) {
-  const div = document.createElement('div');
-  div.className = 'dynamic-list';
-  div.innerHTML = `
-    <div class="dynamic-item">
-      <div class="dynamic-item-header">
-        <span class="dynamic-item-label">${labelText}</span>
-        <button type="button" class="btn-remove" onclick="${removeFn}(this)">Remove</button>
-      </div>
-      ${innerHTML}
-    </div>`;
-  return div;
-}
-
 function renderStatItem(s, i) {
   const div = document.createElement('div');
   div.className = 'dynamic-list';
   div.innerHTML = `<div class="dynamic-item">
     <div class="dynamic-item-header">
-      <span class="dynamic-item-label">Stat ${i + 1}</span>
-      <button type="button" class="btn-remove" onclick="removeStat(this)">Remove</button>
+      <span class="dynamic-item-label">Stat ${i+1}</span>
+      <button type="button" class="btn-remove" onclick="this.closest('.dynamic-list').remove();markUnsaved()">Remove</button>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Value</label><input type="text" class="stat-value" value="${s.value || ''}"></div>
-      <div class="form-group"><label>Label</label><input type="text" class="stat-label" value="${s.label || ''}"></div>
+      <div class="form-group"><label class="field-label">Value</label><input type="text" class="stat-value" value="${esc(s.value||'')}"></div>
+      <div class="form-group"><label class="field-label">Label</label><input type="text" class="stat-label" value="${esc(s.label||'')}"></div>
     </div>
   </div>`;
   return div;
@@ -574,18 +635,32 @@ function renderStatItem(s, i) {
 function renderLeaderItem(l, i) {
   const div = document.createElement('div');
   div.className = 'dynamic-list';
+  const leaderWidgetId = `widget-leader-${i}-${Date.now()}`;
+  const leaderFieldId = `field-leader-photo-${i}-${Date.now()}`;
   div.innerHTML = `<div class="dynamic-item">
     <div class="dynamic-item-header">
-      <span class="dynamic-item-label">Leader ${i + 1}</span>
-      <button type="button" class="btn-remove" onclick="removeLeader(this)">Remove</button>
+      <span class="dynamic-item-label">Leader / Staff ${i+1}</span>
+      <button type="button" class="btn-remove" onclick="this.closest('.dynamic-list').remove();markUnsaved()">Remove</button>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Initials</label><input type="text" class="leader-initials" value="${l.initials || ''}"></div>
-      <div class="form-group"><label>Name</label><input type="text" class="leader-name" value="${l.name || ''}"></div>
+      <div class="form-group"><label class="field-label">Initials</label><input type="text" class="leader-initials" value="${esc(l.initials||'')}"></div>
+      <div class="form-group"><label class="field-label">Name</label><input type="text" class="leader-name" value="${esc(l.name||'')}"></div>
     </div>
-    <div class="form-group"><label>Role</label><input type="text" class="leader-role" value="${l.role || ''}"></div>
-    <div class="form-group"><label>Bio</label><textarea class="leader-bio" rows="3">${l.bio || ''}</textarea></div>
+    <div class="form-group"><label class="field-label">Role / Title</label><input type="text" class="leader-role" value="${esc(l.role||'')}"></div>
+    <div class="form-group"><label class="field-label">Bio</label><textarea class="leader-bio" rows="2">${esc(l.bio||'')}</textarea></div>
+    <div class="form-group">
+      <label class="field-label">Photo</label>
+      <div class="img-widget" id="${leaderWidgetId}"></div>
+      <input type="hidden" class="leader-photo" id="${leaderFieldId}" value="${esc(l.photo||'')}">
+    </div>
   </div>`;
+  // Build image widget after element is in DOM
+  setTimeout(() => {
+    const f = campusData && (campusData.folder || campusData.id);
+    if (f && document.getElementById(leaderWidgetId)) {
+      buildImageWidget(leaderWidgetId, leaderFieldId, f, l.photo || '');
+    }
+  }, 0);
   return div;
 }
 
@@ -594,14 +669,14 @@ function renderProgrammeItem(p, i) {
   div.className = 'dynamic-list';
   div.innerHTML = `<div class="dynamic-item">
     <div class="dynamic-item-header">
-      <span class="dynamic-item-label">Programme ${i + 1}</span>
-      <button type="button" class="btn-remove" onclick="removeProgramme(this)">Remove</button>
+      <span class="dynamic-item-label">Programme ${i+1}</span>
+      <button type="button" class="btn-remove" onclick="this.closest('.dynamic-list').remove();markUnsaved()">Remove</button>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Ages / Grades</label><input type="text" class="prog-ages" value="${p.ages || ''}"></div>
-      <div class="form-group"><label>Title</label><input type="text" class="prog-title" value="${p.title || ''}"></div>
+      <div class="form-group"><label class="field-label">Ages / Grades</label><input type="text" class="prog-ages" value="${esc(p.ages||'')}"></div>
+      <div class="form-group"><label class="field-label">Title</label><input type="text" class="prog-title" value="${esc(p.title||'')}"></div>
     </div>
-    <div class="form-group"><label>Body</label><textarea class="prog-body" rows="2">${p.body || ''}</textarea></div>
+    <div class="form-group"><label class="field-label">Description</label><textarea class="prog-body" rows="2">${esc(p.body||'')}</textarea></div>
   </div>`;
   return div;
 }
@@ -611,11 +686,11 @@ function renderMythItem(m, i) {
   div.className = 'dynamic-list';
   div.innerHTML = `<div class="dynamic-item">
     <div class="dynamic-item-header">
-      <span class="dynamic-item-label">Myth ${i + 1}</span>
-      <button type="button" class="btn-remove" onclick="removeMyth(this)">Remove</button>
+      <span class="dynamic-item-label">Myth / FAQ ${i+1}</span>
+      <button type="button" class="btn-remove" onclick="this.closest('.dynamic-list').remove();markUnsaved()">Remove</button>
     </div>
-    <div class="form-group"><label>Myth</label><input type="text" class="myth-myth" value="${(m.myth || '').replace(/"/g, '&quot;')}"></div>
-    <div class="form-group"><label>Fact</label><textarea class="myth-fact" rows="2">${m.fact || ''}</textarea></div>
+    <div class="form-group"><label class="field-label">Myth / Question</label><input type="text" class="myth-myth" value="${esc(m.myth||'')}"></div>
+    <div class="form-group"><label class="field-label">Fact / Answer</label><textarea class="myth-fact" rows="2">${esc(m.fact||'')}</textarea></div>
   </div>`;
   return div;
 }
@@ -625,14 +700,14 @@ function renderStepItem(s, i) {
   div.className = 'dynamic-list';
   div.innerHTML = `<div class="dynamic-item">
     <div class="dynamic-item-header">
-      <span class="dynamic-item-label">Step ${i + 1}</span>
-      <button type="button" class="btn-remove" onclick="removeStep(this)">Remove</button>
+      <span class="dynamic-item-label">Step ${i+1}</span>
+      <button type="button" class="btn-remove" onclick="this.closest('.dynamic-list').remove();markUnsaved()">Remove</button>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Letter</label><input type="text" class="step-letter" value="${s.letter || ''}" style="max-width:80px;"></div>
-      <div class="form-group"><label>Title</label><input type="text" class="step-title" value="${s.title || ''}"></div>
+      <div class="form-group"><label class="field-label">Letter (P/A/E)</label><input type="text" class="step-letter" value="${esc(s.letter||'')}" style="max-width:80px;"></div>
+      <div class="form-group"><label class="field-label">Title</label><input type="text" class="step-title" value="${esc(s.title||'')}"></div>
     </div>
-    <div class="form-group"><label>Body</label><textarea class="step-body" rows="2">${s.body || ''}</textarea></div>
+    <div class="form-group"><label class="field-label">Description</label><textarea class="step-body" rows="2">${esc(s.body||'')}</textarea></div>
   </div>`;
   return div;
 }
@@ -641,100 +716,77 @@ function renderTabs(tabs) {
   const c = document.getElementById('tabs-section');
   c.innerHTML = `<div class="form-row">${tabs.map((t, i) => `
     <div class="form-group">
-      <label>Tab ${i + 1} (${t.id})</label>
-      <input type="text" class="tab-label" data-tab-index="${i}" value="${t.label || ''}">
+      <label class="field-label">Tab ${i+1} (${t.id})</label>
+      <input type="text" class="tab-label" data-tab-index="${i}" value="${esc(t.label||'')}">
     </div>`).join('')}</div>`;
 }
 
-// ── Add / remove helpers ──────────────────────────────────────────────────────
-function addStat() {
-  const c = document.getElementById('stats-list');
-  const count = c.children.length;
-  c.appendChild(renderStatItem({ value: '', label: '' }, count));
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
-function removeStat(btn) { btn.closest('.dynamic-list').remove(); }
 
-function addLeader() {
-  const c = document.getElementById('leaders-list');
-  c.appendChild(renderLeaderItem({}, c.children.length));
-}
-function removeLeader(btn) { btn.closest('.dynamic-list').remove(); }
+// ── Add helpers ───────────────────────────────────────────────────────────────
+function addStat() { const c=document.getElementById('stats-list'); c.appendChild(renderStatItem({},c.children.length)); markUnsaved(); }
+function addLeader() { const c=document.getElementById('leaders-list'); c.appendChild(renderLeaderItem({},c.children.length)); markUnsaved(); }
+function addProgramme() { const c=document.getElementById('programmes-list'); c.appendChild(renderProgrammeItem({},c.children.length)); markUnsaved(); }
+function addMyth() { const c=document.getElementById('myths-list'); c.appendChild(renderMythItem({},c.children.length)); markUnsaved(); }
+function addStep() { const c=document.getElementById('steps-list'); c.appendChild(renderStepItem({},c.children.length)); markUnsaved(); }
 
-function addProgramme() {
-  const c = document.getElementById('programmes-list');
-  c.appendChild(renderProgrammeItem({}, c.children.length));
-}
-function removeProgramme(btn) { btn.closest('.dynamic-list').remove(); }
-
-function addMyth() {
-  const c = document.getElementById('myths-list');
-  c.appendChild(renderMythItem({}, c.children.length));
-}
-function removeMyth(btn) { btn.closest('.dynamic-list').remove(); }
-
-function addStep() {
-  const c = document.getElementById('steps-list');
-  c.appendChild(renderStepItem({}, c.children.length));
-}
-function removeStep(btn) { btn.closest('.dynamic-list').remove(); }
-
-// ── Collect form data ─────────────────────────────────────────────────────────
+// ── Collect form ──────────────────────────────────────────────────────────────
 function collectForm() {
-  const data = JSON.parse(JSON.stringify(campusData)); // deep clone
+  const data = JSON.parse(JSON.stringify(campusData));
 
-  // Simple fields
   document.querySelectorAll('[data-field]').forEach(el => {
+    if (el.type === 'hidden') return; // handled separately
     const key = el.dataset.field;
     let val = el.value;
     if (key === 'launched') val = val === 'true';
     data[key] = val;
   });
-  // Path fields
+  // Hidden image fields
+  data.logo = document.getElementById('field-logo').value;
+  data.heroImage = document.getElementById('field-heroImage').value;
+
   document.querySelectorAll('[data-path]').forEach(el => {
+    if (el.type === 'hidden') return;
     setPath(data, el.dataset.path, el.value);
   });
+  data.about.image = document.getElementById('field-about-image').value;
 
-  // Phones arrays
-  data.utilBar.phones = document.getElementById('utilbar-phones').value.split(',').map(s => s.trim()).filter(Boolean);
-  data.contact.phones = document.getElementById('contact-phones').value.split(',').map(s => s.trim()).filter(Boolean);
-  data.studentLife.sportsTags = document.getElementById('sports-tags').value.split(',').map(s => s.trim()).filter(Boolean);
-  data.admissions.docsRequired = document.getElementById('docs-textarea').value.split('\n').map(s => s.trim()).filter(Boolean);
+  data.utilBar.phones = document.getElementById('utilbar-phones').value.split(',').map(s=>s.trim()).filter(Boolean);
+  data.contact.phones = document.getElementById('contact-phones').value.split(',').map(s=>s.trim()).filter(Boolean);
+  data.studentLife.sportsTags = document.getElementById('sports-tags').value.split(',').map(s=>s.trim()).filter(Boolean);
+  data.admissions.docsRequired = document.getElementById('docs-textarea').value.split('\n').map(s=>s.trim()).filter(Boolean);
 
-  // Tabs
-  const tabInputs = document.querySelectorAll('.tab-label');
-  tabInputs.forEach(inp => {
+  document.querySelectorAll('.tab-label').forEach(inp => {
     const i = parseInt(inp.dataset.tabIndex);
     if (data.tabs[i]) data.tabs[i].label = inp.value;
   });
 
-  // Stats
   data.stats = [...document.getElementById('stats-list').querySelectorAll('.dynamic-list')].map(el => ({
     value: el.querySelector('.stat-value').value,
     label: el.querySelector('.stat-label').value
   }));
 
-  // Leaders
   data.about.leaders = [...document.getElementById('leaders-list').querySelectorAll('.dynamic-list')].map(el => ({
     initials: el.querySelector('.leader-initials').value,
     name: el.querySelector('.leader-name').value,
     role: el.querySelector('.leader-role').value,
-    bio: el.querySelector('.leader-bio').value
+    bio: el.querySelector('.leader-bio').value,
+    photo: (el.querySelector('.leader-photo') || {}).value || ''
   }));
 
-  // Programmes
   data.academics.programmes = [...document.getElementById('programmes-list').querySelectorAll('.dynamic-list')].map(el => ({
     ages: el.querySelector('.prog-ages').value,
     title: el.querySelector('.prog-title').value,
     body: el.querySelector('.prog-body').value
   }));
 
-  // Myths
   data.academics.myths = [...document.getElementById('myths-list').querySelectorAll('.dynamic-list')].map(el => ({
     myth: el.querySelector('.myth-myth').value,
     fact: el.querySelector('.myth-fact').value
   }));
 
-  // Steps
   data.admissions.steps = [...document.getElementById('steps-list').querySelectorAll('.dynamic-list')].map(el => ({
     letter: el.querySelector('.step-letter').value,
     title: el.querySelector('.step-title').value,
@@ -746,8 +798,11 @@ function collectForm() {
 
 // ── Save ──────────────────────────────────────────────────────────────────────
 async function saveForm() {
-  const payload = collectForm();
+  const btn = document.getElementById('save-btn');
+  btn.textContent = 'Saving…';
+  btn.disabled = true;
   try {
+    const payload = collectForm();
     const res = await fetch(`/api/campus/${campusId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -756,27 +811,41 @@ async function saveForm() {
     const json = await res.json();
     if (!res.ok) throw new Error(json.error || 'Save failed');
     campusData = payload;
-    showToast('Saved! HTML regenerated.', 'success');
+    markSaved();
+    showToast('✓ Saved! Website HTML regenerated.', 'success');
   } catch (e) {
-    showToast(`Error: ${e.message}`, 'error');
+    showToast('Error: ' + e.message, 'error');
+  } finally {
+    btn.textContent = 'Save Changes';
+    btn.disabled = false;
+  }
+}
+
+// ── Delete ────────────────────────────────────────────────────────────────────
+async function deleteCampus() {
+  if (!confirm(`DELETE "${campusId}" permanently?\n\nThis removes the data file, HTML folder, and campus from the list. This cannot be undone.`)) return;
+  try {
+    const res = await fetch(`/api/campus/${campusId}`, { method: 'DELETE' });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Delete failed');
+    showToast('Campus deleted. Redirecting…', 'success');
+    setTimeout(() => { window.location.href = '/admin'; }, 1600);
+  } catch (e) {
+    showToast('Error: ' + e.message, 'error');
   }
 }
 
 // ── Load ──────────────────────────────────────────────────────────────────────
 async function loadCampus() {
-  if (!campusId) {
-    document.getElementById('loading').textContent = 'No campus ID specified.';
-    return;
-  }
+  if (!campusId) { document.getElementById('loading').textContent = 'No campus ID specified.'; return; }
   try {
     const res = await fetch(`/api/campus/${campusId}`);
     if (!res.ok) throw new Error('Campus not found');
     campusData = await res.json();
 
-    // Update UI
     document.getElementById('topnav-campus').textContent = campusData.shortCode || campusId;
     document.getElementById('page-title').textContent = `Edit — ${campusData.name}`;
-    document.getElementById('page-sub').textContent = `Folder: ${campusData.folder} / ID: ${campusData.id}`;
+    document.getElementById('page-sub').textContent = `Folder: ${campusData.folder} · ID: ${campusData.id} · Ctrl+S to save`;
 
     const previewUrl = `/${campusData.folder}/index.html`;
     document.getElementById('preview-btn').href = previewUrl;
@@ -787,10 +856,38 @@ async function loadCampus() {
 
     document.getElementById('loading').classList.add('hidden');
     document.getElementById('editor').classList.remove('hidden');
+
+    // Track changes
+    document.getElementById('campus-form').addEventListener('input', markUnsaved);
   } catch (e) {
     document.getElementById('loading').textContent = `Error: ${e.message}`;
   }
 }
+
+// ── Keyboard shortcuts ─────────────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); saveForm(); }
+});
+
+// ── Warn unsaved ──────────────────────────────────────────────────────────────
+window.addEventListener('beforeunload', e => {
+  if (hasUnsaved) { e.preventDefault(); e.returnValue = ''; }
+});
+
+// ── Sidebar active link ───────────────────────────────────────────────────────
+const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      sidebarLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-58px 0px -60% 0px' });
+
+document.querySelectorAll('.section-card[id]').forEach(el => observer.observe(el));
 
 loadCampus();
 </script>
