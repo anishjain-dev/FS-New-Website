@@ -1,0 +1,66 @@
+{
+  "id": "fs",
+  "folder": ".",
+  "name": "Fountainhead Schools — Main Website",
+  "shortCode": "FS",
+  "color": "#F2C418",
+  "launched": true,
+  "isMain": true,
+  "hero": {
+    "eyebrow": "An IB School Group · 6 Campuses · 3 Cities",
+    "heading": "Schools Built Around How Children Actually Learn",
+    "subtext": "Six campuses across Surat, Vapi and Chhatrapati Sambhajinagar — one conviction: children flourish when curiosity leads and the IB continuum gives it direction.",
+    "image": "fsk/images/FSK Front Facade Image.jpg",
+    "btnPrimary": "Explore Admissions",
+    "btnSecondary": "Our Philosophy"
+  },
+  "tagline": "To Nurture Leaders with Character and Competence",
+  "about": {
+    "heading": "One conviction, every campus",
+    "body": "Founded in 2005 with six students and one belief — that children learn best when they are curious, not compliant — Fountainhead has grown into a group of six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Our mission has not changed: to nurture leaders with character and competence.",
+    "subtext": "Ranked 4th nationally — Cfore 2026. Highest in Pedagogy and Curriculum in the country.",
+    "image": "fsk/images/FSK Ground.jpg",
+    "imageCaption": "Khelangan · FSK Sports Ground · Surat"
+  },
+  "stats": [
+    { "label": "Cfore 2026", "num": "4th", "desc": "Ranked 4th Best Co-Ed Day School in India. Highest nationally in both Pedagogy and Curriculum." },
+    { "label": "Campuses", "num": "6", "desc": "Six campuses across Surat, Vapi and Chhatrapati Sambhajinagar." },
+    { "label": "IB Continuum", "num": "IB", "desc": "Full EY→Diploma continuum across all campuses." },
+    { "label": "Philosophy", "num": "1", "desc": "One shared philosophy of learning — IB world schools." },
+    { "label": "Years of IB", "num": "20", "desc": "Twenty years of IB education in India." }
+  ],
+  "contact": {
+    "phone1": "8000-130-031",
+    "phone2": "0261-3501300",
+    "email": "surat@fountainheadschools.org",
+    "whatsapp": "918000130031",
+    "address": "Opp. Ambetha Water Tank, Nr. Village Kunkni, Rander–Dandi Road, Surat – 395005"
+  },
+  "results": {
+    "dp": {
+      "year": "2026",
+      "average": "32.97",
+      "students": "157",
+      "diplomas": "115",
+      "highest": "44"
+    },
+    "myp": {
+      "year": "2025",
+      "average": "45.68",
+      "students": "157",
+      "scored40": "128",
+      "highest": "55"
+    }
+  },
+  "footer": {
+    "tagline": "An IB School Group with six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Nurturing leaders with character and competence since 2005.",
+    "year": "2026"
+  },
+  "ctaBand": {
+    "heading": "See a campus for yourself",
+    "subtext": "The best way to understand Fountainhead is to walk through it on a school day.",
+    "button": "Book a Visit →"
+  },
+  "metaTitle": "Fountainhead Schools — An IB School Group",
+  "metaDescription": "Fountainhead Schools is India's leading IB School Group — six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Ranked 4th nationally by Cfore 2026."
+}

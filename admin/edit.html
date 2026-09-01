@@ -220,6 +220,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
   <!-- Sidebar nav -->
   <aside class="sidebar">
     <nav class="sidebar-nav">
+      <a href="#sec-main" id="sidebar-main" style="display:none;color:var(--gold);">🌐 Main FS Website</a>
       <a href="#sec-basic">Basic Info</a>
       <a href="#sec-hero">Hero</a>
       <a href="#sec-header">Header</a>
@@ -253,6 +254,108 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
       </div>
 
       <form id="campus-form">
+
+        <!-- MAIN SITE EDITOR (only shown for isMain campus) -->
+        <div class="section-card hidden" id="sec-main" style="scroll-margin-top:74px;">
+          <div class="section-card-header"><h2>🌐 Main FS Website</h2></div>
+          <div class="section-card-body">
+            <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:20px;">Edit the main Fountainhead Schools homepage content. Changes are saved to <code>data/fs.json</code>.</p>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">Meta</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Page Title</label><input type="text" id="fs-meta-title" placeholder="Fountainhead Schools — An IB School Group"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Meta Description</label><textarea id="fs-meta-desc" rows="2"></textarea></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">Hero Section</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Eyebrow</label><input type="text" id="fs-hero-eyebrow"></div>
+              <div class="form-group"><label>Hero Image Path</label><input type="text" id="fs-hero-image" placeholder="fsk/images/FSK Front Facade Image.jpg"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Heading</label><input type="text" id="fs-hero-heading"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Subtext</label><textarea id="fs-hero-subtext" rows="2"></textarea></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Primary Button</label><input type="text" id="fs-hero-btn1"></div>
+              <div class="form-group"><label>Secondary Button</label><input type="text" id="fs-hero-btn2"></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">Tagline</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Tagline Text</label><input type="text" id="fs-tagline"></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">About Section</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Heading</label><input type="text" id="fs-about-heading"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Body Text</label><textarea id="fs-about-body" rows="4"></textarea></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Subtext (awards, ranks)</label><input type="text" id="fs-about-subtext"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Image Path</label><input type="text" id="fs-about-image" placeholder="fsk/images/FSK Ground.jpg"></div>
+              <div class="form-group"><label>Image Caption</label><input type="text" id="fs-about-caption"></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">CTA Band</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Heading</label><input type="text" id="fs-cta-heading"></div>
+              <div class="form-group"><label>Subtext</label><input type="text" id="fs-cta-subtext"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Button Label</label><input type="text" id="fs-cta-button"></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">Contact</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Phone 1</label><input type="text" id="fs-phone1"></div>
+              <div class="form-group"><label>Phone 2</label><input type="text" id="fs-phone2"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Email</label><input type="text" id="fs-email"></div>
+              <div class="form-group"><label>WhatsApp (number only)</label><input type="text" id="fs-whatsapp"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Address</label><textarea id="fs-address" rows="2"></textarea></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">IB Results — DP</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Year</label><input type="text" id="fs-dp-year"></div>
+              <div class="form-group"><label>School Average</label><input type="text" id="fs-dp-avg"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Students</label><input type="text" id="fs-dp-students"></div>
+              <div class="form-group"><label>Full Diplomas</label><input type="text" id="fs-dp-diplomas"></div>
+              <div class="form-group"><label>Highest Score</label><input type="text" id="fs-dp-highest"></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">IB Results — MYP</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Year</label><input type="text" id="fs-myp-year"></div>
+              <div class="form-group"><label>School Average</label><input type="text" id="fs-myp-avg"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Students</label><input type="text" id="fs-myp-students"></div>
+              <div class="form-group"><label>Scored 40+</label><input type="text" id="fs-myp-scored40"></div>
+              <div class="form-group"><label>Highest Score</label><input type="text" id="fs-myp-highest"></div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">Footer</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Tagline</label><textarea id="fs-footer-tagline" rows="2"></textarea></div>
+              <div class="form-group"><label>Year</label><input type="text" id="fs-footer-year"></div>
+            </div>
+          </div>
+        </div>
 
         <!-- PAGE BUILDER -->
         <div class="section-card" id="sec-builder" style="scroll-margin-top:74px;">
@@ -921,7 +1024,7 @@ async function saveForm() {
   btn.textContent = 'Saving…';
   btn.disabled = true;
   try {
-    const payload = collectForm();
+    const payload = campusData.isMain ? collectMainForm() : collectForm();
     const res = await fetch(`/api/campus/${campusId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -931,7 +1034,7 @@ async function saveForm() {
     if (!res.ok) throw new Error(json.error || 'Save failed');
     campusData = payload;
     markSaved();
-    showToast('✓ Saved! Website HTML regenerated.', 'success');
+    showToast(campusData.isMain ? '✓ Saved! Main site data updated.' : '✓ Saved! Website HTML regenerated.', 'success');
   } catch (e) {
     showToast('Error: ' + e.message, 'error');
   } finally {
@@ -1281,6 +1384,109 @@ function selectBrowsedImage(fieldId, containerId, campusFolder, filename) {
   markUnsaved();
 }
 
+// ── Main site populate / collect ───────────────────────────────────────────────
+function populateMainForm(d) {
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ''; };
+  set('fs-meta-title', d.metaTitle);
+  set('fs-meta-desc', d.metaDescription);
+  const h = d.hero || {};
+  set('fs-hero-eyebrow', h.eyebrow);
+  set('fs-hero-heading', h.heading);
+  set('fs-hero-subtext', h.subtext);
+  set('fs-hero-image', h.image);
+  set('fs-hero-btn1', h.btnPrimary);
+  set('fs-hero-btn2', h.btnSecondary);
+  set('fs-tagline', d.tagline);
+  const a = d.about || {};
+  set('fs-about-heading', a.heading);
+  set('fs-about-body', a.body);
+  set('fs-about-subtext', a.subtext);
+  set('fs-about-image', a.image);
+  set('fs-about-caption', a.imageCaption);
+  const ct = d.ctaBand || {};
+  set('fs-cta-heading', ct.heading);
+  set('fs-cta-subtext', ct.subtext);
+  set('fs-cta-button', ct.button);
+  const c = d.contact || {};
+  set('fs-phone1', c.phone1);
+  set('fs-phone2', c.phone2);
+  set('fs-email', c.email);
+  set('fs-whatsapp', c.whatsapp);
+  set('fs-address', c.address);
+  const dp = (d.results || {}).dp || {};
+  set('fs-dp-year', dp.year);
+  set('fs-dp-avg', dp.average);
+  set('fs-dp-students', dp.students);
+  set('fs-dp-diplomas', dp.diplomas);
+  set('fs-dp-highest', dp.highest);
+  const myp = (d.results || {}).myp || {};
+  set('fs-myp-year', myp.year);
+  set('fs-myp-avg', myp.average);
+  set('fs-myp-students', myp.students);
+  set('fs-myp-scored40', myp.scored40);
+  set('fs-myp-highest', myp.highest);
+  const ft = d.footer || {};
+  set('fs-footer-tagline', ft.tagline);
+  set('fs-footer-year', ft.year);
+}
+
+function collectMainForm() {
+  const get = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  return {
+    ...campusData,
+    metaTitle: get('fs-meta-title'),
+    metaDescription: get('fs-meta-desc'),
+    hero: {
+      eyebrow: get('fs-hero-eyebrow'),
+      heading: get('fs-hero-heading'),
+      subtext: get('fs-hero-subtext'),
+      image: get('fs-hero-image'),
+      btnPrimary: get('fs-hero-btn1'),
+      btnSecondary: get('fs-hero-btn2')
+    },
+    tagline: get('fs-tagline'),
+    about: {
+      heading: get('fs-about-heading'),
+      body: get('fs-about-body'),
+      subtext: get('fs-about-subtext'),
+      image: get('fs-about-image'),
+      imageCaption: get('fs-about-caption')
+    },
+    ctaBand: {
+      heading: get('fs-cta-heading'),
+      subtext: get('fs-cta-subtext'),
+      button: get('fs-cta-button')
+    },
+    contact: {
+      phone1: get('fs-phone1'),
+      phone2: get('fs-phone2'),
+      email: get('fs-email'),
+      whatsapp: get('fs-whatsapp'),
+      address: get('fs-address')
+    },
+    results: {
+      dp: {
+        year: get('fs-dp-year'),
+        average: get('fs-dp-avg'),
+        students: get('fs-dp-students'),
+        diplomas: get('fs-dp-diplomas'),
+        highest: get('fs-dp-highest')
+      },
+      myp: {
+        year: get('fs-myp-year'),
+        average: get('fs-myp-avg'),
+        students: get('fs-myp-students'),
+        scored40: get('fs-myp-scored40'),
+        highest: get('fs-myp-highest')
+      }
+    },
+    footer: {
+      tagline: get('fs-footer-tagline'),
+      year: get('fs-footer-year')
+    }
+  };
+}
+
 // ── Load ──────────────────────────────────────────────────────────────────────
 async function loadCampus() {
   if (!campusId) { document.getElementById('loading').textContent = 'No campus ID specified.'; return; }
@@ -1297,12 +1503,28 @@ async function loadCampus() {
     document.getElementById('page-title').textContent = `Edit — ${campusData.name}`;
     document.getElementById('page-sub').textContent = `Folder: ${campusData.folder} · ID: ${campusData.id} · Ctrl+S to save`;
 
-    const previewUrl = `/${campusData.folder}/index.html`;
+    const previewUrl = campusData.isMain ? '/' : `/${campusData.folder}/index.html`;
     document.getElementById('preview-btn').href = previewUrl;
     document.getElementById('preview-btn-bottom').href = previewUrl;
     document.title = `Edit ${campusData.shortCode} — FS CMS`;
 
-    populateForm(campusData);
+    if (campusData.isMain) {
+      // Show main-site editor, hide campus-specific sections
+      document.getElementById('sec-main').classList.remove('hidden');
+      document.getElementById('sidebar-main').style.display = '';
+      ['sec-builder','sec-header','sec-basic','sec-hero','sec-utilbar','sec-nav','sec-about',
+       'sec-academics','sec-admissions','sec-contact','sec-life','sec-footer'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      document.querySelectorAll('.sidebar-nav a:not(#sidebar-main)').forEach(a => a.style.display = 'none');
+      document.getElementById('page-sub').textContent = 'Editing main FS homepage · Ctrl+S to save · Changes saved to data/fs.json';
+      // Hide delete button for main site
+      document.querySelector('[onclick="deleteCampus()"]').style.display = 'none';
+      populateMainForm(campusData);
+    } else {
+      populateForm(campusData);
+    }
 
     document.getElementById('loading').classList.add('hidden');
     document.getElementById('editor').classList.remove('hidden');

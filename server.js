@@ -44,6 +44,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage, limits: { fileSize: 20 * 1024 * 1024 } });
 
 const app = express();
+app.set('trust proxy', 1); // trust Cloudflare / reverse-proxy headers
 const PORT = 3000;
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data');
@@ -78,7 +79,8 @@ if (AUTH_ENABLED) {
   passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: `${BASE_URL}/auth/google/callback`
+    callbackURL: `${BASE_URL}/auth/google/callback`,
+    proxy: true
   }, (accessToken, refreshToken, profile, done) => {
     const email = (profile.emails[0] || {}).value || '';
     let user = findUser(email);
@@ -309,7 +311,12 @@ app.post('/api/campus/:id', requireLogin, requireCampusAccess, (req, res) => {
     // Write updated JSON
     fs.writeFileSync(campusFile, JSON.stringify(campusData, null, 2), 'utf8');
 
-    // Regenerate HTML
+    // Main FS website has a hand-coded index.html — skip template regeneration
+    if (campusData.isMain) {
+      return res.json({ success: true, id, message: 'Main site data saved. HTML not regenerated (hand-coded template).' });
+    }
+
+    // Regenerate HTML for campus sites
     const folder = path.join(ROOT, campusData.folder || id);
     if (!fs.existsSync(folder)) fs.mkdirSync(folder, { recursive: true });
     const html = generateCampusHTML(campusData);
