@@ -1,5 +1,14 @@
 [
   {
+    "id": "fs",
+    "folder": ".",
+    "name": "Fountainhead Schools — Main Website",
+    "shortCode": "FS",
+    "color": "#F2C418",
+    "launched": true,
+    "isMain": true
+  },
+  {
     "id": "fsk",
     "folder": "fsk",
     "name": "Fountainhead School Kunkni",
@@ -36,7 +45,7 @@
     "folder": "fpa",
     "name": "Fountainhead Preschool Adajan",
     "shortCode": "FPA",
-    "color": "#b62b2f",
+    "color": "#005baa",
     "launched": true
   },
   {

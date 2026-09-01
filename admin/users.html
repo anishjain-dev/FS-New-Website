@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Management — FS CMS</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue:#005BAA;--red:#B8292F;--gold:#F2C418;--dark:#0C1920;--bg:#f0f2f5;--white:#fff;--border:#dde2ea;--text:#1a2530;--mid:#5a6878;--radius:8px;--shadow:0 2px 12px rgba(0,0,0,0.07);}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+h1,h2,h3{font-family:'Montserrat',sans-serif;}
+.topnav{background:var(--dark);padding:0 28px;display:flex;align-items:center;gap:14px;height:58px;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,0.35);}
+.topnav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.fs-star{width:30px;height:30px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.topnav-title{color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.88rem;}
+.topnav-title span{color:var(--gold);}
+.topnav-right{margin-left:auto;display:flex;align-items:center;gap:12px;}
+.nav-link{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;font-weight:600;padding:5px 10px;border-radius:4px;transition:0.15s;font-family:'Montserrat',sans-serif;}
+.nav-link:hover{color:white;background:rgba(255,255,255,0.1);}
+.nav-link.active{color:var(--gold);}
+.user-badge{display:flex;align-items:center;gap:8px;color:white;font-size:0.8rem;}
+.user-badge img{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);}
+.page{max-width:900px;margin:0 auto;padding:32px 20px 80px;}
+.page-header{margin-bottom:28px;}
+.page-header h1{font-size:1.4rem;font-weight:800;}
+.page-header p{color:var(--mid);font-size:0.85rem;margin-top:5px;}
+.card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:20px;overflow:hidden;}
+.card-header{padding:14px 20px;background:var(--dark);display:flex;align-items:center;justify-content:space-between;}
+.card-header h2{font-size:0.78rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--gold);}
+.card-body{padding:20px;}
+.user-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);}
+.user-row:last-child{border-bottom:none;}
+.user-avatar{width:40px;height:40px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-family:'Montserrat',sans-serif;font-size:0.9rem;flex-shrink:0;overflow:hidden;}
+.user-avatar img{width:100%;height:100%;object-fit:cover;}
+.user-info{flex:1;}
+.user-name{font-weight:700;font-size:0.9rem;}
+.user-email{font-size:0.78rem;color:var(--mid);}
+.role-badge{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:3px 8px;border-radius:20px;font-family:'Montserrat',sans-serif;}
+.role-badge.admin{background:#dcfce7;color:#166534;}
+.role-badge.editor{background:#dbeafe;color:#1d4ed8;}
+.user-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:0.15s;}
+.btn-primary{background:var(--blue);color:white;}
+.btn-primary:hover{background:#004a8c;}
+.btn-outline{background:transparent;color:var(--dark);border:1.5px solid var(--border);}
+.btn-outline:hover{border-color:var(--dark);}
+.btn-danger{background:#fff0f0;color:var(--red);border:1.5px solid var(--red);}
+.btn-danger:hover{background:var(--red);color:white;}
+.btn-sm{padding:5px 10px;font-size:0.68rem;}
+.campus-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;}
+.campus-pill{font-size:0.65rem;font-weight:700;font-family:'Montserrat',sans-serif;padding:2px 8px;border-radius:20px;background:#f0f2f5;border:1px solid var(--border);color:var(--mid);}
+.add-user-form{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;}
+.form-group{margin-bottom:0;}
+.form-group label{display:block;font-size:0.7rem;font-weight:700;color:var(--mid);margin-bottom:5px;font-family:'Montserrat',sans-serif;letter-spacing:0.07em;text-transform:uppercase;}
+.form-group input,.form-group select{width:100%;padding:9px 11px;border:1.5px solid var(--border);border-radius:5px;font-family:'Nunito',sans-serif;font-size:0.87rem;color:var(--text);background:white;}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--blue);}
+.campus-checkboxes{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;}
+.campus-checkboxes label{display:flex;align-items:center;gap:5px;font-size:0.8rem;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;}
+.toast{position:fixed;bottom:22px;right:22px;background:var(--dark);color:white;padding:12px 18px;border-radius:var(--radius);font-size:0.84rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,0.22);transform:translateY(80px);opacity:0;transition:all 0.28s;z-index:9999;}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast.success{border-left:4px solid #22c55e;}
+.toast.error{border-left:4px solid var(--red);}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:white;border-radius:var(--radius);width:100%;max-width:500px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,0.2);}
+.modal h2{font-size:1rem;margin-bottom:4px;}
+.modal p{font-size:0.82rem;color:var(--mid);margin-bottom:20px;}
+.modal-footer{display:flex;gap:10px;margin-top:20px;justify-content:flex-end;}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="/admin" class="topnav-logo">
+    <div class="fs-star"></div>
+    <span class="topnav-title">Fountainhead <span>CMS</span></span>
+  </a>
+  <div class="topnav-right">
+    <a href="/admin" class="nav-link">Campuses</a>
+    <a href="/admin/users.html" class="nav-link active">Users</a>
+    <span class="user-badge" id="user-info"></span>
+    <a href="/auth/logout" class="nav-link">Sign Out</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-header">
+    <h1>User Management</h1>
+    <p>Control who can access the CMS and which campuses they can edit.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Current Users</h2>
+      <button class="btn btn-primary btn-sm" onclick="openAddModal()">+ Add User</button>
+    </div>
+    <div class="card-body" id="users-list">
+      <div style="color:var(--mid);font-size:0.85rem;">Loading users…</div>
+    </div>
+  </div>
+</div>
+
+<!-- Add/Edit User Modal -->
+<div class="modal-overlay" id="user-modal">
+  <div class="modal">
+    <h2 id="modal-title">Add User</h2>
+    <p>Enter the user's Google email address and set their access level.</p>
+    <input type="hidden" id="edit-email-orig">
+    <div class="form-group" style="margin-bottom:14px;">
+      <label>Google Email Address</label>
+      <input type="email" id="modal-email" placeholder="user@example.com">
+    </div>
+    <div class="form-group" style="margin-bottom:14px;">
+      <label>Name</label>
+      <input type="text" id="modal-name" placeholder="Full Name">
+    </div>
+    <div class="form-group" style="margin-bottom:14px;">
+      <label>Role</label>
+      <select id="modal-role" onchange="toggleCampusPicker()">
+        <option value="admin">Admin — Full access to all campuses</option>
+        <option value="editor">Editor — Access to specific campuses only</option>
+      </select>
+    </div>
+    <div id="campus-picker" style="display:none;">
+      <label style="display:block;font-size:0.7rem;font-weight:700;color:var(--mid);margin-bottom:8px;font-family:Montserrat,sans-serif;letter-spacing:0.07em;text-transform:uppercase;">Campus Access</label>
+      <div class="campus-checkboxes" id="campus-checkboxes"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveUser()">Save User</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function showToast(msg, type='success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type} show`;
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+let campusList = [];
+
+async function loadAll() {
+  try {
+    const [ur, cr, me] = await Promise.all([
+      fetch('/api/users'),
+      fetch('/api/campuses'),
+      fetch('/api/me')
+    ]);
+    const users = await ur.json();
+    campusList = await cr.json();
+    const myData = await me.json();
+
+    // Show logged-in user
+    const uiBadge = document.getElementById('user-info');
+    if (myData.name) uiBadge.innerHTML = `<span style="color:rgba(255,255,255,0.7);font-size:0.78rem;font-family:Montserrat,sans-serif;font-weight:600;">${myData.name}</span>`;
+
+    renderUsers(users);
+  } catch(e) {
+    document.getElementById('users-list').innerHTML = `<div style="color:var(--red);">Error: ${e.message}</div>`;
+  }
+}
+
+function renderUsers(users) {
+  const el = document.getElementById('users-list');
+  if (!users.length) { el.innerHTML = '<div style="color:var(--mid);font-size:0.85rem;">No users yet.</div>'; return; }
+  el.innerHTML = users.map(u => {
+    const initials = (u.name || u.email).split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+    const campusPills = u.role === 'admin'
+      ? '<span class="campus-pill">All Campuses</span>'
+      : (u.campuses||[]).map(c => `<span class="campus-pill">${c.toUpperCase()}</span>`).join('') || '<span class="campus-pill" style="color:#B8292F;">No campuses assigned</span>';
+    return `
+      <div class="user-row" data-email="${u.email}">
+        <div class="user-avatar">${u.photo ? `<img src="${u.photo}">` : initials}</div>
+        <div class="user-info">
+          <div class="user-name">${u.name || '—'} <span class="role-badge ${u.role}">${u.role}</span></div>
+          <div class="user-email">${u.email}</div>
+          <div class="campus-pills">${campusPills}</div>
+        </div>
+        <div class="user-actions">
+          <button class="btn btn-outline btn-sm" onclick="editUser('${u.email}')">Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="removeUser('${u.email}')">Remove</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function openAddModal() {
+  document.getElementById('modal-title').textContent = 'Add User';
+  document.getElementById('modal-email').value = '';
+  document.getElementById('modal-email').disabled = false;
+  document.getElementById('modal-name').value = '';
+  document.getElementById('modal-role').value = 'editor';
+  document.getElementById('edit-email-orig').value = '';
+  buildCampusCheckboxes([]);
+  toggleCampusPicker();
+  document.getElementById('user-modal').classList.add('open');
+}
+
+async function editUser(email) {
+  const r = await fetch('/api/users');
+  const users = await r.json();
+  const u = users.find(x => x.email === email);
+  if (!u) return;
+  document.getElementById('modal-title').textContent = 'Edit User';
+  document.getElementById('modal-email').value = u.email;
+  document.getElementById('modal-email').disabled = true;
+  document.getElementById('modal-name').value = u.name || '';
+  document.getElementById('modal-role').value = u.role || 'editor';
+  document.getElementById('edit-email-orig').value = u.email;
+  buildCampusCheckboxes(u.campuses || []);
+  toggleCampusPicker();
+  document.getElementById('user-modal').classList.add('open');
+}
+
+function buildCampusCheckboxes(selected) {
+  const el = document.getElementById('campus-checkboxes');
+  el.innerHTML = campusList.map(c => `
+    <label><input type="checkbox" value="${c.id}" ${selected.includes(c.id)?'checked':''}> ${c.shortCode}</label>
+  `).join('');
+}
+
+function toggleCampusPicker() {
+  const role = document.getElementById('modal-role').value;
+  document.getElementById('campus-picker').style.display = role === 'editor' ? 'block' : 'none';
+}
+
+function closeModal() {
+  document.getElementById('user-modal').classList.remove('open');
+}
+
+async function saveUser() {
+  const email = document.getElementById('modal-email').value.trim();
+  const name = document.getElementById('modal-name').value.trim();
+  const role = document.getElementById('modal-role').value;
+  const campuses = role === 'editor'
+    ? [...document.querySelectorAll('#campus-checkboxes input:checked')].map(i => i.value)
+    : [];
+  if (!email) { showToast('Email is required', 'error'); return; }
+  try {
+    const r = await fetch('/api/users', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({email, name, role, campuses})
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error);
+    showToast(`User saved.`, 'success');
+    closeModal();
+    loadAll();
+  } catch(e) { showToast('Error: ' + e.message, 'error'); }
+}
+
+async function removeUser(email) {
+  if (!confirm(`Remove access for ${email}?`)) return;
+  try {
+    const r = await fetch(`/api/users/${encodeURIComponent(email)}`, {method:'DELETE'});
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error);
+    showToast('User removed.', 'success');
+    loadAll();
+  } catch(e) { showToast('Error: ' + e.message, 'error'); }
+}
+
+document.getElementById('user-modal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeModal();
+});
+
+loadAll();
+</script>
+</body>
+</html>

@@ -3,12 +3,12 @@
   "folder": "fpa",
   "name": "Fountainhead Preschool Adajan",
   "shortCode": "FPA",
-  "color": "#005BAA",
+  "color": "#005baa",
   "launched": true,
   "metaTitle": "Fountainhead Preschool Adajan (FPA) — IB PYP Early Years, Surat",
   "metaDescription": "Fountainhead Preschool Adajan — IB PYP-aligned early years education in Adajan, Surat. Ages 3–6.",
-  "logo": "fs-main-logo.png",
-  "heroImage": "fpa-hero.jpg",
+  "logo": "",
+  "heroImage": "FPA Front Facade.jpeg",
   "heroHeading": "Fountainhead Preschool Adajan",
   "heroSubtext": "Early years for ages 2–6, Adajan, Surat.",
   "heroButtonPrimary": "Explore FPA",
@@ -16,35 +16,76 @@
   "utilBar": {
     "policyLabel": "Child Protection Policy",
     "policyFile": "FSK Child Protection Policy.pdf",
-    "phones": ["+91 92270 18880"],
+    "phones": [
+      "+91 92270 18880"
+    ],
     "email": "fpa.info@fountainheadpreschools.org"
   },
   "nav": {
-    "about": { "label": "About FPA" },
-    "academics": { "label": "Programmes" },
-    "admissions": { "label": "Admissions" },
-    "campusLife": { "label": "" },
-    "contact": { "label": "Contact Us" },
-    "policies": { "label": "Policies" }
+    "about": {
+      "label": "About FPA"
+    },
+    "academics": {
+      "label": "Programmes"
+    },
+    "admissions": {
+      "label": "Admissions"
+    },
+    "campusLife": {
+      "label": ""
+    },
+    "contact": {
+      "label": "Contact Us"
+    },
+    "policies": {
+      "label": "Policies"
+    }
   },
   "tabs": [
-    {"id":"about-tab","label":"About FPA"},
-    {"id":"programme-tab","label":"Programme"},
-    {"id":"admissions-tab","label":"Admissions"},
-    {"id":"policies-tab","label":"Policies"},
-    {"id":"contact-tab","label":"Contact"}
+    {
+      "id": "about-tab",
+      "label": "About FPA"
+    },
+    {
+      "id": "programme-tab",
+      "label": "Programme"
+    },
+    {
+      "id": "admissions-tab",
+      "label": "Admissions"
+    },
+    {
+      "id": "policies-tab",
+      "label": "Policies"
+    },
+    {
+      "id": "contact-tab",
+      "label": "Contact"
+    }
   ],
   "stats": [
-    {"value":"Adajan","label":"Surat, Gujarat"},
-    {"value":"IB PYP","label":"International Baccalaureate"},
-    {"value":"3–6","label":"Years (Early Years)"},
-    {"value":"FS Group","label":"Flagship Learning Model"}
+    {
+      "value": "Adajan",
+      "label": "Surat, Gujarat"
+    },
+    {
+      "value": "IB PYP",
+      "label": "International Baccalaureate"
+    },
+    {
+      "value": "3–6",
+      "label": "Years (Early Years)"
+    },
+    {
+      "value": "FS Group",
+      "label": "Flagship Learning Model"
+    }
   ],
   "about": {
     "sectionLabel": "About FPA",
     "heading": "Fountainhead Preschool Adajan",
     "intro": "Fountainhead Preschool Adajan (FPA) brings the renowned Fountainhead early years experience to the heart of Adajan, Surat. With the same IB PYP-aligned philosophy that underpins FSK and all FS Group campuses, FPA is the ideal starting point for a child's lifelong love of learning. At FPA, every child's curiosity is celebrated. Our warm, nurturing environment is designed to help young learners discover who they are, how they express themselves, and how the world works — through inquiry, play, and collaboration.",
-    "image": "fpa-hero.jpg",
+    "image": "FPA Front Facade.jpeg",
     "imageCaption": "Fountainhead Preschool Adajan · Surat",
     "leadershipHeading": "How We Learn at FPA",
     "leadershipLabel": "Our Philosophy",
@@ -76,10 +117,26 @@
     "sectionLabel": "Programmes",
     "heading": "Learning at FPA",
     "programmes": [
-      {"ages":"Ages 2–3","title":"Playgroup","body":"Mon–Fri, 2h 30m. Play-based introduction to learning."},
-      {"ages":"Ages 3–4","title":"Pre Nursery","body":"Mon–Fri, 3h. Foundation inquiry learning."},
-      {"ages":"Ages 3–4.5","title":"Nursery","body":"Mon–Fri, 3h. Developing social and academic readiness."},
-      {"ages":"Ages 4–6","title":"Mixed Age Kindergarten","body":"Mon–Fri, 5h. IB PYP-aligned full programme for pre-primary children. Staff ratio: 1:10."}
+      {
+        "ages": "Ages 2–3",
+        "title": "Playgroup",
+        "body": "Mon–Fri, 2h 30m. Play-based introduction to learning."
+      },
+      {
+        "ages": "Ages 3–4",
+        "title": "Pre Nursery",
+        "body": "Mon–Fri, 3h. Foundation inquiry learning."
+      },
+      {
+        "ages": "Ages 3–4.5",
+        "title": "Nursery",
+        "body": "Mon–Fri, 3h. Developing social and academic readiness."
+      },
+      {
+        "ages": "Ages 4–6",
+        "title": "Mixed Age Kindergarten",
+        "body": "Mon–Fri, 5h. IB PYP-aligned full programme for pre-primary children. Staff ratio: 1:10."
+      }
     ],
     "learningModelHeading": "IB PYP Early Years",
     "learningModelLabel": "Programme",
@@ -89,7 +146,18 @@
     "mythsHeading": "",
     "mythsLabel": "",
     "myths": [],
-    "ibLearnerProfile": ["Inquirers","Knowledgeable","Thinkers","Communicators","Principled","Open-Minded","Caring","Risk-Takers","Balanced","Reflective"],
+    "ibLearnerProfile": [
+      "Inquirers",
+      "Knowledgeable",
+      "Thinkers",
+      "Communicators",
+      "Principled",
+      "Open-Minded",
+      "Caring",
+      "Risk-Takers",
+      "Balanced",
+      "Reflective"
+    ],
     "transdisciplinaryThemes": [
       "Who We Are",
       "How We Express Ourselves",
@@ -106,10 +174,30 @@
       "Outdoor Play & Exploration"
     ],
     "programmeSchedule": [
-      {"programme":"Playgroup","age":"2 – 3 years","duration":"2 h 30 min","days":"Mon – Fri"},
-      {"programme":"Pre Nursery","age":"3 – 4 years","duration":"3 h","days":"Mon – Fri"},
-      {"programme":"Nursery","age":"3 – 4.5 years","duration":"3 h","days":"Mon – Fri"},
-      {"programme":"Mixed Age Kindergarten","age":"4 – 6 years","duration":"5 h","days":"Mon – Fri"}
+      {
+        "programme": "Playgroup",
+        "age": "2 – 3 years",
+        "duration": "2 h 30 min",
+        "days": "Mon – Fri"
+      },
+      {
+        "programme": "Pre Nursery",
+        "age": "3 – 4 years",
+        "duration": "3 h",
+        "days": "Mon – Fri"
+      },
+      {
+        "programme": "Nursery",
+        "age": "3 – 4.5 years",
+        "duration": "3 h",
+        "days": "Mon – Fri"
+      },
+      {
+        "programme": "Mixed Age Kindergarten",
+        "age": "4 – 6 years",
+        "duration": "5 h",
+        "days": "Mon – Fri"
+      }
     ],
     "staffRatio": "1:10"
   },
@@ -119,9 +207,21 @@
     "subheading": "Our PAE process — three steps. Warm, welcoming, and centred on your child.",
     "processHeading": "The PAE Process",
     "steps": [
-      {"letter":"P","title":"Pre-Admission","body":"Visit FPA, meet the teachers, and experience the warm Fountainhead environment firsthand. Ask every question you have."},
-      {"letter":"A","title":"Assessment","body":"A gentle, play-based interaction to understand your child and answer all your questions. Relaxed, friendly, and child-centred."},
-      {"letter":"E","title":"Enrolment","body":"Welcome to FPA — documentation, orientation day, and your child's first steps at Fountainhead."}
+      {
+        "letter": "P",
+        "title": "Pre-Admission",
+        "body": "Visit FPA, meet the teachers, and experience the warm Fountainhead environment firsthand. Ask every question you have."
+      },
+      {
+        "letter": "A",
+        "title": "Assessment",
+        "body": "A gentle, play-based interaction to understand your child and answer all your questions. Relaxed, friendly, and child-centred."
+      },
+      {
+        "letter": "E",
+        "title": "Enrolment",
+        "body": "Welcome to FPA — documentation, orientation day, and your child's first steps at Fountainhead."
+      }
     ],
     "docsRequired": [
       "Birth certificate / Age proof",
@@ -133,7 +233,9 @@
   "contact": {
     "sectionLabel": "Contact",
     "heading": "Reach Fountainhead Preschool Adajan",
-    "phones": ["+91 92270 18880"],
+    "phones": [
+      "+91 92270 18880"
+    ],
     "email": "fpa.info@fountainheadpreschools.org",
     "whatsapp": "+919227018880",
     "address": "3, Madhuvilla Bungalow, Madhubha Park,\nAdajan, Surat — 395007, Gujarat",
@@ -161,5 +263,85 @@
     "heading": "Visit FPA",
     "subtext": "Come meet our teachers and see the space where your child will flourish.",
     "buttonLabel": "Book a Visit"
-  }
+  },
+  "sections": [
+    {
+      "visible": true,
+      "id": "s_utilBar_1",
+      "type": "utilBar",
+      "order": 0
+    },
+    {
+      "visible": true,
+      "id": "s_nav_2",
+      "type": "nav",
+      "order": 1
+    },
+    {
+      "visible": true,
+      "id": "s_hero_3",
+      "type": "hero",
+      "order": 2
+    },
+    {
+      "visible": true,
+      "id": "s_stats_4",
+      "type": "stats",
+      "order": 3
+    },
+    {
+      "visible": true,
+      "id": "s_about_5",
+      "type": "about",
+      "order": 4
+    },
+    {
+      "visible": true,
+      "id": "s_academics_6",
+      "type": "academics",
+      "order": 5
+    },
+    {
+      "visible": true,
+      "id": "s_admissions_7",
+      "type": "admissions",
+      "order": 6
+    },
+    {
+      "visible": true,
+      "id": "s_policies_8",
+      "type": "policies",
+      "order": 7
+    },
+    {
+      "visible": true,
+      "id": "s_studentLife_9",
+      "type": "studentLife",
+      "order": 8
+    },
+    {
+      "visible": true,
+      "id": "s_media_10",
+      "type": "media",
+      "order": 9
+    },
+    {
+      "visible": true,
+      "id": "s_contact_11",
+      "type": "contact",
+      "order": 10
+    },
+    {
+      "visible": true,
+      "id": "s_ctaBand_12",
+      "type": "ctaBand",
+      "order": 11
+    },
+    {
+      "visible": true,
+      "id": "s_footer_13",
+      "type": "footer",
+      "order": 12
+    }
+  ]
 }

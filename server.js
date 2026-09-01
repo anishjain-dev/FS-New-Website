@@ -1,10 +1,24 @@
 'use strict';
 
+require('dotenv').config();
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
-const { generateCampusHTML } = require('./template');
+const session = require('express-session');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const { generateCampusHTML, DEFAULT_SECTIONS } = require('./template');
+
+// ── Auth config (loaded from .env) ───────────────────────────────────────────
+const GOOGLE_CLIENT_ID     = process.env.GOOGLE_CLIENT_ID     || '';
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
+const SESSION_SECRET       = process.env.SESSION_SECRET       || 'fs-cms-secret-2026';
+const BASE_URL             = process.env.BASE_URL             || 'http://localhost:3000';
+
+// Auth enabled only when real credentials are present
+const AUTH_ENABLED = GOOGLE_CLIENT_ID !== 'PASTE_YOUR_CLIENT_ID_HERE';
 
 // Multer storage: save to campus folder or images/ subfolder
 const storage = multer.diskStorage({
@@ -33,19 +47,157 @@ const app = express();
 const PORT = 3000;
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data');
+const USERS_FILE = path.join(DATA, 'users.json');
 
-app.use(express.json());
-app.use(express.static(ROOT));
+// ── Users helpers ────────────────────────────────────────────────────────────
+function readUsers() {
+  try { return JSON.parse(fs.readFileSync(USERS_FILE, 'utf8')); } catch { return []; }
+}
+function writeUsers(users) {
+  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
+}
+function findUser(email) { return readUsers().find(u => u.email === email); }
+function isAdmin(user) { return user && user.role === 'admin'; }
+function canEditCampus(user, campusId) {
+  if (!user) return false;
+  if (user.role === 'admin') return true;
+  return user.role === 'editor' && (user.campuses || []).includes(campusId);
+}
 
-// Serve admin
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(ROOT, 'admin', 'index.html'));
+// ── Session & Passport ───────────────────────────────────────────────────────
+app.use(session({
+  secret: SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 } // 7 days
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+if (AUTH_ENABLED) {
+  passport.use(new GoogleStrategy({
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: `${BASE_URL}/auth/google/callback`
+  }, (accessToken, refreshToken, profile, done) => {
+    const email = (profile.emails[0] || {}).value || '';
+    let user = findUser(email);
+    if (!user) return done(null, false, { message: 'no_access' });
+    // Update googleId and photo
+    const users = readUsers();
+    const idx = users.findIndex(u => u.email === email);
+    if (idx >= 0) {
+      users[idx].googleId = profile.id;
+      users[idx].name = users[idx].name || profile.displayName;
+      users[idx].photo = (profile.photos[0] || {}).value || '';
+      writeUsers(users);
+      user = users[idx];
+    }
+    return done(null, user);
+  }));
+}
+
+passport.serializeUser((user, done) => done(null, user.email));
+passport.deserializeUser((email, done) => {
+  const user = findUser(email);
+  done(null, user || false);
 });
 
-// GET /api/campuses
-app.get('/api/campuses', (req, res) => {
+// ── Auth middleware ──────────────────────────────────────────────────────────
+function requireLogin(req, res, next) {
+  if (!AUTH_ENABLED) return next(); // dev mode: no auth
+  if (req.isAuthenticated()) return next();
+  if (req.path.startsWith('/api/')) return res.status(401).json({ error: 'Not authenticated' });
+  res.redirect('/admin/login.html');
+}
+function requireAdmin(req, res, next) {
+  if (!AUTH_ENABLED) return next();
+  if (!req.isAuthenticated()) return res.status(401).json({ error: 'Not authenticated' });
+  if (!isAdmin(req.user)) return res.status(403).json({ error: 'Admin access required' });
+  next();
+}
+function requireCampusAccess(req, res, next) {
+  if (!AUTH_ENABLED) return next();
+  if (!req.isAuthenticated()) return res.status(401).json({ error: 'Not authenticated' });
+  const campusId = req.params.id;
+  if (!canEditCampus(req.user, campusId)) return res.status(403).json({ error: 'No access to this campus' });
+  next();
+}
+
+// ── Google OAuth routes ───────────────────────────────────────────────────────
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/admin/login.html?error=no_access' }),
+  (req, res) => res.redirect('/admin')
+);
+app.get('/auth/logout', (req, res) => {
+  req.logout(() => res.redirect('/admin/login.html'));
+});
+
+// ── Me endpoint ───────────────────────────────────────────────────────────────
+app.get('/api/me', (req, res) => {
+  if (!AUTH_ENABLED) return res.json({ name: 'Dev Mode', role: 'admin', email: '' });
+  if (!req.isAuthenticated()) return res.status(401).json({ error: 'Not authenticated' });
+  const { name, email, role, photo, campuses } = req.user;
+  res.json({ name, email, role, photo, campuses });
+});
+
+app.use(express.json());
+
+// ── Admin HTML routes (protected — must be BEFORE express.static) ─────────────
+app.get('/admin', requireLogin, (req, res) => {
+  res.sendFile(path.join(ROOT, 'admin', 'index.html'));
+});
+app.get('/admin/', requireLogin, (req, res) => {
+  res.sendFile(path.join(ROOT, 'admin', 'index.html'));
+});
+app.get('/admin/index.html', requireLogin, (req, res) => {
+  res.sendFile(path.join(ROOT, 'admin', 'index.html'));
+});
+app.get('/admin/edit.html', requireLogin, (req, res) => {
+  res.sendFile(path.join(ROOT, 'admin', 'edit.html'));
+});
+app.get('/admin/users.html', requireLogin, requireAdmin, (req, res) => {
+  res.sendFile(path.join(ROOT, 'admin', 'users.html'));
+});
+
+// Login page always public
+app.get('/admin/login.html', (req, res) => {
+  res.sendFile(path.join(ROOT, 'admin', 'login.html'));
+});
+
+// Static files (campus HTML, images, assets) — after protected routes
+app.use(express.static(ROOT));
+
+// ── User management API (admin only) ─────────────────────────────────────────
+app.get('/api/users', requireAdmin, (req, res) => {
+  res.json(readUsers());
+});
+app.post('/api/users', requireAdmin, (req, res) => {
+  const { email, name, role, campuses } = req.body;
+  if (!email) return res.status(400).json({ error: 'email required' });
+  const users = readUsers();
+  const idx = users.findIndex(u => u.email === email);
+  const entry = { googleId: (users[idx] || {}).googleId || '', email, name: name || '', role: role || 'editor', campuses: role === 'admin' ? [] : (campuses || []), photo: (users[idx] || {}).photo || '' };
+  if (idx >= 0) users[idx] = entry; else users.push(entry);
+  writeUsers(users);
+  res.json({ success: true });
+});
+app.delete('/api/users/:email', requireAdmin, (req, res) => {
+  const email = decodeURIComponent(req.params.email);
+  const users = readUsers().filter(u => u.email !== email);
+  writeUsers(users);
+  res.json({ success: true });
+});
+
+// GET /api/campuses — filtered by user access
+app.get('/api/campuses', requireLogin, (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync(path.join(DATA, 'campuses.json'), 'utf8'));
+    // Editors only see their assigned campuses
+    if (AUTH_ENABLED && req.user && req.user.role === 'editor') {
+      return res.json(data.filter(c => (req.user.campuses || []).includes(c.id)));
+    }
     res.json(data);
   } catch (e) {
     res.status(500).json({ error: e.message });
@@ -53,20 +205,24 @@ app.get('/api/campuses', (req, res) => {
 });
 
 // GET /api/campus/:id
-app.get('/api/campus/:id', (req, res) => {
+app.get('/api/campus/:id', requireLogin, requireCampusAccess, (req, res) => {
   const id = req.params.id;
   const file = path.join(DATA, `${id}.json`);
   if (!fs.existsSync(file)) return res.status(404).json({ error: 'Campus not found' });
   try {
     const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    // Runtime migration: inject default sections if missing
+    if (!data.sections) {
+      data.sections = DEFAULT_SECTIONS.map(s => Object.assign({}, s));
+    }
     res.json(data);
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
 });
 
-// POST /api/campus/new — create new campus
-app.post('/api/campus/new', (req, res) => {
+// POST /api/campus/new — create new campus (admin only)
+app.post('/api/campus/new', requireAdmin, (req, res) => {
   try {
     const body = req.body;
     const id = body.id || body.folder;
@@ -138,7 +294,7 @@ app.post('/api/campus/new', (req, res) => {
 });
 
 // POST /api/campus/:id — update campus
-app.post('/api/campus/:id', (req, res) => {
+app.post('/api/campus/:id', requireLogin, requireCampusAccess, (req, res) => {
   try {
     const id = req.params.id;
     const campusFile = path.join(DATA, `${id}.json`);
@@ -175,7 +331,7 @@ app.post('/api/campus/:id', (req, res) => {
 });
 
 // POST /api/upload/:id — upload image for a campus
-app.post('/api/upload/:id', upload.single('image'), (req, res) => {
+app.post('/api/upload/:id', requireLogin, requireCampusAccess, upload.single('image'), (req, res) => {
   try {
     if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
     const id = req.params.id;
@@ -191,8 +347,8 @@ app.post('/api/upload/:id', upload.single('image'), (req, res) => {
   }
 });
 
-// DELETE /api/campus/:id — delete campus
-app.delete('/api/campus/:id', (req, res) => {
+// DELETE /api/campus/:id — delete campus (admin only)
+app.delete('/api/campus/:id', requireAdmin, (req, res) => {
   try {
     const id = req.params.id;
     const campusFile = path.join(DATA, `${id}.json`);
@@ -218,6 +374,21 @@ app.delete('/api/campus/:id', (req, res) => {
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+// GET /api/campus/:id/images — list image files in campus images folder
+app.get('/api/campus/:id/images', requireLogin, requireCampusAccess, (req, res) => {
+  const id = req.params.id;
+  const campusFile = path.join(DATA, `${id}.json`);
+  let folder = id;
+  if (fs.existsSync(campusFile)) {
+    try { folder = JSON.parse(fs.readFileSync(campusFile, 'utf8')).folder || id; } catch {}
+  }
+  const imgDir = path.join(ROOT, folder, 'images');
+  if (!fs.existsSync(imgDir)) return res.json({ files: [] });
+  const IMAGE_EXT = /\.(jpe?g|png|gif|webp|svg|avif)$/i;
+  const files = fs.readdirSync(imgDir).filter(f => IMAGE_EXT.test(f));
+  res.json({ files });
 });
 
 app.listen(PORT, () => {

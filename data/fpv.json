@@ -1,268 +1,354 @@
 {
-  "id": "fpv",
-  "folder": "fpv",
-  "name": "Fountainhead Preschool Vesu",
-  "shortCode": "FPV",
-  "color": "#005BAA",
-  "launched": true,
-  "metaTitle": "Fountainhead Preschool Vesu (FPV) — IB PYP Early Years, Surat",
-  "metaDescription": "Fountainhead Preschool Vesu — IB PYP-aligned early years education in Vesu, Surat. Ages 3—6.",
-  "logo": "fs-main-logo.png",
-  "heroImage": "fpv-hero.jpg",
-  "heroHeading": "Fountainhead Preschool Vesu",
-  "heroSubtext": "Early years for ages 2–6, Vesu, Surat.",
-  "heroButtonPrimary": "Explore FPV",
-  "heroButtonSecondary": "Enquire Now",
-  "utilBar": {
-    "policyLabel": "Child Protection Policy",
-    "policyFile": "FSK Child Protection Policy.pdf",
-    "phones": [
-      "+91 98241 19636"
-    ],
-    "email": "fpv.info@fountainheadpreschools.org"
-  },
-  "nav": {
-    "about": {
-      "label": "About FPV"
-    },
-    "academics": {
-      "label": "Programmes"
-    },
-    "admissions": {
-      "label": "Admissions"
-    },
-    "campusLife": {
-      "label": ""
-    },
-    "contact": {
-      "label": "Contact Us"
-    },
-    "policies": {
-      "label": "Policies"
-    }
-  },
-  "tabs": [
-    {
-      "id": "about-tab",
-      "label": "About FPV"
-    },
-    {
-      "id": "programme-tab",
-      "label": "Programme"
-    },
-    {
-      "id": "admissions-tab",
-      "label": "Admissions"
-    },
-    {
-      "id": "policies-tab",
-      "label": "Policies"
-    },
-    {
-      "id": "contact-tab",
-      "label": "Contact"
-    }
-  ],
-  "stats": [
-    {
-      "value": "Vesu",
-      "label": "Surat, Gujarat"
-    },
-    {
-      "value": "IB PYP",
-      "label": "International Baccalaureate"
-    },
-    {
-      "value": "3—6",
-      "label": "Years (Early Years)"
-    },
-    {
-      "value": "FS Group",
-      "label": "Flagship Learning Model"
-    }
-  ],
-  "about": {
-    "sectionLabel": "About FPV",
-    "heading": "Fountainhead Preschool Vesu",
-    "intro": "Fountainhead Preschool Vesu (FPV) is the Fountainhead early years experience for families in the Vesu area of Surat. Backed by the same IB PYP philosophy and the Fountainhead learning model, FPV creates a warm, safe, and intellectually stimulating space for children aged 3–6. At FPV, children are not just cared for — they are inspired. Every day is an inquiry. Every moment is an opportunity to grow, explore, and discover who they are and how the world around them works. Previously The Village Early Learning Centre.",
-    "image": "fpv-hero.jpg",
-    "imageCaption": "Fountainhead Preschool Vesu — Surat",
-    "leadershipHeading": "How We Learn at FPV",
-    "leadershipLabel": "Our Philosophy",
-    "leaders": [],
-    "learningPillars": [
-      {
-        "icon": "sparkle",
-        "title": "Learner Agency",
-        "body": "Every child at FPV has genuine choice, voice, and ownership of their learning journey — from the very beginning."
-      },
-      {
-        "icon": "search",
-        "title": "Inquiry Through Play",
-        "body": "Play is learning. Every activity at FPV is designed to provoke curiosity, encourage exploration, and develop critical thinking."
-      },
-      {
-        "icon": "heart",
-        "title": "Social-Emotional Resilience",
-        "body": "We develop emotional vocabulary and the resilience children need to navigate their world with confidence and care."
-      },
-      {
-        "icon": "leaf",
-        "title": "Environment as Third Teacher",
-        "body": "FPV spaces are intentionally designed — with materials that invite exploration and displays that reflect children's thinking."
-      }
-    ],
-    "previousName": "Previously The Village Early Learning Centre."
-  },
-  "academics": {
-    "sectionLabel": "Programmes",
-    "heading": "Learning at FPV",
-    "programmes": [
-      {
-        "ages": "Ages 2–3",
-        "title": "Playgroup",
-        "body": "Mon–Fri, 2h 30m. Play-based introduction to learning."
-      },
-      {
-        "ages": "Ages 3–4",
-        "title": "Pre Nursery",
-        "body": "Mon–Fri, 3h. Foundation inquiry learning."
-      },
-      {
-        "ages": "Ages 3–4.5",
-        "title": "Nursery",
-        "body": "Mon–Fri, 3h. Developing social and academic readiness."
-      },
-      {
-        "ages": "Ages 4–6",
-        "title": "Mixed Age Kindergarten",
-        "body": "Mon–Fri, 5h. IB PYP-aligned full programme for pre-primary children. Staff ratio: 1:10."
-      }
-    ],
-    "learningModelHeading": "IB PYP Early Years",
-    "learningModelLabel": "Programme",
-    "learningModelQuote": "",
-    "learningModelText1": "Inquiry-based, play-led, IB PYP-aligned early childhood education. Developing curious, caring, and courageous young learners through six transdisciplinary themes.",
-    "learningModelText2": "FPV classrooms are carefully prepared environments — with natural light, inviting learning corners, and materials that prompt exploration. Every inch of the space is designed with the child in mind.",
-    "mythsHeading": "",
-    "mythsLabel": "",
-    "myths": [],
-    "ibLearnerProfile": [
-      "Inquirers",
-      "Knowledgeable",
-      "Thinkers",
-      "Communicators",
-      "Principled",
-      "Open-Minded",
-      "Caring",
-      "Risk-Takers",
-      "Balanced",
-      "Reflective"
-    ],
-    "transdisciplinaryThemes": [
-      "Who We Are",
-      "How We Express Ourselves",
-      "How the World Works",
-      "How We Organise Ourselves",
-      "Sharing the Planet",
-      "Where We Are in Place & Time"
-    ],
-    "enrichmentActivities": [
-      "Visual Arts & Creative Expression",
-      "Music & Movement",
-      "Yoga & Mindfulness",
-      "Storytelling & Drama",
-      "Outdoor Play & Nature Exploration"
-    ],
-    "programmeSchedule": [
-      {
-        "programme": "Playgroup",
-        "age": "2 – 3 years",
-        "duration": "2 h 30 min",
-        "days": "Mon – Fri"
-      },
-      {
-        "programme": "Pre Nursery",
-        "age": "3 – 4 years",
-        "duration": "3 h",
-        "days": "Mon – Fri"
-      },
-      {
-        "programme": "Nursery",
-        "age": "3 – 4.5 years",
-        "duration": "3 h",
-        "days": "Mon – Fri"
-      },
-      {
-        "programme": "Mixed Age Kindergarten",
-        "age": "4 – 6 years",
-        "duration": "5 h",
-        "days": "Mon – Fri"
-      }
-    ],
-    "staffRatio": "1:10"
-  },
-  "admissions": {
-    "sectionLabel": "Admissions",
-    "heading": "Join FPV",
-    "subheading": "Our PAE process — three steps. Relaxed, child-friendly, and focused on your family.",
-    "processHeading": "The PAE Process",
-    "steps": [
-      {
-        "letter": "P",
-        "title": "Pre-Admission",
-        "body": "Visit FPV and meet our warm team. See the space where your child will grow, play, and discover."
-      },
-      {
-        "letter": "A",
-        "title": "Assessment",
-        "body": "Play-based interaction — relaxed, child-friendly, and focused on getting to know your little one. Not a test."
-      },
-      {
-        "letter": "E",
-        "title": "Enrolment",
-        "body": "Welcome to the FPV family. Orientation, documentation, and a joyful beginning at Fountainhead."
-      }
-    ],
-    "docsRequired": [
-      "Birth certificate / Age proof",
-      "Passport-size photographs (4 copies)",
-      "Residential address proof",
-      "Aadhar card (child and parents)"
-    ]
-  },
-  "contact": {
-    "sectionLabel": "Contact",
-    "heading": "Reach Fountainhead Preschool Vesu",
-    "phones": [
-      "+91 98241 19636"
-    ],
-    "email": "fpv.info@fountainheadpreschools.org",
-    "whatsapp": "+918000130031",
-    "address": "40-41-42, Behind T.M. Patel School,\nVesu, Surat — 395007, Gujarat",
-    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721!2d72.79!3d21.16!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA5JzM2LjAiTiA3MsKwNDcnMjQuMCJF!5e0!3m2!1sen!2sin!4v1",
-    "instagram": "",
-    "facebook": "",
-    "youtube": "https://www.youtube.com/@fountainheadschools",
-    "linkedin": ""
-  },
-  "studentLife": {
-    "sectionLabel": "Student Life",
-    "heading": "Life at FPV",
-    "sportsLabel": "",
-    "sportsHeading": "",
-    "sportsBody": "",
-    "sportsTags": [],
-    "hdpHeading": "",
-    "hdpBody": ""
-  },
-  "footer": {
-    "description": "IB PYP early years school in Vesu, Surat. Part of the Fountainhead Schools group.",
-    "year": "2026"
-  },
-  "ctaBand": {
-    "heading": "Visit FPV",
-    "subtext": "Come meet our teachers and see the space where your child will flourish.",
-    "buttonLabel": "Book a Visit"
-  }
+    "id":  "fpv",
+    "folder":  "fpv",
+    "name":  "Fountainhead Preschool Vesu",
+    "shortCode":  "FPV",
+    "color":  "#005BAA",
+    "launched":  true,
+    "metaTitle":  "Fountainhead Preschool Vesu (FPV) — IB PYP Early Years, Surat",
+    "metaDescription":  "Fountainhead Preschool Vesu — IB PYP-aligned early years education in Vesu, Surat. Ages 3—6.",
+    "logo":  "",
+    "heroImage":  "FPV and FSM Front Facade.JPG",
+    "heroHeading":  "Fountainhead Preschool Vesu",
+    "heroSubtext":  "Early years for ages 2–6, Vesu, Surat.",
+    "heroButtonPrimary":  "Explore FPV",
+    "heroButtonSecondary":  "Enquire Now",
+    "utilBar":  {
+                    "policyLabel":  "Child Protection Policy",
+                    "policyFile":  "FSK Child Protection Policy.pdf",
+                    "phones":  [
+                                   "+91 98241 19636"
+                               ],
+                    "email":  "fpv.info@fountainheadpreschools.org"
+                },
+    "nav":  {
+                "about":  {
+                              "label":  "About FPV"
+                          },
+                "academics":  {
+                                  "label":  "Programmes"
+                              },
+                "admissions":  {
+                                   "label":  "Admissions"
+                               },
+                "campusLife":  {
+                                   "label":  ""
+                               },
+                "contact":  {
+                                "label":  "Contact Us"
+                            },
+                "policies":  {
+                                 "label":  "Policies"
+                             }
+            },
+    "tabs":  [
+                 {
+                     "id":  "about-tab",
+                     "label":  "About FPV"
+                 },
+                 {
+                     "id":  "programme-tab",
+                     "label":  "Programme"
+                 },
+                 {
+                     "id":  "admissions-tab",
+                     "label":  "Admissions"
+                 },
+                 {
+                     "id":  "policies-tab",
+                     "label":  "Policies"
+                 },
+                 {
+                     "id":  "contact-tab",
+                     "label":  "Contact"
+                 }
+             ],
+    "stats":  [
+                  {
+                      "value":  "Vesu",
+                      "label":  "Surat, Gujarat"
+                  },
+                  {
+                      "value":  "IB PYP",
+                      "label":  "International Baccalaureate"
+                  },
+                  {
+                      "value":  "3—6",
+                      "label":  "Years (Early Years)"
+                  },
+                  {
+                      "value":  "FS Group",
+                      "label":  "Flagship Learning Model"
+                  }
+              ],
+    "about":  {
+                  "sectionLabel":  "About FPV",
+                  "heading":  "Fountainhead Preschool Vesu",
+                  "intro":  "Fountainhead Preschool Vesu (FPV) is the Fountainhead early years experience for families in the Vesu area of Surat. Backed by the same IB PYP philosophy and the Fountainhead learning model, FPV creates a warm, safe, and intellectually stimulating space for children aged 3–6. At FPV, children are not just cared for — they are inspired. Every day is an inquiry. Every moment is an opportunity to grow, explore, and discover who they are and how the world around them works. Previously The Village Early Learning Centre.",
+                  "image":  "FPV and FSM Front Facade.JPV",
+                  "imageCaption":  "Fountainhead Preschool Vesu — Surat",
+                  "leadershipHeading":  "How We Learn at FPV",
+                  "leadershipLabel":  "Our Philosophy",
+                  "leaders":  [
+
+                              ],
+                  "learningPillars":  [
+                                          {
+                                              "icon":  "sparkle",
+                                              "title":  "Learner Agency",
+                                              "body":  "Every child at FPV has genuine choice, voice, and ownership of their learning journey — from the very beginning."
+                                          },
+                                          {
+                                              "icon":  "search",
+                                              "title":  "Inquiry Through Play",
+                                              "body":  "Play is learning. Every activity at FPV is designed to provoke curiosity, encourage exploration, and develop critical thinking."
+                                          },
+                                          {
+                                              "icon":  "heart",
+                                              "title":  "Social-Emotional Resilience",
+                                              "body":  "We develop emotional vocabulary and the resilience children need to navigate their world with confidence and care."
+                                          },
+                                          {
+                                              "icon":  "leaf",
+                                              "title":  "Environment as Third Teacher",
+                                              "body":  "FPV spaces are intentionally designed — with materials that invite exploration and displays that reflect children\u0027s thinking."
+                                          }
+                                      ],
+                  "previousName":  "Previously The Village Early Learning Centre."
+              },
+    "academics":  {
+                      "sectionLabel":  "Programmes",
+                      "heading":  "Learning at FPV",
+                      "programmes":  [
+                                         {
+                                             "ages":  "Ages 2–3",
+                                             "title":  "Playgroup",
+                                             "body":  "Mon–Fri, 2h 30m. Play-based introduction to learning."
+                                         },
+                                         {
+                                             "ages":  "Ages 3–4",
+                                             "title":  "Pre Nursery",
+                                             "body":  "Mon–Fri, 3h. Foundation inquiry learning."
+                                         },
+                                         {
+                                             "ages":  "Ages 3–4.5",
+                                             "title":  "Nursery",
+                                             "body":  "Mon–Fri, 3h. Developing social and academic readiness."
+                                         },
+                                         {
+                                             "ages":  "Ages 4–6",
+                                             "title":  "Mixed Age Kindergarten",
+                                             "body":  "Mon–Fri, 5h. IB PYP-aligned full programme for pre-primary children. Staff ratio: 1:10."
+                                         }
+                                     ],
+                      "learningModelHeading":  "IB PYP Early Years",
+                      "learningModelLabel":  "Programme",
+                      "learningModelQuote":  "",
+                      "learningModelText1":  "Inquiry-based, play-led, IB PYP-aligned early childhood education. Developing curious, caring, and courageous young learners through six transdisciplinary themes.",
+                      "learningModelText2":  "FPV classrooms are carefully prepared environments — with natural light, inviting learning corners, and materials that prompt exploration. Every inch of the space is designed with the child in mind.",
+                      "mythsHeading":  "",
+                      "mythsLabel":  "",
+                      "myths":  [
+
+                                ],
+                      "ibLearnerProfile":  [
+                                               "Inquirers",
+                                               "Knowledgeable",
+                                               "Thinkers",
+                                               "Communicators",
+                                               "Principled",
+                                               "Open-Minded",
+                                               "Caring",
+                                               "Risk-Takers",
+                                               "Balanced",
+                                               "Reflective"
+                                           ],
+                      "transdisciplinaryThemes":  [
+                                                      "Who We Are",
+                                                      "How We Express Ourselves",
+                                                      "How the World Works",
+                                                      "How We Organise Ourselves",
+                                                      "Sharing the Planet",
+                                                      "Where We Are in Place \u0026 Time"
+                                                  ],
+                      "enrichmentActivities":  [
+                                                   "Visual Arts \u0026 Creative Expression",
+                                                   "Music \u0026 Movement",
+                                                   "Yoga \u0026 Mindfulness",
+                                                   "Storytelling \u0026 Drama",
+                                                   "Outdoor Play \u0026 Nature Exploration"
+                                               ],
+                      "programmeSchedule":  [
+                                                {
+                                                    "programme":  "Playgroup",
+                                                    "age":  "2 – 3 years",
+                                                    "duration":  "2 h 30 min",
+                                                    "days":  "Mon – Fri"
+                                                },
+                                                {
+                                                    "programme":  "Pre Nursery",
+                                                    "age":  "3 – 4 years",
+                                                    "duration":  "3 h",
+                                                    "days":  "Mon – Fri"
+                                                },
+                                                {
+                                                    "programme":  "Nursery",
+                                                    "age":  "3 – 4.5 years",
+                                                    "duration":  "3 h",
+                                                    "days":  "Mon – Fri"
+                                                },
+                                                {
+                                                    "programme":  "Mixed Age Kindergarten",
+                                                    "age":  "4 – 6 years",
+                                                    "duration":  "5 h",
+                                                    "days":  "Mon – Fri"
+                                                }
+                                            ],
+                      "staffRatio":  "1:10"
+                  },
+    "admissions":  {
+                       "sectionLabel":  "Admissions",
+                       "heading":  "Join FPV",
+                       "subheading":  "Our PAE process — three steps. Relaxed, child-friendly, and focused on your family.",
+                       "processHeading":  "The PAE Process",
+                       "steps":  [
+                                     {
+                                         "letter":  "P",
+                                         "title":  "Pre-Admission",
+                                         "body":  "Visit FPV and meet our warm team. See the space where your child will grow, play, and discover."
+                                     },
+                                     {
+                                         "letter":  "A",
+                                         "title":  "Assessment",
+                                         "body":  "Play-based interaction — relaxed, child-friendly, and focused on getting to know your little one. Not a test."
+                                     },
+                                     {
+                                         "letter":  "E",
+                                         "title":  "Enrolment",
+                                         "body":  "Welcome to the FPV family. Orientation, documentation, and a joyful beginning at Fountainhead."
+                                     }
+                                 ],
+                       "docsRequired":  [
+                                            "Birth certificate / Age proof",
+                                            "Passport-size photographs (4 copies)",
+                                            "Residential address proof",
+                                            "Aadhar card (child and parents)"
+                                        ]
+                   },
+    "contact":  {
+                    "sectionLabel":  "Contact",
+                    "heading":  "Reach Fountainhead Preschool Vesu",
+                    "phones":  [
+                                   "+91 98241 19636"
+                               ],
+                    "email":  "fpv.info@fountainheadpreschools.org",
+                    "whatsapp":  "+918000130031",
+                    "address":  "40-41-42, Behind T.M. Patel School,\nVesu, Surat — 395007, Gujarat",
+                    "mapEmbed":  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721!2d72.79!3d21.16!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA5JzM2LjAiTiA3MsKwNDcnMjQuMCJF!5e0!3m2!1sen!2sin!4v1",
+                    "instagram":  "",
+                    "facebook":  "",
+                    "youtube":  "https://www.youtube.com/@fountainheadschools",
+                    "linkedin":  ""
+                },
+    "studentLife":  {
+                        "sectionLabel":  "Student Life",
+                        "heading":  "Life at FPV",
+                        "sportsLabel":  "",
+                        "sportsHeading":  "",
+                        "sportsBody":  "",
+                        "sportsTags":  [
+
+                                       ],
+                        "hdpHeading":  "",
+                        "hdpBody":  ""
+                    },
+    "footer":  {
+                   "description":  "IB PYP early years school in Vesu, Surat. Part of the Fountainhead Schools group.",
+                   "year":  "2026"
+               },
+    "ctaBand":  {
+                    "heading":  "Visit FPV",
+                    "subtext":  "Come meet our teachers and see the space where your child will flourish.",
+                    "buttonLabel":  "Book a Visit"
+                },
+    "sections":  [
+                     {
+                         "visible":  true,
+                         "id":  "s_utilBar_1",
+                         "type":  "utilBar",
+                         "order":  0
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_nav_2",
+                         "type":  "nav",
+                         "order":  1
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_hero_3",
+                         "type":  "hero",
+                         "order":  2
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_stats_4",
+                         "type":  "stats",
+                         "order":  3
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_about_5",
+                         "type":  "about",
+                         "order":  4
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_academics_6",
+                         "type":  "academics",
+                         "order":  5
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_admissions_7",
+                         "type":  "admissions",
+                         "order":  6
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_policies_8",
+                         "type":  "policies",
+                         "order":  7
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_studentLife_9",
+                         "type":  "studentLife",
+                         "order":  8
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_media_10",
+                         "type":  "media",
+                         "order":  9
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_contact_11",
+                         "type":  "contact",
+                         "order":  10
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_ctaBand_12",
+                         "type":  "ctaBand",
+                         "order":  11
+                     },
+                     {
+                         "visible":  true,
+                         "id":  "s_footer_13",
+                         "type":  "footer",
+                         "order":  12
+                     }
+                 ]
 }

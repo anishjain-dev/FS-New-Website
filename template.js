@@ -3,8 +3,29 @@
 /**
  * generateCampusHTML(data)
  * Generates a complete campus index.html from a campus data object.
- * Matches the exact visual structure of the existing campus pages.
+ * Section order and visibility are driven by data.sections array.
  */
+
+const DEFAULT_SECTIONS = [
+  {id:'s_utilBar_1',  type:'utilBar',     order:0,  visible:true},
+  {id:'s_nav_2',      type:'nav',         order:1,  visible:true},
+  {id:'s_hero_3',     type:'hero',        order:2,  visible:true},
+  {id:'s_stats_4',    type:'stats',       order:3,  visible:true},
+  {id:'s_about_5',    type:'about',       order:4,  visible:true},
+  {id:'s_academics_6',type:'academics',   order:5,  visible:true},
+  {id:'s_admissions_7',type:'admissions', order:6,  visible:true},
+  {id:'s_policies_8', type:'policies',    order:7,  visible:true},
+  {id:'s_studentLife_9',type:'studentLife',order:8, visible:true},
+  {id:'s_media_10',   type:'media',       order:9,  visible:true},
+  {id:'s_contact_11', type:'contact',     order:10, visible:true},
+  {id:'s_ctaBand_12', type:'ctaBand',     order:11, visible:true},
+  {id:'s_footer_13',  type:'footer',      order:12, visible:true}
+];
+
+const TAB_TYPES = new Set(['about','academics','admissions','policies','studentLife','media','contact']);
+// Maps tab type to its index in the d.tabs array (legacy structure)
+const TAB_TYPE_TO_TABS_IDX = {about:0, academics:1, admissions:2, policies:3, studentLife:4, media:5, contact:6};
+
 function generateCampusHTML(data) {
   const d = data;
   const phones = d.utilBar.phones || [];
@@ -17,7 +38,6 @@ function generateCampusHTML(data) {
   const docs = (d.admissions && d.admissions.docsRequired) || [];
   const contactPhones = (d.contact && d.contact.phones) || [];
   const sportsTags = (d.studentLife && d.studentLife.sportsTags) || [];
-  const tabIds = tabs.map(t => `'${t.id}'`).join(',');
 
   const progColors = [
     'var(--dark)', 'var(--gold)', '#8B6914', 'var(--fs-blue)', '#c0392b', '#0891b2'
@@ -61,10 +81,7 @@ function generateCampusHTML(data) {
 
   const statsGridCols = `repeat(${stats.length},1fr)`;
 
-  const tabBtnsHTML = tabs.map((t, i) => `
-      <button class="tab-btn${i === 0 ? ' active' : ''}" onclick="showTab('${t.id}',${i})">${t.label}</button>`).join('');
-
-  const phonesUtilHTML = phones.map((p, i) => {
+  const phonesUtilHTML = phones.map((p) => {
     const num = p.replace(/[^0-9]/g, '');
     return `<a href="tel:+91${num}">${p}</a>`;
   }).join('\n      ');
@@ -83,28 +100,59 @@ function generateCampusHTML(data) {
   const navContact = (d.nav && d.nav.contact && d.nav.contact.label) || 'Contact Us';
   const navPolicies = (d.nav && d.nav.policies && d.nav.policies.label) || 'Policies';
 
-  const admTabId = tabs[2] ? tabs[2].id : 'admissions-tab';
-  const aboutTabId = tabs[0] ? tabs[0].id : 'about-tab';
-  const academicsTabId = tabs[1] ? tabs[1].id : 'academics-tab';
-  const policiesTabId = tabs[3] ? tabs[3].id : 'policies-tab';
-  const lifeTabId = tabs[4] ? tabs[4].id : 'life-tab';
-  const contactTabId = tabs[6] ? tabs[6].id : 'contact-tab';
-
   const addressHTML = (d.contact.address || '').replace(/\n/g, '<br>');
   const mapEmbed = d.contact.mapEmbed || '';
   const whatsappNum = (d.contact.whatsapp || '').replace(/[^0-9]/g, '');
 
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${d.metaTitle}</title>
-<meta name="description" content="${d.metaDescription}">
-<link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
+  // ── Section ordering ────────────────────────────────────────────────────────
+  const rawSections = d.sections || DEFAULT_SECTIONS;
+  const sorted = [...rawSections]
+    .sort((a, b) => a.order - b.order)
+    .filter(s => s.visible !== false);
 
+  // Tab sections in their display order
+  const tabSections = sorted.filter(s => TAB_TYPES.has(s.type));
+
+  // Map tab type → tab data object from legacy d.tabs array
+  const tabDataByType = {};
+  Object.entries(TAB_TYPE_TO_TABS_IDX).forEach(([type, idx]) => {
+    tabDataByType[type] = tabs[idx] || { id: `${type}-tab`, label: type };
+  });
+
+  // Visible index within the tab bar for each type (needed for showTab calls)
+  const tabIdx = {};
+  tabSections.forEach((s, i) => { tabIdx[s.type] = i; });
+
+  const aboutTabId      = tabDataByType.about.id;
+  const academicsTabId  = tabDataByType.academics.id;
+  const admTabId        = tabDataByType.admissions.id;
+  const policiesTabId   = tabDataByType.policies.id;
+  const lifeTabId       = tabDataByType.studentLife.id;
+  const mediaTabId      = tabDataByType.media.id;
+  const contactTabId    = tabDataByType.contact.id;
+
+  const aIdx   = tabIdx.about       !== undefined ? tabIdx.about       : 0;
+  const acIdx  = tabIdx.academics   !== undefined ? tabIdx.academics   : 1;
+  const admIdx = tabIdx.admissions  !== undefined ? tabIdx.admissions  : 2;
+  const polIdx = tabIdx.policies    !== undefined ? tabIdx.policies    : 3;
+  const liIdx  = tabIdx.studentLife !== undefined ? tabIdx.studentLife : 4;
+  const meIdx  = tabIdx.media       !== undefined ? tabIdx.media       : 5;
+  const coIdx  = tabIdx.contact     !== undefined ? tabIdx.contact     : 6;
+
+  // Tab bar buttons
+  const tabBtnsHTML = tabSections.map((s, i) => {
+    const td = tabDataByType[s.type];
+    if (!td) return '';
+    return `\n      <button class="tab-btn${i === 0 ? ' active' : ''}" onclick="showTab('${td.id}',${i})">${td.label}</button>`;
+  }).join('');
+
+  // Tab IDs array for JS
+  const tabIdsJS = tabSections.map(s => `'${tabDataByType[s.type].id}'`).join(',');
+
+  // ── Section HTML builders ───────────────────────────────────────────────────
+
+  function buildUtilBar() {
+    return `
 <!-- UTILITY BAR -->
 <div class="utility-bar">
   <div class="utility-inner">
@@ -114,8 +162,11 @@ function generateCampusHTML(data) {
       <a href="mailto:${d.utilBar.email}">${d.utilBar.email}</a>
     </div>
   </div>
-</div>
+</div>`;
+  }
 
+  function buildNav() {
+    return `
 <!-- HEADER -->
 <header class="site-header" id="navbar">
   <div class="header-row">
@@ -127,38 +178,38 @@ function generateCampusHTML(data) {
       <details class="nav-group" name="primary-nav">
         <summary>${navAbout}</summary>
         <div class="nav-submenu">
-          <a href="#" onclick="showTab('${aboutTabId}',0)">${navAbout}</a>
-          <a href="#" onclick="showTab('${aboutTabId}',0)">Values, Mission &amp; Philosophy</a>
-          <a href="#" onclick="showTab('${aboutTabId}',0)">IB Mission Statement</a>
-          <a href="#" onclick="showTab('${policiesTabId}',3)">Child Protection</a>
+          <a href="#" onclick="showTab('${aboutTabId}',${aIdx})">${navAbout}</a>
+          <a href="#" onclick="showTab('${aboutTabId}',${aIdx})">Values, Mission &amp; Philosophy</a>
+          <a href="#" onclick="showTab('${aboutTabId}',${aIdx})">IB Mission Statement</a>
+          <a href="#" onclick="showTab('${policiesTabId}',${polIdx})">Child Protection</a>
         </div>
       </details>
       <details class="nav-group" name="primary-nav">
         <summary>${navAcademics}</summary>
         <div class="nav-submenu">
-          <a href="#" onclick="showTab('${academicsTabId}',1)">Academics Overview</a>
-          <a href="#" onclick="showTab('${academicsTabId}',1)">The Fountainhead Learning Model</a>
-          <a href="#" onclick="showTab('${academicsTabId}',1)">Primary Years Programme</a>
-          <a href="#" onclick="showTab('${academicsTabId}',1)">Middle Years Programme</a>
-          <a href="#" onclick="showTab('${academicsTabId}',1)">Diploma Programme</a>
-          <a href="#" onclick="showTab('${academicsTabId}',1)">Demystifying IB Myths</a>
+          <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Academics Overview</a>
+          <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">The Fountainhead Learning Model</a>
+          <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Primary Years Programme</a>
+          <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Middle Years Programme</a>
+          <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Diploma Programme</a>
+          <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Demystifying IB Myths</a>
         </div>
       </details>
-      <a href="#" onclick="showTab('${admTabId}',2)">${navAdmissions}</a>
+      <a href="#" onclick="showTab('${admTabId}',${admIdx})">${navAdmissions}</a>
       <details class="nav-group" name="primary-nav">
         <summary>${navCampusLife}</summary>
         <div class="nav-submenu">
-          <a href="#" onclick="showTab('${lifeTabId}',4)">Campus Life Overview</a>
-          <a href="#" onclick="showTab('${lifeTabId}',4)">Student Life</a>
-          <a href="#" onclick="showTab('${lifeTabId}',4)">Student Support</a>
-          <a href="#" onclick="showTab('${lifeTabId}',4)">Transport</a>
+          <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Campus Life Overview</a>
+          <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Student Life</a>
+          <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Student Support</a>
+          <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Transport</a>
         </div>
       </details>
-      <a href="#" onclick="showTab('${contactTabId}',6)">${navContact}</a>
-      <a href="#" onclick="showTab('${policiesTabId}',3)">${navPolicies}</a>
+      <a href="#" onclick="showTab('${contactTabId}',${coIdx})">${navContact}</a>
+      <a href="#" onclick="showTab('${policiesTabId}',${polIdx})">${navPolicies}</a>
     </nav>
 
-    <a class="nav-inquire" href="#" onclick="showTab('${admTabId}',2)">Enquire</a>
+    <a class="nav-inquire" href="#" onclick="showTab('${admTabId}',${admIdx})">Enquire</a>
 
     <button class="hamburger" popovertarget="site-nav" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -171,38 +222,41 @@ function generateCampusHTML(data) {
   <details class="panel-group" name="mobile-nav">
     <summary>${navAbout}</summary>
     <div class="panel-submenu">
-      <a href="#" onclick="showTab('${aboutTabId}',0)">${navAbout}</a>
-      <a href="#" onclick="showTab('${aboutTabId}',0)">Values, Mission &amp; Philosophy</a>
-      <a href="#" onclick="showTab('${aboutTabId}',0)">IB Mission Statement</a>
-      <a href="#" onclick="showTab('${policiesTabId}',3)">Child Protection</a>
+      <a href="#" onclick="showTab('${aboutTabId}',${aIdx})">${navAbout}</a>
+      <a href="#" onclick="showTab('${aboutTabId}',${aIdx})">Values, Mission &amp; Philosophy</a>
+      <a href="#" onclick="showTab('${aboutTabId}',${aIdx})">IB Mission Statement</a>
+      <a href="#" onclick="showTab('${policiesTabId}',${polIdx})">Child Protection</a>
     </div>
   </details>
   <details class="panel-group" name="mobile-nav">
     <summary>${navAcademics}</summary>
     <div class="panel-submenu">
-      <a href="#" onclick="showTab('${academicsTabId}',1)">Academics Overview</a>
-      <a href="#" onclick="showTab('${academicsTabId}',1)">The Fountainhead Learning Model</a>
-      <a href="#" onclick="showTab('${academicsTabId}',1)">Primary Years Programme</a>
-      <a href="#" onclick="showTab('${academicsTabId}',1)">Middle Years Programme</a>
-      <a href="#" onclick="showTab('${academicsTabId}',1)">Diploma Programme</a>
-      <a href="#" onclick="showTab('${academicsTabId}',1)">Demystifying IB Myths</a>
+      <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Academics Overview</a>
+      <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">The Fountainhead Learning Model</a>
+      <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Primary Years Programme</a>
+      <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Middle Years Programme</a>
+      <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Diploma Programme</a>
+      <a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Demystifying IB Myths</a>
     </div>
   </details>
-  <a href="#" onclick="showTab('${admTabId}',2)">${navAdmissions}</a>
+  <a href="#" onclick="showTab('${admTabId}',${admIdx})">${navAdmissions}</a>
   <details class="panel-group" name="mobile-nav">
     <summary>${navCampusLife}</summary>
     <div class="panel-submenu">
-      <a href="#" onclick="showTab('${lifeTabId}',4)">Campus Life Overview</a>
-      <a href="#" onclick="showTab('${lifeTabId}',4)">Student Life</a>
-      <a href="#" onclick="showTab('${lifeTabId}',4)">Student Support</a>
-      <a href="#" onclick="showTab('${lifeTabId}',4)">Transport</a>
+      <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Campus Life Overview</a>
+      <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Student Life</a>
+      <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Student Support</a>
+      <a href="#" onclick="showTab('${lifeTabId}',${liIdx})">Transport</a>
     </div>
   </details>
-  <a href="#" onclick="showTab('${contactTabId}',6)">${navContact}</a>
-  <a href="#" onclick="showTab('${policiesTabId}',3)">${navPolicies}</a>
-  <a href="#" onclick="showTab('${admTabId}',2)" class="panel-enquire">Enquire</a>
-</nav>
+  <a href="#" onclick="showTab('${contactTabId}',${coIdx})">${navContact}</a>
+  <a href="#" onclick="showTab('${policiesTabId}',${polIdx})">${navPolicies}</a>
+  <a href="#" onclick="showTab('${admTabId}',${admIdx})" class="panel-enquire">Enquire</a>
+</nav>`;
+  }
 
+  function buildHero() {
+    return `
 <!-- CAMPUS HERO -->
 <section class="campus-hero-ois">
   <img src="../images/${d.heroImage}" alt="${d.name}">
@@ -218,12 +272,15 @@ function generateCampusHTML(data) {
       <p>${d.heroSubtext}</p>
       <div class="campus-hero-actions">
         <a href="#content" class="btn-hero-primary">${d.heroButtonPrimary} ↓</a>
-        <a href="#" onclick="showTab('${admTabId}',2)" class="btn-hero-outline">${d.heroButtonSecondary}</a>
+        <a href="#" onclick="showTab('${admTabId}',${admIdx})" class="btn-hero-outline">${d.heroButtonSecondary}</a>
       </div>
     </div>
   </div>
-</section>
+</section>`;
+  }
 
+  function buildStats() {
+    return `
 <!-- STATS BAND -->
 <div class="campus-stats-band">
   <div class="container">
@@ -231,19 +288,84 @@ function generateCampusHTML(data) {
       ${statsHTML}
     </div>
   </div>
-</div>
+</div>`;
+  }
 
-<!-- MAIN CONTENT -->
-<section class="section" id="content">
+  function buildCtaBand() {
+    return `
+<!-- CTA BAND -->
+<div class="cta-band">
   <div class="container">
-
-    <!-- TAB BAR -->
-    <div class="tab-bar">
-      ${tabBtnsHTML}
+    <div class="cta-inner">
+      <div>
+        <h2>${d.ctaBand.heading}</h2>
+        <p>${d.ctaBand.subtext}</p>
+      </div>
+      <a href="#" onclick="showTab('${contactTabId}',${coIdx})" class="btn-cta-white">${d.ctaBand.buttonLabel} →</a>
     </div>
+  </div>
+</div>`;
+  }
 
+  function buildFooter() {
+    return `
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo">
+          <img src="../images/${d.logo}" alt="${d.name}" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
+        </div>
+        <p>${d.footer.description}</p>
+        <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
+      </div>
+      <div>
+        <h6>Programmes</h6>
+        <ul>
+          <li><a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Early Years / PYP</a></li>
+          <li><a href="#" onclick="showTab('${academicsTabId}',${acIdx})">Middle Years (MYP)</a></li>
+          <li><a href="#" onclick="showTab('${academicsTabId}',${acIdx})">IB Diploma (DP)</a></li>
+          <li><a href="#" onclick="showTab('${academicsTabId}',${acIdx})">BTec / MLC</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Policies</h6>
+        <ul>
+          <li><a href="#" onclick="showTab('${policiesTabId}',${polIdx});window.scrollTo({top:0,behavior:'smooth'})">Child Protection</a></li>
+          <li><a href="#" onclick="showTab('${policiesTabId}',${polIdx});window.scrollTo({top:0,behavior:'smooth'})">Academic Integrity</a></li>
+          <li><a href="#" onclick="showTab('${policiesTabId}',${polIdx});window.scrollTo({top:0,behavior:'smooth'})">Admissions</a></li>
+          <li><a href="#" onclick="showTab('${policiesTabId}',${polIdx});window.scrollTo({top:0,behavior:'smooth'})">Assessment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Contact</h6>
+        <ul>
+          ${contactPhones.map(p => `<li><a href="tel:+91${p.replace(/[^0-9]/g,'')}">${p}</a></li>`).join('\n          ')}
+          <li><a href="mailto:${d.contact.email}">${d.contact.email}</a></li>
+          <li><a href="https://wa.me/${whatsappNum}">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© ${d.footer.year} ${d.name}. All rights reserved.</span>
+      <div class="footer-policies">
+        <a href="#" onclick="showTab('${policiesTabId}',${polIdx});window.scrollTo({top:0,behavior:'smooth'})">Child Protection Policy</a>
+        <a href="#">DPDP 2023</a>
+        <a href="#" onclick="showTab('${contactTabId}',${coIdx})">Contact Us</a>
+        <a href="../index.html">FS Group Home</a>
+      </div>
+    </div>
+  </div>
+</footer>`;
+  }
+
+  // ── Tab panel builders ──────────────────────────────────────────────────────
+
+  function buildAboutPanel(activeClass) {
+    return `
     <!-- --- ABOUT --- -->
-    <div class="tab-panel active" id="${aboutTabId}">
+    <div class="tab-panel${activeClass}" id="${aboutTabId}">
 
       <!-- Intro -->
       <div class="about-grid" style="margin-bottom:80px;">
@@ -270,10 +392,13 @@ function generateCampusHTML(data) {
           ${leadersHTML}
         </div>
       </div>
-    </div>
+    </div>`;
+  }
 
+  function buildAcademicsPanel(activeClass) {
+    return `
     <!-- --- ACADEMICS --- -->
-    <div class="tab-panel" id="${academicsTabId}">
+    <div class="tab-panel${activeClass}" id="${academicsTabId}">
       <span class="label">${d.academics.sectionLabel}</span>
       <h2 style="margin-bottom:48px;">${d.academics.heading}</h2>
 
@@ -314,10 +439,13 @@ function generateCampusHTML(data) {
           ${mythsHTML}
         </div>
       </div>
-    </div>
+    </div>`;
+  }
 
+  function buildAdmissionsPanel(activeClass) {
+    return `
     <!-- --- ADMISSIONS --- -->
-    <div class="tab-panel" id="${admTabId}">
+    <div class="tab-panel${activeClass}" id="${admTabId}">
       <span class="label">${d.admissions.sectionLabel}</span>
       <h2 style="margin-bottom:12px;">${d.admissions.heading}</h2>
       <p style="margin-bottom:60px;font-size:1rem;">${d.admissions.subheading}</p>
@@ -353,7 +481,7 @@ function generateCampusHTML(data) {
             <span class="label">Contact Admissions</span>
             <div class="contact-item-ois">
               <div class="contact-icon-ois">&#128222;</div>
-              <div><h5>Phone</h5><p>${contactPhones.map((p, i) => `<a href="tel:+91${p.replace(/[^0-9]/g,'')}">${p}</a>`).join(' &nbsp;/&nbsp; ')}</p></div>
+              <div><h5>Phone</h5><p>${contactPhones.map((p) => `<a href="tel:+91${p.replace(/[^0-9]/g,'')}">${p}</a>`).join(' &nbsp;/&nbsp; ')}</p></div>
             </div>
             <div class="contact-item-ois">
               <div class="contact-icon-ois">&#9993;</div>
@@ -366,10 +494,13 @@ function generateCampusHTML(data) {
           </div>
         </div>
       </div>
-    </div>
+    </div>`;
+  }
 
+  function buildPoliciesPanel(activeClass) {
+    return `
     <!-- --- POLICIES --- -->
-    <div class="tab-panel" id="${policiesTabId}">
+    <div class="tab-panel${activeClass}" id="${policiesTabId}">
       <span class="label">Download Policies</span>
       <h2 style="margin-bottom:8px;">${d.shortCode} School Policies</h2>
       <p style="margin-bottom:0;">Click any policy below to open the PDF in a new tab.</p>
@@ -381,10 +512,13 @@ function generateCampusHTML(data) {
         <a href="../policies/${d.shortCode} Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128172;</div><span>Language Policy</span></a>
         <a href="../policies/${d.shortCode} Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127891;</div><span>Academic Integrity Policy</span></a>
       </div>
-    </div>
+    </div>`;
+  }
 
+  function buildStudentLifePanel(activeClass) {
+    return `
     <!-- --- STUDENT LIFE --- -->
-    <div class="tab-panel" id="${lifeTabId}">
+    <div class="tab-panel${activeClass}" id="${lifeTabId}">
       <span class="label">${d.studentLife.sectionLabel}</span>
       <h2 style="margin-bottom:48px;">${d.studentLife.heading}</h2>
 
@@ -417,10 +551,13 @@ function generateCampusHTML(data) {
           <a href="https://curricle.io" target="_blank" class="qlink"><span>&#128197;</span>School Calendar</a>
         </div>
       </div>
-    </div>
+    </div>`;
+  }
 
+  function buildMediaPanel(activeClass) {
+    return `
     <!-- --- MEDIA --- -->
-    <div class="tab-panel" id="${tabs[5] ? tabs[5].id : 'media-tab'}">
+    <div class="tab-panel${activeClass}" id="${mediaTabId}">
       <span class="label">Recognition</span>
       <h2 style="margin-bottom:48px;">${d.shortCode} in the News</h2>
       <div class="accolades-grid-ois" style="margin-bottom:64px;">
@@ -430,10 +567,13 @@ function generateCampusHTML(data) {
           <p>Recognised for excellence in education and student outcomes.</p>
         </div>
       </div>
-    </div>
+    </div>`;
+  }
 
+  function buildContactPanel(activeClass) {
+    return `
     <!-- --- CONTACT --- -->
-    <div class="tab-panel" id="${contactTabId}">
+    <div class="tab-panel${activeClass}" id="${contactTabId}">
       <span class="label">${d.contact.sectionLabel}</span>
       <h2 style="margin-bottom:48px;">${d.contact.heading}</h2>
 
@@ -487,76 +627,89 @@ function generateCampusHTML(data) {
           <a href="https://maps.google.com" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">&#128205; Open in Google Maps</a>
         </div>
       </div>
+    </div>`;
+  }
+
+  function buildTabPanel(sec, i) {
+    const activeClass = i === 0 ? ' active' : '';
+    switch (sec.type) {
+      case 'about':       return buildAboutPanel(activeClass);
+      case 'academics':   return buildAcademicsPanel(activeClass);
+      case 'admissions':  return buildAdmissionsPanel(activeClass);
+      case 'policies':    return buildPoliciesPanel(activeClass);
+      case 'studentLife': return buildStudentLifePanel(activeClass);
+      case 'media':       return buildMediaPanel(activeClass);
+      case 'contact':     return buildContactPanel(activeClass);
+      default:            return '';
+    }
+  }
+
+  function buildTabContainer() {
+    const panelsHTML = tabSections.map((sec, i) => buildTabPanel(sec, i)).join('');
+    return `
+<!-- MAIN CONTENT -->
+<section class="section" id="content">
+  <div class="container">
+
+    <!-- TAB BAR -->
+    <div class="tab-bar">
+      ${tabBtnsHTML}
     </div>
+
+    ${panelsHTML}
 
   </div><!-- container -->
-</section>
+</section>`;
+  }
 
-<!-- CTA BAND -->
-<div class="cta-band">
-  <div class="container">
-    <div class="cta-inner">
-      <div>
-        <h2>${d.ctaBand.heading}</h2>
-        <p>${d.ctaBand.subtext}</p>
-      </div>
-      <a href="#" onclick="showTab('${contactTabId}',6)" class="btn-cta-white">${d.ctaBand.buttonLabel} →</a>
-    </div>
-  </div>
-</div>
+  // ── Assemble body in sorted section order ───────────────────────────────────
+  const bodyParts = [];
+  let tabContainerInserted = false;
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="f-logo">
-          <img src="../images/${d.logo}" alt="${d.name}" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
-        </div>
-        <p>${d.footer.description}</p>
-        <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
-      </div>
-      <div>
-        <h6>Programmes</h6>
-        <ul>
-          <li><a href="#" onclick="showTab('${academicsTabId}',1)">Early Years / PYP</a></li>
-          <li><a href="#" onclick="showTab('${academicsTabId}',1)">Middle Years (MYP)</a></li>
-          <li><a href="#" onclick="showTab('${academicsTabId}',1)">IB Diploma (DP)</a></li>
-          <li><a href="#" onclick="showTab('${academicsTabId}',1)">BTec / MLC</a></li>
-        </ul>
-      </div>
-      <div>
-        <h6>Policies</h6>
-        <ul>
-          <li><a href="#" onclick="showTab('${policiesTabId}',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection</a></li>
-          <li><a href="#" onclick="showTab('${policiesTabId}',3);window.scrollTo({top:0,behavior:'smooth'})">Academic Integrity</a></li>
-          <li><a href="#" onclick="showTab('${policiesTabId}',3);window.scrollTo({top:0,behavior:'smooth'})">Admissions</a></li>
-          <li><a href="#" onclick="showTab('${policiesTabId}',3);window.scrollTo({top:0,behavior:'smooth'})">Assessment</a></li>
-        </ul>
-      </div>
-      <div>
-        <h6>Contact</h6>
-        <ul>
-          ${contactPhones.map(p => `<li><a href="tel:+91${p.replace(/[^0-9]/g,'')}">${p}</a></li>`).join('\n          ')}
-          <li><a href="mailto:${d.contact.email}">${d.contact.email}</a></li>
-          <li><a href="https://wa.me/${whatsappNum}">WhatsApp Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© ${d.footer.year} ${d.name}. All rights reserved.</span>
-      <div class="footer-policies">
-        <a href="#" onclick="showTab('${policiesTabId}',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection Policy</a>
-        <a href="#">DPDP 2023</a>
-        <a href="#" onclick="showTab('${contactTabId}',6)">Contact Us</a>
-        <a href="../index.html">FS Group Home</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  for (const sec of sorted) {
+    if (TAB_TYPES.has(sec.type)) {
+      if (!tabContainerInserted) {
+        bodyParts.push(buildTabContainer());
+        tabContainerInserted = true;
+      }
+      // Individual tab panels are rendered inside the container above; skip here
+    } else if (sec.type === 'custom') {
+      bodyParts.push(`\n<div class="section"><div class="container">${(sec.content && sec.content.html) || ''}</div></div>`);
+    } else {
+      switch (sec.type) {
+        case 'utilBar': bodyParts.push(buildUtilBar()); break;
+        case 'nav':     bodyParts.push(buildNav());     break;
+        case 'hero':    bodyParts.push(buildHero());    break;
+        case 'stats':   bodyParts.push(buildStats());   break;
+        case 'ctaBand': bodyParts.push(buildCtaBand()); break;
+        case 'footer':  bodyParts.push(buildFooter());  break;
+      }
+    }
+  }
+
+  // ── Hash-routing JS (indices are now dynamic) ───────────────────────────────
+  const hashRoutingJS = `
+const h = window.location.hash;
+if(h==='#admissions') showTab('${admTabId}',${admIdx});
+else if(h==='#policies') showTab('${policiesTabId}',${polIdx});
+else if(h==='#academics') showTab('${academicsTabId}',${acIdx});
+else if(h==='#student-life') showTab('${lifeTabId}',${liIdx});
+else if(h==='#contact') showTab('${contactTabId}',${coIdx});`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${d.metaTitle}</title>
+<meta name="description" content="${d.metaDescription}">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+${bodyParts.join('\n')}
 
 <script>
-const tabs = [${tabIds}];
+const tabs = [${tabIdsJS}];
 function showTab(id, idx) {
   tabs.forEach(t => { document.getElementById(t).classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -564,13 +717,7 @@ function showTab(id, idx) {
   document.querySelectorAll('.tab-btn')[idx].classList.add('active');
   document.getElementById('content').scrollIntoView({behavior:'smooth'});
 }
-
-const h = window.location.hash;
-if(h==='#admissions') showTab('${admTabId}',2);
-else if(h==='#policies') showTab('${policiesTabId}',3);
-else if(h==='#academics') showTab('${academicsTabId}',1);
-else if(h==='#student-life') showTab('${lifeTabId}',4);
-else if(h==='#contact') showTab('${contactTabId}',6);
+${hashRoutingJS}
 </script>
 
 <script src="../js/main.js" defer></script>
@@ -578,4 +725,4 @@ else if(h==='#contact') showTab('${contactTabId}',6);
 </html>`;
 }
 
-module.exports = { generateCampusHTML };
+module.exports = { generateCampusHTML, DEFAULT_SECTIONS };
