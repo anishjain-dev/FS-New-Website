@@ -187,6 +187,9 @@ app.post('/api/users', requireAdmin, (req, res) => {
 });
 app.delete('/api/users/:email', requireAdmin, (req, res) => {
   const email = decodeURIComponent(req.params.email);
+  if (AUTH_ENABLED && req.user && req.user.email === email) {
+    return res.status(403).json({ error: 'You cannot remove your own account.' });
+  }
   const users = readUsers().filter(u => u.email !== email);
   writeUsers(users);
   res.json({ success: true });

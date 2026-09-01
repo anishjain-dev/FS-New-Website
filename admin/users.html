@@ -143,6 +143,7 @@ function showToast(msg, type='success') {
 }
 
 let campusList = [];
+let currentUserEmail = '';
 
 async function loadAll() {
   try {
@@ -154,6 +155,7 @@ async function loadAll() {
     const users = await ur.json();
     campusList = await cr.json();
     const myData = await me.json();
+    currentUserEmail = myData.email || '';
 
     // Show logged-in user
     const uiBadge = document.getElementById('user-info');
@@ -173,17 +175,21 @@ function renderUsers(users) {
     const campusPills = u.role === 'admin'
       ? '<span class="campus-pill">All Campuses</span>'
       : (u.campuses||[]).map(c => `<span class="campus-pill">${c.toUpperCase()}</span>`).join('') || '<span class="campus-pill" style="color:#B8292F;">No campuses assigned</span>';
+    const isSelf = u.email === currentUserEmail;
+    const removeBtn = isSelf
+      ? `<button class="btn btn-sm" style="background:#f0f2f5;color:#aaa;border:1.5px solid #e2e6ea;cursor:not-allowed;" title="Cannot remove your own account" disabled>You</button>`
+      : `<button class="btn btn-danger btn-sm" onclick="removeUser('${u.email}')">Remove</button>`;
     return `
-      <div class="user-row" data-email="${u.email}">
+      <div class="user-row" data-email="${u.email}" ${isSelf ? 'style="border-left:3px solid #F2C418;"' : ''}>
         <div class="user-avatar">${u.photo ? `<img src="${u.photo}">` : initials}</div>
         <div class="user-info">
-          <div class="user-name">${u.name || '—'} <span class="role-badge ${u.role}">${u.role}</span></div>
+          <div class="user-name">${u.name || '—'} <span class="role-badge ${u.role}">${u.role}</span>${isSelf ? ' <span style="font-size:0.6rem;font-weight:700;font-family:Montserrat,sans-serif;background:#F2C418;color:#0C1920;padding:2px 7px;border-radius:20px;vertical-align:middle;">You</span>' : ''}</div>
           <div class="user-email">${u.email}</div>
           <div class="campus-pills">${campusPills}</div>
         </div>
         <div class="user-actions">
           <button class="btn btn-outline btn-sm" onclick="editUser('${u.email}')">Edit</button>
-          <button class="btn btn-danger btn-sm" onclick="removeUser('${u.email}')">Remove</button>
+          ${removeBtn}
         </div>
       </div>`;
   }).join('');
