@@ -1,0 +1,8 @@
+[
+  {"id":"fsk","folder":"fsk","name":"Fountainhead School Kunkni","shortCode":"FSK","color":"#005BAA","launched":true},
+  {"id":"fsm","folder":"fsm","name":"Fountainhead School Malgama","shortCode":"FSM","color":"#005BAA","launched":true},
+  {"id":"fwgs","folder":"fwgs","name":"Fountainhead Wockhardt Global School","shortCode":"FWGS","color":"#005BAA","launched":true},
+  {"id":"falh","folder":"falh","name":"Fountainhead Avadh Learning Hub","shortCode":"FALH","color":"#E67E22","launched":true},
+  {"id":"fpa","folder":"fpa","name":"Fountainhead Preschool Adajan","shortCode":"FPA","color":"#b62b2f","launched":true},
+  {"id":"fpv","folder":"fpv","name":"Fountainhead Preschool Vesu","shortCode":"FPV","color":"#b62b2f","launched":true}
+]
