@@ -261,7 +261,32 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
           <div class="section-card-body">
             <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:20px;">Edit the main Fountainhead Schools homepage content. Changes are saved to <code>data/fs.json</code>.</p>
 
-            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">Meta</h3>
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">Header</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Site Name</label><input type="text" id="fs-name" placeholder="Fountainhead Schools — Main Website"></div>
+              <div class="form-group"><label>Short Code</label><input type="text" id="fs-shortcode" placeholder="FS"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Subheader / Tagline</label><input type="text" id="fs-tagline" placeholder="To Nurture Leaders with Character and Competence"></div>
+              <div class="form-group" style="max-width:200px;">
+                <label>Brand Color</label>
+                <div style="display:flex;gap:8px;align-items:center;">
+                  <input type="color" id="fs-color" style="width:44px;height:38px;border:none;background:none;cursor:pointer;padding:0;" oninput="document.documentElement.style.setProperty('--campus-color',this.value);markUnsaved()">
+                  <input type="text" id="fs-color-text" placeholder="#F2C418" style="flex:1;" oninput="document.getElementById('fs-color').value=this.value;document.documentElement.style.setProperty('--campus-color',this.value);markUnsaved()">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Status</label>
+                <select id="fs-launched">
+                  <option value="true">Launched (Live on website)</option>
+                  <option value="false">Draft (Hidden from website)</option>
+                </select>
+              </div>
+            </div>
+
+            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">Meta</h3>
             <div class="form-row">
               <div class="form-group"><label>Page Title</label><input type="text" id="fs-meta-title" placeholder="Fountainhead Schools — An IB School Group"></div>
             </div>
@@ -283,11 +308,6 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
             <div class="form-row">
               <div class="form-group"><label>Primary Button</label><input type="text" id="fs-hero-btn1"></div>
               <div class="form-group"><label>Secondary Button</label><input type="text" id="fs-hero-btn2"></div>
-            </div>
-
-            <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">Tagline</h3>
-            <div class="form-row">
-              <div class="form-group"><label>Tagline Text</label><input type="text" id="fs-tagline"></div>
             </div>
 
             <h3 style="color:var(--gold);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin:24px 0 12px;">About Section</h3>
@@ -1387,6 +1407,18 @@ function selectBrowsedImage(fieldId, containerId, campusFolder, filename) {
 // ── Main site populate / collect ───────────────────────────────────────────────
 function populateMainForm(d) {
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ''; };
+  // Header fields
+  set('fs-name', d.name);
+  set('fs-shortcode', d.shortCode);
+  set('fs-tagline', d.tagline);
+  const colorEl = document.getElementById('fs-color');
+  const colorTextEl = document.getElementById('fs-color-text');
+  if (colorEl) colorEl.value = d.color || '#F2C418';
+  if (colorTextEl) colorTextEl.value = d.color || '#F2C418';
+  if (d.color) document.documentElement.style.setProperty('--campus-color', d.color);
+  const launchedEl = document.getElementById('fs-launched');
+  if (launchedEl) launchedEl.value = d.launched ? 'true' : 'false';
+  // Meta
   set('fs-meta-title', d.metaTitle);
   set('fs-meta-desc', d.metaDescription);
   const h = d.hero || {};
@@ -1396,7 +1428,6 @@ function populateMainForm(d) {
   set('fs-hero-image', h.image);
   set('fs-hero-btn1', h.btnPrimary);
   set('fs-hero-btn2', h.btnSecondary);
-  set('fs-tagline', d.tagline);
   const a = d.about || {};
   set('fs-about-heading', a.heading);
   set('fs-about-body', a.body);
@@ -1434,6 +1465,11 @@ function collectMainForm() {
   const get = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
   return {
     ...campusData,
+    name: get('fs-name') || campusData.name,
+    shortCode: get('fs-shortcode') || campusData.shortCode,
+    color: get('fs-color-text') || campusData.color,
+    launched: document.getElementById('fs-launched') ? document.getElementById('fs-launched').value === 'true' : campusData.launched,
+    tagline: get('fs-tagline'),
     metaTitle: get('fs-meta-title'),
     metaDescription: get('fs-meta-desc'),
     hero: {
@@ -1444,7 +1480,6 @@ function collectMainForm() {
       btnPrimary: get('fs-hero-btn1'),
       btnSecondary: get('fs-hero-btn2')
     },
-    tagline: get('fs-tagline'),
     about: {
       heading: get('fs-about-heading'),
       body: get('fs-about-body'),
