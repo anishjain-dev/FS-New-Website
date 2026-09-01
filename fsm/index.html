@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fountainhead School Malgama (FSM) — IB EY &amp; PYP, Surat</title>
+<title>Fountainhead School Malgama (FSM) — IB EY & PYP, Surat</title>
 <meta name="description" content="Fountainhead School Malgama (FSM) — Early Years and PYP IB school in Surat. Part of the Fountainhead Schools group.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -31,7 +31,7 @@
       <details class="nav-group" name="primary-nav">
         <summary>About FSM</summary>
         <div class="nav-submenu">
-          <a href="#" onclick="showTab('about-tab',0)">About Fountainhead Schools</a>
+          <a href="#" onclick="showTab('about-tab',0)">About FSM</a>
           <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
           <a href="#" onclick="showTab('about-tab',0)">IB Mission Statement</a>
           <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
@@ -49,7 +49,16 @@
         </div>
       </details>
       <a href="#" onclick="showTab('admissions-tab',2)">Admissions</a>
-      <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+      <details class="nav-group" name="primary-nav">
+        <summary>Campus Life</summary>
+        <div class="nav-submenu">
+          <a href="#" onclick="showTab('contact-tab',4)">Campus Life Overview</a>
+          <a href="#" onclick="showTab('contact-tab',4)">Student Life</a>
+          <a href="#" onclick="showTab('contact-tab',4)">Student Support</a>
+          <a href="#" onclick="showTab('contact-tab',4)">Transport</a>
+        </div>
+      </details>
+      <a href="#" onclick="showTab('contact-tab',6)">Contact Us</a>
       <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
     </nav>
 
@@ -66,7 +75,7 @@
   <details class="panel-group" name="mobile-nav">
     <summary>About FSM</summary>
     <div class="panel-submenu">
-      <a href="#" onclick="showTab('about-tab',0)">About Fountainhead Schools</a>
+      <a href="#" onclick="showTab('about-tab',0)">About FSM</a>
       <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
       <a href="#" onclick="showTab('about-tab',0)">IB Mission Statement</a>
       <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
@@ -84,7 +93,16 @@
     </div>
   </details>
   <a href="#" onclick="showTab('admissions-tab',2)">Admissions</a>
-  <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+  <details class="panel-group" name="mobile-nav">
+    <summary>Campus Life</summary>
+    <div class="panel-submenu">
+      <a href="#" onclick="showTab('contact-tab',4)">Campus Life Overview</a>
+      <a href="#" onclick="showTab('contact-tab',4)">Student Life</a>
+      <a href="#" onclick="showTab('contact-tab',4)">Student Support</a>
+      <a href="#" onclick="showTab('contact-tab',4)">Transport</a>
+    </div>
+  </details>
+  <a href="#" onclick="showTab('contact-tab',6)">Contact Us</a>
   <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
   <a href="#" onclick="showTab('admissions-tab',2)" class="panel-enquire">Enquire</a>
 </nav>
@@ -103,7 +121,7 @@
       <h1>Fountainhead School Malgama</h1>
       <p>Full IB continuum campus in Malgama, Surat.</p>
       <div class="campus-hero-actions">
-        <a href="#content" class="btn-hero-primary">Explore FSM ?</a>
+        <a href="#content" class="btn-hero-primary">Explore FSM ↓</a>
         <a href="#" onclick="showTab('admissions-tab',2)" class="btn-hero-outline">Enquire Now</a>
       </div>
     </div>
@@ -113,7 +131,8 @@
 <!-- STATS BAND -->
 <div class="campus-stats-band">
   <div class="container">
-    <div class="campus-stats-inner">
+    <div class="campus-stats-inner" style="grid-template-columns:repeat(4,1fr);">
+      
       <div class="campus-stat"><span class="cnum">Malgama</span><p>Surat, Gujarat</p></div>
       <div class="campus-stat"><span class="cnum">EY + PYP</span><p>IB Programmes</p></div>
       <div class="campus-stat"><span class="cnum">3—11</span><p>Years (Early Years + PYP)</p></div>
@@ -128,129 +147,99 @@
 
     <!-- TAB BAR -->
     <div class="tab-bar">
+      
       <button class="tab-btn active" onclick="showTab('about-tab',0)">About FSM</button>
       <button class="tab-btn" onclick="showTab('programme-tab',1)">Programme</button>
       <button class="tab-btn" onclick="showTab('admissions-tab',2)">Admissions</button>
       <button class="tab-btn" onclick="showTab('policies-tab',3)">Policies</button>
       <button class="tab-btn" onclick="showTab('contact-tab',4)">Contact</button>
+      <button class="tab-btn" onclick="showTab('media-tab',5)">media</button>
+      <button class="tab-btn" onclick="showTab('contact-tab',6)">contact</button>
     </div>
 
+    
     <!-- --- ABOUT --- -->
     <div class="tab-panel active" id="about-tab">
+
+      <!-- Intro -->
       <div class="about-grid" style="margin-bottom:80px;">
         <div class="about-text">
           <span class="label">About FSM</span>
           <h2>Fountainhead School Malgama</h2>
-          <p>Fountainhead School Malgama (FSM) is the newest addition to the Fountainhead Schools group — bringing the same outstanding IB education that Surat knows and trusts, to a brand new campus location.</p>
-          <p>Offering Early Years and the IB Primary Years Programme (PYP), FSM will be a warm, vibrant, and modern learning environment for children aged 3 to 11. Ground breaking has been completed — FSM is on its way.</p>
-          <div style="margin-top:32px;padding:24px 28px;background:var(--dark);color:white;display:inline-block;max-width:100%;">
-            <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Milestone</span>
-            <h4 style="color:white;margin:8px 0 4px;font-size:1.1rem;">Ground Breaking Ceremony</h4>
-            <p style="color:rgba(255,255,255,0.7);margin:0;font-size:0.85rem;">The official Ground Breaking Ceremony for FSM has been completed, marking the beginning of construction on the new campus.</p>
-          </div>
+          <p>Fountainhead School Malgama (FSM) is the newest addition to the Fountainhead Schools group — bringing the same outstanding IB education that Surat knows and trusts, to a brand new campus location. Offering Early Years and the IB Primary Years Programme (PYP), FSM will be a warm, vibrant, and modern learning environment for children aged 3 to 11. Ground breaking has been completed — FSM is on its way.</p>
         </div>
         <div class="about-img">
-          <img src="../images/fsm-hero.jpg" alt="FSM Malgama Campus">
+          <img src="../images/fsm-hero.jpg" alt="Fountainhead School Malgama">
           <div class="about-img-caption">Fountainhead School Malgama — Coming Soon</div>
         </div>
       </div>
 
       <div class="divider"></div>
 
+      <!-- People -->
       <div style="padding-top:80px;">
-        <div style="text-align:center;margin-bottom:56px;">
+        <div style="text-align:center; margin-bottom:56px;">
           <span class="label" style="display:flex;justify-content:center;">Learning Philosophy</span>
           <h2>Built on the FS Learning Model</h2>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-          <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">&#10024;</span>
-            <h4>Learner Agency</h4>
-            <p>Children are active agents of their own learning — with genuine choice, voice, and ownership from the very first day.</p>
-          </div>
-          <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">&#128270;</span>
-            <h4>Inquiry-Based Learning</h4>
-            <p>Every activity is designed to provoke curiosity and encourage exploration. Questions are celebrated more than answers.</p>
-          </div>
-          <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">&#9825;</span>
-            <h4>Social-Emotional Wellbeing</h4>
-            <p>We develop emotional vocabulary and resilience alongside academic skills — the whole child, every day.</p>
-          </div>
-          <div style="padding:32px;border:1px solid var(--border);">
-            <span style="font-size:1.5rem;display:block;margin-bottom:12px;">&#127807;</span>
-            <h4>Environment as Third Teacher</h4>
-            <p>Spaces are designed intentionally — natural elements, inviting materials, and displays that extend children's thinking.</p>
-          </div>
-        </div>
-        <div style="margin-top:40px;padding:32px;background:var(--light-gray);">
-          <span class="label">Learning Resource</span>
-          <h3 style="margin:8px 0 12px;">Download the FS Learning Model</h3>
-          <p style="font-size:0.88rem;color:var(--mid);">Understand the pedagogical foundation that underpins every Fountainhead campus, including FSM.</p>
-          <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">? FS Learning Model (PDF)</a>
+        <div class="people-grid-ois">
+          
         </div>
       </div>
     </div>
-
-    <!-- --- PROGRAMME --- -->
+    <!-- --- ACADEMICS --- -->
     <div class="tab-panel" id="programme-tab">
       <span class="label">Programmes</span>
       <h2 style="margin-bottom:48px;">Learning at FSM</h2>
 
+      <!-- Programmes -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:60px;">
-        <div style="background:white;padding:40px;border-top:3px solid var(--dark);">
+        
+        <div style="background:white;padding:36px;border-left:4px solid var(--dark);">
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Ages 3—6</span>
-          <h3 style="margin:10px 0 16px;">Early Years Programme</h3>
+          <h3 style="margin:8px 0;">Early Years Programme</h3>
           <p>Play-based inquiry rooted in the IB PYP framework. Learner agency, social-emotional resilience, the environment as the third teacher. Every child is seen, heard, and celebrated.</p>
-          <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
-            <li>Who We Are</li>
-            <li>How We Express Ourselves</li>
-            <li>How the World Works</li>
-            <li>How We Organise Ourselves</li>
-            <li>Sharing the Planet</li>
-            <li>Where We Are in Place &amp; Time</li>
-          </ul>
         </div>
-        <div style="background:white;padding:40px;border-top:3px solid var(--gold);">
+        <div style="background:white;padding:36px;border-left:4px solid var(--gold);">
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Grades 1—5</span>
-          <h3 style="margin:10px 0 16px;">Primary Years Programme (PYP)</h3>
+          <h3 style="margin:8px 0;">Primary Years Programme (PYP)</h3>
           <p>Six transdisciplinary units of inquiry per year. Collaborative, concept-driven learning developing the whole child and the IB learner profile through authentic, meaningful experiences.</p>
-          <ul style="padding-left:20px;color:var(--mid);line-height:2.2;margin-top:16px;font-size:0.9rem;">
-            <li>Six transdisciplinary units per year</li>
-            <li>Concept-driven learning</li>
-            <li>Student-led exhibition (PYP Exhibition)</li>
-            <li>IB Learner Profile development</li>
-            <li>Action and reflection embedded throughout</li>
-          </ul>
         </div>
       </div>
 
-      <!-- IB Learner Profile -->
-      <div style="padding:40px;background:var(--dark);margin-bottom:60px;">
-        <span class="label" style="color:var(--gold);">The IB Learner Profile</span>
-        <h3 style="color:white;margin:12px 0 24px;">What We Aim to Build in Every Child</h3>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Inquirers</span>
-          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Knowledgeable</span>
-          <span style="background:rgba(255,255,255,0.1);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Thinkers</span>
-          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Communicators</span>
-          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Principled</span>
-          <span style="background:var(--gold);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Open-Minded</span>
-          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Caring</span>
-          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Risk-Takers</span>
-          <span style="background:var(--fs-blue);color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Balanced</span>
-          <span style="background:#444;color:white;padding:8px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;">Reflective</span>
+      <!-- Learning Model -->
+      <div class="philosophy-section" style="border-radius:0;margin:0 -40px;padding:64px 40px;">
+        <div class="philosophy-inner">
+          <div class="philosophy-text">
+            <span class="label">Learning Philosophy</span>
+            <h2>The FS Learning Model at FSM</h2>
+            <div class="philosophy-quote">
+              <p>""</p>
+            </div>
+            <p>FSM is built on the same pedagogical foundation as FSK — the flagship. Students are at the centre of everything we do. We place a strong emphasis on fostering a love of learning, building academic competencies alongside physical fitness, creativity, and social-emotional wellbeing.</p>
+            <p></p>
+            <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">↓ Download FS Learning Model (PDF)</a>
+          </div>
+          <div>
+            <div class="ib-programs-grid">
+              <div class="ib-prog"><span class="age">3—6</span><h4>Early Years</h4><p>Play, inquiry, agency</p></div>
+              <div class="ib-prog"><span class="age">6—11</span><h4>PYP</h4><p>Transdisciplinary inquiry</p></div>
+              <div class="ib-prog"><span class="age">11—16</span><h4>MYP</h4><p>Global context, service</p></div>
+              <div class="ib-prog"><span class="age">16—19</span><h4>Diploma</h4><p>University preparation</p></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div style="padding:40px;background:var(--light-gray);border:1px solid var(--border);">
-        <span class="label">Learning Philosophy</span>
-        <h3>The FS Learning Model at FSM</h3>
-        <p>FSM is built on the same pedagogical foundation as FSK — the flagship. Students are at the centre of everything we do. We place a strong emphasis on fostering a love of learning, building academic competencies alongside physical fitness, creativity, and social-emotional wellbeing.</p>
+      <!-- IB Myths -->
+      <div style="padding-top:64px;">
+        <span class="label"></span>
+        <h2 style="margin-bottom:36px;"></h2>
+        <div class="myth-grid">
+          
+        </div>
       </div>
     </div>
-
     <!-- --- ADMISSIONS --- -->
     <div class="tab-panel" id="admissions-tab">
       <span class="label">Admissions</span>
@@ -259,7 +248,9 @@
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
         <div>
+          <h3 style="margin-bottom:0;">The PAE Process</h3>
           <div class="admission-steps-ois">
+            
             <div class="admission-step-ois">
               <div class="step-circle">P</div>
               <div class="step-body">
@@ -298,174 +289,95 @@
 
         <div>
           <div style="background:var(--dark);padding:40px;margin-bottom:24px;">
-            <span class="label" style="color:var(--gold);">Register Your Interest</span>
-            <h3 style="color:white;margin-bottom:24px;">Contact FSM Admissions</h3>
-            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-              <div class="contact-icon-ois">&#128222;</div>
-              <div><h5 style="color:rgba(255,255,255,0.5);">Phone</h5><p><a href="tel:+918000130031" style="color:white;">8000-130-031</a></p></div>
-            </div>
-            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-              <div class="contact-icon-ois">&#9993;</div>
-              <div><h5 style="color:rgba(255,255,255,0.5);">Email</h5><p><a href="mailto:surat@fountainheadschools.org" style="color:white;">surat@fountainheadschools.org</a></p></div>
-            </div>
-            <div class="contact-item-ois" style="border-color:rgba(255,255,255,0.1);">
-              <div class="contact-icon-ois">&#128172;</div>
-              <div><h5 style="color:rgba(255,255,255,0.5);">WhatsApp</h5><p><a href="https://wa.me/918000130031" style="color:white;">+91 8000-130-031</a></p></div>
+            <span class="label" style="color:var(--gold);">Parent Portal</span>
+            <h3 style="color:white;margin-bottom:16px;">Nucleus — Your Window In</h3>
+            <p style="color:rgba(255,255,255,0.7);">All FSM parents have access to Nucleus — progress tracking, calendars, communication, and more. Available on web and iOS.</p>
+            <div class="qlinks" style="margin-top:24px;background:none;grid-template-columns:1fr;">
+              <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink" style="background:rgba(255,255,255,0.06);color:white;border:1px solid rgba(255,255,255,0.1);"><span>&#128274;</span> Nucleus Web Portal</a>
+              <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink" style="background:rgba(255,255,255,0.06);color:white;border:1px solid rgba(255,255,255,0.1);"><span>&#128241;</span> Nucleus App (iOS)</a>
+              <a href="https://curricle.io" target="_blank" class="qlink" style="background:rgba(255,255,255,0.06);color:white;border:1px solid rgba(255,255,255,0.1);"><span>&#128197;</span> School Calendar (Curricle)</a>
             </div>
           </div>
 
           <div style="padding:32px;border:1px solid var(--border);">
-            <span class="label">Parent Portal</span>
-            <h3 style="margin-bottom:16px;">Nucleus — Your Window In</h3>
-            <p style="font-size:0.88rem;color:var(--mid);">FSM parents will have access to Nucleus — progress tracking, calendars, and communication. Available on web and iOS.</p>
-            <div class="qlinks" style="margin-top:16px;grid-template-columns:1fr;">
-              <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink"><span>&#128274;</span>Nucleus Web Portal</a>
-              <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink"><span>&#128241;</span>Nucleus App (iOS)</a>
+            <span class="label">Contact Admissions</span>
+            <div class="contact-item-ois">
+              <div class="contact-icon-ois">&#128222;</div>
+              <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a></p></div>
+            </div>
+            <div class="contact-item-ois">
+              <div class="contact-icon-ois">&#9993;</div>
+              <div><h5>Email</h5><p><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></p></div>
+            </div>
+            <div class="contact-item-ois">
+              <div class="contact-icon-ois">&#128172;</div>
+              <div><h5>WhatsApp</h5><p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- --- POLICIES --- -->
     <div class="tab-panel" id="policies-tab">
       <span class="label">Download Policies</span>
       <h2 style="margin-bottom:8px;">FSM School Policies</h2>
       <p style="margin-bottom:0;">Click any policy below to open the PDF in a new tab.</p>
       <div class="policies-grid">
-        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128737;</div><span>Child Protection Policy</span></a>
-        <a href="../policies/FSK Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128196;</div><span>Admission Policy</span></a>
-        <a href="../policies/FSK Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128203;</div><span>Assessment Policy</span></a>
-        <a href="../policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127860;</div><span>Canteen &amp; Pantry Guidelines</span></a>
-        <a href="../policies/FSK Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128218;</div><span>Discipline Policy</span></a>
-        <a href="../policies/FSK Food policy (Parents &amp; Students).pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127858;</div><span>Food Policy</span></a>
-        <a href="../policies/FSK Health Exclusion Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127973;</div><span>Health Exclusion Policy</span></a>
-        <a href="../policies/FSK Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128172;</div><span>Language Policy</span></a>
-        <a href="../policies/FSK Learning Diversity &amp; Inclusion Policy .pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128203;</div><span>Learning Diversity &amp; Inclusion</span></a>
-        <a href="../policies/FSK Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127891;</div><span>Academic Integrity Policy</span></a>
+        <a href="../policies/FSM Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128737;</div><span>Child Protection Policy</span></a>
+        <a href="../policies/FSM Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128196;</div><span>Admission Policy</span></a>
+        <a href="../policies/FSM Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128203;</div><span>Assessment Policy</span></a>
+        <a href="../policies/FSM Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128218;</div><span>Discipline Policy</span></a>
+        <a href="../policies/FSM Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128172;</div><span>Language Policy</span></a>
+        <a href="../policies/FSM Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127891;</div><span>Academic Integrity Policy</span></a>
       </div>
-      <div class="divider" style="margin:60px 0 48px;"></div>
-      <div class="policy-layout">
-        <div class="policy-sidebar">
-          <h5>All Policies</h5>
-          <ul>
-            <li><a href="#fsm-child">Child Protection</a></li>
-            <li><a href="#fsm-integrity">Academic Integrity</a></li>
-            <li><a href="#fsm-language">Language Policy</a></li>
-            <li><a href="#fsm-admission">Admission Policy</a></li>
-            <li><a href="#fsm-uniform">Uniform Policy</a></li>
-            <li><a href="#fsm-notuition">No Tuition Policy</a></li>
-            <li><a href="#fsm-health">Health Exclusion</a></li>
-            <li><a href="#fsm-parent">Parent Role</a></li>
-          </ul>
+    </div>
+    <!-- --- STUDENT LIFE --- -->
+    <div class="tab-panel" id="contact-tab">
+      <span class="label">Student Life</span>
+      <h2 style="margin-bottom:48px;">Life at FSM</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:80px;">
+        <div>
+          <span class="label"></span>
+          <h3></h3>
+          <p></p>
+          <div class="sport-tags">
+            
+          </div>
+          <div style="margin-top:28px;padding:24px;background:var(--dark);color:white;">
+            <h4 style="color:white;font-size:1rem;margin-bottom:8px;"></h4>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin:0;"></p>
+          </div>
         </div>
-        <div class="policy-content-area">
+        <div>
+          <img src="../images/fsm-hero.jpg" alt="" style="width:100%;height:400px;object-fit:cover;display:block;">
+        </div>
+      </div>
 
-          <div class="policy-block" id="fsm-child">
-            <span class="policy-meta">Safeguarding Policy</span>
-            <h2>Child Protection Policy</h2>
-            <p>The safety and wellbeing of every child at Fountainhead School Malgama is our highest priority. We are committed to creating a safe, secure, and nurturing environment where every child can flourish.</p>
-            <h3>Key Commitments</h3>
-            <ul>
-              <li>All staff undergo mandatory Child Protection training</li>
-              <li>A designated Child Protection Officer (CPO) is available at all times</li>
-              <li>Any concerns about a child's welfare are reported immediately and investigated</li>
-              <li>We follow POCSO (Protection of Children from Sexual Offences) Act guidelines</li>
-              <li>All allegations are treated seriously, impartially, and confidentially</li>
-            </ul>
-            <h3>Reporting Concerns</h3>
-            <p>If you have any concerns about a child's safety, please contact the school's Child Protection Officer directly or email <a href="mailto:surat@fountainheadschools.org" style="color:var(--gold);">surat@fountainheadschools.org</a> immediately. All concerns will be acted upon within 24 hours.</p>
-          </div>
+      <div class="divider"></div>
 
-          <div class="policy-block" id="fsm-integrity">
-            <span class="policy-meta">Academic Policy</span>
-            <h2>Academic Integrity Policy</h2>
-            <p>Fountainhead School Malgama is committed to academic integrity — the honest, authentic, and responsible production of work. Academic integrity is a fundamental value of an IB education.</p>
-            <h3>Key Principles</h3>
-            <ul>
-              <li>All submitted work must be the student's own authentic work</li>
-              <li>Proper citation and referencing of all sources is mandatory</li>
-              <li>Collaboration is encouraged but must be clearly distinguished from collusion</li>
-              <li>Plagiarism, malpractice, and misconduct will be investigated and addressed</li>
-            </ul>
-          </div>
-
-          <div class="policy-block" id="fsm-language">
-            <span class="policy-meta">Academic Policy</span>
-            <h2>Language Policy</h2>
-            <p>Language is central to all learning at FSM. Our Language Policy reflects our commitment to multilingualism and the IB's belief that all teachers are language teachers.</p>
-            <h3>Language of Instruction</h3>
-            <ul>
-              <li>English is the primary language of instruction across all programmes</li>
-              <li>Mother tongue language support is provided and celebrated</li>
-              <li>Students are encouraged to maintain and develop their home language</li>
-              <li>All teachers are responsible for developing academic language in their subject area</li>
-            </ul>
-          </div>
-
-          <div class="policy-block" id="fsm-admission">
-            <span class="policy-meta">Administrative Policy</span>
-            <h2>Admission Policy</h2>
-            <p>FSM admits students through a transparent, fair, and holistic process. We welcome learners from all backgrounds who demonstrate curiosity, enthusiasm, and a willingness to embrace the IB learner profile.</p>
-            <h3>Eligibility</h3>
-            <ul>
-              <li>Students must meet the age criteria for the relevant grade</li>
-              <li>Previous academic records and school reports are reviewed</li>
-              <li>An interaction or assessment may be scheduled for the student</li>
-            </ul>
-          </div>
-
-          <div class="policy-block" id="fsm-uniform">
-            <span class="policy-meta">Student Policy</span>
-            <h2>Uniform Policy</h2>
-            <p>FSM believes that a uniform fosters a sense of belonging, equality, and school pride. All students are required to wear the prescribed FSM uniform on all school days and at school events unless otherwise notified.</p>
-            <h3>General Guidelines</h3>
-            <ul>
-              <li>Complete, clean, and neat uniform is mandatory every school day</li>
-              <li>Sports uniform to be worn on PE days only</li>
-              <li>Name tags must be affixed to all uniform items</li>
-            </ul>
-          </div>
-
-          <div class="policy-block" id="fsm-notuition">
-            <span class="policy-meta">Academic Policy</span>
-            <h2>No Tuition Policy</h2>
-            <p>Fountainhead School strongly discourages students from taking private tuitions from former or current Fountainhead teachers. The school believes that its own instruction is sufficient for students to achieve their academic goals.</p>
-            <h3>Important Clarification</h3>
-            <p>Coaching for competitive examinations such as NEET, JEE, SAT, etc. is <strong>NOT</strong> discouraged. Only academic tuitions from former or current FS teachers are restricted under this policy.</p>
-          </div>
-
-          <div class="policy-block" id="fsm-health">
-            <span class="policy-meta">Health Policy</span>
-            <h2>Health Exclusion Policy</h2>
-            <p>To protect the health of all students and staff, FSM follows a Health Exclusion Policy that specifies when students should be kept home and when they may return to school.</p>
-            <h3>When to Keep Your Child at Home</h3>
-            <ul>
-              <li><strong>Fever</strong> (above 100—F / 37.8—C) — child must be fever-free for 24 hours before returning</li>
-              <li><strong>Vomiting or diarrhoea</strong> — must be symptom-free for 24 hours</li>
-              <li><strong>Chickenpox</strong> — until all blisters have crusted over</li>
-              <li><strong>Pink eye (Conjunctivitis)</strong> — until treatment has begun and discharge has stopped</li>
-            </ul>
-          </div>
-
-          <div class="policy-block" id="fsm-parent">
-            <span class="policy-meta">Partnership Policy</span>
-            <h2>Parent Role in Education</h2>
-            <p>FSM believes that a child's education is best when school and parents work in genuine partnership. This policy outlines what we expect from parents as active participants in their child's learning.</p>
-            <h3>School Activities &amp; Expectations</h3>
-            <ul>
-              <li>Attend all Parent Orientation sessions</li>
-              <li>Attend Parent-Teacher Conferences (PTCs) and Student-Led Conferences (SLCs)</li>
-              <li>Participate in school events and volunteer for activities</li>
-              <li>Support your child to do self-study — not do it for them</li>
-              <li>Foster independence in learning habits and daily routine</li>
-            </ul>
-          </div>
-
+      <div style="padding-top:64px;">
+        <span class="label">Resources</span>
+        <h3 style="margin-bottom:8px;">Quick Links for Students &amp; Parents</h3>
+        <div class="qlinks">
+          <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink"><span>&#128274;</span>Nucleus Web Portal</a>
+          <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink"><span>&#128241;</span>Nucleus App (iOS)</a>
+          <a href="https://curricle.io" target="_blank" class="qlink"><span>&#128197;</span>School Calendar</a>
         </div>
       </div>
     </div>
-
+    <!-- --- MEDIA --- -->
+    <div class="tab-panel" id="media-tab">
+      <span class="label">Recognition</span>
+      <h2 style="margin-bottom:48px;">FSM in the News</h2>
+      <div class="accolades-grid-ois" style="margin-bottom:64px;">
+        <div class="accolade-ois">
+          <div class="accolade-year-tag">Surat, Gujarat</div>
+          <h4>Malgama Surat, Gujarat</h4>
+          <p>Recognised for excellence in education and student outcomes.</p>
+        </div>
+      </div>
+    </div>
     <!-- --- CONTACT --- -->
     <div class="tab-panel" id="contact-tab">
       <span class="label">Contact</span>
@@ -474,29 +386,41 @@
       <div class="contact-grid-ois">
         <div>
           <div class="contact-item-ois">
-            <div class="contact-icon-ois">&#128205;</div>
-            <div><h5>Campus Location</h5><p>Malgama, Surat, Gujarat, India</p></div>
-          </div>
-          <div class="contact-item-ois">
             <div class="contact-icon-ois">&#128222;</div>
-            <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a></p></div>
+            <div>
+              <h5>Phone Numbers</h5>
+              <p><a href="tel:+918000130031">8000-130-031</a></p>
+            </div>
           </div>
           <div class="contact-item-ois">
             <div class="contact-icon-ois">&#9993;</div>
-            <div><h5>Email</h5><p><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></p></div>
+            <div>
+              <h5>Email</h5>
+              <p><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></p>
+            </div>
           </div>
           <div class="contact-item-ois">
             <div class="contact-icon-ois">&#128172;</div>
-            <div><h5>WhatsApp</h5><p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p></div>
+            <div>
+              <h5>WhatsApp</h5>
+              <p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p>
+            </div>
+          </div>
+          <div class="contact-item-ois">
+            <div class="contact-icon-ois">&#128205;</div>
+            <div>
+              <h5>Address</h5>
+              <p>Malgama, Surat, Gujarat, India</p>
+            </div>
           </div>
           <div class="contact-item-ois">
             <div class="contact-icon-ois">&#9679;</div>
             <div>
-              <h5>Follow FS Group</h5>
+              <h5>Follow FSM</h5>
               <div class="social-row">
                 <a href="https://instagram.com/fountainheadschoolkunkni" target="_blank" class="soc-btn">IG Instagram</a>
                 <a href="https://facebook.com/fountainheadschoolkunkni" target="_blank" class="soc-btn">FB Facebook</a>
-                <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="soc-btn">? YouTube</a>
+                <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="soc-btn">▶ YouTube</a>
                 <a href="https://linkedin.com/company/fountainheadschools" target="_blank" class="soc-btn">in LinkedIn</a>
               </div>
             </div>
@@ -506,59 +430,12 @@
           <div class="map-box">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720!2d72.85!3d21.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzM2LjAiTiA3MsKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
           </div>
-          <a href="https://goo.gl/maps" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">&#128205; Open in Google Maps</a>
+          <a href="https://maps.google.com" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">&#128205; Open in Google Maps</a>
         </div>
       </div>
     </div>
 
   </div><!-- container -->
-</section>
-
-<!-- LATEST NEWS -->
-<section style="padding:80px 0;background:var(--light-gray);">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;">
-      <div>
-        <span class="label">News &amp; Happenings</span>
-        <h2>Latest from FSM</h2>
-      </div>
-      <a href="../index.html#news" style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">All News ?</a>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
-      <div style="background:white;padding:32px;">
-        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
-          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--gold);color:white;">FSM</span>
-          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">18 Jul 2026</span>
-        </div>
-        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Ground Breaking Ceremony Completed at Malgama</h4>
-        <p style="font-size:0.82rem;color:var(--mid);">The official Ground Breaking Ceremony for FSM has been completed, marking the beginning of construction on the new campus.</p>
-      </div>
-      <div style="background:white;padding:32px;">
-        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
-          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--dark);color:white;">Group</span>
-          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">15 Jun 2026</span>
-        </div>
-        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Group Sports Day 2026 — All Five Campuses Compete</h4>
-        <p style="font-size:0.82rem;color:var(--mid);">An inter-campus sports day bringing together students from all five campuses for a day of healthy competition and community spirit.</p>
-      </div>
-      <div style="background:white;padding:32px;">
-        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
-          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--dark);color:white;">Group</span>
-          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">1 Sept 2025</span>
-        </div>
-        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Fountainhead Schools Certified as Great Place to Work</h4>
-        <p style="font-size:0.82rem;color:var(--mid);">Fountainhead Schools has been officially certified as a Great Place to Work — recognition of our commitment to our staff and learning community.</p>
-      </div>
-      <div style="background:white;padding:32px;">
-        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
-          <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;background:var(--gold);color:white;">FSM</span>
-          <span style="font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;">10 Jul 2026</span>
-        </div>
-        <h4 style="font-size:1rem;line-height:1.3;margin-bottom:10px;">Registration Open for FSM's Inaugural Academic Year</h4>
-        <p style="font-size:0.82rem;color:var(--mid);">Be among the first families to join Fountainhead School Malgama. Early registration is now open for the inaugural academic year.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- CTA BAND -->
@@ -569,7 +446,7 @@
         <h2>Register Your Interest in FSM</h2>
         <p>Be among the first families to join Fountainhead School Malgama when it opens.</p>
       </div>
-      <a href="#" onclick="showTab('admissions-tab',2)" class="btn-cta-white">Get in Touch ?</a>
+      <a href="#" onclick="showTab('contact-tab',6)" class="btn-cta-white">Get in Touch →</a>
     </div>
   </div>
 </div>
@@ -583,24 +460,24 @@
           <img src="../images/fsm-logo.png" alt="Fountainhead School Malgama" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
         </div>
         <p>IB Early Years + PYP campus in Malgama, Surat. Part of the Fountainhead Schools group.</p>
-        <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group ?</a></div>
+        <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
       </div>
       <div>
         <h6>Programmes</h6>
         <ul>
-          <li><a href="#" onclick="showTab('programme-tab',1)">Early Years Programme</a></li>
-          <li><a href="#" onclick="showTab('programme-tab',1)">IB PYP</a></li>
+          <li><a href="#" onclick="showTab('programme-tab',1)">Early Years / PYP</a></li>
+          <li><a href="#" onclick="showTab('programme-tab',1)">Middle Years (MYP)</a></li>
+          <li><a href="#" onclick="showTab('programme-tab',1)">IB Diploma (DP)</a></li>
+          <li><a href="#" onclick="showTab('programme-tab',1)">BTec / MLC</a></li>
         </ul>
       </div>
       <div>
-        <h6>Campus Links</h6>
+        <h6>Policies</h6>
         <ul>
-          <li><a href="../fsk/index.html">FSK — Kunkni</a></li>
-          <li><a href="../fwgs/index.html">FWGS — Wockhardt</a></li>
-          <li><a href="../falh/index.html">FALH — Vapi</a></li>
-          <li><a href="../fpa/index.html">FPA — Adajan</a></li>
-          <li><a href="../fpv/index.html">FPV — Vesu</a></li>
-          <li><a href="../index.html">FS Group Home</a></li>
+          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection</a></li>
+          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Academic Integrity</a></li>
+          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Admissions</a></li>
+          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Assessment</a></li>
         </ul>
       </div>
       <div>
@@ -613,11 +490,11 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>— 2026 Fountainhead School Malgama. All rights reserved.</span>
+      <span>© 2026 Fountainhead School Malgama. All rights reserved.</span>
       <div class="footer-policies">
         <a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection Policy</a>
         <a href="#">DPDP 2023</a>
-        <a href="#" onclick="showTab('contact-tab',4)">Contact Us</a>
+        <a href="#" onclick="showTab('contact-tab',6)">Contact Us</a>
         <a href="../index.html">FS Group Home</a>
       </div>
     </div>
@@ -625,8 +502,7 @@
 </footer>
 
 <script>
-
-const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab'];
+const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab','media-tab','contact-tab'];
 function showTab(id, idx) {
   tabs.forEach(t => { document.getElementById(t).classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -637,9 +513,10 @@ function showTab(id, idx) {
 
 const h = window.location.hash;
 if(h==='#admissions') showTab('admissions-tab',2);
-else if(h==='#programme') showTab('programme-tab',1);
 else if(h==='#policies') showTab('policies-tab',3);
-else if(h==='#contact') showTab('contact-tab',4);
+else if(h==='#academics') showTab('programme-tab',1);
+else if(h==='#student-life') showTab('contact-tab',4);
+else if(h==='#contact') showTab('contact-tab',6);
 </script>
 
 <script src="../js/main.js" defer></script>

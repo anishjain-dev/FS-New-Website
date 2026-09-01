@@ -1,314 +1,308 @@
 {
-    "id":  "fsm",
-    "folder":  "fsm",
-    "name":  "Fountainhead School Malgama",
-    "shortCode":  "FSM",
-    "color":  "#005BAA",
-    "launched":  false,
-    "metaTitle":  "Fountainhead School Malgama (FSM) — IB EY \u0026 PYP, Surat",
-    "metaDescription":  "Fountainhead School Malgama (FSM) — Early Years and PYP IB school in Surat. Part of the Fountainhead Schools group.",
-    "logo":  "",
-    "heroImage":  "FPV and FSM Front Facade.JPG",
-    "heroHeading":  "Fountainhead School Malgama",
-    "heroSubtext":  "Full IB continuum campus in Malgama, Surat.",
-    "heroButtonPrimary":  "Explore FSM",
-    "heroButtonSecondary":  "Enquire Now",
-    "utilBar":  {
-                    "policyLabel":  "Child Protection Policy",
-                    "policyFile":  "FSK Child Protection Policy.pdf",
-                    "phones":  [
-                                   "8000-130-031"
-                               ],
-                    "email":  "surat@fountainheadschools.org"
-                },
-    "nav":  {
-                "about":  {
-                              "label":  "About FSM"
-                          },
-                "academics":  {
-                                  "label":  "Academics"
-                              },
-                "admissions":  {
-                                   "label":  "Admissions"
-                               },
-                "campusLife":  {
-                                   "label":  ""
-                               },
-                "contact":  {
-                                "label":  "Contact Us"
-                            },
-                "policies":  {
-                                 "label":  "Policies"
-                             }
-            },
-    "tabs":  [
-                 {
-                     "id":  "about-tab",
-                     "label":  "About FSM"
-                 },
-                 {
-                     "id":  "programme-tab",
-                     "label":  "Programme"
-                 },
-                 {
-                     "id":  "admissions-tab",
-                     "label":  "Admissions"
-                 },
-                 {
-                     "id":  "policies-tab",
-                     "label":  "Policies"
-                 },
-                 {
-                     "id":  "contact-tab",
-                     "label":  "Contact"
-                 }
-             ],
-    "stats":  [
-                  {
-                      "value":  "Malgama",
-                      "label":  "Surat, Gujarat"
-                  },
-                  {
-                      "value":  "EY + PYP",
-                      "label":  "IB Programmes"
-                  },
-                  {
-                      "value":  "3—11",
-                      "label":  "Years (Early Years + PYP)"
-                  },
-                  {
-                      "value":  "FS Group",
-                      "label":  "Flagship Learning Model"
-                  }
-              ],
-    "about":  {
-                  "sectionLabel":  "About FSM",
-                  "heading":  "Fountainhead School Malgama",
-                  "intro":  "Fountainhead School Malgama (FSM) is the newest addition to the Fountainhead Schools group — bringing the same outstanding IB education that Surat knows and trusts, to a brand new campus location. Offering Early Years and the IB Primary Years Programme (PYP), FSM will be a warm, vibrant, and modern learning environment for children aged 3 to 11. Ground breaking has been completed — FSM is on its way.",
-                  "image":  "FPV and FSM Front Facade.JPG",
-                  "imageCaption":  "Fountainhead School Malgama — Coming Soon",
-                  "milestoneLabel":  "Milestone",
-                  "milestoneHeading":  "Ground Breaking Ceremony",
-                  "milestoneBody":  "The official Ground Breaking Ceremony for FSM has been completed, marking the beginning of construction on the new campus.",
-                  "leadershipHeading":  "Built on the FS Learning Model",
-                  "leadershipLabel":  "Learning Philosophy",
-                  "leaders":  [
-
-                              ],
-                  "learningPillars":  [
-                                          {
-                                              "icon":  "sparkle",
-                                              "title":  "Learner Agency",
-                                              "body":  "Children are active agents of their own learning — with genuine choice, voice, and ownership from the very first day."
-                                          },
-                                          {
-                                              "icon":  "search",
-                                              "title":  "Inquiry-Based Learning",
-                                              "body":  "Every activity is designed to provoke curiosity and encourage exploration. Questions are celebrated more than answers."
-                                          },
-                                          {
-                                              "icon":  "heart",
-                                              "title":  "Social-Emotional Wellbeing",
-                                              "body":  "We develop emotional vocabulary and resilience alongside academic skills — the whole child, every day."
-                                          },
-                                          {
-                                              "icon":  "leaf",
-                                              "title":  "Environment as Third Teacher",
-                                              "body":  "Spaces are designed intentionally — natural elements, inviting materials, and displays that extend children\u0027s thinking."
-                                          }
-                                      ]
-              },
-    "academics":  {
-                      "sectionLabel":  "Programmes",
-                      "heading":  "Learning at FSM",
-                      "programmes":  [
-                                         {
-                                             "ages":  "Ages 3—6",
-                                             "title":  "Early Years Programme",
-                                             "body":  "Play-based inquiry rooted in the IB PYP framework. Learner agency, social-emotional resilience, the environment as the third teacher. Every child is seen, heard, and celebrated."
-                                         },
-                                         {
-                                             "ages":  "Grades 1—5",
-                                             "title":  "Primary Years Programme (PYP)",
-                                             "body":  "Six transdisciplinary units of inquiry per year. Collaborative, concept-driven learning developing the whole child and the IB learner profile through authentic, meaningful experiences."
-                                         }
-                                     ],
-                      "learningModelHeading":  "The FS Learning Model at FSM",
-                      "learningModelLabel":  "Learning Philosophy",
-                      "learningModelQuote":  "",
-                      "learningModelText1":  "FSM is built on the same pedagogical foundation as FSK — the flagship. Students are at the centre of everything we do. We place a strong emphasis on fostering a love of learning, building academic competencies alongside physical fitness, creativity, and social-emotional wellbeing.",
-                      "learningModelText2":  "",
-                      "mythsHeading":  "",
-                      "mythsLabel":  "",
-                      "myths":  [
-
-                                ],
-                      "ibLearnerProfile":  [
-                                               "Inquirers",
-                                               "Knowledgeable",
-                                               "Thinkers",
-                                               "Communicators",
-                                               "Principled",
-                                               "Open-Minded",
-                                               "Caring",
-                                               "Risk-Takers",
-                                               "Balanced",
-                                               "Reflective"
-                                           ],
-                      "transdisciplinaryThemes":  [
-                                                      "Who We Are",
-                                                      "How We Express Ourselves",
-                                                      "How the World Works",
-                                                      "How We Organise Ourselves",
-                                                      "Sharing the Planet",
-                                                      "Where We Are in Place \u0026 Time"
-                                                  ]
-                  },
-    "admissions":  {
-                       "sectionLabel":  "Admissions",
-                       "heading":  "Join FSM",
-                       "subheading":  "Our PAE process — three steps. Transparent, fair, centred on the child.",
-                       "processHeading":  "The PAE Process",
-                       "steps":  [
-                                     {
-                                         "letter":  "P",
-                                         "title":  "Pre-Admission",
-                                         "body":  "Reach out to our admissions team to register your interest and receive updates about FSM\u0027s opening timeline. Visit the site or connect with us online."
-                                     },
-                                     {
-                                         "letter":  "A",
-                                         "title":  "Assessment",
-                                         "body":  "Age-appropriate interaction to understand your child — warm, play-based, and focused on curiosity rather than academic performance."
-                                     },
-                                     {
-                                         "letter":  "E",
-                                         "title":  "Enrolment",
-                                         "body":  "Welcome to the FSM family — documentation, orientation, and your child\u0027s exciting beginning at Fountainhead."
-                                     }
-                                 ],
-                       "docsRequired":  [
-                                            "Birth certificate / Age proof",
-                                            "Previous school\u0027s Transfer Certificate (TC)",
-                                            "Last two years\u0027 academic report cards",
-                                            "Passport-size photographs (4 copies)",
-                                            "Residential address proof",
-                                            "Aadhar card (child and parents)"
-                                        ]
-                   },
-    "contact":  {
-                    "sectionLabel":  "Contact",
-                    "heading":  "Reach Fountainhead School Malgama",
-                    "phones":  [
-                                   "8000-130-031"
-                               ],
-                    "email":  "surat@fountainheadschools.org",
-                    "whatsapp":  "+918000130031",
-                    "address":  "Malgama, Surat, Gujarat, India",
-                    "mapEmbed":  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720!2d72.85!3d21.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzM2LjAiTiA3MsKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1",
-                    "instagram":  "https://instagram.com/fountainheadschoolkunkni",
-                    "facebook":  "https://facebook.com/fountainheadschoolkunkni",
-                    "youtube":  "https://www.youtube.com/@fountainheadschools",
-                    "linkedin":  "https://linkedin.com/company/fountainheadschools"
-                },
-    "studentLife":  {
-                        "sectionLabel":  "Student Life",
-                        "heading":  "Life at FSM",
-                        "sportsLabel":  "",
-                        "sportsHeading":  "",
-                        "sportsBody":  "",
-                        "sportsTags":  [
-
-                                       ],
-                        "hdpHeading":  "",
-                        "hdpBody":  ""
-                    },
-    "footer":  {
-                   "description":  "IB Early Years + PYP campus in Malgama, Surat. Part of the Fountainhead Schools group.",
-                   "year":  "2026"
-               },
-    "ctaBand":  {
-                    "heading":  "Register Your Interest in FSM",
-                    "subtext":  "Be among the first families to join Fountainhead School Malgama when it opens.",
-                    "buttonLabel":  "Get in Touch"
-                },
-    "sections":  [
-                     {
-                         "visible":  true,
-                         "id":  "s_utilBar_1",
-                         "type":  "utilBar",
-                         "order":  0
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_nav_2",
-                         "type":  "nav",
-                         "order":  1
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_hero_3",
-                         "type":  "hero",
-                         "order":  2
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_stats_4",
-                         "type":  "stats",
-                         "order":  3
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_about_5",
-                         "type":  "about",
-                         "order":  4
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_academics_6",
-                         "type":  "academics",
-                         "order":  5
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_admissions_7",
-                         "type":  "admissions",
-                         "order":  6
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_policies_8",
-                         "type":  "policies",
-                         "order":  7
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_studentLife_9",
-                         "type":  "studentLife",
-                         "order":  8
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_media_10",
-                         "type":  "media",
-                         "order":  9
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_contact_11",
-                         "type":  "contact",
-                         "order":  10
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_ctaBand_12",
-                         "type":  "ctaBand",
-                         "order":  11
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_footer_13",
-                         "type":  "footer",
-                         "order":  12
-                     }
-                 ]
+  "id": "fsm",
+  "folder": "fsm",
+  "name": "Fountainhead School Malgama",
+  "shortCode": "FSM",
+  "color": "#005BAA",
+  "launched": false,
+  "metaTitle": "Fountainhead School Malgama (FSM) — IB EY & PYP, Surat",
+  "metaDescription": "Fountainhead School Malgama (FSM) — Early Years and PYP IB school in Surat. Part of the Fountainhead Schools group.",
+  "logo": "fsm-logo.png",
+  "heroImage": "fsm-hero.jpg",
+  "heroHeading": "Fountainhead School Malgama",
+  "heroSubtext": "Full IB continuum campus in Malgama, Surat.",
+  "heroButtonPrimary": "Explore FSM",
+  "heroButtonSecondary": "Enquire Now",
+  "utilBar": {
+    "policyLabel": "Child Protection Policy",
+    "policyFile": "FSK Child Protection Policy.pdf",
+    "phones": [
+      "8000-130-031"
+    ],
+    "email": "surat@fountainheadschools.org"
+  },
+  "nav": {
+    "about": {
+      "label": "About FSM"
+    },
+    "academics": {
+      "label": "Academics"
+    },
+    "admissions": {
+      "label": "Admissions"
+    },
+    "campusLife": {
+      "label": ""
+    },
+    "contact": {
+      "label": "Contact Us"
+    },
+    "policies": {
+      "label": "Policies"
+    }
+  },
+  "tabs": [
+    {
+      "id": "about-tab",
+      "label": "About FSM"
+    },
+    {
+      "id": "programme-tab",
+      "label": "Programme"
+    },
+    {
+      "id": "admissions-tab",
+      "label": "Admissions"
+    },
+    {
+      "id": "policies-tab",
+      "label": "Policies"
+    },
+    {
+      "id": "contact-tab",
+      "label": "Contact"
+    }
+  ],
+  "stats": [
+    {
+      "value": "Malgama",
+      "label": "Surat, Gujarat"
+    },
+    {
+      "value": "EY + PYP",
+      "label": "IB Programmes"
+    },
+    {
+      "value": "3—11",
+      "label": "Years (Early Years + PYP)"
+    },
+    {
+      "value": "FS Group",
+      "label": "Flagship Learning Model"
+    }
+  ],
+  "about": {
+    "sectionLabel": "About FSM",
+    "heading": "Fountainhead School Malgama",
+    "intro": "Fountainhead School Malgama (FSM) is the newest addition to the Fountainhead Schools group — bringing the same outstanding IB education that Surat knows and trusts, to a brand new campus location. Offering Early Years and the IB Primary Years Programme (PYP), FSM will be a warm, vibrant, and modern learning environment for children aged 3 to 11. Ground breaking has been completed — FSM is on its way.",
+    "image": "fsm-hero.jpg",
+    "imageCaption": "Fountainhead School Malgama — Coming Soon",
+    "milestoneLabel": "Milestone",
+    "milestoneHeading": "Ground Breaking Ceremony",
+    "milestoneBody": "The official Ground Breaking Ceremony for FSM has been completed, marking the beginning of construction on the new campus.",
+    "leadershipHeading": "Built on the FS Learning Model",
+    "leadershipLabel": "Learning Philosophy",
+    "leaders": [],
+    "learningPillars": [
+      {
+        "icon": "sparkle",
+        "title": "Learner Agency",
+        "body": "Children are active agents of their own learning — with genuine choice, voice, and ownership from the very first day."
+      },
+      {
+        "icon": "search",
+        "title": "Inquiry-Based Learning",
+        "body": "Every activity is designed to provoke curiosity and encourage exploration. Questions are celebrated more than answers."
+      },
+      {
+        "icon": "heart",
+        "title": "Social-Emotional Wellbeing",
+        "body": "We develop emotional vocabulary and resilience alongside academic skills — the whole child, every day."
+      },
+      {
+        "icon": "leaf",
+        "title": "Environment as Third Teacher",
+        "body": "Spaces are designed intentionally — natural elements, inviting materials, and displays that extend children's thinking."
+      }
+    ]
+  },
+  "academics": {
+    "sectionLabel": "Programmes",
+    "heading": "Learning at FSM",
+    "programmes": [
+      {
+        "ages": "Ages 3—6",
+        "title": "Early Years Programme",
+        "body": "Play-based inquiry rooted in the IB PYP framework. Learner agency, social-emotional resilience, the environment as the third teacher. Every child is seen, heard, and celebrated."
+      },
+      {
+        "ages": "Grades 1—5",
+        "title": "Primary Years Programme (PYP)",
+        "body": "Six transdisciplinary units of inquiry per year. Collaborative, concept-driven learning developing the whole child and the IB learner profile through authentic, meaningful experiences."
+      }
+    ],
+    "learningModelHeading": "The FS Learning Model at FSM",
+    "learningModelLabel": "Learning Philosophy",
+    "learningModelQuote": "",
+    "learningModelText1": "FSM is built on the same pedagogical foundation as FSK — the flagship. Students are at the centre of everything we do. We place a strong emphasis on fostering a love of learning, building academic competencies alongside physical fitness, creativity, and social-emotional wellbeing.",
+    "learningModelText2": "",
+    "mythsHeading": "",
+    "mythsLabel": "",
+    "myths": [],
+    "ibLearnerProfile": [
+      "Inquirers",
+      "Knowledgeable",
+      "Thinkers",
+      "Communicators",
+      "Principled",
+      "Open-Minded",
+      "Caring",
+      "Risk-Takers",
+      "Balanced",
+      "Reflective"
+    ],
+    "transdisciplinaryThemes": [
+      "Who We Are",
+      "How We Express Ourselves",
+      "How the World Works",
+      "How We Organise Ourselves",
+      "Sharing the Planet",
+      "Where We Are in Place & Time"
+    ]
+  },
+  "admissions": {
+    "sectionLabel": "Admissions",
+    "heading": "Join FSM",
+    "subheading": "Our PAE process — three steps. Transparent, fair, centred on the child.",
+    "processHeading": "The PAE Process",
+    "steps": [
+      {
+        "letter": "P",
+        "title": "Pre-Admission",
+        "body": "Reach out to our admissions team to register your interest and receive updates about FSM's opening timeline. Visit the site or connect with us online."
+      },
+      {
+        "letter": "A",
+        "title": "Assessment",
+        "body": "Age-appropriate interaction to understand your child — warm, play-based, and focused on curiosity rather than academic performance."
+      },
+      {
+        "letter": "E",
+        "title": "Enrolment",
+        "body": "Welcome to the FSM family — documentation, orientation, and your child's exciting beginning at Fountainhead."
+      }
+    ],
+    "docsRequired": [
+      "Birth certificate / Age proof",
+      "Previous school's Transfer Certificate (TC)",
+      "Last two years' academic report cards",
+      "Passport-size photographs (4 copies)",
+      "Residential address proof",
+      "Aadhar card (child and parents)"
+    ]
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "heading": "Reach Fountainhead School Malgama",
+    "phones": [
+      "8000-130-031"
+    ],
+    "email": "surat@fountainheadschools.org",
+    "whatsapp": "+918000130031",
+    "address": "Malgama, Surat, Gujarat, India",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720!2d72.85!3d21.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzM2LjAiTiA3MsKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1",
+    "instagram": "https://instagram.com/fountainheadschoolkunkni",
+    "facebook": "https://facebook.com/fountainheadschoolkunkni",
+    "youtube": "https://www.youtube.com/@fountainheadschools",
+    "linkedin": "https://linkedin.com/company/fountainheadschools"
+  },
+  "studentLife": {
+    "sectionLabel": "Student Life",
+    "heading": "Life at FSM",
+    "sportsLabel": "",
+    "sportsHeading": "",
+    "sportsBody": "",
+    "sportsTags": [],
+    "hdpHeading": "",
+    "hdpBody": ""
+  },
+  "footer": {
+    "description": "IB Early Years + PYP campus in Malgama, Surat. Part of the Fountainhead Schools group.",
+    "year": "2026"
+  },
+  "ctaBand": {
+    "heading": "Register Your Interest in FSM",
+    "subtext": "Be among the first families to join Fountainhead School Malgama when it opens.",
+    "buttonLabel": "Get in Touch"
+  },
+  "sections": [
+    {
+      "visible": true,
+      "id": "s_utilBar_1",
+      "type": "utilBar",
+      "order": 0
+    },
+    {
+      "visible": true,
+      "id": "s_nav_2",
+      "type": "nav",
+      "order": 1
+    },
+    {
+      "visible": true,
+      "id": "s_hero_3",
+      "type": "hero",
+      "order": 2
+    },
+    {
+      "visible": true,
+      "id": "s_stats_4",
+      "type": "stats",
+      "order": 3
+    },
+    {
+      "visible": true,
+      "id": "s_about_5",
+      "type": "about",
+      "order": 4
+    },
+    {
+      "visible": true,
+      "id": "s_academics_6",
+      "type": "academics",
+      "order": 5
+    },
+    {
+      "visible": true,
+      "id": "s_admissions_7",
+      "type": "admissions",
+      "order": 6
+    },
+    {
+      "visible": true,
+      "id": "s_policies_8",
+      "type": "policies",
+      "order": 7
+    },
+    {
+      "visible": true,
+      "id": "s_studentLife_9",
+      "type": "studentLife",
+      "order": 8
+    },
+    {
+      "visible": true,
+      "id": "s_media_10",
+      "type": "media",
+      "order": 9
+    },
+    {
+      "visible": true,
+      "id": "s_contact_11",
+      "type": "contact",
+      "order": 10
+    },
+    {
+      "visible": true,
+      "id": "s_ctaBand_12",
+      "type": "ctaBand",
+      "order": 11
+    },
+    {
+      "visible": true,
+      "id": "s_footer_13",
+      "type": "footer",
+      "order": 12
+    }
+  ]
 }

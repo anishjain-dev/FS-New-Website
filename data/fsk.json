@@ -1,340 +1,340 @@
 {
-    "id":  "fsk",
-    "folder":  "fsk",
-    "name":  "Fountainhead School Kunkni",
-    "shortCode":  "FSK",
-    "color":  "#005BAA",
-    "launched":  true,
-    "metaTitle":  "Fountainhead School Kunkni — IB Continuum School, Surat",
-    "metaDescription":  "Fountainhead School Kunkni (FSK) — India\u0027s 4th ranked IB school. Full IB continuum: EY, PYP, MYP, Diploma. Rander—Dandi Road, Surat.",
-    "logo":  "",
-    "heroImage":  "FSK Front Facade Image.jpg",
-    "heroHeading":  "Fountainhead School Kunkni",
-    "heroSubtext":  "India\u0027s 4th ranked IB school. Full EY—Diploma continuum on Rander—Dandi Road, Surat.",
-    "heroButtonPrimary":  "Explore Campus",
-    "heroButtonSecondary":  "Apply for Admission",
-    "utilBar":  {
-                    "policyLabel":  "Child Protection Policy",
-                    "policyFile":  "FSK Child Protection Policy.pdf",
-                    "phones":  [
-                                   "8000-130-031",
-                                   "0261-350-1300"
-                               ],
-                    "email":  "surat@fountainheadschools.org"
-                },
-    "nav":  {
-                "about":  {
-                              "label":  "About FSK"
-                          },
-                "academics":  {
-                                  "label":  "Academics"
-                              },
-                "admissions":  {
-                                   "label":  "Admissions at FSK"
-                               },
-                "campusLife":  {
-                                   "label":  "Campus Life"
-                               },
-                "contact":  {
-                                "label":  "Contact Us"
-                            },
-                "policies":  {
-                                 "label":  "Policies"
-                             }
-            },
-    "tabs":  [
-                 {
-                     "id":  "about-tab",
-                     "label":  "About FSK"
-                 },
-                 {
-                     "id":  "academics-tab",
-                     "label":  "Academics"
-                 },
-                 {
-                     "id":  "admissions-tab",
-                     "label":  "Admissions"
-                 },
-                 {
-                     "id":  "policies-tab",
-                     "label":  "Policies"
-                 },
-                 {
-                     "id":  "life-tab",
-                     "label":  "Student Life"
-                 },
-                 {
-                     "id":  "media-tab",
-                     "label":  "Media"
-                 },
-                 {
-                     "id":  "contact-tab",
-                     "label":  "Contact"
-                 }
-             ],
-    "stats":  [
-                  {
-                      "value":  "4th",
-                      "label":  "Nationally — Cfore 2026"
-                  },
-                  {
-                      "value":  "EY→DP",
-                      "label":  "Full IB Continuum"
-                  },
-                  {
-                      "value":  "7",
-                      "label":  "Trained Counselors"
-                  },
-                  {
-                      "value":  "BTec",
-                      "label":  "Vocational Pathway"
-                  },
-                  {
-                      "value":  "2009",
-                      "label":  "Year Established"
-                  }
-              ],
-    "about":  {
-                  "sectionLabel":  "About FSK",
-                  "heading":  "Fountainhead School Kunkni",
-                  "intro":  "Fountainhead School Kunkni is India\u0027s 4th ranked co-ed day school (Cfore 2026). Located on Rander-Dandi Road, Surat, the campus runs the full IB continuum from Early Years through Diploma Programme. Head of School: Bhumika Parmar. Senior School Principals: Shezin Siganporia and Utsav Oza.",
-                  "image":  "FSK Ground.jpg",
-                  "imageCaption":  "Khelangan — FSK Sports Ground — Surat",
-                  "leadershipHeading":  "People at FSK",
-                  "leadershipLabel":  "Leadership",
-                  "leaders":  [
-                                  {
-                                      "initials":  "BP",
-                                      "name":  "Bhumika Parmar",
-                                      "role":  "Head of School",
-                                      "bio":  "At FSK since 2009 — Home Room Teacher, Team Leader, MYP Coordinator, and now Head of School. Degrees in Commerce, Law, Education, and School Leadership Management. Led curriculum development in the Middle Years. Her view of education goes beyond academic results — it accounts for the person the student becomes."
-                                  },
-                                  {
-                                      "initials":  "SS",
-                                      "name":  "Shezin Siganporia",
-                                      "role":  "Senior School Principal",
-                                      "bio":  "Chartered Accountant. At FS since 2013. Teaches Business Management, brings the same rigour to the classroom that the qualification demands. Passionate about finance and the way it connects to the real world — she makes that connection visible to students."
-                                  },
-                                  {
-                                      "initials":  "UO",
-                                      "name":  "Utsav Oza",
-                                      "role":  "Senior School Principal",
-                                      "bio":  "Engineer. Gold medalist, SCET. Dewang Mehta IT Award 2017. National quiz competitor. Has performed at IIT-Bombay\u0027s Mood Indigo. At FS because the job of being curious alongside young people suits him — and because curiosity, he thinks, is what schools are actually for."
-                                  }
-                              ]
-              },
-    "academics":  {
-                      "sectionLabel":  "Academics",
-                      "heading":  "Academic Programmes at FSK",
-                      "programmes":  [
-                                         {
-                                             "ages":  "Ages 3—6",
-                                             "title":  "Early Years Programme",
-                                             "body":  "Play-based inquiry. The environment is the third teacher. Children lead — adults listen and extend."
-                                         },
-                                         {
-                                             "ages":  "Grades 1—5",
-                                             "title":  "Primary Years Programme",
-                                             "body":  "Six transdisciplinary units of inquiry per year. Concepts, not content. The whole child, not just the academic one."
-                                         },
-                                         {
-                                             "ages":  "Grades 6—10",
-                                             "title":  "Middle Years Programme",
-                                             "body":  "Eight subject groups. Global contexts that connect what students learn to why it matters. Service as action — not a checkbox."
-                                         },
-                                         {
-                                             "ages":  "Grades 11—12",
-                                             "title":  "IB Diploma Programme",
-                                             "body":  "University preparation recognised by institutions worldwide. Six subjects, Theory of Knowledge, Extended Essay, CAS. A rigorous two years."
-                                         },
-                                         {
-                                             "ages":  "Specialist",
-                                             "title":  "Maverick Learning Centre",
-                                             "body":  "Award-winning skill development initiative — Best Skill Development at ScooNews 2023. Inclusive, personalised learning support."
-                                         },
-                                         {
-                                             "ages":  "Vocational",
-                                             "title":  "BTec Programme",
-                                             "body":  "Industry-aligned vocational qualifications accepted by universities worldwide. Career-ready skills alongside the IB pathway."
-                                         }
-                                     ],
-                      "learningModelHeading":  "The FS Learning Model",
-                      "learningModelLabel":  "Learning Philosophy",
-                      "learningModelQuote":  "Learning is not a performance for school. It is a habit that lasts a lifetime — or it is nothing.",
-                      "learningModelText1":  "Students are at the centre. Not in theory — in practice. The teacher\u0027s job is to build a learner, not deliver a syllabus. Every lesson at FSK is designed around a question, not an answer.",
-                      "learningModelText2":  "Academic rigour. Physical fitness. Social and emotional wellbeing. All three, in balance.",
-                      "mythsHeading":  "Common Myths About IB Education",
-                      "mythsLabel":  "Demystifying IB",
-                      "myths":  [
-                                    {
-                                        "myth":  "IB is only for gifted students",
-                                        "fact":  "The IB is designed for all learners. Inquiry works for every child — it does not sort them into gifted and not gifted, it asks all of them to think."
-                                    },
-                                    {
-                                        "myth":  "IB students cannot do engineering or medicine",
-                                        "fact":  "IB DP is accepted by universities for STEM, medicine, law, management — in India and worldwide. The subject combination is what matters, not the board."
-                                    },
-                                    {
-                                        "myth":  "IB means there are no exams",
-                                        "fact":  "IB has rigorous external assessments. DP students sit comprehensive written exams marked by IB examiners worldwide — it is among the most respected qualifications globally."
-                                    },
-                                    {
-                                        "myth":  "IB does not prepare students for competitive exams",
-                                        "fact":  "IB develops deep analytical thinking and strong academic foundations. FSK students successfully clear JEE, NEET, SAT, and other competitive examinations. Coaching for competitive exams is not discouraged — only tuition from former FS teachers is restricted."
-                                    }
-                                ]
-                  },
-    "admissions":  {
-                       "sectionLabel":  "Admissions",
-                       "heading":  "How admission to FSK works",
-                       "subheading":  "The PAE process — three steps. Transparent, fair, centred on the child.",
-                       "processHeading":  "The PAE Process",
-                       "steps":  [
-                                     {
-                                         "letter":  "P",
-                                         "title":  "Pre-Admission",
-                                         "body":  "Initial enquiry and campus tour. Meet our admissions team to learn about our programmes, facilities, and the IB continuum. Walk through the campus on a school day — the best way to understand Fountainhead."
-                                     },
-                                     {
-                                         "letter":  "A",
-                                         "title":  "Assessment",
-                                         "body":  "Age-appropriate interaction or assessment. For younger grades, a warm play-based interaction. For older grades, a casual conversation with our academic team. We assess curiosity and enthusiasm — not just academics."
-                                     },
-                                     {
-                                         "letter":  "E",
-                                         "title":  "Enrolment",
-                                         "body":  "Offer of admission, documentation, fee payment, and welcome orientation. Your child joins the Fountainhead family — a lifelong community of learners, thinkers, and doers."
-                                     }
-                                 ],
-                       "docsRequired":  [
-                                            "Birth certificate / Age proof",
-                                            "Previous school\u0027s Transfer Certificate (TC)",
-                                            "Last two years\u0027 academic report cards",
-                                            "Passport-size photographs (4 copies)",
-                                            "Residential address proof",
-                                            "Aadhar card (child and parents)"
-                                        ]
-                   },
-    "contact":  {
-                    "sectionLabel":  "Contact",
-                    "heading":  "Reach Fountainhead School Kunkni",
-                    "phones":  [
-                                   "8000-130-031",
-                                   "0261-3501300"
-                               ],
-                    "email":  "surat@fountainheadschools.org",
-                    "whatsapp":  "+918000130031",
-                    "address":  "Opp. Ambetha Water Tank, Nr. Village Kunkni,\nRander—Dandi Road, Surat — 395005, Gujarat",
-                    "mapEmbed":  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.5!2d72.8!3d21.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzAwLjAiTiA3MsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1",
-                    "instagram":  "https://instagram.com/fountainheadschoolkunkni",
-                    "facebook":  "https://facebook.com/fountainheadschoolkunkni",
-                    "youtube":  "https://www.youtube.com/@fountainheadschools",
-                    "linkedin":  "https://linkedin.com/company/fountainheadschools"
-                },
-    "studentLife":  {
-                        "sectionLabel":  "Student Life",
-                        "heading":  "Life at FSK",
-                        "sportsLabel":  "Sports",
-                        "sportsHeading":  "Khelangan — Our World-Class Ground",
-                        "sportsBody":  "FSK\u0027s Khelangan is built to international standards — featuring a football turf sourced from the Netherlands, cricket nets, basketball and pickleball courts, badminton facilities, and a gymnastics space.",
-                        "sportsTags":  [
-                                           "Football (Netherlands Turf)",
-                                           "Cricket Nets",
-                                           "Basketball",
-                                           "Badminton",
-                                           "Pickleball",
-                                           "Gymnastics"
-                                       ],
-                        "hdpHeading":  "HDP \u0026 HDP+ Programme",
-                        "hdpBody":  "High-Performance Development programme for students with exceptional sporting talent — structured, competitive training alongside academic achievement."
-                    },
-    "footer":  {
-                   "description":  "The flagship IB continuum campus of the Fountainhead Schools group. Rander—Dandi Road, Surat. Ranked 4th nationally — Cfore 2026.",
-                   "year":  "2026"
-               },
-    "ctaBand":  {
-                    "heading":  "See FSK for yourself",
-                    "subtext":  "The best way to understand Fountainhead is to walk through it on a school day.",
-                    "buttonLabel":  "Book a Campus Visit"
-                },
-    "sections":  [
-                     {
-                         "visible":  true,
-                         "id":  "s_utilBar_1",
-                         "type":  "utilBar",
-                         "order":  0
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_nav_2",
-                         "type":  "nav",
-                         "order":  1
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_hero_3",
-                         "type":  "hero",
-                         "order":  2
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_stats_4",
-                         "type":  "stats",
-                         "order":  3
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_about_5",
-                         "type":  "about",
-                         "order":  4
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_academics_6",
-                         "type":  "academics",
-                         "order":  5
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_admissions_7",
-                         "type":  "admissions",
-                         "order":  6
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_policies_8",
-                         "type":  "policies",
-                         "order":  7
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_studentLife_9",
-                         "type":  "studentLife",
-                         "order":  8
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_media_10",
-                         "type":  "media",
-                         "order":  9
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_contact_11",
-                         "type":  "contact",
-                         "order":  10
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_ctaBand_12",
-                         "type":  "ctaBand",
-                         "order":  11
-                     },
-                     {
-                         "visible":  true,
-                         "id":  "s_footer_13",
-                         "type":  "footer",
-                         "order":  12
-                     }
-                 ]
+  "id": "fsk",
+  "folder": "fsk",
+  "name": "Fountainhead School Kunkni",
+  "shortCode": "FSK",
+  "color": "#005BAA",
+  "launched": true,
+  "metaTitle": "Fountainhead School Kunkni — IB Continuum School, Surat",
+  "metaDescription": "Fountainhead School Kunkni (FSK) — India's 4th ranked IB school. Full IB continuum: EY, PYP, MYP, Diploma. Rander—Dandi Road, Surat.",
+  "logo": "fsk-logo.png",
+  "heroImage": "fsk-hero.jpg",
+  "heroHeading": "Fountainhead School Kunkni",
+  "heroSubtext": "India's 4th ranked IB school. Full EY—Diploma continuum on Rander—Dandi Road, Surat.",
+  "heroButtonPrimary": "Explore Campus",
+  "heroButtonSecondary": "Apply for Admission",
+  "utilBar": {
+    "policyLabel": "Child Protection Policy",
+    "policyFile": "FSK Child Protection Policy.pdf",
+    "phones": [
+      "8000-130-031",
+      "0261-350-1300"
+    ],
+    "email": "surat@fountainheadschools.org"
+  },
+  "nav": {
+    "about": {
+      "label": "About FSK"
+    },
+    "academics": {
+      "label": "Academics"
+    },
+    "admissions": {
+      "label": "Admissions at FSK"
+    },
+    "campusLife": {
+      "label": "Campus Life"
+    },
+    "contact": {
+      "label": "Contact Us"
+    },
+    "policies": {
+      "label": "Policies"
+    }
+  },
+  "tabs": [
+    {
+      "id": "about-tab",
+      "label": "About FSK"
+    },
+    {
+      "id": "academics-tab",
+      "label": "Academics"
+    },
+    {
+      "id": "admissions-tab",
+      "label": "Admissions"
+    },
+    {
+      "id": "policies-tab",
+      "label": "Policies"
+    },
+    {
+      "id": "life-tab",
+      "label": "Student Life"
+    },
+    {
+      "id": "media-tab",
+      "label": "Media"
+    },
+    {
+      "id": "contact-tab",
+      "label": "Contact"
+    }
+  ],
+  "stats": [
+    {
+      "value": "4th",
+      "label": "Nationally — Cfore 2026"
+    },
+    {
+      "value": "EY→DP",
+      "label": "Full IB Continuum"
+    },
+    {
+      "value": "7",
+      "label": "Trained Counselors"
+    },
+    {
+      "value": "BTec",
+      "label": "Vocational Pathway"
+    },
+    {
+      "value": "2009",
+      "label": "Year Established"
+    }
+  ],
+  "about": {
+    "sectionLabel": "About FSK",
+    "heading": "Fountainhead School Kunkni",
+    "intro": "Fountainhead School Kunkni is India's 4th ranked co-ed day school (Cfore 2026). Located on Rander-Dandi Road, Surat, the campus runs the full IB continuum from Early Years through Diploma Programme. Head of School: Bhumika Parmar. Senior School Principals: Shezin Siganporia and Utsav Oza.",
+    "image": "fsk-ground.jpg",
+    "imageCaption": "Khelangan — FSK Sports Ground — Surat",
+    "leadershipHeading": "People at FSK",
+    "leadershipLabel": "Leadership",
+    "leaders": [
+      {
+        "initials": "BP",
+        "name": "Bhumika Parmar",
+        "role": "Head of School",
+        "bio": "At FSK since 2009 — Home Room Teacher, Team Leader, MYP Coordinator, and now Head of School. Degrees in Commerce, Law, Education, and School Leadership Management. Led curriculum development in the Middle Years. Her view of education goes beyond academic results — it accounts for the person the student becomes."
+      },
+      {
+        "initials": "SS",
+        "name": "Shezin Siganporia",
+        "role": "Senior School Principal",
+        "bio": "Chartered Accountant. At FS since 2013. Teaches Business Management, brings the same rigour to the classroom that the qualification demands. Passionate about finance and the way it connects to the real world — she makes that connection visible to students."
+      },
+      {
+        "initials": "UO",
+        "name": "Utsav Oza",
+        "role": "Senior School Principal",
+        "bio": "Engineer. Gold medalist, SCET. Dewang Mehta IT Award 2017. National quiz competitor. Has performed at IIT-Bombay's Mood Indigo. At FS because the job of being curious alongside young people suits him — and because curiosity, he thinks, is what schools are actually for."
+      }
+    ]
+  },
+  "academics": {
+    "sectionLabel": "Academics",
+    "heading": "Academic Programmes at FSK",
+    "programmes": [
+      {
+        "ages": "Ages 3—6",
+        "title": "Early Years Programme",
+        "body": "Play-based inquiry. The environment is the third teacher. Children lead — adults listen and extend."
+      },
+      {
+        "ages": "Grades 1—5",
+        "title": "Primary Years Programme",
+        "body": "Six transdisciplinary units of inquiry per year. Concepts, not content. The whole child, not just the academic one."
+      },
+      {
+        "ages": "Grades 6—10",
+        "title": "Middle Years Programme",
+        "body": "Eight subject groups. Global contexts that connect what students learn to why it matters. Service as action — not a checkbox."
+      },
+      {
+        "ages": "Grades 11—12",
+        "title": "IB Diploma Programme",
+        "body": "University preparation recognised by institutions worldwide. Six subjects, Theory of Knowledge, Extended Essay, CAS. A rigorous two years."
+      },
+      {
+        "ages": "Specialist",
+        "title": "Maverick Learning Centre",
+        "body": "Award-winning skill development initiative — Best Skill Development at ScooNews 2023. Inclusive, personalised learning support."
+      },
+      {
+        "ages": "Vocational",
+        "title": "BTec Programme",
+        "body": "Industry-aligned vocational qualifications accepted by universities worldwide. Career-ready skills alongside the IB pathway."
+      }
+    ],
+    "learningModelHeading": "The FS Learning Model",
+    "learningModelLabel": "Learning Philosophy",
+    "learningModelQuote": "Learning is not a performance for school. It is a habit that lasts a lifetime — or it is nothing.",
+    "learningModelText1": "Students are at the centre. Not in theory — in practice. The teacher's job is to build a learner, not deliver a syllabus. Every lesson at FSK is designed around a question, not an answer.",
+    "learningModelText2": "Academic rigour. Physical fitness. Social and emotional wellbeing. All three, in balance.",
+    "mythsHeading": "Common Myths About IB Education",
+    "mythsLabel": "Demystifying IB",
+    "myths": [
+      {
+        "myth": "IB is only for gifted students",
+        "fact": "The IB is designed for all learners. Inquiry works for every child — it does not sort them into gifted and not gifted, it asks all of them to think."
+      },
+      {
+        "myth": "IB students cannot do engineering or medicine",
+        "fact": "IB DP is accepted by universities for STEM, medicine, law, management — in India and worldwide. The subject combination is what matters, not the board."
+      },
+      {
+        "myth": "IB means there are no exams",
+        "fact": "IB has rigorous external assessments. DP students sit comprehensive written exams marked by IB examiners worldwide — it is among the most respected qualifications globally."
+      },
+      {
+        "myth": "IB does not prepare students for competitive exams",
+        "fact": "IB develops deep analytical thinking and strong academic foundations. FSK students successfully clear JEE, NEET, SAT, and other competitive examinations. Coaching for competitive exams is not discouraged — only tuition from former FS teachers is restricted."
+      }
+    ]
+  },
+  "admissions": {
+    "sectionLabel": "Admissions",
+    "heading": "How admission to FSK works",
+    "subheading": "The PAE process — three steps. Transparent, fair, centred on the child.",
+    "processHeading": "The PAE Process",
+    "steps": [
+      {
+        "letter": "P",
+        "title": "Pre-Admission",
+        "body": "Initial enquiry and campus tour. Meet our admissions team to learn about our programmes, facilities, and the IB continuum. Walk through the campus on a school day — the best way to understand Fountainhead."
+      },
+      {
+        "letter": "A",
+        "title": "Assessment",
+        "body": "Age-appropriate interaction or assessment. For younger grades, a warm play-based interaction. For older grades, a casual conversation with our academic team. We assess curiosity and enthusiasm — not just academics."
+      },
+      {
+        "letter": "E",
+        "title": "Enrolment",
+        "body": "Offer of admission, documentation, fee payment, and welcome orientation. Your child joins the Fountainhead family — a lifelong community of learners, thinkers, and doers."
+      }
+    ],
+    "docsRequired": [
+      "Birth certificate / Age proof",
+      "Previous school's Transfer Certificate (TC)",
+      "Last two years' academic report cards",
+      "Passport-size photographs (4 copies)",
+      "Residential address proof",
+      "Aadhar card (child and parents)"
+    ]
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "heading": "Reach Fountainhead School Kunkni",
+    "phones": [
+      "8000-130-031",
+      "0261-3501300"
+    ],
+    "email": "surat@fountainheadschools.org",
+    "whatsapp": "+918000130031",
+    "address": "Opp. Ambetha Water Tank, Nr. Village Kunkni,\nRander—Dandi Road, Surat — 395005, Gujarat",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.5!2d72.8!3d21.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzAwLjAiTiA3MsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1",
+    "instagram": "https://instagram.com/fountainheadschoolkunkni",
+    "facebook": "https://facebook.com/fountainheadschoolkunkni",
+    "youtube": "https://www.youtube.com/@fountainheadschools",
+    "linkedin": "https://linkedin.com/company/fountainheadschools"
+  },
+  "studentLife": {
+    "sectionLabel": "Student Life",
+    "heading": "Life at FSK",
+    "sportsLabel": "Sports",
+    "sportsHeading": "Khelangan — Our World-Class Ground",
+    "sportsBody": "FSK's Khelangan is built to international standards — featuring a football turf sourced from the Netherlands, cricket nets, basketball and pickleball courts, badminton facilities, and a gymnastics space.",
+    "sportsTags": [
+      "Football (Netherlands Turf)",
+      "Cricket Nets",
+      "Basketball",
+      "Badminton",
+      "Pickleball",
+      "Gymnastics"
+    ],
+    "hdpHeading": "HDP & HDP+ Programme",
+    "hdpBody": "High-Performance Development programme for students with exceptional sporting talent — structured, competitive training alongside academic achievement."
+  },
+  "footer": {
+    "description": "The flagship IB continuum campus of the Fountainhead Schools group. Rander—Dandi Road, Surat. Ranked 4th nationally — Cfore 2026.",
+    "year": "2026"
+  },
+  "ctaBand": {
+    "heading": "See FSK for yourself",
+    "subtext": "The best way to understand Fountainhead is to walk through it on a school day.",
+    "buttonLabel": "Book a Campus Visit"
+  },
+  "sections": [
+    {
+      "visible": true,
+      "id": "s_utilBar_1",
+      "type": "utilBar",
+      "order": 0
+    },
+    {
+      "visible": true,
+      "id": "s_nav_2",
+      "type": "nav",
+      "order": 1
+    },
+    {
+      "visible": true,
+      "id": "s_hero_3",
+      "type": "hero",
+      "order": 2
+    },
+    {
+      "visible": true,
+      "id": "s_stats_4",
+      "type": "stats",
+      "order": 3
+    },
+    {
+      "visible": true,
+      "id": "s_about_5",
+      "type": "about",
+      "order": 4
+    },
+    {
+      "visible": true,
+      "id": "s_academics_6",
+      "type": "academics",
+      "order": 5
+    },
+    {
+      "visible": true,
+      "id": "s_admissions_7",
+      "type": "admissions",
+      "order": 6
+    },
+    {
+      "visible": true,
+      "id": "s_policies_8",
+      "type": "policies",
+      "order": 7
+    },
+    {
+      "visible": true,
+      "id": "s_studentLife_9",
+      "type": "studentLife",
+      "order": 8
+    },
+    {
+      "visible": true,
+      "id": "s_media_10",
+      "type": "media",
+      "order": 9
+    },
+    {
+      "visible": true,
+      "id": "s_contact_11",
+      "type": "contact",
+      "order": 10
+    },
+    {
+      "visible": true,
+      "id": "s_ctaBand_12",
+      "type": "ctaBand",
+      "order": 11
+    },
+    {
+      "visible": true,
+      "id": "s_footer_13",
+      "type": "footer",
+      "order": 12
+    }
+  ]
 }

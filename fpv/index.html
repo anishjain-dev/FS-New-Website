@@ -24,7 +24,7 @@
 <header class="site-header" id="navbar">
   <div class="header-row">
     <a href="../index.html" class="nav-logo">
-      <img src="../images/fs-main-logo.png" alt="Fountainhead Preschool Vesu" style="height:3rem;width:auto;display:block;">
+      <img src="../images/fpv-hero.jpg" alt="Fountainhead Preschool Vesu" style="height:3rem;width:auto;display:block;">
     </a>
 
     <nav class="nav-desktop" aria-label="Primary">
@@ -153,8 +153,11 @@
       <button class="tab-btn" onclick="showTab('admissions-tab',2)">Admissions</button>
       <button class="tab-btn" onclick="showTab('policies-tab',3)">Policies</button>
       <button class="tab-btn" onclick="showTab('contact-tab',4)">Contact</button>
+      <button class="tab-btn" onclick="showTab('media-tab',5)">media</button>
+      <button class="tab-btn" onclick="showTab('contact-tab',6)">contact</button>
     </div>
 
+    
     <!-- --- ABOUT --- -->
     <div class="tab-panel active" id="about-tab">
 
@@ -184,7 +187,6 @@
         </div>
       </div>
     </div>
-
     <!-- --- ACADEMICS --- -->
     <div class="tab-panel" id="programme-tab">
       <span class="label">Programmes</span>
@@ -248,7 +250,6 @@
         </div>
       </div>
     </div>
-
     <!-- --- ADMISSIONS --- -->
     <div class="tab-panel" id="admissions-tab">
       <span class="label">Admissions</span>
@@ -324,7 +325,6 @@
         </div>
       </div>
     </div>
-
     <!-- --- POLICIES --- -->
     <div class="tab-panel" id="policies-tab">
       <span class="label">Download Policies</span>
@@ -339,7 +339,6 @@
         <a href="../policies/FPV Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127891;</div><span>Academic Integrity Policy</span></a>
       </div>
     </div>
-
     <!-- --- STUDENT LIFE --- -->
     <div class="tab-panel" id="contact-tab">
       <span class="label">Student Life</span>
@@ -375,7 +374,6 @@
         </div>
       </div>
     </div>
-
     <!-- --- MEDIA --- -->
     <div class="tab-panel" id="media-tab">
       <span class="label">Recognition</span>
@@ -388,7 +386,6 @@
         </div>
       </div>
     </div>
-
     <!-- --- CONTACT --- -->
     <div class="tab-panel" id="contact-tab">
       <span class="label">Contact</span>
@@ -468,7 +465,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">
-          <img src="../images/fs-main-logo.png" alt="Fountainhead Preschool Vesu" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
+          <img src="../images/fpv-hero.jpg" alt="Fountainhead Preschool Vesu" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
         </div>
         <p>IB PYP early years school in Vesu, Surat. Part of the Fountainhead Schools group.</p>
         <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
@@ -513,7 +510,7 @@
 </footer>
 
 <script>
-const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab'];
+const tabs = ['about-tab','programme-tab','admissions-tab','policies-tab','contact-tab','media-tab','contact-tab'];
 function showTab(id, idx) {
   tabs.forEach(t => { document.getElementById(t).classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
