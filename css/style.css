@@ -3271,7 +3271,25 @@ a:hover { color: var(--fs-blue-light); }
 /* ── VALUES, MISSION & PHILOSOPHY ── */
 .values-section {
   padding: 72px 0 60px;
-  background: var(--bg-secondary, #f7f8fa);
+  background: #f7f9fc;
+  position: relative;
+  overflow: hidden;
+}
+.values-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 40 40'%3E%3Cpath d='M8 32 C8 14 14 8 20 6 C26 8 32 14 32 32' stroke='%23005BAA' stroke-width='1.5' stroke-opacity='0.08' fill='none' stroke-linecap='round'/%3E%3Cline x1='20' y1='4' x2='20' y2='8' stroke='%23005BAA' stroke-width='2' stroke-opacity='0.1' stroke-linecap='round'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 40 40'%3E%3Cpath d='M20 6 l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z' fill='%23F2C418' fill-opacity='0.18' stroke='%23F2C418' stroke-width='1' stroke-opacity='0.2' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 40 40' fill='none'%3E%3Ccircle cx='20' cy='20' r='12' stroke='%23B8292F' stroke-width='1.5' stroke-opacity='0.1'/%3E%3Cpath d='M14 20 l4 4 8-8' stroke='%23B8292F' stroke-width='2' stroke-opacity='0.12' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 6 L32 11 L32 22 C32 29 26 34 20 36 C14 34 8 29 8 22 L8 11 Z' stroke='%23005BAA' stroke-width='1.5' stroke-opacity='0.1' stroke-linejoin='round'/%3E%3Cpath d='M15 20 l3.5 3.5 6.5-7' stroke='%23005BAA' stroke-width='2' stroke-opacity='0.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 40 40' fill='none'%3E%3Cline x1='10' y1='8' x2='10' y2='34' stroke='%23F2C418' stroke-width='2.5' stroke-opacity='0.2' stroke-linecap='round'/%3E%3Cpath d='M10 8 L30 12 L10 20Z' fill='%23F2C418' fill-opacity='0.15'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 8 C12 8 6 14 6 20 C6 28 14 34 20 36 C26 34 34 28 34 20 C34 14 28 8 20 8Z' stroke='%23005BAA' stroke-width='1.5' stroke-opacity='0.08'/%3E%3Cline x1='20' y1='8' x2='20' y2='32' stroke='%23005BAA' stroke-width='1' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-position: 3% 15%, 92% 8%, 8% 80%, 88% 75%, 50% 5%, 48% 90%;
+  background-repeat: no-repeat;
+  background-size: 64px, 52px, 60px, 56px, 48px, 60px;
+  pointer-events: none;
 }
 .values-header {
   text-align: center;
@@ -4084,19 +4102,26 @@ a:hover { color: var(--fs-blue-light); }
   position: relative;
   overflow: hidden;
 }
+/* Decorative scattered icons in background */
 .bsn-logo-panel::before {
   content: '';
   position: absolute;
-  top: -80px; right: -80px;
-  width: 320px; height: 320px;
-  border-radius: 50%;
-  background: rgba(0,91,170,0.06);
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 8 C16 8 10 8 6 10 L6 32 C10 30 16 30 20 32 C24 30 30 30 34 32 L34 10 C30 8 24 8 20 8Z' stroke='%23005BAA' stroke-width='1.5' stroke-opacity='0.15' stroke-linejoin='round'/%3E%3Cline x1='20' y1='8' x2='20' y2='32' stroke='%23005BAA' stroke-width='1.5' stroke-opacity='0.15'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 6 l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z' stroke='%23F2C418' stroke-width='1.5' stroke-opacity='0.3' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 40 40' fill='none'%3E%3Ccircle cx='20' cy='20' r='13' stroke='%23B8292F' stroke-width='1.5' stroke-opacity='0.12'/%3E%3Cline x1='20' y1='7' x2='20' y2='10' stroke='%23B8292F' stroke-width='1.5' stroke-opacity='0.12' stroke-linecap='round'/%3E%3Cline x1='20' y1='30' x2='20' y2='33' stroke='%23B8292F' stroke-width='1.5' stroke-opacity='0.12' stroke-linecap='round'/%3E%3Cline x1='7' y1='20' x2='10' y2='20' stroke='%23B8292F' stroke-width='1.5' stroke-opacity='0.12' stroke-linecap='round'/%3E%3Cline x1='30' y1='20' x2='33' y2='20' stroke='%23B8292F' stroke-width='1.5' stroke-opacity='0.12' stroke-linecap='round'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 6 L32 11 L32 22 C32 29 26 34 20 36 C14 34 8 29 8 22 L8 11 Z' stroke='%23005BAA' stroke-width='1.5' stroke-opacity='0.12' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: 15% 20%, 75% 15%, 20% 72%, 70% 68%;
+  background-repeat: no-repeat;
+  background-size: 56px, 44px, 52px, 48px;
+  pointer-events: none;
 }
 .bsn-logo-panel::after {
   content: '';
   position: absolute;
   bottom: -60px; left: -60px;
-  width: 240px; height: 240px;
+  width: 200px; height: 200px;
   border-radius: 50%;
   background: rgba(0,91,170,0.04);
 }
