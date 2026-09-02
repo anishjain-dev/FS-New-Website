@@ -63,7 +63,6 @@ function generateMainHTML(d) {
       <details class="nav-group" name="primary-nav">
         <summary>About Us</summary>
         <div class="nav-submenu">
-          <a href="#about">About Us Overview</a>
           <a href="#about-story">Our Story &amp; Founders</a>
           <a href="#about-values">Values, Mission &amp; Philosophy</a>
           <a href="#about-mission">IB Mission Statement</a>
@@ -127,7 +126,6 @@ function generateMainHTML(d) {
   <details class="panel-group" name="mobile-nav">
     <summary>About Us</summary>
     <div class="panel-submenu">
-      <a href="#about">About Us Overview</a>
       <a href="#about-story">Our Story &amp; Founders</a>
       <a href="#about-values">Values, Mission &amp; Philosophy</a>
       <a href="#about-mission">IB Mission Statement</a>
@@ -207,7 +205,7 @@ function generateMainHTML(d) {
   </div>
 </div>
 
-<!-- WHO WE ARE -->
+<!-- WHO WE ARE / ABOUT US -->
 <section class="section" id="about">
   <div class="container">
     <div class="about-grid">
@@ -286,7 +284,7 @@ ${(d.stats || [
     <div class="campuses-grid-ois">
 
       <div class="campus-ois" onclick="window.open('fsk/index.html','_blank')">
-        <img src="fsk/images/FSK Front Facade Image.jpg" alt="Fountainhead School Kunkni">
+        <img src="images/fsk-campus-ref.png" alt="Fountainhead School Kunkni" onerror="this.src='fsk/images/FSK Front Facade Image.jpg'">
         <div class="campus-ois-overlay">
           <div class="campus-ois-city">📍 Surat, Gujarat</div>
           <h3>Fountainhead School Kunkni</h3>
@@ -296,7 +294,7 @@ ${(d.stats || [
       </div>
 
       <div class="campus-ois" onclick="window.open('fsm/index.html','_blank')">
-        <img src="images/fsm-facade.jpg" alt="Fountainhead School Malgama">
+        <img src="images/fsm-campus-ref.png" alt="Fountainhead School Malgama" onerror="this.src='images/fsm-facade.jpg'">
         <div class="campus-ois-overlay">
           <div class="campus-ois-city">📍 Surat, Gujarat</div>
           <h3>Fountainhead School Malgama</h3>
@@ -305,8 +303,9 @@ ${(d.stats || [
         </div>
       </div>
 
-      <div class="campus-ois" onclick="window.open('fwgs/index.html','_blank')" style="background:linear-gradient(135deg,#003d7a 0%,#005BAA 60%,#0070cc 100%);">
-        <div class="campus-ois-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,30,80,0.5) 100%);">
+      <div class="campus-ois" onclick="window.open('fwgs/index.html','_blank')">
+        <img src="images/fwgs-campus-ref.png" alt="Fountainhead Wockhardt Global School" onerror="this.style.background='linear-gradient(135deg,#003d7a 0%,#005BAA 60%,#0070cc 100%)'">
+        <div class="campus-ois-overlay">
           <div class="campus-ois-city">📍 Chhatrapati Sambhajinagar, Maharashtra</div>
           <h3>Fountainhead Wockhardt Global School</h3>
           <p>IB World School in Maharashtra — EYP to DP.</p>
@@ -314,9 +313,9 @@ ${(d.stats || [
         </div>
       </div>
 
-      <div class="campus-ois" onclick="window.open('falh/index.html','_blank')" style="background:#0a1628;">
-        <img src="images/falh-logo.jpg" alt="FALH" style="opacity:0.55;object-fit:contain;padding:30px;">
-        <div class="campus-ois-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.4) 60%);">
+      <div class="campus-ois" onclick="window.open('falh/index.html','_blank')">
+        <img src="images/falh-campus-ref.png" alt="Fountainhead Avadh Learning Hub" onerror="this.src='images/falh-logo.jpg'">
+        <div class="campus-ois-overlay">
           <div class="campus-ois-city">📍 Vapi, Gujarat</div>
           <h3>Fountainhead Avadh Learning Hub</h3>
           <p>Preschool and after-school programmes in Vapi.</p>
@@ -325,7 +324,7 @@ ${(d.stats || [
       </div>
 
       <div class="campus-ois" onclick="window.open('fpa/index.html','_blank')">
-        <img src="fpa/images/FPA Front Facade.jpeg" alt="Fountainhead Preschool Adajan">
+        <img src="images/vapi-campus-ref.png" alt="Fountainhead Preschool Adajan" onerror="this.src='fpa/images/FPA Front Facade.jpeg'">
         <div class="campus-ois-overlay">
           <div class="campus-ois-city">📍 Adajan, Surat</div>
           <h3>Fountainhead Preschool Adajan</h3>
@@ -373,6 +372,11 @@ ${(d.stats || [
       </div>
 
       <div>
+        <!-- IB CONTINUUM IMAGE -->
+        <div style="text-align:center;margin-bottom:24px;">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">IB Continuum</span>
+          <img src="images/ib-continuum.png" alt="IB Continuum" style="max-width:100%;width:100%;height:auto;display:inline-block;border:1px solid rgba(255,255,255,0.08);">
+        </div>
         <!-- FS LEARNING MODEL DIAGRAM -->
         <div style="text-align:center;margin-bottom:32px;">
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px;">The FS Learning Model</span>
@@ -421,7 +425,7 @@ ${(d.stats || [
   <div style="position:absolute;inset:0;background-image:url('images/fs-values-banner.jpg');background-size:cover;background-position:center;opacity:0.12;pointer-events:none;"></div>
   <div class="container" style="position:relative;">
     <div style="text-align:center;margin-bottom:60px;">
-      <span class="label" style="color:rgba(255,255,255,0.4);justify-content:center;display:flex;">Our Values</span>
+      <span class="label" style="color:var(--fs-yellow);justify-content:center;display:flex;">Values, Mission &amp; Philosophy</span>
       <h2 style="color:white;">What We Stand For</h2>
       <p style="color:rgba(255,255,255,0.55);font-size:0.95rem;margin-top:12px;">To nurture leaders with character and competence.</p>
     </div>
@@ -454,11 +458,11 @@ ${(d.stats || [
   </div>
 </section>
 
-<!-- TIMELINE SECTION -->
+<!-- OUR STORY & FOUNDERS -->
 <section class="section" id="about-story" style="background:var(--light-gray);padding:80px 0;">
   <div class="container">
-    <span class="label">Our Journey</span>
-    <h2 style="margin-bottom:12px;">The FS Timeline</h2>
+    <span class="label">Our Story &amp; Founders</span>
+    <h2 style="margin-bottom:12px;">The FS Journey</h2>
     <p style="color:var(--mid);margin-bottom:48px;max-width:600px;">From 6 students in Adajan to 6 campuses across India — two decades of building schools around how children actually learn.</p>
   </div>
   <div style="overflow-x:auto;padding-bottom:24px;">
@@ -481,10 +485,10 @@ ${(d.stats || [
   </div>
 </section>
 
-<!-- PEOPLE -->
+<!-- PEOPLE & LEADERSHIP -->
 <section class="section" id="leadership">
   <div class="container">
-    <div style="margin-bottom:48px;"><span class="label">Leadership</span><h2>The Fountainhead Team</h2></div>
+    <div style="margin-bottom:48px;"><span class="label">People &amp; Leadership</span><h2>The Fountainhead Team</h2></div>
     <div class="people-grid-ois">
       <div class="person-ois"><div class="person-initials">BP</div><h4>Bhumika Parmar</h4><div class="person-role">Head of School — FSK</div><p>Bhumika Parmar has been associated with Fountainhead School since 2009 — Home Room Teacher, Team Leader, Middle Years Coordinator, and now HOS. She holds degrees in Commerce, Law, Education, and School Leadership Management.</p></div>
       <div class="person-ois"><div class="person-initials">SS</div><h4>Shezin Siganporia</h4><div class="person-role">Senior School Principal — FSK</div><p>A Chartered Accountant who enjoys taking on new challenges. Passionate about Finance and Business Management. Shezin has been working with FS since 2013.</p></div>
