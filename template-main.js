@@ -42,7 +42,11 @@ function generateMainHTML(d) {
   <div class="utility-inner">
     <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
     <div class="util-right">
-      <a href="tel:+91${phone1.replace(/[^0-9]/g,'')}">  ${escHtml(phone1)}</a>
+      <a href="https://www.facebook.com/fountainheadschools" target="_blank" aria-label="Facebook" title="Facebook" style="display:inline-flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="https://instagram.com/fountainheadschools" target="_blank" aria-label="Instagram" title="Instagram" style="display:inline-flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.youtube.com/@fountainheadschools" target="_blank" aria-label="YouTube" title="YouTube" style="display:inline-flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+      <a href="https://linkedin.com/company/fountainheadschools" target="_blank" aria-label="LinkedIn" title="LinkedIn" style="display:inline-flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="tel:+91${phone1.replace(/[^0-9]/g,'')}">${escHtml(phone1)}</a>
       <a href="mailto:${escAttr(email)}">${escHtml(email)}</a>
     </div>
   </div>
@@ -63,6 +67,7 @@ function generateMainHTML(d) {
           <a href="#about-story">Our Story &amp; Founders</a>
           <a href="#about-values">Values, Mission &amp; Philosophy</a>
           <a href="#about-mission">IB Mission Statement</a>
+          <a href="#leadership">People &amp; Leadership</a>
         </div>
       </details>
       <details class="nav-group" name="primary-nav">
@@ -100,7 +105,13 @@ function generateMainHTML(d) {
         </div>
       </details>
       <a href="#results">Results &amp; University Destinations</a>
-      <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Policies</a>
+      <details class="nav-group" name="primary-nav">
+        <summary>Connect</summary>
+        <div class="nav-submenu">
+          <a href="#connect">Contact Us</a>
+          <a href="careers.html">Careers</a>
+        </div>
+      </details>
     </nav>
 
     <a class="nav-inquire" href="#connect">Enquire</a>
@@ -120,6 +131,7 @@ function generateMainHTML(d) {
       <a href="#about-story">Our Story &amp; Founders</a>
       <a href="#about-values">Values, Mission &amp; Philosophy</a>
       <a href="#about-mission">IB Mission Statement</a>
+      <a href="#leadership">People &amp; Leadership</a>
     </div>
   </details>
   <details class="panel-group" name="mobile-nav">
@@ -157,7 +169,13 @@ function generateMainHTML(d) {
     </div>
   </details>
   <a href="#results">Results &amp; University Destinations</a>
-  <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Policies</a>
+  <details class="panel-group" name="mobile-nav">
+    <summary>Connect</summary>
+    <div class="panel-submenu">
+      <a href="#connect">Contact Us</a>
+      <a href="careers.html">Careers</a>
+    </div>
+  </details>
   <a class="panel-enquire" href="#connect">Enquire</a>
 </nav>
 
@@ -659,16 +677,16 @@ ${(d.stats || [
           <a href="https://instagram.com/fountainheadschools" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">Instagram</a>
           <a href="https://linkedin.com/company/fountainheadschools" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">LinkedIn</a>
           <a href="https://www.youtube.com/@fountainheadschools" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">YouTube</a>
-          <a href="https://wa.me/${escAttr(wa)}" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">WhatsApp</a>
+          <a href="https://www.facebook.com/fountainheadschools" target="_blank" style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);padding:7px 14px;transition:all 0.2s;" onmouseover="this.style.color='white';this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'">Facebook</a>
         </div>
       </div>
       <div><h6>Our Schools</h6><ul><li><a href="fsk/index.html" target="_blank">FSK — Surat (Kunkni)</a></li><li><a href="fsm/index.html" target="_blank">FSM — Surat (Malgama)</a></li><li><a href="fwgs/index.html" target="_blank">FWGS — Chh. Sambhajinagar</a></li><li><a href="falh/index.html" target="_blank">FALH — Vapi</a></li><li><a href="fpa/index.html" target="_blank">FPA — Adajan, Surat</a></li><li><a href="fpv/index.html" target="_blank">FPV — Vesu, Surat</a></li></ul></div>
-      <div><h6>Quick Links</h6><ul><li><a href="#academics">IB Programmes</a></li><li><a href="#accolades">Accolades</a></li><li><a href="fsk/index.html#policies">School Policies</a></li><li><a href="fsk/index.html#admissions">Admissions</a></li><li><a href="https://parents.fountainheadschools.org/Login" target="_blank">Nucleus Portal</a></li><li><a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank">Nucleus App (iOS)</a></li></ul></div>
+      <div><h6>Quick Links</h6><ul><li><a href="#about">About Us</a></li><li><a href="#campuses">Our Schools</a></li><li><a href="#academics">Academics</a></li><li><a href="#admissions-steps">Admissions</a></li><li><a href="#news">News &amp; Happenings</a></li><li><a href="#accolades">Accolades</a></li><li><a href="#connect">Connect</a></li><li><a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a></li></ul></div>
       <div><h6>Contact</h6><ul><li><a href="tel:+91${phone1.replace(/[^0-9]/g,'')}">${escHtml(phone1)}</a></li><li><a href="tel:+91${phone2.replace(/[^0-9]/g,'')}">${escHtml(phone2)}</a></li><li><a href="mailto:${escAttr(email)}">${escHtml(email)}</a></li><li><a href="https://wa.me/${escAttr(wa)}">WhatsApp</a></li><li style="color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:12px;line-height:1.7;">${escHtml(addr).replace(/,\s*/g,',<br>')}</li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© ${escHtml(footerYear)} Fountainhead Schools. All rights reserved.</span>
-      <div class="footer-policies"><a href="fsk/index.html#policies">Child Protection Policy</a><a href="fsk/index.html#policies">DPDP 2023</a><a href="#connect">Contact Us</a><a href="#">Careers</a></div>
+      <div class="footer-policies"><a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a><a href="policies/FSK Child Protection Policy.pdf" target="_blank">DPDP 2023</a><a href="#connect">Contact Us</a><a href="careers.html">Careers</a></div>
     </div>
   </div>
 </footer>
