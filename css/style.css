@@ -136,8 +136,8 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 2px 24px rgba(0,0,0,0.12);
 }
 
-/* ── HEADER UTILITY ROW — hidden, single-row header ── */
-.header-util-row { display: none; }
+/* ── HEADER UTILITY ROW ── */
+.header-util-row { display: block; }
 .header-util-inner {
   max-width: 1240px;
   margin: 0 auto;
