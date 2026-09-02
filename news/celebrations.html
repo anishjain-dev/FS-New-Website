@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celebrations | Fountainhead Schools</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.site-header { position: fixed !important; top: 0 !important; left: 0; right: 0; background: white !important; border-bottom: 3px solid var(--fs-blue) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important; z-index: 9999; }
+body { padding-top: 84px; }
+
+.art-breadcrumb { padding: 28px 0 0; font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--mid); }
+.art-breadcrumb a { color:var(--mid); text-decoration:none; }
+.art-breadcrumb a:hover { color:var(--fs-blue); }
+.art-breadcrumb .bc-sep { margin:0 8px; color:var(--border); }
+.art-breadcrumb .bc-cur { color:var(--dark); }
+
+/* Article wrapper — hidden by default when hash is active */
+.cel-article { display: none; padding: 40px 0 80px; }
+.cel-article.active { display: block; }
+/* When no hash, show all */
+body.no-hash .cel-article { display: block; margin-bottom: 60px; border-bottom: 1px solid var(--border); }
+body.no-hash .cel-article:last-of-type { border-bottom: none; }
+
+.art-layout { display:grid; grid-template-columns: 420px 1fr; gap:64px; align-items:start; }
+.art-img-col { position:sticky; top:100px; }
+.art-portrait { border-radius:4px; overflow:hidden; aspect-ratio: 3/4; }
+.art-portrait img { width:100%; height:100%; object-fit:cover; display:block; }
+.art-img-caption { margin-top:12px; font-size:0.72rem; color:var(--mid); font-family:'Montserrat',sans-serif; letter-spacing:0.04em; }
+
+.art-tag-row { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.art-tag { font-size:0.6rem; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; padding:4px 10px; background:var(--fs-red); color:white; display:inline-block; }
+.art-tag.blue { background:var(--fs-blue); }
+.art-date-lbl { font-size:0.68rem; font-weight:600; color:var(--mid); letter-spacing:0.06em; text-transform:uppercase; font-family:'Montserrat',sans-serif; }
+.art-title { font-family:'Montserrat',sans-serif; font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; line-height:1.2; color:var(--dark); margin-bottom:16px; text-wrap:balance; }
+.art-deck { font-size:1.05rem; color:var(--mid); line-height:1.7; margin-bottom:36px; border-bottom:1px solid var(--border); padding-bottom:36px; }
+.art-body p { color:var(--mid); line-height:1.9; font-size:0.95rem; margin-bottom:20px; }
+
+.art-back { display:inline-flex; align-items:center; gap:8px; font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dark); text-decoration:none; margin-top:40px; opacity:0.6; transition:opacity 0.2s; }
+.art-back:hover { opacity:1; }
+
+@media(max-width:900px){
+  .art-layout { grid-template-columns:1fr; gap:32px; }
+  .art-img-col { position:static; }
+  .art-portrait { aspect-ratio:4/3; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="navbar">
+  <div class="header-row">
+    <a href="../index.html" class="nav-logo"><img src="../images/fs-main-logo.png" alt="Fountainhead Schools" class="nav-logo-img"></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="../index.html#about">About Us</a>
+      <a href="../index.html#about-story">Our Story</a>
+      <a href="../index.html#campuses">Our Schools</a>
+      <a href="../index.html#accolades">Accolades</a>
+      <a href="../news.html" aria-current="page">News</a>
+    </nav>
+    <a class="nav-inquire" href="../index.html#connect">Enquire</a>
+    <button class="hamburger" popovertarget="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav id="site-nav" class="nav-panel" popover aria-label="Primary, mobile">
+  <a href="../index.html">Home</a>
+  <a href="../index.html#about">About Us</a>
+  <a href="../index.html#campuses">Our Schools</a>
+  <a href="../news.html">News</a>
+  <a class="panel-enquire" href="../index.html#connect">Enquire</a>
+</nav>
+
+<div class="container">
+  <div style="display:none" id="bc-current">Celebrations</div>
+
+  <!-- INDEPENDENCE DAY -->
+  <article class="cel-article" id="independence-day">
+    <div class="art-layout">
+      <div class="art-img-col">
+        <div class="art-portrait">
+          <img src="../images/news/independence-day.jpg" alt="Independence Day 2026">
+        </div>
+        <div class="art-img-caption">Independence Day 2026 · Group-Wide</div>
+      </div>
+      <div class="art-content-col">
+        <div class="art-tag-row">
+          <span class="art-tag">Group-Wide</span>
+          <span class="art-date-lbl">15 Aug 2026</span>
+        </div>
+        <h1 class="art-title">Independence Day Celebrations — A Day Full of Colours, Spirit &amp; Pride</h1>
+        <p class="art-deck">Fountainhead campuses across Surat, Vapi and Chhatrapati Sambhajinagar came alive with flag hoisting, patriotic performances and heartfelt tributes to the nation.</p>
+        <div class="art-body">
+          <p>Every year, Independence Day at Fountainhead is more than a ceremony — it is a lived expression of the values we teach. Students, teachers and parents gathered at each of our six campuses, united by the tricolour and a shared love for the nation.</p>
+          <p>From spirited March Pasts to soulful renditions of patriotic songs, the morning was filled with pride and energy. Guest speakers shared stories of resilience and courage, reminding students that they too carry the responsibility of building a better India.</p>
+          <p>The celebrations were a powerful reminder that education, at its best, builds not just knowledgeable individuals — but conscious, caring citizens.</p>
+        </div>
+        <a href="../news.html" class="art-back">← Back to News</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- SUBROTO CUP -->
+  <article class="cel-article" id="subroto-cup">
+    <div class="art-layout">
+      <div class="art-img-col">
+        <div class="art-portrait">
+          <img src="../images/news/subroto-cup.jpg" alt="Subroto Cup Champions">
+        </div>
+        <div class="art-img-caption">Subroto Cup Football Tournament · FSK Kunkni</div>
+      </div>
+      <div class="art-content-col">
+        <div class="art-tag-row">
+          <span class="art-tag blue">Kunkni</span>
+          <span class="art-date-lbl">12 Oct 2025</span>
+        </div>
+        <h1 class="art-title">FSK Champions at Subroto Cup Football Tournament</h1>
+        <p class="art-deck">Our students brought home the trophy at the prestigious Subroto Cup — a testament to teamwork, grit, and the FS spirit that never gives up.</p>
+        <div class="art-body">
+          <p>Fountainhead School Kunkni's football team returned as champions from the Subroto Cup Football Tournament — one of the most coveted inter-school competitions in India.</p>
+          <p>The journey was not easy. Months of rigorous training, early morning practice sessions, and the unwavering belief of coaches and students alike brought this victory to life. The team displayed incredible skill, tactical play, and most importantly, the spirit of sportsmanship.</p>
+          <p>We are immensely proud of every player who wore the FS jersey. This trophy belongs to every one of them — and to the entire Fountainhead family that cheered them on.</p>
+        </div>
+        <a href="../news.html" class="art-back">← Back to News</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- FS GOT TALENT -->
+  <article class="cel-article" id="fs-got-talent">
+    <div class="art-layout">
+      <div class="art-img-col">
+        <div class="art-portrait">
+          <img src="../images/fsk-ground.jpg" alt="FS Got Talent">
+        </div>
+        <div class="art-img-caption">FS Got Talent 2026 · Group-Wide</div>
+      </div>
+      <div class="art-content-col">
+        <div class="art-tag-row">
+          <span class="art-tag">Group-Wide</span>
+          <span class="art-date-lbl">5 Mar 2026</span>
+        </div>
+        <h1 class="art-title">FS Got Talent — A Night of Stars and Standing Ovations</h1>
+        <p class="art-deck">Students from all six campuses showcased their extraordinary talents in our annual talent extravaganza. Every act was a reminder of the creativity that flourishes at Fountainhead.</p>
+        <div class="art-body">
+          <p>The stage glittered, the audience held their breath, and one by one, students stepped forward to reveal the extraordinary. FS Got Talent 2026 was, without doubt, our most spectacular evening yet.</p>
+          <p>Dance routines that blended classical and contemporary, original musical compositions, dramatic performances, stand-up comedy, spoken word — the range of talent on display was breathtaking.</p>
+          <p>What made the evening truly special was not the performances alone, but the courage each student showed in sharing their gift with the world. At Fountainhead, we believe every child has a talent worth celebrating.</p>
+        </div>
+        <a href="../news.html" class="art-back">← Back to News</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ANNUAL DAY -->
+  <article class="cel-article" id="annual-day">
+    <div class="art-layout">
+      <div class="art-img-col">
+        <div class="art-portrait">
+          <img src="../images/fsk-hero.jpg" alt="Annual Day 2025">
+        </div>
+        <div class="art-img-caption">Annual Day 2025 · FSK Kunkni</div>
+      </div>
+      <div class="art-content-col">
+        <div class="art-tag-row">
+          <span class="art-tag blue">Kunkni</span>
+          <span class="art-date-lbl">20 Dec 2025</span>
+        </div>
+        <h1 class="art-title">Annual Day 2025 — Curtain Call on a Year of Excellence</h1>
+        <p class="art-deck">An unforgettable evening of performances, awards and shared memories as students, parents and educators gathered to celebrate a milestone year together.</p>
+        <div class="art-body">
+          <p>Annual Day is the moment when a year's worth of learning, growth and creativity comes alive on stage. The 2025 edition at Fountainhead School Kunkni was nothing short of magical.</p>
+          <p>Students took the audience through a journey of performances — from sweeping theatrical productions to nuanced dance pieces — each one telling the story of a child who has grown, discovered, and become more fully themselves.</p>
+          <p>Awards were presented to students who exemplified the FS values of curiosity, kindness, and commitment. As the curtain fell, there wasn't a dry eye in the room.</p>
+        </div>
+        <a href="../news.html" class="art-back">← Back to News</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- GRADUATION -->
+  <article class="cel-article" id="graduation">
+    <div class="art-layout">
+      <div class="art-img-col">
+        <div class="art-portrait">
+          <img src="../images/fsk-facade-main.jpg" alt="Graduation Ceremony 2026">
+        </div>
+        <div class="art-img-caption">Graduation Ceremony 2026 · Group-Wide</div>
+      </div>
+      <div class="art-content-col">
+        <div class="art-tag-row">
+          <span class="art-tag">Group-Wide</span>
+          <span class="art-date-lbl">8 May 2026</span>
+        </div>
+        <h1 class="art-title">Graduation Ceremony 2026 — Farewell to Our Class of Changemakers</h1>
+        <p class="art-deck">With caps, gowns and teary smiles, the Class of 2026 stepped off the Fountainhead stage and into a world ready for their impact.</p>
+        <div class="art-body">
+          <p>The Class of 2026 walked through the doors of Fountainhead one last time as students — and emerged as graduates, ready to shape the world in their own unique ways.</p>
+          <p>The ceremony was a celebration of six years of learning, growing, failing, trying again, and ultimately becoming. Teachers shared memories; students shared gratitude. Parents watched with pride as their children crossed the stage.</p>
+          <p>To the Class of 2026: carry your curiosity with you. The world needs people who ask good questions, care deeply, and act with purpose. You are exactly that. Congratulations.</p>
+        </div>
+        <a href="../news.html" class="art-back">← Back to News</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <div><h2>Explore Our Campuses</h2><p>Six campuses, one community — driven by curiosity, guided by care.</p></div>
+      <a href="../index.html#campuses" class="btn-cta-white">View All Campuses →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../images/fs-main-logo.png" alt="Fountainhead Schools" style="height:48px;margin-bottom:16px;">
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:260px;">An IB World School Group with six campuses across Surat, Vapi and Chhatrapati Sambhajinagar.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Quick Links</div>
+        <a href="../index.html#about">About Us</a>
+        <a href="../index.html#about-story">Our Story</a>
+        <a href="../index.html#campuses">Our Schools</a>
+        <a href="../index.html#accolades">Accolades</a>
+        <a href="../news.html">News &amp; Happenings</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="tel:+918000130031">8000-130-031</a>
+        <a href="../index.html#connect">Enquire Now</a>
+        <a href="../fsk/index.html">Fountainhead Kunkni</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fountainhead Schools. All rights reserved.</span>
+      <div class="footer-policies">
+        <a href="../fsk/index.html#policies">Child Protection Policy</a>
+        <a href="../news.html">All News</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var titles = {
+    'independence-day': 'Independence Day 2026',
+    'subroto-cup': 'Subroto Cup Champions',
+    'fs-got-talent': 'FS Got Talent 2026',
+    'annual-day': 'Annual Day 2025',
+    'graduation': 'Graduation 2026'
+  };
+
+  function applyHash() {
+    var hash = window.location.hash.replace('#', '');
+    var articles = document.querySelectorAll('.cel-article');
+    var body = document.body;
+
+    if (hash && document.getElementById(hash)) {
+      body.classList.remove('no-hash');
+      articles.forEach(function(a) { a.classList.remove('active'); });
+      document.getElementById(hash).classList.add('active');
+      var bc = document.getElementById('bc-current');
+      if (bc && titles[hash]) bc.textContent = titles[hash];
+      document.title = (titles[hash] || 'Celebrations') + ' | Fountainhead Schools';
+    } else {
+      body.classList.add('no-hash');
+      articles.forEach(function(a) { a.classList.remove('active'); });
+    }
+  }
+
+  applyHash();
+  window.addEventListener('hashchange', applyHash);
+})();
+</script>
+<script src="../js/main.js" defer></script>
+</body>
+</html>
