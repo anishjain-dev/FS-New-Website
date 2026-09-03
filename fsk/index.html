@@ -3,588 +3,1783 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fountainhead School Kunkni — IB Continuum School, Surat</title>
-<meta name="description" content="Fountainhead School Kunkni (FSK) — India's 4th ranked IB school. Full IB continuum: EY, PYP, MYP, Diploma. Rander—Dandi Road, Surat.">
+<title>Fountainhead School Kunkni — An IB School, Surat</title>
+<meta name="description" content="Fountainhead School Kunkni (FSK), Surat — IB continuum school nurturing leaders with character and competence. Ranked 4th nationally by Cfore 2026.">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap">
+<style>
+/* ─── FSK PAGE OVERRIDES ─── */
+:root {
+  --fsk-blue:   #005BAA;
+  --fsk-red:    #B8292F;
+  --fsk-yellow: #F2C418;
+  --fsk-dark:   #003E74;
+  --fsk-util:   #002747;
+}
+
+/* ─── UTIL BAR ─── */
+.fsk-util {
+  background: var(--fsk-util);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.fsk-util-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fsk-util a { color: #fff; opacity: 0.85; transition: opacity .2s; }
+.fsk-util a:hover { opacity: 1; }
+.fsk-util-right { display: flex; align-items: center; gap: 14px; }
+.util-soc { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background .2s; }
+.util-soc:hover { background: rgba(255,255,255,0.15); }
+.util-sep { opacity: 0.3; }
+
+/* ─── STICKY HEADER ─── */
+.fsk-header {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+.fsk-header-row {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.fsk-logo { display: flex; align-items: center; flex-shrink: 0; }
+.fsk-logo img { height: 44px; width: auto; }
+.fsk-logo-text { font-family: 'Montserrat', sans-serif; line-height: 1.1; }
+.fsk-logo-text .l1 { display: block; font-size: 1.1rem; font-weight: 700; color: var(--fsk-blue); }
+.fsk-logo-text .l2 { display: block; font-size: 0.65rem; font-weight: 600; color: var(--fsk-red); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Desktop nav */
+.fsk-nav { display: flex; align-items: center; gap: 2px; flex: 1; justify-content: center; }
+.fsk-nav-item { position: relative; }
+.fsk-nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--dark, #181C22);
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: color .2s, background .2s;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.fsk-nav-link:hover { color: var(--fsk-blue); background: #E6EFF6; }
+.fsk-nav-link .arr { font-size: 0.55rem; opacity: 0.6; transition: transform .2s; }
+.fsk-nav-item:hover .arr { transform: rotate(180deg); }
+
+/* Dropdown */
+.fsk-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  min-width: 200px;
+  padding: 8px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s, transform .2s;
+  transform: translateX(-50%) translateY(-6px);
+  border-top: 3px solid var(--fsk-blue);
+  z-index: 100;
+}
+.fsk-nav-item:hover .fsk-dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+.fsk-dropdown a {
+  display: block;
+  padding: 9px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark, #181C22);
+  transition: color .15s, background .15s;
+}
+.fsk-dropdown a:hover { color: var(--fsk-blue); background: #E6EFF6; }
+
+.fsk-nav-enquire {
+  background: var(--fsk-blue);
+  color: #fff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background .2s;
+  flex-shrink: 0;
+}
+.fsk-nav-enquire:hover { background: var(--fsk-dark); }
+
+/* Hamburger */
+.fsk-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: auto;
+}
+.fsk-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark, #181C22);
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+
+/* Mobile panel */
+.fsk-mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 24px;
+  flex-direction: column;
+}
+.fsk-mobile-nav.open { display: flex; }
+.fsk-mobile-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 16px;
+  color: var(--dark, #181C22);
+}
+.fsk-mobile-nav a {
+  display: block;
+  padding: 14px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark, #181C22);
+  border-bottom: 1px solid #eee;
+}
+.fsk-mobile-nav details summary {
+  padding: 14px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark, #181C22);
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  list-style: none;
+}
+.fsk-mobile-nav details div a {
+  padding-left: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fsk-blue);
+}
+.fsk-mobile-enquire {
+  margin-top: 20px;
+  background: var(--fsk-blue);
+  color: #fff !important;
+  border-radius: 8px;
+  text-align: center;
+  padding: 16px !important;
+  border-bottom: none !important;
+}
+
+/* ─── HERO ─── */
+.fsk-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.fsk-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.fsk-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,39,71,0.88) 0%, rgba(0,39,71,0.5) 50%, rgba(0,39,71,0.1) 100%);
+}
+.fsk-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 40px;
+  max-width: 780px;
+}
+.fsk-hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fsk-yellow);
+  margin-bottom: 16px;
+}
+.fsk-hero-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.fsk-hero-content p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+.fsk-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--fsk-blue);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 6px;
+  transition: background .2s, transform .2s;
+}
+.btn-primary:hover { background: var(--fsk-dark); transform: translateY(-1px); }
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid rgba(255,255,255,0.6);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 6px;
+  transition: border-color .2s, background .2s;
+}
+.btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+/* ─── ACCOLADE BANNER ─── */
+.fsk-accolade-bar {
+  background: var(--fsk-blue);
+  color: #fff;
+  padding: 22px 40px;
+}
+.fsk-accolade-bar-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.fsk-accolade-bar img { height: 56px; flex-shrink: 0; filter: brightness(0) invert(1); }
+.fsk-accolade-bar-text { font-family: 'Montserrat', sans-serif; }
+.fsk-accolade-bar-text .rank { font-size: 1.5rem; font-weight: 800; color: var(--fsk-yellow); }
+.fsk-accolade-bar-text .desc { font-size: 0.82rem; font-weight: 500; opacity: 0.9; margin-top: 2px; }
+
+/* ─── SECTION UTILS ─── */
+.fsk-section { padding: 80px 0; }
+.fsk-section-sm { padding: 56px 0; }
+.fsk-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+.fsk-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fsk-blue);
+  margin-bottom: 12px;
+  display: block;
+}
+.fsk-label-red { color: var(--fsk-red); }
+.fsk-section-head { margin-bottom: 48px; }
+.fsk-section-head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: #181C22;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.fsk-section-head p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.975rem;
+  color: #545C68;
+  max-width: 640px;
+  line-height: 1.8;
+}
+.fsk-rule { width: 48px; height: 4px; background: var(--fsk-blue); border-radius: 2px; margin: 14px 0; }
+.fsk-rule-red { background: var(--fsk-red); }
+
+/* ─── ABOUT ─── */
+.fsk-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.fsk-about-img { position: relative; border-radius: 12px; overflow: hidden; }
+.fsk-about-img img { width: 100%; height: 460px; object-fit: cover; display: block; }
+.fsk-about-img-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: var(--fsk-blue);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+.fsk-about-text h2 { margin-bottom: 16px; }
+.fsk-about-text p { margin-bottom: 16px; }
+.btn-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--fsk-blue);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: background .2s;
+  margin-top: 8px;
+}
+.btn-blue:hover { background: var(--fsk-dark); }
+
+/* ─── MISSION / VALUES ─── */
+.fsk-values-bg { background: #F6F7F9; }
+.fsk-values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
+.fsk-value-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px 24px;
+  border-top: 4px solid var(--fsk-blue);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.fsk-value-card.red-top { border-top-color: var(--fsk-red); }
+.fsk-value-card.yellow-top { border-top-color: var(--fsk-yellow); }
+.fsk-value-icon { font-size: 1.8rem; margin-bottom: 14px; }
+.fsk-value-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #181C22;
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+.fsk-mission-box {
+  background: var(--fsk-blue);
+  color: #fff;
+  border-radius: 12px;
+  padding: 48px;
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.fsk-mission-box::before {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.fsk-mission-box .eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fsk-yellow);
+  margin-bottom: 12px;
+}
+.fsk-mission-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+  position: relative;
+}
+
+/* ─── LEADERSHIP ─── */
+.fsk-people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+.fsk-person-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: transform .2s, box-shadow .2s;
+}
+.fsk-person-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+.fsk-person-img { overflow: hidden; background: #f4f6f9; }
+.fsk-person-img img { width: 100%; height: auto; display: block; aspect-ratio: 3/4; object-fit: cover; object-position: center top; transition: transform .4s; }
+.fsk-person-card:hover .fsk-person-img img { transform: scale(1.02); }
+.fsk-person-body { padding: 24px; }
+.fsk-person-body h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #181C22;
+  margin-bottom: 2px;
+}
+.fsk-person-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fsk-blue);
+  margin-bottom: 12px;
+  display: block;
+}
+.fsk-person-body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.875rem;
+  color: #545C68;
+  line-height: 1.75;
+}
+
+/* ─── TIMELINE ─── */
+.fsk-timeline-wrap { overflow-x: auto; padding-bottom: 24px; cursor: grab; }
+.fsk-timeline-wrap:active { cursor: grabbing; }
+.fsk-timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  min-width: max-content;
+  position: relative;
+  padding: 32px 0 40px;
+}
+.fsk-timeline::before {
+  content: '';
+  position: absolute;
+  top: 56px;
+  left: 100px;
+  right: 100px;
+  height: 3px;
+  background: linear-gradient(to right, var(--fsk-blue), var(--fsk-red), var(--fsk-yellow), var(--fsk-blue));
+  border-radius: 2px;
+  z-index: 0;
+}
+.fsk-st-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  position: relative;
+  z-index: 1;
+}
+.fsk-st-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--fsk-blue);
+  border-radius: 20px;
+  padding: 6px 18px;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.fsk-st-item:nth-child(3n+2) .fsk-st-year { background: var(--fsk-red); }
+.fsk-st-item:nth-child(3n+3) .fsk-st-year { background: #2E79B9; }
+.fsk-st-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--fsk-blue);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--fsk-blue);
+  position: absolute;
+  top: 50px;
+  z-index: 2;
+}
+.fsk-st-item:nth-child(3n+2) .fsk-st-dot { background: var(--fsk-red); box-shadow: 0 0 0 2px var(--fsk-red); }
+.fsk-st-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 16px;
+  width: 176px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-top: 3px solid var(--fsk-blue);
+  margin-top: 30px;
+  text-align: center;
+}
+.fsk-st-item:nth-child(3n+2) .fsk-st-card { border-top-color: var(--fsk-red); }
+.fsk-st-item:nth-child(3n+3) .fsk-st-card { border-top-color: #2E79B9; }
+.fsk-st-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #181C22;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.fsk-st-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  color: #545C68;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── CAMPUS / GALLERY ─── */
+.fsk-campus-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 16px; border-radius: 14px; overflow: hidden; }
+.fsk-campus-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fsk-campus-main { height: 480px; }
+.fsk-campus-side { display: flex; flex-direction: column; gap: 16px; }
+.fsk-campus-side img { height: 232px; }
+
+/* ─── ACADEMICS ─── */
+.fsk-academics-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
+.fsk-tab-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 9px 20px;
+  border-radius: 20px;
+  border: 2px solid var(--fsk-blue);
+  color: var(--fsk-blue);
+  background: transparent;
+  cursor: pointer;
+  transition: all .2s;
+}
+.fsk-tab-btn.active, .fsk-tab-btn:hover { background: var(--fsk-blue); color: #fff; }
+.fsk-tab-panel { display: none; }
+.fsk-tab-panel.active { display: block; }
+.fsk-academics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.fsk-academics-grid img { width: 100%; height: 360px; object-fit: cover; border-radius: 10px; }
+
+/* ─── NUCLEUS ─── */
+.fsk-nucleus-bg { background: var(--fsk-dark); color: #fff; }
+.fsk-nucleus-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.fsk-nucleus-inner .fsk-label { color: var(--fsk-yellow); }
+.fsk-nucleus-inner h2 { color: #fff; }
+.fsk-nucleus-inner p { color: rgba(255,255,255,0.8); }
+.fsk-nucleus-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.btn-yellow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--fsk-yellow); color: #181C22;
+  font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 800;
+  padding: 12px 22px; border-radius: 6px; transition: background .2s;
+}
+.btn-yellow:hover { background: #DAB015; }
+.btn-ghost-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid rgba(255,255,255,0.5); color: #fff;
+  font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700;
+  padding: 10px 20px; border-radius: 6px; transition: border-color .2s;
+}
+.btn-ghost-white:hover { border-color: #fff; }
+.fsk-nucleus-img { border-radius: 12px; overflow: hidden; }
+.fsk-nucleus-img img { width: 100%; display: block; }
+
+/* ─── VIDEO ─── */
+.fsk-video-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+}
+.fsk-video-wrap video,
+.fsk-video-wrap iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+}
+.fsk-video-thumb {
+  position: absolute; inset: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.fsk-video-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.fsk-video-thumb .play-btn {
+  position: absolute;
+  width: 72px; height: 72px;
+  background: var(--fsk-red);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 32px rgba(184,41,47,0.4);
+  transition: transform .2s;
+}
+.fsk-video-thumb:hover .play-btn { transform: scale(1.1); }
+.play-btn svg { margin-left: 4px; }
+
+/* ─── POLICIES ─── */
+.fsk-policies-bg { background: #eef2f7; }
+.fsk-policies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 24px; }
+.fsk-pol-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.fsk-pol-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+.fsk-pol-icon {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--fsk-blue);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.fsk-pol-icon svg { color: #fff; }
+.fsk-pol-icon.red { background: var(--fsk-red); }
+.fsk-pol-icon.yellow { background: var(--fsk-yellow); }
+.fsk-pol-icon.dark { background: var(--fsk-dark); }
+.fsk-pol-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #181C22;
+  line-height: 1.3;
+  text-align: center;
+}
+.fsk-pol-dl {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--fsk-blue);
+  letter-spacing: 0.04em;
+}
+
+/* ─── ADMISSIONS ─── */
+.fsk-admissions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.fsk-admissions-steps { display: flex; flex-direction: column; gap: 20px; }
+.fsk-step {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px; background: #fff; border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.fsk-step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--fsk-blue); color: #fff;
+  font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fsk-step h4 {
+  font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700;
+  color: #181C22; margin-bottom: 4px;
+}
+.fsk-step p { font-size: 0.82rem; color: #545C68; margin: 0; }
+.fsk-admissions-img img { width: 100%; height: 420px; object-fit: cover; border-radius: 12px; }
+
+/* ─── NEWSLETTERS ─── */
+.fsk-newsletter-cards { display: flex; gap: 24px; flex-wrap: wrap; }
+.fsk-nl-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px 24px;
+  display: flex; align-items: center; gap: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border-left: 4px solid var(--fsk-red);
+  min-width: 260px;
+  transition: transform .2s;
+  text-decoration: none;
+  color: inherit;
+}
+.fsk-nl-card:hover { transform: translateY(-3px); }
+.fsk-nl-icon { font-size: 2rem; }
+.fsk-nl-card h4 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; color: #181C22; margin-bottom: 4px; }
+.fsk-nl-card span { font-family: 'Nunito', sans-serif; font-size: 0.8rem; color: var(--fsk-blue); font-weight: 600; }
+
+/* ─── FORM / CONNECT ─── */
+.fsk-connect-bg { background: #F6F7F9; }
+.fsk-connect-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+.fsk-contact-info { padding-top: 8px; }
+.fsk-contact-info h2 { margin-bottom: 16px; }
+.fsk-contact-info p { margin-bottom: 24px; }
+.fsk-contact-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.fsk-contact-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: var(--fsk-blue); color: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fsk-contact-item strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 700; color: #181C22; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+.fsk-contact-item span { font-family: 'Nunito', sans-serif; font-size: 0.875rem; color: #545C68; line-height: 1.6; }
+.fsk-contact-item a { color: var(--fsk-blue); font-weight: 600; }
+
+/* Form */
+.fsk-form-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+}
+.fsk-form-card h3 {
+  font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 800;
+  color: #181C22; margin-bottom: 6px;
+}
+.fsk-form-card > p { font-size: 0.875rem; color: #545C68; margin-bottom: 28px; }
+.fsk-form { display: flex; flex-direction: column; gap: 18px; }
+.fsk-field { display: flex; flex-direction: column; gap: 6px; }
+.fsk-field label {
+  font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700;
+  color: #181C22; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.fsk-field input,
+.fsk-field select,
+.fsk-field textarea {
+  font-family: 'Nunito', sans-serif; font-size: 0.9rem;
+  padding: 11px 14px; border: 1.5px solid #DCE0E5; border-radius: 7px;
+  color: #181C22; background: #fff; width: 100%;
+  transition: border-color .2s;
+  outline: none;
+}
+.fsk-field input:focus,
+.fsk-field select:focus,
+.fsk-field textarea:focus { border-color: var(--fsk-blue); }
+.fsk-field textarea { resize: vertical; min-height: 90px; }
+.fsk-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.fsk-submit {
+  background: var(--fsk-blue); color: #fff; border: none; cursor: pointer;
+  font-family: 'Montserrat', sans-serif; font-size: 0.88rem; font-weight: 700;
+  padding: 14px 32px; border-radius: 7px; transition: background .2s; margin-top: 4px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.fsk-submit:hover { background: var(--fsk-dark); }
+
+/* ─── FOOTER ─── */
+.fsk-footer {
+  background: #2A2F37;
+  color: #ECEEF1;
+  padding: 64px 0 0;
+}
+.fsk-footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.fsk-footer-brand .fsk-logo-text .l1 { color: #fff; font-size: 1.2rem; }
+.fsk-footer-brand .fsk-logo-text .l2 { color: var(--fsk-yellow); }
+.fsk-footer-desc {
+  font-family: 'Nunito', sans-serif; font-size: 0.86rem;
+  color: rgba(255,255,255,0.6); line-height: 1.75; margin: 16px 0 20px;
+}
+.fsk-footer-soc { display: flex; gap: 10px; }
+.fsk-footer-soc a {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7);
+  transition: border-color .2s, color .2s;
+}
+.fsk-footer-soc a:hover { border-color: #fff; color: #fff; }
+.fsk-footer-col h4 {
+  font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4);
+  margin-bottom: 18px;
+}
+.fsk-footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.fsk-footer-col ul li a {
+  font-family: 'Nunito', sans-serif; font-size: 0.86rem; color: rgba(255,255,255,0.7);
+  transition: color .15s;
+}
+.fsk-footer-col ul li a:hover { color: #fff; }
+.fsk-footer-bottom {
+  padding: 20px 0;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  font-family: 'Nunito', sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.35);
+}
+.fsk-footer-bottom a { color: rgba(255,255,255,0.5); transition: color .15s; }
+.fsk-footer-bottom a:hover { color: #fff; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .fsk-nav { display: none; }
+  .fsk-hamburger { display: flex; }
+  .fsk-nav-enquire { display: none; }
+  .fsk-about-grid, .fsk-nucleus-inner, .fsk-admissions-grid, .fsk-connect-grid { grid-template-columns: 1fr; gap: 40px; }
+  .fsk-campus-grid { grid-template-columns: 1fr; }
+  .fsk-campus-side { flex-direction: row; }
+  .fsk-campus-side img { height: 180px; flex: 1; }
+  .fsk-footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .fsk-academics-grid { grid-template-columns: 1fr; }
+  .fsk-hero-content { padding: 60px 24px; }
+  .fsk-util-inner { padding: 0 20px; }
+  .fsk-util-inner .util-left { display: none; }
+  .fsk-form-row { grid-template-columns: 1fr; }
+  .fsk-header-row { padding: 0 20px; }
+  .fsk-container { padding: 0 24px; }
+}
+@media (max-width: 600px) {
+  .fsk-footer-grid { grid-template-columns: 1fr; }
+  .fsk-campus-side { flex-direction: column; }
+  .fsk-campus-side img { height: 200px; }
+  .fsk-campus-main { height: 280px; }
+  .fsk-form-card { padding: 28px 20px; }
+  .fsk-people-grid { grid-template-columns: 1fr; }
+  .fsk-timeline { padding: 24px 0 32px; }
+  .fsk-st-item { width: 160px; }
+  .fsk-st-card { width: 140px; }
+  .fsk-policies-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .fsk-accolade-bar { padding: 18px 24px; }
+  .fsk-accolade-bar-inner { gap: 16px; }
+}
+</style>
 </head>
 <body>
 
-<!-- UTILITY BAR -->
-<div class="utility-bar">
-  <div class="utility-inner">
-    <a href="../policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
-    <div class="util-right">
+<!-- ═══ UTIL BAR ═══ -->
+<div class="fsk-util">
+  <div class="fsk-util-inner">
+    <a href="policies/FSK Child Protection Policy.pdf" target="_blank" class="util-left">Child Protection Policy</a>
+    <div class="fsk-util-right">
+      <a href="https://www.facebook.com/fountainheadschools" target="_blank" aria-label="Facebook" class="util-soc">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://instagram.com/fountainheadschools" target="_blank" aria-label="Instagram" class="util-soc">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@fountainheadschools" target="_blank" aria-label="YouTube" class="util-soc">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+      </a>
+      <span class="util-sep">|</span>
       <a href="tel:+918000130031">8000-130-031</a>
-      <a href="tel:+9102613501300">0261-350-1300</a>
       <a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a>
     </div>
   </div>
 </div>
 
-<!-- HEADER -->
-<header class="site-header" id="navbar">
-  <div class="header-row">
-    <a href="../index.html" class="nav-logo">
-      <img src="../images/fsk-logo.png" alt="Fountainhead School Kunkni" style="height:3rem;width:auto;display:block;">
+<!-- ═══ STICKY HEADER ═══ -->
+<header class="fsk-header" id="fsk-navbar">
+  <div class="fsk-header-row">
+    <a href="#" class="fsk-logo">
+      <img src="../images/fsk-logo.png" alt="Fountainhead School Kunkni" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div class="fsk-logo-text" style="display:none">
+        <span class="l1">fountainhead</span>
+        <span class="l2">school • kunkni</span>
+      </div>
     </a>
 
-    <nav class="nav-desktop" aria-label="Primary">
-      <details class="nav-group" name="primary-nav">
-        <summary>About FSK</summary>
-        <div class="nav-submenu">
-          <a href="#" onclick="showTab('about-tab',0)">About FSK</a>
-          <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
-          <a href="#" onclick="showTab('about-tab',0)">IB Mission Statement</a>
-          <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
+    <nav class="fsk-nav" aria-label="Primary">
+      <div class="fsk-nav-item"><a href="#about" class="fsk-nav-link">About Us</a></div>
+      <div class="fsk-nav-item"><a href="#timeline" class="fsk-nav-link">Timeline</a></div>
+      <div class="fsk-nav-item"><a href="#campus" class="fsk-nav-link">The Campus</a></div>
+      <div class="fsk-nav-item">
+        <span class="fsk-nav-link" tabindex="0">Academics <span class="arr">▾</span></span>
+        <div class="fsk-dropdown">
+          <a href="#academics">IB Curriculum</a>
+          <a href="#academics">PYP (Pre-Primary – Grade 5)</a>
+          <a href="#academics">MYP (Grade 6 – 10)</a>
+          <a href="#academics">DP (Grade 11 – 12)</a>
+          <a href="#academics">Learning Model</a>
         </div>
-      </details>
-      <details class="nav-group" name="primary-nav">
-        <summary>Academics</summary>
-        <div class="nav-submenu">
-          <a href="#" onclick="showTab('academics-tab',1)">Academics Overview</a>
-          <a href="#" onclick="showTab('academics-tab',1)">The Fountainhead Learning Model</a>
-          <a href="#" onclick="showTab('academics-tab',1)">Primary Years Programme</a>
-          <a href="#" onclick="showTab('academics-tab',1)">Middle Years Programme</a>
-          <a href="#" onclick="showTab('academics-tab',1)">Diploma Programme</a>
-          <a href="#" onclick="showTab('academics-tab',1)">Demystifying IB Myths</a>
+      </div>
+      <div class="fsk-nav-item"><a href="#admissions" class="fsk-nav-link">Admissions</a></div>
+      <div class="fsk-nav-item">
+        <span class="fsk-nav-link" tabindex="0">Policies <span class="arr">▾</span></span>
+        <div class="fsk-dropdown">
+          <a href="policies/FSK Admission policy.pdf" target="_blank">Admission Policy</a>
+          <a href="policies/FSK Academic Integrity policy.pdf" target="_blank">Academic Integrity</a>
+          <a href="policies/FSK Assessment Policy.pdf" target="_blank">Assessment Policy</a>
+          <a href="policies/FSK Discipline Policy.pdf" target="_blank">Discipline Policy</a>
+          <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection</a>
+          <a href="policies/FSK Language Policy.pdf" target="_blank">Language Policy</a>
+          <a href="policies/FSK Learning Diversity & Inclusion Policy .pdf" target="_blank">Learning Diversity & Inclusion</a>
+          <a href="policies/FSK Health Exclusion Policy.pdf" target="_blank">Health Exclusion</a>
+          <a href="policies/FSK Food policy (Parents & Students).pdf" target="_blank">Food Policy</a>
+          <a href="policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank">Canteen Guidelines</a>
         </div>
-      </details>
-      <a href="#" onclick="showTab('admissions-tab',2)">Admissions at FSK</a>
-      <details class="nav-group" name="primary-nav">
-        <summary>Campus Life</summary>
-        <div class="nav-submenu">
-          <a href="#" onclick="showTab('life-tab',4)">Campus Life Overview</a>
-          <a href="#" onclick="showTab('life-tab',4)">Student Life</a>
-          <a href="#" onclick="showTab('life-tab',4)">Student Support</a>
-          <a href="#" onclick="showTab('life-tab',4)">Transport</a>
+      </div>
+      <div class="fsk-nav-item">
+        <span class="fsk-nav-link" tabindex="0">Student Life <span class="arr">▾</span></span>
+        <div class="fsk-dropdown">
+          <a href="#student-life">Student Support</a>
+          <a href="#student-life">Nucleus App</a>
+          <a href="#student-life">Media & Gallery</a>
+          <a href="#newsletters">Newsletters</a>
         </div>
-      </details>
-      <a href="#" onclick="showTab('contact-tab',6)">Contact Us</a>
-      <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
+      </div>
+      <div class="fsk-nav-item"><a href="#connect" class="fsk-nav-link">Contact Us</a></div>
     </nav>
 
-    <a class="nav-inquire" href="#" onclick="showTab('admissions-tab',2)">Enquire</a>
+    <a href="#connect" class="fsk-nav-enquire">Enquire Now</a>
 
-    <button class="hamburger" popovertarget="site-nav" aria-label="Menu">
+    <button class="fsk-hamburger" id="fsk-hamburger-btn" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- MOBILE NAV PANEL -->
-<nav id="site-nav" class="nav-panel" popover aria-label="Primary, mobile">
-  <details class="panel-group" name="mobile-nav">
-    <summary>About FSK</summary>
-    <div class="panel-submenu">
-      <a href="#" onclick="showTab('about-tab',0)">About FSK</a>
-      <a href="#" onclick="showTab('about-tab',0)">Values, Mission &amp; Philosophy</a>
-      <a href="#" onclick="showTab('about-tab',0)">IB Mission Statement</a>
-      <a href="#" onclick="showTab('policies-tab',3)">Child Protection</a>
-    </div>
-  </details>
-  <details class="panel-group" name="mobile-nav">
+<!-- ═══ MOBILE NAV ═══ -->
+<nav class="fsk-mobile-nav" id="fsk-mobile-nav" aria-label="Mobile navigation">
+  <button class="fsk-mobile-close" id="fsk-mobile-close" aria-label="Close menu">✕</button>
+  <a href="#about">About Us</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#campus">The Campus</a>
+  <details>
     <summary>Academics</summary>
-    <div class="panel-submenu">
-      <a href="#" onclick="showTab('academics-tab',1)">Academics Overview</a>
-      <a href="#" onclick="showTab('academics-tab',1)">The Fountainhead Learning Model</a>
-      <a href="#" onclick="showTab('academics-tab',1)">Primary Years Programme</a>
-      <a href="#" onclick="showTab('academics-tab',1)">Middle Years Programme</a>
-      <a href="#" onclick="showTab('academics-tab',1)">Diploma Programme</a>
-      <a href="#" onclick="showTab('academics-tab',1)">Demystifying IB Myths</a>
+    <div>
+      <a href="#academics">IB Curriculum</a>
+      <a href="#academics">PYP (Pre-Primary – Grade 5)</a>
+      <a href="#academics">MYP (Grade 6 – 10)</a>
+      <a href="#academics">DP (Grade 11 – 12)</a>
     </div>
   </details>
-  <a href="#" onclick="showTab('admissions-tab',2)">Admissions at FSK</a>
-  <details class="panel-group" name="mobile-nav">
-    <summary>Campus Life</summary>
-    <div class="panel-submenu">
-      <a href="#" onclick="showTab('life-tab',4)">Campus Life Overview</a>
-      <a href="#" onclick="showTab('life-tab',4)">Student Life</a>
-      <a href="#" onclick="showTab('life-tab',4)">Student Support</a>
-      <a href="#" onclick="showTab('life-tab',4)">Transport</a>
+  <a href="#admissions">Admissions</a>
+  <details>
+    <summary>Policies</summary>
+    <div>
+      <a href="policies/FSK Admission policy.pdf" target="_blank">Admission Policy</a>
+      <a href="policies/FSK Academic Integrity policy.pdf" target="_blank">Academic Integrity</a>
+      <a href="policies/FSK Discipline Policy.pdf" target="_blank">Discipline Policy</a>
+      <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection</a>
     </div>
   </details>
-  <a href="#" onclick="showTab('contact-tab',6)">Contact Us</a>
-  <a href="#" onclick="showTab('policies-tab',3)">Policies</a>
-  <a href="#" onclick="showTab('admissions-tab',2)" class="panel-enquire">Enquire</a>
+  <a href="#student-life">Student Life</a>
+  <a href="#newsletters">Newsletters</a>
+  <a href="#connect">Contact Us</a>
+  <a href="#connect" class="fsk-mobile-enquire">Enquire Now</a>
 </nav>
 
-<!-- CAMPUS HERO -->
-<section class="campus-hero-ois">
-  <img src="../images/fsk-hero.jpg" alt="Fountainhead School Kunkni">
-  <div class="campus-hero-ois-overlay"></div>
-  <div class="container">
-    <div class="campus-hero-ois-content">
-      <div class="breadcrumb-ois">
-        <a href="../index.html">FS Group</a>
-        <span>›</span>
-        <span>Fountainhead School Kunkni</span>
-      </div>
-      <h1>Fountainhead School Kunkni</h1>
-      <p>India's 4th ranked IB school. Full EY—Diploma continuum on Rander—Dandi Road, Surat.</p>
-      <div class="campus-hero-actions">
-        <a href="#content" class="btn-hero-primary">Explore Campus ↓</a>
-        <a href="#" onclick="showTab('admissions-tab',2)" class="btn-hero-outline">Apply for Admission</a>
+<!-- ═══ HERO ═══ -->
+<section class="fsk-hero" id="hero">
+  <img src="images/fsk-facade.jpg" alt="Fountainhead School Kunkni campus" class="fsk-hero-bg">
+  <div class="fsk-hero-overlay"></div>
+  <div style="position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 40px;">
+    <div class="fsk-hero-content" style="padding:0 0 80px;">
+      <div class="fsk-hero-eyebrow">IB Continuum School · Surat · Est. 2008</div>
+      <h1>Nurturing Leaders with Character and Competence</h1>
+      <p>Fountainhead School Kunkni is an authorised IB World School offering the full IB continuum — PYP, MYP and DP — in a happy, purposeful and nurturing environment.</p>
+      <div class="fsk-hero-actions">
+        <a href="#admissions" class="btn-primary">Explore Admissions</a>
+        <a href="#about" class="btn-outline-white">Our Philosophy</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS BAND -->
-<div class="campus-stats-band">
-  <div class="container">
-    <div class="campus-stats-inner" style="grid-template-columns:repeat(5,1fr);">
-      
-      <div class="campus-stat"><span class="cnum">4th</span><p>Nationally — Cfore 2026</p></div>
-      <div class="campus-stat"><span class="cnum">EY→DP</span><p>Full IB Continuum</p></div>
-      <div class="campus-stat"><span class="cnum">7</span><p>Trained Counselors</p></div>
-      <div class="campus-stat"><span class="cnum">BTec</span><p>Vocational Pathway</p></div>
-      <div class="campus-stat"><span class="cnum">2009</span><p>Year Established</p></div>
+<!-- ═══ ACCOLADE BANNER ═══ -->
+<div class="fsk-accolade-bar">
+  <div class="fsk-accolade-bar-inner">
+    <img src="../images/cfore-2026-fsk.png" alt="Cfore 2026 Award" onerror="this.style.display='none'">
+    <div class="fsk-accolade-bar-text">
+      <div class="rank">Ranked 4th Nationally · Cfore 2026</div>
+      <div class="desc">Moved up from 5th · Top ranked in Pedagogy &amp; Curriculum · No school scored above FSK in these categories</div>
     </div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<section class="section" id="content">
-  <div class="container">
-
-    <!-- TAB BAR -->
-    <div class="tab-bar">
-      
-      <button class="tab-btn active" onclick="showTab('about-tab',0)">About FSK</button>
-      <button class="tab-btn" onclick="showTab('academics-tab',1)">Academics</button>
-      <button class="tab-btn" onclick="showTab('admissions-tab',2)">Admissions</button>
-      <button class="tab-btn" onclick="showTab('policies-tab',3)">Policies</button>
-      <button class="tab-btn" onclick="showTab('life-tab',4)">Student Life</button>
-      <button class="tab-btn" onclick="showTab('media-tab',5)">Media</button>
-      <button class="tab-btn" onclick="showTab('contact-tab',6)">Contact</button>
-    </div>
-
-    
-    <!-- --- ABOUT --- -->
-    <div class="tab-panel active" id="about-tab">
-
-      <!-- Intro -->
-      <div class="about-grid" style="margin-bottom:80px;">
-        <div class="about-text">
-          <span class="label">About FSK</span>
-          <h2>Fountainhead School Kunkni</h2>
-          <p>Fountainhead School Kunkni is India's 4th ranked co-ed day school (Cfore 2026). Located on Rander-Dandi Road, Surat, the campus runs the full IB continuum from Early Years through Diploma Programme. Head of School: Bhumika Parmar. Senior School Principals: Shezin Siganporia and Utsav Oza.</p>
-        </div>
-        <div class="about-img">
-          <img src="../images/fsk-ground.jpg" alt="Fountainhead School Kunkni">
-          <div class="about-img-caption">Khelangan — FSK Sports Ground — Surat</div>
-        </div>
+<!-- ═══ ABOUT US ═══ -->
+<section class="fsk-section" id="about">
+  <div class="fsk-container">
+    <div class="fsk-about-grid">
+      <div class="fsk-about-img">
+        <img src="https://fountainheadschools.org/wp-content/uploads/2026/03/FS_Kunkni-1-768x288.png" alt="Fountainhead School Kunkni campus">
+        <div class="fsk-about-img-badge">IB World School · Est. 2008</div>
       </div>
-
-      <div class="divider"></div>
-
-      <!-- People -->
-      <div style="padding-top:80px;">
-        <div style="text-align:center; margin-bottom:56px;">
-          <span class="label" style="display:flex;justify-content:center;">Leadership</span>
-          <h2>People at FSK</h2>
-        </div>
-        <div class="people-grid-ois">
-          
-          <div class="person-ois">
-            <div class="person-initials">BP</div>
-            <h4>Bhumika Parmar</h4>
-            <div class="person-role">Head of School</div>
-            <p>At FSK since 2009 — Home Room Teacher, Team Leader, MYP Coordinator, and now Head of School. Degrees in Commerce, Law, Education, and School Leadership Management. Led curriculum development in the Middle Years. Her view of education goes beyond academic results — it accounts for the person the student becomes.</p>
-          </div>
-          <div class="person-ois">
-            <div class="person-initials">SS</div>
-            <h4>Shezin Siganporia</h4>
-            <div class="person-role">Senior School Principal</div>
-            <p>Chartered Accountant. At FS since 2013. Teaches Business Management, brings the same rigour to the classroom that the qualification demands. Passionate about finance and the way it connects to the real world — she makes that connection visible to students.</p>
-          </div>
-          <div class="person-ois">
-            <div class="person-initials">UO</div>
-            <h4>Utsav Oza</h4>
-            <div class="person-role">Senior School Principal</div>
-            <p>Engineer. Gold medalist, SCET. Dewang Mehta IT Award 2017. National quiz competitor. Has performed at IIT-Bombay's Mood Indigo. At FS because the job of being curious alongside young people suits him — and because curiosity, he thinks, is what schools are actually for.</p>
-          </div>
-        </div>
+      <div class="fsk-about-text">
+        <span class="fsk-label">About FSK</span>
+        <div class="fsk-rule"></div>
+        <h2>A School That Believes Learning is a Lifelong Joy</h2>
+        <p>At Fountainhead School Kunkni, we believe that learning is a lifelong process. We aim to inculcate a sheer sense of joy in the learning process among students, parents, and teachers alike.</p>
+        <p>Our goal is to provide a happy, purposeful, safe, and nurturing environment that equips our children with the skills, attitudes, and character needed for sustainable success in life.</p>
+        <p>We place a strong emphasis on fostering a love of learning. Our pedagogy is learner-centred and creates a positive and supportive environment where students are at the centre of everything we do.</p>
+        <a href="#connect" class="btn-blue">Get in Touch</a>
       </div>
     </div>
-    <!-- --- ACADEMICS --- -->
-    <div class="tab-panel" id="academics-tab">
-      <span class="label">Academics</span>
-      <h2 style="margin-bottom:48px;">Academic Programmes at FSK</h2>
+  </div>
+</section>
 
-      <!-- Programmes -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:60px;">
-        
-        <div style="background:white;padding:36px;border-left:4px solid var(--dark);">
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Ages 3—6</span>
-          <h3 style="margin:8px 0;">Early Years Programme</h3>
-          <p>Play-based inquiry. The environment is the third teacher. Children lead — adults listen and extend.</p>
+<!-- ═══ MISSION & VALUES ═══ -->
+<section class="fsk-section fsk-values-bg" id="values">
+  <div class="fsk-container">
+    <div class="fsk-mission-box">
+      <div class="eyebrow">Our Mission</div>
+      <h2>"To nurture leaders with character and competence."</h2>
+    </div>
+
+    <div class="fsk-section-head">
+      <span class="fsk-label">Core Values</span>
+      <div class="fsk-rule"></div>
+      <h2>What We Stand For</h2>
+      <p>Five values that shape every decision, every classroom, and every relationship at FSK.</p>
+    </div>
+
+    <div class="fsk-values-grid">
+      <div class="fsk-value-card">
+        <div class="fsk-value-icon">🤝</div>
+        <h3>Together, We Thrive.</h3>
+      </div>
+      <div class="fsk-value-card red-top">
+        <div class="fsk-value-icon">🌱</div>
+        <h3>Students' Growth, Our Compass.</h3>
+      </div>
+      <div class="fsk-value-card yellow-top">
+        <div class="fsk-value-icon">💡</div>
+        <h3>Learn. Evolve. Excel.</h3>
+      </div>
+      <div class="fsk-value-card red-top">
+        <div class="fsk-value-icon">🎯</div>
+        <h3>Take Charge and Follow Through.</h3>
+      </div>
+      <div class="fsk-value-card">
+        <div class="fsk-value-icon">⭐</div>
+        <h3>Make Each Other Better.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LEADERSHIP ═══ -->
+<section class="fsk-section" id="leadership">
+  <div class="fsk-container">
+    <div class="fsk-section-head">
+      <span class="fsk-label">People @ FSK</span>
+      <div class="fsk-rule"></div>
+      <h2>Our Leadership Team</h2>
+      <p>Experienced educators dedicated to nurturing every child's potential.</p>
+    </div>
+    <div class="fsk-people-grid">
+      <div class="fsk-person-card">
+        <div class="fsk-person-img">
+          <img src="https://fountainheadschools.org/wp-content/uploads/2024/07/unnamed.jpg" alt="Bhumika Parmar – Head of School">
         </div>
-        <div style="background:white;padding:36px;border-left:4px solid var(--gold);">
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Grades 1—5</span>
-          <h3 style="margin:8px 0;">Primary Years Programme</h3>
-          <p>Six transdisciplinary units of inquiry per year. Concepts, not content. The whole child, not just the academic one.</p>
-        </div>
-        <div style="background:white;padding:36px;border-left:4px solid #8B6914;">
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Grades 6—10</span>
-          <h3 style="margin:8px 0;">Middle Years Programme</h3>
-          <p>Eight subject groups. Global contexts that connect what students learn to why it matters. Service as action — not a checkbox.</p>
-        </div>
-        <div style="background:white;padding:36px;border-left:4px solid var(--fs-blue);">
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Grades 11—12</span>
-          <h3 style="margin:8px 0;">IB Diploma Programme</h3>
-          <p>University preparation recognised by institutions worldwide. Six subjects, Theory of Knowledge, Extended Essay, CAS. A rigorous two years.</p>
-        </div>
-        <div style="background:white;padding:36px;border-left:4px solid #c0392b;">
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Specialist</span>
-          <h3 style="margin:8px 0;">Maverick Learning Centre</h3>
-          <p>Award-winning skill development initiative — Best Skill Development at ScooNews 2023. Inclusive, personalised learning support.</p>
-        </div>
-        <div style="background:white;padding:36px;border-left:4px solid #0891b2;">
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Vocational</span>
-          <h3 style="margin:8px 0;">BTec Programme</h3>
-          <p>Industry-aligned vocational qualifications accepted by universities worldwide. Career-ready skills alongside the IB pathway.</p>
+        <div class="fsk-person-body">
+          <h3>Bhumika Parmar</h3>
+          <span class="fsk-person-role">Head of School</span>
+          <p>Bhumika strongly believes that life is one big circle and you get back what you give. Associated with Fountainhead since 2009, she has worked as a home room teacher, Team Leader, and MYP Coordinator. She holds degrees in Commerce, Law, Education, and School Leadership Management, and leads the IB Middle Years Program at the school.</p>
         </div>
       </div>
+      <div class="fsk-person-card">
+        <div class="fsk-person-img">
+          <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/ShezinSiganporia-683x1024.jpg" alt="Shezin Siganporia – Senior School Principal">
+        </div>
+        <div class="fsk-person-body">
+          <h3>Shezin Siganporia</h3>
+          <span class="fsk-person-role">Senior School Principal</span>
+          <p>A Chartered Accountant who enjoys taking on new challenges, Shezin is passionate about Finance and Business Management. She has been with Fountainhead since 2013 and brings a dynamic energy to student development and school administration.</p>
+        </div>
+      </div>
+      <div class="fsk-person-card">
+        <div class="fsk-person-img">
+          <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/UtsavOza-683x1024.jpg" alt="Utsav Oza – Senior School Principal">
+        </div>
+        <div class="fsk-person-body">
+          <h3>Utsav Oza</h3>
+          <span class="fsk-person-role">Senior School Principal</span>
+          <p>An engineer and gold medallist from SCET, Utsav was awarded the Dewang Mehta IT Award 2017. He has a keen interest in quizzing, drama, and poetry, having competed at state and national level festivals including IIT Bombay's Mood Indigo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Learning Model -->
-      <div class="philosophy-section" style="border-radius:0;margin:0 -40px;padding:64px 40px;">
-        <div class="philosophy-inner">
-          <div class="philosophy-text">
-            <span class="label">Learning Philosophy</span>
-            <h2>The FS Learning Model</h2>
-            <div class="philosophy-quote">
-              <p>"Learning is not a performance for school. It is a habit that lasts a lifetime — or it is nothing."</p>
+<!-- ═══ TIMELINE ═══ -->
+<section class="fsk-section fsk-values-bg" id="timeline">
+  <div class="fsk-container">
+    <div class="fsk-section-head">
+      <span class="fsk-label">Our Journey</span>
+      <div class="fsk-rule"></div>
+      <h2>The FSK Story</h2>
+      <p>Two decades of growth, milestones, and excellence.</p>
+    </div>
+  </div>
+  <div style="padding: 0 40px; overflow: hidden;">
+    <div class="fsk-timeline-wrap" id="fsk-timeline-scroll">
+      <div class="fsk-timeline">
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2008</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="https://fountainheadschools.org/wp-content/uploads/2026/03/FS_Kunkni-1-768x288.png" alt="FSK campus" style="width:100%;height:70px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
+            <h4>FSK Established</h4>
+            <p>Fountainhead School, Kunkni founded in Surat</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2011</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB PYP" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;">
+            <h4>IB PYP Authorised</h4>
+            <p>Authorised as an IB Primary Years Programme school</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2014</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB DP" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;">
+            <h4>IB DP Authorised</h4>
+            <p>IB Diploma Programme authorised; Ankita receives Global Teacher Accreditation by British Council</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2016</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="https://fountainheadschools.org/wp-content/uploads/2026/04/4-1024x379.jpg" alt="1st Graduating Class" style="width:100%;height:70px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
+            <h4>1st Graduating Class</h4>
+            <p>First graduating class of Fountainhead School completes IB DP</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2018</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB MYP" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;">
+            <h4>IB MYP Authorised</h4>
+            <p>Middle Years Programme authorised — full IB continuum achieved at FSK</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2019</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="https://fountainheadschools.org/wp-content/uploads/2026/04/2-1024x379.jpg" alt="MLC" style="width:100%;height:70px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
+            <h4>Maverick Learning Centre</h4>
+            <p>In-house project based 'Maverick Learning Centre' established</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2020</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <div style="width:100%;height:70px;background:#003E74;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;">
+              <span style="color:#fff;font-family:'Montserrat',sans-serif;font-size:0.75rem;font-weight:800;letter-spacing:0.06em;">MSA · CESS</span>
             </div>
-            <p>Students are at the centre. Not in theory — in practice. The teacher's job is to build a learner, not deliver a syllabus. Every lesson at FSK is designed around a question, not an answer.</p>
-            <p>Academic rigour. Physical fitness. Social and emotional wellbeing. All three, in balance.</p>
-            <a href="../images/FS Learning Model.pdf" download style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 22px;background:var(--gold);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">↓ Download FS Learning Model (PDF)</a>
+            <h4>MSA-CESS Accreditation</h4>
+            <p>Accredited for offering American High School Diploma programme</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2023</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <div style="width:100%;height:70px;background:#F2C418;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;">
+              <span style="color:#181C22;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:800;text-align:center;padding:0 8px;">EducationWorld Best International School, Surat</span>
+            </div>
+            <h4>Best International School</h4>
+            <p>Ranked Best International School in Surat by EducationWorld</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2024</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <div style="width:100%;height:70px;background:#005BAA;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;">
+              <span style="color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:800;text-align:center;padding:0 8px;">Great Place To Work® Certified</span>
+            </div>
+            <h4>Great Place To Work®</h4>
+            <p>Certified as a Great Place To Work — November 2024</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2025</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="../images/cfore-2026-fsk.png" alt="Cfore 2025" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;" onerror="this.style.background='#B8292F';this.alt='';this.src=''">
+            <h4>Cfore — 5th Nationally</h4>
+            <p>Stands proudly among India's Top Schools — Cfore Rankings</p>
+          </div>
+        </div>
+
+        <div class="fsk-st-item">
+          <div class="fsk-st-year">2026</div>
+          <div class="fsk-st-dot"></div>
+          <div class="fsk-st-card">
+            <img src="../images/cfore-2026-fsk.png" alt="Cfore 2026" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;" onerror="this.style.background='#005BAA';this.alt='';this.src=''">
+            <h4>Cfore — 4th Nationally</h4>
+            <p>Moved up to 4th — top ranked in Pedagogy &amp; Curriculum nationally</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE CAMPUS ═══ -->
+<section class="fsk-section" id="campus">
+  <div class="fsk-container">
+    <div class="fsk-section-head">
+      <span class="fsk-label">The Campus</span>
+      <div class="fsk-rule"></div>
+      <h2>A Space Built for Learning</h2>
+      <p>Our Kunkni campus provides a safe, vibrant, and resource-rich environment where every child can explore, create, and thrive.</p>
+    </div>
+    <div class="fsk-campus-grid">
+      <div class="fsk-campus-main">
+        <img src="images/fsk-facade.jpg" alt="FSK campus front view">
+      </div>
+      <div class="fsk-campus-side">
+        <img src="images/fsk-ground.jpg" alt="FSK campus ground">
+        <img src="images/fsk-facade.jpg" alt="FSK school building" style="object-position:right center;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACADEMICS ═══ -->
+<section class="fsk-section fsk-values-bg" id="academics">
+  <div class="fsk-container">
+    <div class="fsk-section-head">
+      <span class="fsk-label">Academics</span>
+      <div class="fsk-rule"></div>
+      <h2>The IB Continuum at FSK</h2>
+      <p>From early years through Diploma, our programmes develop inquiring, knowledgeable, and caring young people.</p>
+    </div>
+
+    <div class="fsk-academics-tabs" role="tablist">
+      <button class="fsk-tab-btn active" onclick="showTab('pyp', this)">PYP · Pre-K to Grade 5</button>
+      <button class="fsk-tab-btn" onclick="showTab('myp', this)">MYP · Grade 6 to 10</button>
+      <button class="fsk-tab-btn" onclick="showTab('dp', this)">DP · Grade 11 &amp; 12</button>
+    </div>
+
+    <div id="tab-pyp" class="fsk-tab-panel active">
+      <div class="fsk-academics-grid">
+        <div>
+          <span class="fsk-label">Primary Years Programme</span>
+          <h3 style="font-family:Montserrat,sans-serif;font-weight:800;margin-bottom:16px;">Inquiry-Led Learning from the Very Beginning</h3>
+          <p>The PYP offers a transdisciplinary framework that nurtures curiosity and a love of learning in children aged 3–12. Students develop the knowledge, skills, attitudes, and understanding they need to be active participants in a lifelong journey of learning.</p>
+          <p>Our PYP programme focuses on developing inquirers, thinkers, communicators, and principled learners who are open-minded, caring, and reflective.</p>
+        </div>
+        <img src="https://fountainheadschools.org/wp-content/uploads/2026/04/4-1024x379.jpg" alt="PYP students at FSK">
+      </div>
+    </div>
+
+    <div id="tab-myp" class="fsk-tab-panel">
+      <div class="fsk-academics-grid">
+        <div>
+          <span class="fsk-label">Middle Years Programme</span>
+          <h3 style="font-family:Montserrat,sans-serif;font-weight:800;margin-bottom:16px;">Building Bridges Between Learning and Real Life</h3>
+          <p>The MYP is a challenging framework that encourages students to make practical connections between their studies and the real world. It develops confident, independent, reflective learners who are skilled at researching, thinking critically, and communicating effectively.</p>
+          <p>Students complete a Community Project (Grade 9) and Personal Project (Grade 10), developing self-management, research, and social skills.</p>
+        </div>
+        <img src="images/fsk-facade.jpg" alt="MYP students at FSK">
+      </div>
+    </div>
+
+    <div id="tab-dp" class="fsk-tab-panel">
+      <div class="fsk-academics-grid">
+        <div>
+          <span class="fsk-label">Diploma Programme</span>
+          <h3 style="font-family:Montserrat,sans-serif;font-weight:800;margin-bottom:16px;">College-Ready. World-Ready.</h3>
+          <p>The IB Diploma Programme is an internationally recognised qualification for students aged 16–19. It provides a rigorous academic challenge, developing students' intellectual, personal, emotional, and social skills.</p>
+          <p>DP students choose from six subject groups, complete Theory of Knowledge (TOK), an Extended Essay, and Creativity, Activity, Service (CAS) — developing well-rounded graduates ready for top universities worldwide.</p>
+        </div>
+        <img src="images/fsk-ground.jpg" alt="DP students at FSK">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STUDENT SUPPORT / NUCLEUS ═══ -->
+<section class="fsk-section fsk-nucleus-bg" id="student-life">
+  <div class="fsk-container">
+    <div class="fsk-nucleus-inner">
+      <div>
+        <span class="fsk-label">Nucleus — Parent Portal</span>
+        <div class="fsk-rule" style="background:var(--fsk-yellow);"></div>
+        <h2 style="color:#fff;margin-bottom:16px;">Stay Connected with Your Child's Journey</h2>
+        <p>The Nucleus app gives parents real-time access to attendance, timetables, bus routes, academic progress, and school updates — all in one secure platform.</p>
+        <div class="fsk-nucleus-btns">
+          <a href="https://parents.fountainheadschools.org/login" target="_blank" class="btn-yellow">Login to Nucleus Web</a>
+          <a href="https://apps.apple.com/in/app/fs-nucleus/id1629369558" target="_blank" class="btn-ghost-white">iOS App</a>
+          <a href="https://fsk.fountainheadschools.org/nucleus-app-ppt/" target="_blank" class="btn-ghost-white">App Guide (PPT)</a>
+        </div>
+        <p style="margin-top:20px;font-size:0.8rem;color:rgba(255,255,255,0.5);">For bus routes: Login via Curricle through Nucleus</p>
+      </div>
+      <div class="fsk-nucleus-img">
+        <img src="images/fsk-ground.jpg" alt="Students at FSK campus" style="width:100%;border-radius:12px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MEDIA / VIDEO ═══ -->
+<section class="fsk-section" id="media">
+  <div class="fsk-container">
+    <div class="fsk-section-head">
+      <span class="fsk-label">Media &amp; Gallery</span>
+      <div class="fsk-rule"></div>
+      <h2>Life at FSK</h2>
+      <p>Glimpses of the vibrant school life that makes Fountainhead School Kunkni special.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:24px;align-items:start;">
+      <div>
+        <div class="fsk-video-wrap" id="fsk-video-1">
+          <div class="fsk-video-thumb" onclick="playVideo('fsk-video-1','images/FS Got Talent.mp4')">
+            <img src="images/fsk-ground.jpg" alt="FS Got Talent video thumbnail">
+            <div class="play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:12px;font-family:'Montserrat',sans-serif;font-size:0.78rem;font-weight:700;color:#181C22;">FS Got Talent — Annual Cultural Event</p>
+      </div>
+      <div>
+        <a href="https://www.youtube.com/@fountainheadschools" target="_blank" rel="noopener" style="display:block;text-decoration:none;">
+          <div class="fsk-video-wrap" style="background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+            <svg width="56" height="40" viewBox="0 0 56 40" fill="none"><rect width="56" height="40" rx="8" fill="#FF0000"/><polygon points="22,12 40,20 22,28" fill="#fff"/></svg>
+            <span style="color:#fff;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;text-align:center;">View FSK Videos<br>on YouTube</span>
+          </div>
+        </a>
+        <p style="margin-top:12px;font-family:'Montserrat',sans-serif;font-size:0.78rem;font-weight:700;color:#181C22;">Discipline &amp; Anti-Bullying Programme</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWSLETTERS ═══ -->
+<section class="fsk-section-sm fsk-values-bg" id="newsletters">
+  <div class="fsk-container">
+    <div class="fsk-section-head" style="margin-bottom:28px;">
+      <span class="fsk-label">Newsletters</span>
+      <div class="fsk-rule fsk-rule-red"></div>
+      <h2>Stay Updated</h2>
+    </div>
+    <div class="fsk-newsletter-cards">
+      <a href="newsletters/June Newsletter.pdf" target="_blank" class="fsk-nl-card">
+        <div class="fsk-nl-icon">📰</div>
+        <div>
+          <h4>June 2025 Newsletter</h4>
+          <span>Download PDF ↗</span>
+        </div>
+      </a>
+      <a href="newsletters/July Newsletter.pdf" target="_blank" class="fsk-nl-card">
+        <div class="fsk-nl-icon">📰</div>
+        <div>
+          <h4>July 2025 Newsletter</h4>
+          <span>Download PDF ↗</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ POLICIES ═══ -->
+<section class="fsk-section fsk-policies-bg" id="policies">
+  <div class="fsk-container">
+    <div class="fsk-section-head">
+      <span class="fsk-label">School Policies</span>
+      <div class="fsk-rule fsk-rule-red"></div>
+      <h2>Our Policies</h2>
+      <p>Transparent guidelines that shape our school community and ensure every child's safety and well-being.</p>
+    </div>
+    <div class="fsk-policies-grid">
+      <a href="policies/FSK Admission policy.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="fsk-pol-name">Admission Policy</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Academic Integrity policy.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon red">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="fsk-pol-name">Academic Integrity</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Assessment Policy.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon dark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="fsk-pol-name">Assessment Policy</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Discipline Policy.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon red">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="fsk-pol-name">Discipline Policy</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Child Protection Policy.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="fsk-pol-name">Child Protection Policy</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Language Policy.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon dark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="fsk-pol-name">Language Policy</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Learning Diversity & Inclusion Policy .pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="fsk-pol-name">Learning Diversity &amp; Inclusion</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Health Exclusion Policy.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon red">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="fsk-pol-name">Health Exclusion Policy</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Food policy (Parents & Students).pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon yellow" style="background:var(--fsk-yellow);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#181C22" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div class="fsk-pol-name">Food Policy</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+      <a href="policies/FSK Canteen_Pantry Usage Guidelines.pdf" target="_blank" class="fsk-pol-card">
+        <div class="fsk-pol-icon dark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </div>
+        <div class="fsk-pol-name">Canteen Guidelines</div>
+        <div class="fsk-pol-dl">Download PDF</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ADMISSIONS ═══ -->
+<section class="fsk-section" id="admissions">
+  <div class="fsk-container">
+    <div class="fsk-admissions-grid">
+      <div>
+        <span class="fsk-label">Admissions</span>
+        <div class="fsk-rule"></div>
+        <h2>Join the FSK Community</h2>
+        <p>We welcome families who share our belief that education is about nurturing whole children — academically, socially, emotionally, and physically.</p>
+        <div class="fsk-admissions-steps" style="margin-top:28px;">
+          <div class="fsk-step">
+            <div class="fsk-step-num">1</div>
+            <div>
+              <h4>Enquire</h4>
+              <p>Fill in the enquiry form or call us to learn about programmes, fees, and availability.</p>
+            </div>
+          </div>
+          <div class="fsk-step">
+            <div class="fsk-step-num">2</div>
+            <div>
+              <h4>Campus Visit</h4>
+              <p>Schedule a school tour to experience FSK's facilities and meet our faculty.</p>
+            </div>
+          </div>
+          <div class="fsk-step">
+            <div class="fsk-step-num">3</div>
+            <div>
+              <h4>Application</h4>
+              <p>Submit the application form along with required documents.</p>
+            </div>
+          </div>
+          <div class="fsk-step">
+            <div class="fsk-step-num">4</div>
+            <div>
+              <h4>Interaction &amp; Enrolment</h4>
+              <p>Student interaction session followed by enrolment confirmation.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#connect" class="btn-blue" style="margin-top:24px;">Apply / Enquire Now</a>
+      </div>
+      <div class="fsk-admissions-img">
+        <img src="images/fsk-facade.jpg" alt="FSK admissions — campus view">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONNECT / FORM ═══ -->
+<section class="fsk-section fsk-connect-bg" id="connect">
+  <div class="fsk-container">
+    <div class="fsk-connect-grid">
+      <div class="fsk-contact-info">
+        <span class="fsk-label">Contact Us</span>
+        <div class="fsk-rule"></div>
+        <h2>How Can We Help You?</h2>
+        <p>Reach out to us for admissions enquiries, campus visits, or any information about Fountainhead School Kunkni.</p>
+
+        <div class="fsk-contact-item">
+          <div class="fsk-contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.79-1.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
           <div>
-            <div class="ib-programs-grid">
-              <div class="ib-prog"><span class="age">3—6</span><h4>Early Years</h4><p>Play, inquiry, agency</p></div>
-              <div class="ib-prog"><span class="age">6—11</span><h4>PYP</h4><p>Transdisciplinary inquiry</p></div>
-              <div class="ib-prog"><span class="age">11—16</span><h4>MYP</h4><p>Global context, service</p></div>
-              <div class="ib-prog"><span class="age">16—19</span><h4>Diploma</h4><p>University preparation</p></div>
-            </div>
+            <strong>Phone</strong>
+            <span><a href="tel:+918000130031">8000-130-031</a> &nbsp;|&nbsp; <a href="tel:+910261350130">0261-3501300</a></span>
+          </div>
+        </div>
+
+        <div class="fsk-contact-item">
+          <div class="fsk-contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <span><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></span>
+          </div>
+        </div>
+
+        <div class="fsk-contact-item">
+          <div class="fsk-contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Address</strong>
+            <span>Opp. Ambetha Water Tank, Nr. Village Kunkni,<br>Rander - Dandi Road, Surat – 395005</span>
+          </div>
+        </div>
+
+        <div class="fsk-contact-item">
+          <div class="fsk-contact-icon" style="background:var(--fsk-red);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong>School Timings</strong>
+            <span>Monday – Friday: 7:30 AM – 3:30 PM<br>Saturday: 8:00 AM – 12:30 PM</span>
           </div>
         </div>
       </div>
 
-      <!-- IB Myths -->
-      <div style="padding-top:64px;">
-        <span class="label">Demystifying IB</span>
-        <h2 style="margin-bottom:36px;">Common Myths About IB Education</h2>
-        <div class="myth-grid">
-          
-          <div class="myth-card">
-            <div class="myth-q">Myth</div>
-            <h4 style="font-family:'Montserrat',serif;font-size:1rem;margin-bottom:10px;">IB is only for gifted students</h4>
-            <p class="myth-a">The IB is designed for all learners. Inquiry works for every child — it does not sort them into gifted and not gifted, it asks all of them to think.</p>
+      <div class="fsk-form-card">
+        <h3>How Can We Help You?</h3>
+        <p>Fill in the form and our team will get back to you within one working day.</p>
+        <form class="fsk-form" onsubmit="handleFormSubmit(event)">
+          <div class="fsk-form-row">
+            <div class="fsk-field">
+              <label for="f-name">Full Name *</label>
+              <input type="text" id="f-name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="fsk-field">
+              <label for="f-email">Email ID *</label>
+              <input type="email" id="f-email" name="email" placeholder="your@email.com" required>
+            </div>
           </div>
-          <div class="myth-card">
-            <div class="myth-q">Myth</div>
-            <h4 style="font-family:'Montserrat',serif;font-size:1rem;margin-bottom:10px;">IB students cannot do engineering or medicine</h4>
-            <p class="myth-a">IB DP is accepted by universities for STEM, medicine, law, management — in India and worldwide. The subject combination is what matters, not the board.</p>
+          <div class="fsk-field">
+            <label for="f-phone">Contact Number *</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="+91 00000 00000" required>
           </div>
-          <div class="myth-card">
-            <div class="myth-q">Myth</div>
-            <h4 style="font-family:'Montserrat',serif;font-size:1rem;margin-bottom:10px;">IB means there are no exams</h4>
-            <p class="myth-a">IB has rigorous external assessments. DP students sit comprehensive written exams marked by IB examiners worldwide — it is among the most respected qualifications globally.</p>
+          <div class="fsk-field">
+            <label for="f-reason">Reason for Visit *</label>
+            <select id="f-reason" name="reason" required>
+              <option value="" disabled selected>Select a reason</option>
+              <option>Admission / School Enquiry</option>
+              <option>Campus Visit / School Tour</option>
+              <option>Career / Job Opportunity</option>
+              <option>Internship / Work Experience</option>
+              <option>Business / Vendor Enquiry</option>
+              <option>Collaboration / Partnership</option>
+              <option>Media / Press</option>
+              <option>Alumni</option>
+              <option>Event / Programme</option>
+              <option>Other</option>
+            </select>
           </div>
-          <div class="myth-card">
-            <div class="myth-q">Myth</div>
-            <h4 style="font-family:'Montserrat',serif;font-size:1rem;margin-bottom:10px;">IB does not prepare students for competitive exams</h4>
-            <p class="myth-a">IB develops deep analytical thinking and strong academic foundations. FSK students successfully clear JEE, NEET, SAT, and other competitive examinations. Coaching for competitive exams is not discouraged — only tuition from former FS teachers is restricted.</p>
+          <div class="fsk-field">
+            <label for="f-message">Brief Details</label>
+            <textarea id="f-message" name="message" placeholder="Tell us a bit more about what you're looking for…"></textarea>
           </div>
-        </div>
+          <button type="submit" class="fsk-submit">
+            Send Message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <div id="form-success" style="display:none;padding:12px 16px;background:#E6EFF6;border-radius:7px;font-family:'Nunito',sans-serif;font-size:0.875rem;color:#005BAA;font-weight:600;">
+            ✓ Thank you! We'll be in touch within one working day.
+          </div>
+        </form>
       </div>
-    </div>
-    <!-- --- ADMISSIONS --- -->
-    <div class="tab-panel" id="admissions-tab">
-      <span class="label">Admissions</span>
-      <h2 style="margin-bottom:12px;">How admission to FSK works</h2>
-      <p style="margin-bottom:60px;font-size:1rem;">The PAE process — three steps. Transparent, fair, centred on the child.</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
-        <div>
-          <h3 style="margin-bottom:0;">The PAE Process</h3>
-          <div class="admission-steps-ois">
-            
-            <div class="admission-step-ois">
-              <div class="step-circle">P</div>
-              <div class="step-body">
-                <h4>Pre-Admission</h4>
-                <p>Initial enquiry and campus tour. Meet our admissions team to learn about our programmes, facilities, and the IB continuum. Walk through the campus on a school day — the best way to understand Fountainhead.</p>
-              </div>
-            </div>
-            <div class="admission-step-ois">
-              <div class="step-circle">A</div>
-              <div class="step-body">
-                <h4>Assessment</h4>
-                <p>Age-appropriate interaction or assessment. For younger grades, a warm play-based interaction. For older grades, a casual conversation with our academic team. We assess curiosity and enthusiasm — not just academics.</p>
-              </div>
-            </div>
-            <div class="admission-step-ois">
-              <div class="step-circle">E</div>
-              <div class="step-body">
-                <h4>Enrolment</h4>
-                <p>Offer of admission, documentation, fee payment, and welcome orientation. Your child joins the Fountainhead family — a lifelong community of learners, thinkers, and doers.</p>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:48px;padding:32px;background:var(--light-gray);">
-            <span class="label">Documents Required</span>
-            <ul style="padding-left:20px;color:var(--mid);line-height:2.2;font-size:0.9rem;">
-              <li>Birth certificate / Age proof</li>
-              <li>Previous school's Transfer Certificate (TC)</li>
-              <li>Last two years' academic report cards</li>
-              <li>Passport-size photographs (4 copies)</li>
-              <li>Residential address proof</li>
-              <li>Aadhar card (child and parents)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <div style="background:var(--dark);padding:40px;margin-bottom:24px;">
-            <span class="label" style="color:var(--gold);">Parent Portal</span>
-            <h3 style="color:white;margin-bottom:16px;">Nucleus — Your Window In</h3>
-            <p style="color:rgba(255,255,255,0.7);">All FSK parents have access to Nucleus — progress tracking, calendars, communication, and more. Available on web and iOS.</p>
-            <div class="qlinks" style="margin-top:24px;background:none;grid-template-columns:1fr;">
-              <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink" style="background:rgba(255,255,255,0.06);color:white;border:1px solid rgba(255,255,255,0.1);"><span>&#128274;</span> Nucleus Web Portal</a>
-              <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink" style="background:rgba(255,255,255,0.06);color:white;border:1px solid rgba(255,255,255,0.1);"><span>&#128241;</span> Nucleus App (iOS)</a>
-              <a href="https://curricle.io" target="_blank" class="qlink" style="background:rgba(255,255,255,0.06);color:white;border:1px solid rgba(255,255,255,0.1);"><span>&#128197;</span> School Calendar (Curricle)</a>
-            </div>
-          </div>
-
-          <div style="padding:32px;border:1px solid var(--border);">
-            <span class="label">Contact Admissions</span>
-            <div class="contact-item-ois">
-              <div class="contact-icon-ois">&#128222;</div>
-              <div><h5>Phone</h5><p><a href="tel:+918000130031">8000-130-031</a> &nbsp;/&nbsp; <a href="tel:+9102613501300">0261-3501300</a></p></div>
-            </div>
-            <div class="contact-item-ois">
-              <div class="contact-icon-ois">&#9993;</div>
-              <div><h5>Email</h5><p><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></p></div>
-            </div>
-            <div class="contact-item-ois">
-              <div class="contact-icon-ois">&#128172;</div>
-              <div><h5>WhatsApp</h5><p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- --- POLICIES --- -->
-    <div class="tab-panel" id="policies-tab">
-      <span class="label">Download Policies</span>
-      <h2 style="margin-bottom:8px;">FSK School Policies</h2>
-      <p style="margin-bottom:0;">Click any policy below to open the PDF in a new tab.</p>
-      <div class="policies-grid">
-        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128737;</div><span>Child Protection Policy</span></a>
-        <a href="../policies/FSK Admission policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128196;</div><span>Admission Policy</span></a>
-        <a href="../policies/FSK Assessment Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128203;</div><span>Assessment Policy</span></a>
-        <a href="../policies/FSK Discipline Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128218;</div><span>Discipline Policy</span></a>
-        <a href="../policies/FSK Language Policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#128172;</div><span>Language Policy</span></a>
-        <a href="../policies/FSK Academic Integrity policy.pdf" target="_blank" class="policy-card"><div class="policy-icon">&#127891;</div><span>Academic Integrity Policy</span></a>
-      </div>
-    </div>
-    <!-- --- STUDENT LIFE --- -->
-    <div class="tab-panel" id="life-tab">
-      <span class="label">Student Life</span>
-      <h2 style="margin-bottom:48px;">Life at FSK</h2>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:80px;">
-        <div>
-          <span class="label">Sports</span>
-          <h3>Khelangan — Our World-Class Ground</h3>
-          <p>FSK's Khelangan is built to international standards — featuring a football turf sourced from the Netherlands, cricket nets, basketball and pickleball courts, badminton facilities, and a gymnastics space.</p>
-          <div class="sport-tags">
-            <span class="sport-tag">&#9977; Football (Netherlands Turf)</span>
-            <span class="sport-tag">&#9977; Cricket Nets</span>
-            <span class="sport-tag">&#9977; Basketball</span>
-            <span class="sport-tag">&#9977; Badminton</span>
-            <span class="sport-tag">&#9977; Pickleball</span>
-            <span class="sport-tag">&#9977; Gymnastics</span>
-          </div>
-          <div style="margin-top:28px;padding:24px;background:var(--dark);color:white;">
-            <h4 style="color:white;font-size:1rem;margin-bottom:8px;">HDP & HDP+ Programme</h4>
-            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin:0;">High-Performance Development programme for students with exceptional sporting talent — structured, competitive training alongside academic achievement.</p>
-          </div>
-        </div>
-        <div>
-          <img src="../images/fsk-ground.jpg" alt="Khelangan — Our World-Class Ground" style="width:100%;height:400px;object-fit:cover;display:block;">
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div style="padding-top:64px;">
-        <span class="label">Resources</span>
-        <h3 style="margin-bottom:8px;">Quick Links for Students &amp; Parents</h3>
-        <div class="qlinks">
-          <a href="https://parents.fountainheadschools.org/Login" target="_blank" class="qlink"><span>&#128274;</span>Nucleus Web Portal</a>
-          <a href="https://apps.apple.com/in/app/fs-nucleus/id1625806958" target="_blank" class="qlink"><span>&#128241;</span>Nucleus App (iOS)</a>
-          <a href="https://curricle.io" target="_blank" class="qlink"><span>&#128197;</span>School Calendar</a>
-        </div>
-      </div>
-    </div>
-    <!-- --- MEDIA --- -->
-    <div class="tab-panel" id="media-tab">
-      <span class="label">Recognition</span>
-      <h2 style="margin-bottom:48px;">FSK in the News</h2>
-      <div class="accolades-grid-ois" style="margin-bottom:64px;">
-        <div class="accolade-ois">
-          <div class="accolade-year-tag">Nationally — Cfore 2026</div>
-          <h4>4th Nationally — Cfore 2026</h4>
-          <p>Recognised for excellence in education and student outcomes.</p>
-        </div>
-      </div>
-    </div>
-    <!-- --- CONTACT --- -->
-    <div class="tab-panel" id="contact-tab">
-      <span class="label">Contact</span>
-      <h2 style="margin-bottom:48px;">Reach Fountainhead School Kunkni</h2>
-
-      <div class="contact-grid-ois">
-        <div>
-          <div class="contact-item-ois">
-            <div class="contact-icon-ois">&#128222;</div>
-            <div>
-              <h5>Phone Numbers</h5>
-              <p><a href="tel:+918000130031">8000-130-031</a><br><a href="tel:+9102613501300">0261-3501300</a></p>
-            </div>
-          </div>
-          <div class="contact-item-ois">
-            <div class="contact-icon-ois">&#9993;</div>
-            <div>
-              <h5>Email</h5>
-              <p><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></p>
-            </div>
-          </div>
-          <div class="contact-item-ois">
-            <div class="contact-icon-ois">&#128172;</div>
-            <div>
-              <h5>WhatsApp</h5>
-              <p><a href="https://wa.me/918000130031">+91 8000-130-031</a></p>
-            </div>
-          </div>
-          <div class="contact-item-ois">
-            <div class="contact-icon-ois">&#128205;</div>
-            <div>
-              <h5>Address</h5>
-              <p>Opp. Ambetha Water Tank, Nr. Village Kunkni,<br>Rander—Dandi Road, Surat — 395005, Gujarat</p>
-            </div>
-          </div>
-          <div class="contact-item-ois">
-            <div class="contact-icon-ois">&#9679;</div>
-            <div>
-              <h5>Follow FSK</h5>
-              <div class="social-row">
-                <a href="https://instagram.com/fountainheadschoolkunkni" target="_blank" class="soc-btn">IG Instagram</a>
-                <a href="https://facebook.com/fountainheadschoolkunkni" target="_blank" class="soc-btn">FB Facebook</a>
-                <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="soc-btn">▶ YouTube</a>
-                <a href="https://linkedin.com/company/fountainheadschools" target="_blank" class="soc-btn">in LinkedIn</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.5!2d72.8!3d21.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzAwLjAiTiA3MsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <a href="https://maps.google.com" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);border-bottom:1px solid var(--dark);padding-bottom:2px;">&#128205; Open in Google Maps</a>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- container -->
-</section>
-
-<!-- CTA BAND -->
-<div class="cta-band">
-  <div class="container">
-    <div class="cta-inner">
-      <div>
-        <h2>See FSK for yourself</h2>
-        <p>The best way to understand Fountainhead is to walk through it on a school day.</p>
-      </div>
-      <a href="#" onclick="showTab('contact-tab',6)" class="btn-cta-white">Book a Campus Visit →</a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="f-logo">
-          <img src="../images/fsk-logo.png" alt="Fountainhead School Kunkni" style="height:3rem;width:auto;display:block;margin-bottom:12px;filter:brightness(0) invert(1);">
+<!-- ═══ FOOTER ═══ -->
+<footer class="fsk-footer">
+  <div class="fsk-container">
+    <div class="fsk-footer-grid">
+      <div class="fsk-footer-brand">
+        <div class="fsk-logo-text">
+          <span class="l1" style="font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;display:block;">fountainhead</span>
+          <span class="l2" style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:700;color:#F2C418;letter-spacing:0.1em;text-transform:uppercase;display:block;">school • kunkni</span>
         </div>
-        <p>The flagship IB continuum campus of the Fountainhead Schools group. Rander—Dandi Road, Surat. Ranked 4th nationally — Cfore 2026.</p>
-        <div style="margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.4);">Part of the <a href="../index.html" style="color:rgba(242,196,24,0.8);">FS Group →</a></div>
+        <p class="fsk-footer-desc">An IB World School in Surat, nurturing leaders with character and competence since 2002.</p>
+        <div class="fsk-footer-soc">
+          <a href="https://www.facebook.com/fountainheadschools" target="_blank" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com/fountainheadschools" target="_blank" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@fountainheadschools" target="_blank" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
       </div>
-      <div>
-        <h6>Programmes</h6>
+
+      <div class="fsk-footer-col">
+        <h4>Programmes</h4>
         <ul>
-          <li><a href="#" onclick="showTab('academics-tab',1)">Early Years / PYP</a></li>
-          <li><a href="#" onclick="showTab('academics-tab',1)">Middle Years (MYP)</a></li>
-          <li><a href="#" onclick="showTab('academics-tab',1)">IB Diploma (DP)</a></li>
-          <li><a href="#" onclick="showTab('academics-tab',1)">BTec / MLC</a></li>
+          <li><a href="#academics">IB PYP</a></li>
+          <li><a href="#academics">IB MYP</a></li>
+          <li><a href="#academics">IB DP</a></li>
+          <li><a href="#admissions">Admissions</a></li>
         </ul>
       </div>
-      <div>
-        <h6>Policies</h6>
+
+      <div class="fsk-footer-col">
+        <h4>Policies</h4>
         <ul>
-          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection</a></li>
-          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Academic Integrity</a></li>
-          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Admissions</a></li>
-          <li><a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Assessment</a></li>
+          <li><a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection</a></li>
+          <li><a href="policies/FSK Admission policy.pdf" target="_blank">Admission Policy</a></li>
+          <li><a href="policies/FSK Discipline Policy.pdf" target="_blank">Discipline Policy</a></li>
+          <li><a href="policies/FSK Language Policy.pdf" target="_blank">Language Policy</a></li>
+          <li><a href="policies/FSK Learning Diversity & Inclusion Policy .pdf" target="_blank">Inclusion Policy</a></li>
         </ul>
       </div>
-      <div>
-        <h6>Contact</h6>
+
+      <div class="fsk-footer-col">
+        <h4>Contact</h4>
         <ul>
           <li><a href="tel:+918000130031">8000-130-031</a></li>
-          <li><a href="tel:+9102613501300">0261-3501300</a></li>
+          <li><a href="tel:+910261350130">0261-3501300</a></li>
           <li><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></li>
-          <li><a href="https://wa.me/918000130031">WhatsApp Us</a></li>
+          <li><a href="#connect">Opp. Ambetha Water Tank,<br>Nr. Village Kunkni, Rander - Dandi Rd, Surat 395005</a></li>
+          <li><a href="../index.html" style="color:rgba(255,255,255,0.4);margin-top:8px;display:block;">← Back to FS Group</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
+
+    <div class="fsk-footer-bottom">
       <span>© 2026 Fountainhead School Kunkni. All rights reserved.</span>
-      <div class="footer-policies">
-        <a href="#" onclick="showTab('policies-tab',3);window.scrollTo({top:0,behavior:'smooth'})">Child Protection Policy</a>
-        <a href="#">DPDP 2023</a>
-        <a href="#" onclick="showTab('contact-tab',6)">Contact Us</a>
-        <a href="../index.html">FS Group Home</a>
-      </div>
+      <span>Part of <a href="../index.html">Fountainhead Schools</a> — An IB School Group</span>
     </div>
   </div>
 </footer>
 
+<!-- ═══ SCRIPTS ═══ -->
 <script>
-const tabs = ['about-tab','academics-tab','admissions-tab','policies-tab','life-tab','media-tab','contact-tab'];
-function showTab(id, idx) {
-  tabs.forEach(t => { document.getElementById(t).classList.remove('active'); });
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
-  document.getElementById('content').scrollIntoView({behavior:'smooth'});
+// Mobile nav toggle
+const hamburger = document.getElementById('fsk-hamburger-btn');
+const mobileNav = document.getElementById('fsk-mobile-nav');
+const closeBtn = document.getElementById('fsk-mobile-close');
+hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+closeBtn.addEventListener('click', () => mobileNav.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+// Academics tabs
+function showTab(id, btn) {
+  document.querySelectorAll('.fsk-tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.fsk-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
 }
 
-const h = window.location.hash;
-if(h==='#admissions') showTab('admissions-tab',2);
-else if(h==='#policies') showTab('policies-tab',3);
-else if(h==='#academics') showTab('academics-tab',1);
-else if(h==='#student-life') showTab('life-tab',4);
-else if(h==='#contact') showTab('contact-tab',6);
+// Local video playback
+function playVideo(wrapId, src) {
+  const wrap = document.getElementById(wrapId);
+  const thumb = wrap.querySelector('.fsk-video-thumb');
+  thumb.style.display = 'none';
+  const vid = document.createElement('video');
+  vid.src = src;
+  vid.controls = true;
+  vid.autoplay = true;
+  vid.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+  wrap.appendChild(vid);
+}
+
+// YouTube embed
+function playYouTube(wrapId, videoId) {
+  const wrap = document.getElementById(wrapId);
+  const thumb = wrap.querySelector('.fsk-video-thumb');
+  thumb.style.display = 'none';
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+  iframe.allow = 'autoplay; encrypted-media';
+  iframe.allowFullscreen = true;
+  iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+  wrap.appendChild(iframe);
+}
+
+// Timeline drag scroll
+const tl = document.getElementById('fsk-timeline-scroll');
+if (tl) {
+  let isDown = false, startX, scrollL;
+  tl.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - tl.offsetLeft; scrollL = tl.scrollLeft; tl.style.cursor = 'grabbing'; });
+  tl.addEventListener('mouseleave', () => { isDown = false; tl.style.cursor = 'grab'; });
+  tl.addEventListener('mouseup', () => { isDown = false; tl.style.cursor = 'grab'; });
+  tl.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - tl.offsetLeft; tl.scrollLeft = scrollL - (x - startX); });
+}
+
+// Logo fallback
+document.querySelectorAll('.fsk-logo img').forEach(img => {
+  img.addEventListener('error', function() {
+    this.style.display = 'none';
+    this.nextElementSibling.style.display = 'block';
+  });
+});
+
+// Form submit
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  form.querySelector('.fsk-submit').textContent = 'Sending…';
+  setTimeout(() => {
+    form.reset();
+    form.querySelector('.fsk-submit').innerHTML = 'Send Message <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    document.getElementById('form-success').style.display = 'block';
+    setTimeout(() => document.getElementById('form-success').style.display = 'none', 5000);
+  }, 800);
+}
+
+// Sticky header shadow on scroll
+window.addEventListener('scroll', () => {
+  const h = document.getElementById('fsk-navbar');
+  if (window.scrollY > 10) h.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+  else h.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
+});
 </script>
 
-<script src="../js/main.js" defer></script>
 </body>
 </html>
