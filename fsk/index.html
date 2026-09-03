@@ -479,80 +479,149 @@
 }
 
 /* ─── TIMELINE ─── */
-.fsk-timeline-wrap { overflow-x: auto; padding-bottom: 24px; cursor: grab; }
-.fsk-timeline-wrap:active { cursor: grabbing; }
-.fsk-timeline {
+/* ── FS-style snake timeline ── */
+.fsk-tl-wrap { padding: 0 40px 48px; }
+.fsk-tl-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.fsk-tl-header-left { display: flex; align-items: center; gap: 16px; }
+.fsk-tl-header-icon svg { display: block; }
+.fsk-tl-title-block .fsk-label { display: block; margin-bottom: 4px; }
+.fsk-tl-title-block h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--fsk-blue);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.fsk-tl-logo img { height: 52px; width: auto; }
+.fsk-tl-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 0;
-  min-width: max-content;
   position: relative;
-  padding: 32px 0 40px;
 }
-.fsk-timeline::before {
-  content: '';
-  position: absolute;
-  top: 56px;
-  left: 100px;
-  right: 100px;
-  height: 3px;
-  background: linear-gradient(to right, var(--fsk-blue), var(--fsk-red), var(--fsk-yellow), var(--fsk-blue));
-  border-radius: 2px;
-  z-index: 0;
+.fsk-tl-row-2 {
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 0;
 }
-.fsk-st-item {
+.fsk-tl-connector {
+  height: 60px;
+  position: relative;
+  margin: 0;
+}
+.fsk-tl-connector svg { width: 100%; height: 100%; }
+.fsk-tl-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  padding: 0 8px;
+  position: relative;
+}
+.fsk-tl-item::before {
+  content: '';
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #dde4ee;
+  z-index: 0;
+}
+.fsk-tl-item:first-child::before { left: 50%; }
+.fsk-tl-item:last-child::before { right: 50%; }
+.fsk-tl-img {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
   position: relative;
   z-index: 1;
+  border: 1.5px solid #e4e9f0;
 }
-.fsk-st-year {
+.fsk-tl-img img { width: 100%; height: 100%; object-fit: cover; }
+.fsk-tl-img.contain img { object-fit: contain; padding: 8px; }
+.fsk-tl-img.badge {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  color: #fff;
-  background: var(--fsk-blue);
-  border-radius: 20px;
-  padding: 6px 18px;
-  margin-bottom: 20px;
-  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 8px;
+  line-height: 1.3;
 }
-.fsk-st-item:nth-child(3n+2) .fsk-st-year { background: var(--fsk-red); }
-.fsk-st-item:nth-child(3n+3) .fsk-st-year { background: #2E79B9; }
-.fsk-st-dot {
+.fsk-tl-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: var(--fsk-blue);
   border: 3px solid #fff;
   box-shadow: 0 0 0 2px var(--fsk-blue);
-  position: absolute;
-  top: 50px;
   z-index: 2;
+  flex-shrink: 0;
 }
-.fsk-st-item:nth-child(3n+2) .fsk-st-dot { background: var(--fsk-red); box-shadow: 0 0 0 2px var(--fsk-red); }
-.fsk-st-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 18px 16px;
-  width: 176px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  border-top: 3px solid var(--fsk-blue);
-  margin-top: 30px;
-  text-align: center;
-}
-.fsk-st-item:nth-child(3n+2) .fsk-st-card { border-top-color: var(--fsk-red); }
-.fsk-st-item:nth-child(3n+3) .fsk-st-card { border-top-color: #2E79B9; }
-.fsk-st-card h4 {
+.fsk-tl-year {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--fsk-blue);
+  border-radius: 20px;
+  padding: 5px 16px;
+  margin: 10px 0 10px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  z-index: 1;
+}
+.fsk-tl-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  text-align: center;
+  width: 100%;
+  border-top: 3px solid var(--fsk-blue);
+  z-index: 1;
+}
+.fsk-tl-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.76rem;
   font-weight: 700;
   color: #181C22;
+  margin-bottom: 4px;
   line-height: 1.3;
-  margin-bottom: 6px;
 }
+.fsk-tl-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  color: #545C68;
+  line-height: 1.5;
+  margin: 0;
+}
+/* colour variants */
+.fsk-tl-item.c-red .fsk-tl-year { background: var(--fsk-red); }
+.fsk-tl-item.c-red .fsk-tl-dot { background: var(--fsk-red); box-shadow: 0 0 0 2px var(--fsk-red); }
+.fsk-tl-item.c-red .fsk-tl-card { border-top-color: var(--fsk-red); }
+.fsk-tl-item.c-yellow .fsk-tl-year { background: #c49e00; }
+.fsk-tl-item.c-yellow .fsk-tl-dot { background: #c49e00; box-shadow: 0 0 0 2px #c49e00; }
+.fsk-tl-item.c-yellow .fsk-tl-card { border-top-color: #c49e00; }
+.fsk-tl-item.c-teal .fsk-tl-year { background: #1a7a6e; }
+.fsk-tl-item.c-teal .fsk-tl-dot { background: #1a7a6e; box-shadow: 0 0 0 2px #1a7a6e; }
+.fsk-tl-item.c-teal .fsk-tl-card { border-top-color: #1a7a6e; }
+/* old classes kept for compat */
+.fsk-timeline-wrap { display:none; }
 .fsk-st-card p {
   font-family: 'Nunito', sans-serif;
   font-size: 0.75rem;
@@ -1109,136 +1178,182 @@
 
 <!-- ═══ TIMELINE ═══ -->
 <section class="fsk-section fsk-values-bg" id="timeline">
-  <div class="fsk-container">
-    <div class="fsk-section-head">
-      <span class="fsk-label">Our Journey</span>
-      <div class="fsk-rule"></div>
-      <h2>The FSK Story</h2>
-      <p>Two decades of growth, milestones, and excellence.</p>
-    </div>
-  </div>
-  <div style="padding: 0 40px; overflow: hidden;">
-    <div class="fsk-timeline-wrap" id="fsk-timeline-scroll">
-      <div class="fsk-timeline">
+  <div class="fsk-tl-wrap">
 
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2008</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="https://fountainheadschools.org/wp-content/uploads/2026/03/FS_Kunkni-1-768x288.png" alt="FSK campus" style="width:100%;height:70px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
-            <h4>FSK Established</h4>
-            <p>Fountainhead School, Kunkni founded in Surat</p>
-          </div>
+    <!-- Header -->
+    <div class="fsk-tl-header">
+      <div class="fsk-tl-header-left">
+        <div class="fsk-tl-header-icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+            <rect x="2" y="12" width="18" height="18" rx="3" stroke="var(--fsk-blue)" stroke-width="2.5" fill="none"/>
+            <rect x="24" y="12" width="18" height="18" rx="3" stroke="var(--fsk-red)" stroke-width="2.5" fill="none"/>
+            <line x1="11" y1="2" x2="11" y2="12" stroke="var(--fsk-blue)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="33" y1="2" x2="33" y2="12" stroke="var(--fsk-red)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="20" y1="21" x2="24" y2="21" stroke="#999" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2011</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB PYP" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;">
-            <h4>IB PYP Authorised</h4>
-            <p>Authorised as an IB Primary Years Programme school</p>
-          </div>
+        <div class="fsk-tl-title-block">
+          <span class="fsk-label">Our Journey</span>
+          <h2>TIMELINE</h2>
         </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2014</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB DP" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;">
-            <h4>IB DP Authorised</h4>
-            <p>IB Diploma Programme authorised; Ankita receives Global Teacher Accreditation by British Council</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2016</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="https://fountainheadschools.org/wp-content/uploads/2026/04/4-1024x379.jpg" alt="1st Graduating Class" style="width:100%;height:70px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
-            <h4>1st Graduating Class</h4>
-            <p>First graduating class of Fountainhead School completes IB DP</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2018</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB MYP" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;">
-            <h4>IB MYP Authorised</h4>
-            <p>Middle Years Programme authorised — full IB continuum achieved at FSK</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2019</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="https://fountainheadschools.org/wp-content/uploads/2026/04/2-1024x379.jpg" alt="MLC" style="width:100%;height:70px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
-            <h4>Maverick Learning Centre</h4>
-            <p>In-house project based 'Maverick Learning Centre' established</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2020</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <div style="width:100%;height:70px;background:#003E74;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;">
-              <span style="color:#fff;font-family:'Montserrat',sans-serif;font-size:0.75rem;font-weight:800;letter-spacing:0.06em;">MSA · CESS</span>
-            </div>
-            <h4>MSA-CESS Accreditation</h4>
-            <p>Accredited for offering American High School Diploma programme</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2023</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <div style="width:100%;height:70px;background:#F2C418;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;">
-              <span style="color:#181C22;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:800;text-align:center;padding:0 8px;">EducationWorld Best International School, Surat</span>
-            </div>
-            <h4>Best International School</h4>
-            <p>Ranked Best International School in Surat by EducationWorld</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2024</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <div style="width:100%;height:70px;background:#005BAA;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;">
-              <span style="color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:800;text-align:center;padding:0 8px;">Great Place To Work® Certified</span>
-            </div>
-            <h4>Great Place To Work®</h4>
-            <p>Certified as a Great Place To Work — November 2024</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2025</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="../images/cfore-2026-fsk.png" alt="Cfore 2025" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;" onerror="this.style.background='#B8292F';this.alt='';this.src=''">
-            <h4>Cfore — 5th Nationally</h4>
-            <p>Stands proudly among India's Top Schools — Cfore Rankings</p>
-          </div>
-        </div>
-
-        <div class="fsk-st-item">
-          <div class="fsk-st-year">2026</div>
-          <div class="fsk-st-dot"></div>
-          <div class="fsk-st-card">
-            <img src="../images/cfore-2026-fsk.png" alt="Cfore 2026" style="width:100%;height:70px;object-fit:contain;border-radius:6px;margin-bottom:10px;background:#f5f5f5;" onerror="this.style.background='#005BAA';this.alt='';this.src=''">
-            <h4>Cfore — 4th Nationally</h4>
-            <p>Moved up to 4th — top ranked in Pedagogy &amp; Curriculum nationally</p>
-          </div>
-        </div>
-
+      </div>
+      <div class="fsk-tl-logo">
+        <img src="../images/fsk-logo.png" alt="Fountainhead School Kunkni" onerror="this.style.display='none'">
       </div>
     </div>
+
+    <!-- ROW 1: 2008 → 2019 (6 items) -->
+    <div class="fsk-tl-row">
+
+      <div class="fsk-tl-item">
+        <div class="fsk-tl-img">
+          <img src="images/fsk-facade.jpg" alt="FSK campus 2008">
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2008</div>
+        <div class="fsk-tl-card">
+          <h4>FSK Established</h4>
+          <p>Fountainhead School, Kunkni founded in Surat</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-red">
+        <div class="fsk-tl-img contain">
+          <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB PYP">
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2011</div>
+        <div class="fsk-tl-card">
+          <h4>IB PYP Authorised</h4>
+          <p>Authorised as an IB Primary Years Programme school</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-teal">
+        <div class="fsk-tl-img contain">
+          <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB DP">
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2014</div>
+        <div class="fsk-tl-card">
+          <h4>IB DP Authorised</h4>
+          <p>IB Diploma Programme authorised at FSK</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-yellow">
+        <div class="fsk-tl-img">
+          <img src="images/fsk-ground.jpg" alt="1st Graduating Class">
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2016</div>
+        <div class="fsk-tl-card">
+          <h4>1st Graduating Class</h4>
+          <p>First IB DP graduating class completes programme</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-red">
+        <div class="fsk-tl-img contain">
+          <img src="https://fountainheadschools.org/wp-content/uploads/2023/11/IB-Continum1-2.png" alt="IB MYP">
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2018</div>
+        <div class="fsk-tl-card">
+          <h4>IB MYP Authorised</h4>
+          <p>Full IB continuum — PYP, MYP &amp; DP — achieved at FSK</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-teal">
+        <div class="fsk-tl-img">
+          <img src="images/fsk-facade.jpg" alt="Maverick Learning Centre" style="object-position:right center;">
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2019</div>
+        <div class="fsk-tl-card">
+          <h4>Maverick Learning Centre</h4>
+          <p>In-house project-based MLC established</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Connector between rows -->
+    <div class="fsk-tl-connector">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M 1100 5 Q 1180 5 1180 30 Q 1180 55 1100 55 L 100 55 Q 20 55 20 30" fill="none" stroke="#dde4ee" stroke-width="3" stroke-dasharray="8 5"/>
+        <circle cx="1100" cy="5" r="5" fill="var(--fsk-blue)"/>
+        <circle cx="20" cy="30" r="5" fill="var(--fsk-blue)"/>
+        <polygon points="15,55 25,50 15,45" fill="var(--fsk-blue)"/>
+      </svg>
+    </div>
+
+    <!-- ROW 2: 2020 → 2026 (5 items) -->
+    <div class="fsk-tl-row fsk-tl-row-2">
+
+      <div class="fsk-tl-item c-yellow">
+        <div class="fsk-tl-img badge" style="background:#003E74;color:#fff;">
+          MSA · CESS<br><span style="font-weight:400;font-size:0.6rem;">Accreditation</span>
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2020</div>
+        <div class="fsk-tl-card">
+          <h4>MSA-CESS Accreditation</h4>
+          <p>Accredited for American High School Diploma programme</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-red">
+        <div class="fsk-tl-img badge" style="background:#F2C418;color:#181C22;">
+          EW Best<br>Intl. School<br><span style="font-weight:400;font-size:0.6rem;">Surat</span>
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2023</div>
+        <div class="fsk-tl-card">
+          <h4>Best International School</h4>
+          <p>Ranked best in Surat by EducationWorld</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-teal">
+        <div class="fsk-tl-img badge" style="background:#005BAA;color:#fff;">
+          Great Place<br>To Work®<br><span style="font-weight:400;font-size:0.6rem;">Certified</span>
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2024</div>
+        <div class="fsk-tl-card">
+          <h4>Great Place To Work®</h4>
+          <p>Certified — November 2024</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-red">
+        <div class="fsk-tl-img badge" style="background:#B8292F;color:#fff;">
+          Cfore<br>5th Nationally<br><span style="font-weight:400;font-size:0.6rem;">2025</span>
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2025</div>
+        <div class="fsk-tl-card">
+          <h4>Cfore — 5th Nationally</h4>
+          <p>Among India's Top Schools — Cfore Rankings</p>
+        </div>
+      </div>
+
+      <div class="fsk-tl-item c-yellow">
+        <div class="fsk-tl-img badge" style="background:#005BAA;color:#fff;">
+          Cfore<br>4th Nationally<br><span style="font-weight:400;font-size:0.6rem;">2026</span>
+        </div>
+        <div class="fsk-tl-dot"></div>
+        <div class="fsk-tl-year">2026</div>
+        <div class="fsk-tl-card">
+          <h4>Cfore — 4th Nationally</h4>
+          <p>Top ranked in Pedagogy &amp; Curriculum nationally</p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
