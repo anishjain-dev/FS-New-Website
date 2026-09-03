@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,17 +17,59 @@
 .art-body h3 { margin:40px 0 12px; }
 .art-body ul { padding-left:24px; color:var(--mid); line-height:2.2; font-size:0.9rem; }
 .campus-tag { font-size:0.6rem; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; padding:4px 10px; background:var(--dark); color:white; display:inline-block; }
-.campus-tag.kunkni { background:var(--fs-yellow); }
+.campus-tag.kunkni { background:var(--fs-yellow); color:var(--dark); }
 .art-date { font-size:0.7rem; color:rgba(255,255,255,0.6); font-weight:500; letter-spacing:0.06em; text-transform:uppercase; }
 .art-meta { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
-.art-back { display:inline-flex; align-items:center; gap:8px; font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--dark); border-bottom:1px solid var(--dark); padding-bottom:2px; text-decoration:none; margin-bottom:48px; }
+.art-back { display:inline-flex; align-items:center; gap:8px; font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--fs-blue); text-decoration:none; margin-bottom:48px; }
+.header-util-row { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; }
+.site-header { position: fixed !important; top: 36px !important; left: 0; right: 0; background: white !important; border-bottom: 3px solid var(--fs-blue) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important; z-index: 9999; }
+body { padding-top: 108px; }
 </style>
 </head>
 <body>
 
-<div class="utility-bar"><div class="utility-inner"><a href="../fsk/index.html#policies">Child Protection Policy</a><div class="util-right"><a href="tel:+918000130031">8000-130-031</a></div></div></div>
-<header class="site-header" id="navbar"><div class="header-row"><a href="../index.html" class="nav-logo"><img src="../images/fs-main-logo.png" alt="Fountainhead Schools" style="height:3rem;width:auto;display:block;"></a><nav class="nav-desktop" aria-label="Primary"><a href="../index.html">Home</a><a href="../news.html" aria-current="page">News &amp; Happenings</a></nav><a class="nav-inquire" href="../index.html#connect">Enquire</a><button class="hamburger" popovertarget="site-nav" aria-label="Menu"><span></span><span></span><span></span></button></div></header>
-<nav id="site-nav" class="nav-panel" popover aria-label="Primary, mobile"><a href="../index.html">Home</a><a href="../news.html">News &amp; Happenings</a><a class="panel-enquire" href="../index.html#connect">Enquire</a></nav>
+<div class="header-util-row">
+  <div class="header-util-inner">
+    <a href="../fsk/index.html#policies" class="util-policy">Child Protection Policy</a>
+    <div class="util-right">
+      <a href="https://www.facebook.com/fountainheadschools" target="_blank" aria-label="Facebook" class="util-social"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="https://instagram.com/fountainheadschools" target="_blank" aria-label="Instagram" class="util-social"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.youtube.com/@fountainheadschools" target="_blank" aria-label="YouTube" class="util-social"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+      <span class="util-sep">|</span>
+      <a href="tel:+918000130031" class="util-contact">8000-130-031</a>
+    </div>
+  </div>
+</div>
+<header class="site-header" id="navbar">
+  <div class="header-row">
+    <a href="../index.html" class="nav-logo"><img src="../images/fs-main-logo.png" alt="Fountainhead Schools" class="nav-logo-img"></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="../index.html#about" class="nav-link">About Us</a>
+      <a href="../index.html#about-story" class="nav-link">Our Story</a>
+      <a href="../index.html#about-values" class="nav-link">Mission &amp; Values</a>
+      <a href="../index.html#campuses" class="nav-link">Our Schools</a>
+      <a href="../index.html#academics" class="nav-link">Academics</a>
+      <a href="../index.html#admissions" class="nav-link">Admissions</a>
+      <a href="../news.html" class="nav-link" aria-current="page">News</a>
+      <a href="../index.html#accolades" class="nav-link">Accolades</a>
+      <a href="../index.html#testimonials" class="nav-link">Testimonials</a>
+    </nav>
+    <a class="nav-inquire" href="../index.html#connect">Enquire</a>
+    <button class="hamburger" popovertarget="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav id="site-nav" class="nav-panel" popover aria-label="Primary, mobile">
+  <a href="../index.html#about">About Us</a>
+  <a href="../index.html#about-story">Our Story &amp; Founders</a>
+  <a href="../index.html#about-values">Values, Mission &amp; IB</a>
+  <a href="../index.html#campuses">Our Schools</a>
+  <a href="../index.html#academics">Academics</a>
+  <a href="../index.html#admissions">Admissions</a>
+  <a href="../news.html">News</a>
+  <a href="../index.html#accolades">Accolades</a>
+  <a href="../index.html#testimonials">Testimonials</a>
+  <a class="panel-enquire" href="../index.html#connect">Enquire</a>
+</nav>
 
 <div class="art-page-hero">
   <img src="../images/fsk-facade.jpg" alt="FSK Ranks 4th Nationally">
@@ -77,25 +119,67 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="footer-bottom" style="padding:24px 0;">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo-wrap">
+          <img src="../images/fs-main-logo.png" alt="Fountainhead Schools" class="footer-logo-img">
+        </a>
+        <p class="footer-tagline">An IB World School Group with six campuses across Surat, Vapi and Chhatrapati Sambhajinagar. Nurturing leaders with character and competence since 2005.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/fountainheadschools" target="_blank" class="footer-social-link">Instagram</a>
+          <a href="https://www.youtube.com/@fountainheadschools" target="_blank" class="footer-social-link">YouTube</a>
+          <a href="https://www.facebook.com/fountainheadschools" target="_blank" class="footer-social-link">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h6 class="footer-col-head">Our Schools</h6>
+        <ul class="footer-col-list">
+          <li><a href="../fsk/index.html">FSK · Kunkni, Surat</a></li>
+          <li><a href="../fsm/index.html">FSM · Malgama, Surat</a></li>
+          <li><a href="../fwgs/index.html">FWGS · Chh. Sambhajinagar</a></li>
+          <li><a href="../falh/index.html">FALH · Vapi</a></li>
+          <li><a href="../fpa/index.html">FPA · Adajan, Surat</a></li>
+          <li><a href="../fpv/index.html">FPV · Vesu, Surat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="footer-col-head">Quick Links</h6>
+        <ul class="footer-col-list">
+          <li><a href="../index.html#about">About Us</a></li>
+          <li><a href="../index.html#academics">Academics</a></li>
+          <li><a href="../index.html#admissions">Admissions</a></li>
+          <li><a href="../news.html">News</a></li>
+          <li><a href="../index.html#accolades">Accolades</a></li>
+          <li><a href="../index.html#connect">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="footer-col-head">Contact Us</h6>
+        <ul class="footer-col-list">
+          <li><a href="tel:+918000130031">8000-130-031</a></li>
+          <li><a href="tel:+912613501300">0261-3501300</a></li>
+          <li><a href="mailto:surat@fountainheadschools.org">surat@fountainheadschools.org</a></li>
+          <li><a href="https://wa.me/918000130031">WhatsApp</a></li>
+          <li class="footer-addr">Opp. Ambetha Water Tank, Nr. Village Kunkni, Rander-Dandi Road, Surat 395005</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
       <span>© 2026 Fountainhead Schools. All rights reserved.</span>
       <div class="footer-policies">
-        <a href="../news.html">All News</a>
-        <a href="../index.html">FS Group Home</a>
+        <a href="../policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
+        <a href="../index.html#connect">Contact Us</a>
+        <a href="../news.html">News</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script>
-window.addEventListener('scroll', () => {
-  const nb = document.getElementById('navbar');
-  if(window.scrollY > 80) { nb.style.background='white'; nb.style.position='fixed'; nb.classList.add('scrolled'); }
-  else { nb.style.background='transparent'; nb.style.position='absolute'; nb.classList.remove('scrolled'); }
-});
-</script>
-
 <script src="../js/main.js" defer></script>
 </body>
 </html>
+
+
 

@@ -123,6 +123,12 @@ function generateMainHTML(d) {
 
 <!-- HERO -->
 <section class="hero" style="min-height:100vh;">
+  <div class="icon-chip ico-rainbow"  style="top:8%;right:6%;opacity:0.13;transform:rotate(-10deg);"></div>
+  <div class="icon-chip ico-giraffe"  style="bottom:10%;left:3%;opacity:0.09;transform:rotate(6deg);"></div>
+  <div class="icon-chip ico-duck"     style="top:42%;left:8%;opacity:0.08;transform:rotate(-15deg);"></div>
+  <div class="icon-chip ico-pinwheel" style="top:20%;left:38%;opacity:0.07;transform:rotate(22deg);"></div>
+  <div class="icon-chip ico-flower"   style="bottom:18%;right:22%;opacity:0.08;transform:rotate(-8deg);"></div>
+  <div class="icon-chip ico-ball"     style="top:65%;right:30%;opacity:0.06;transform:rotate(5deg);"></div>
   ${heroImg}
   <div class="hero-overlay"></div>
   <div class="container">
@@ -141,6 +147,12 @@ function generateMainHTML(d) {
 
 <!-- ABOUT US -->
 <section class="section-about" id="about">
+  <div class="icon-chip ico-flower"  style="top:16px;right:36px;opacity:0.11;transform:rotate(8deg);"></div>
+  <div class="icon-chip ico-leaf"    style="bottom:24px;left:20px;opacity:0.09;transform:rotate(-6deg);"></div>
+  <div class="icon-chip ico-plane"   style="bottom:50px;right:110px;opacity:0.08;transform:rotate(20deg);"></div>
+  <div class="icon-chip ico-tree"    style="top:30%;left:40%;opacity:0.06;transform:rotate(-12deg);"></div>
+  <div class="icon-chip ico-seesaw"  style="top:14px;left:36px;opacity:0.07;transform:rotate(5deg);"></div>
+  <div class="icon-chip ico-duck"    style="bottom:30px;right:36%;opacity:0.06;transform:rotate(-18deg);"></div>
   <div class="container">
     <div class="about-fs-grid">
       <div class="about-fs-text">
@@ -316,42 +328,55 @@ function generateMainHTML(d) {
     </div>
   </div>
 
-  <!-- FS BRAND STORY -->
-  <div class="brand-story-section">
-    <div class="bsn-inner">
-      <div class="bsn-content">
-        <span class="bsn-label">Our Identity</span>
-        <h2 class="bsn-heading">A Mark<br>with Meaning</h2>
-        <div class="bsn-rule"></div>
-        <p class="bsn-body">Two figures — a mentor and a child — reaching upward together. The Fountainhead brandmark is a belief made visible: that <strong>growth guided by care</strong> is the only education worth giving.</p>
-        <p class="bsn-sub">A <em>fountainhead</em> is the original source from which everything flows. We are, for our students, the source of a lifelong love of learning.</p>
-        <div class="bsn-pills">
-          <span class="bsn-pill bsn-pill-blue">Blue — Wisdom &amp; Trust</span>
-          <span class="bsn-pill bsn-pill-red">Red — Passion &amp; Courage</span>
-          <span class="bsn-pill bsn-pill-yellow">Yellow — Joy &amp; Curiosity</span>
+</section>
+
+<!-- FACTS & FIGURES -->
+<div class="facts-section">
+  <div class="icon-chip ico-tree"     style="top:14px;right:50px;opacity:0.09;transform:rotate(-8deg);"></div>
+  <div class="icon-chip ico-elephant" style="bottom:10px;right:200px;opacity:0.07;transform:rotate(12deg);"></div>
+  <div class="icon-chip ico-ball"     style="top:48%;left:44%;opacity:0.06;transform:rotate(0deg);"></div>
+  <div class="icon-chip ico-rainbow"  style="bottom:10px;left:36px;opacity:0.08;transform:rotate(6deg);"></div>
+  <div class="icon-chip ico-gift"     style="top:14px;left:220px;opacity:0.07;transform:rotate(-14deg);"></div>
+  <div class="icon-chip ico-castle"   style="top:48%;right:18%;opacity:0.06;transform:rotate(10deg);"></div>
+  <div class="container">
+    <div class="facts-inner">
+      <div class="facts-head">
+        <span class="facts-eyebrow">Fountainhead Schools</span>
+        <h2 class="facts-title">Two decades.<br>One belief.</h2>
+        <p class="facts-sub">That every child holds unlimited potential — and that the right environment can unlock it.</p>
+      </div>
+      <div class="facts-grid">
+        <div class="fact-item">
+          <span class="fact-num">6</span>
+          <span class="fact-label">Campuses</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact-item">
+          <span class="fact-num">20+</span>
+          <span class="fact-label">Years of Excellence</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact-item">
+          <span class="fact-num">IB</span>
+          <span class="fact-label">World School</span>
+        </div>
+        <div class="fact-divider"></div>
+        <div class="fact-item">
+          <span class="fact-num">K–12</span>
+          <span class="fact-label">Full Continuum</span>
         </div>
       </div>
-      <div class="bsn-logo-panel">
-        <img src="images/fs-main-logo.png" alt="Fountainhead Schools" class="bsn-mark">
-        <div class="bsn-colorbar">
-          <span class="bsn-b bsn-b-blue"></span>
-          <span class="bsn-b bsn-b-red"></span>
-          <span class="bsn-b bsn-b-yellow"></span>
-        </div>
-      </div>
-    </div>
-    <div class="bsn-stats">
-      <div class="bsn-stat"><span class="bsn-num">6</span><span class="bsn-lbl">Campuses</span></div>
-      <div class="bsn-sep"></div>
-      <div class="bsn-stat"><span class="bsn-num">20+</span><span class="bsn-lbl">Years of Excellence</span></div>
-      <div class="bsn-sep"></div>
-      <div class="bsn-stat"><span class="bsn-num">IB</span><span class="bsn-lbl">World School</span></div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- VALUES, MISSION & PHILOSOPHY -->
 <section class="values-section" id="about-values">
+  <div class="icon-chip ico-thought"  style="top:20px;right:40px;opacity:0.11;transform:rotate(5deg);"></div>
+  <div class="icon-chip ico-castle"   style="bottom:30px;left:30px;opacity:0.10;transform:rotate(-12deg);"></div>
+  <div class="icon-chip ico-puzzle"   style="top:42%;left:42%;opacity:0.06;transform:rotate(18deg);"></div>
+  <div class="icon-chip ico-train"    style="top:20px;left:200px;opacity:0.07;transform:rotate(-5deg);"></div>
+  <div class="icon-chip ico-abacus"   style="bottom:30px;right:200px;opacity:0.06;transform:rotate(8deg);"></div>
   <div class="container">
 
     <div class="values-header">
@@ -430,6 +455,11 @@ function generateMainHTML(d) {
 
 <!-- OUR SCHOOLS / CAMPUSES -->
 <section class="campuses-section" id="campuses">
+  <div class="icon-chip ico-building"  style="top:30px;left:20px;opacity:0.09;transform:rotate(-8deg);"></div>
+  <div class="icon-chip ico-tent"      style="bottom:30px;right:20px;opacity:0.08;transform:rotate(10deg);"></div>
+  <div class="icon-chip ico-giraffe"   style="top:30px;right:200px;opacity:0.07;transform:rotate(-15deg);"></div>
+  <div class="icon-chip ico-flower"    style="bottom:30px;left:220px;opacity:0.07;transform:rotate(12deg);"></div>
+  <div class="icon-chip ico-elephant"  style="top:44%;left:48%;opacity:0.05;transform:rotate(5deg);"></div>
   <div class="container-wide">
     <div class="campuses-header">
       <div>
@@ -511,6 +541,12 @@ function generateMainHTML(d) {
 
 <!-- ACADEMICS -->
 <section class="academics-section" id="academics">
+  <div class="icon-chip ico-puzzle"   style="top:16px;right:44px;opacity:0.09;transform:rotate(15deg);"></div>
+  <div class="icon-chip ico-seesaw"   style="bottom:24px;left:28px;opacity:0.08;transform:rotate(-8deg);"></div>
+  <div class="icon-chip ico-stack"    style="top:42%;right:90px;opacity:0.06;transform:rotate(20deg);"></div>
+  <div class="icon-chip ico-abacus"   style="top:16px;left:220px;opacity:0.07;transform:rotate(-10deg);"></div>
+  <div class="icon-chip ico-pencil"   style="bottom:24px;right:240px;opacity:0.06;transform:rotate(8deg);"></div>
+  <div class="icon-chip ico-bowl"     style="top:44%;left:44%;opacity:0.05;transform:rotate(-5deg);"></div>
   <div class="container">
     <div class="academics-header">
       <span class="section-label">Academics</span>
@@ -589,6 +625,11 @@ function generateMainHTML(d) {
 
 <!-- ADMISSIONS -->
 <section class="admissions-section" id="admissions">
+  <div class="icon-chip ico-gift"     style="top:16px;right:36px;opacity:0.09;transform:rotate(-12deg);"></div>
+  <div class="icon-chip ico-bowl"     style="bottom:16px;left:36px;opacity:0.08;transform:rotate(8deg);"></div>
+  <div class="icon-chip ico-leaf"     style="top:42%;right:36%;opacity:0.06;transform:rotate(-20deg);"></div>
+  <div class="icon-chip ico-teddy"    style="top:16px;left:220px;opacity:0.07;transform:rotate(10deg);"></div>
+  <div class="icon-chip ico-plane"    style="bottom:16px;right:200px;opacity:0.06;transform:rotate(-8deg);"></div>
   <div class="container">
     <div class="admissions-header">
       <span class="section-label">Admissions</span>
@@ -625,10 +666,14 @@ function generateMainHTML(d) {
 </section>
 
 <section class="news-section" id="news">
+  <div class="icon-chip ico-teddy"    style="top:16px;right:36px;opacity:0.08;transform:rotate(10deg);"></div>
+  <div class="icon-chip ico-train"    style="bottom:24px;left:28px;opacity:0.07;transform:rotate(-8deg);"></div>
+  <div class="icon-chip ico-building" style="top:42%;right:36%;opacity:0.05;transform:rotate(15deg);"></div>
+  <div class="icon-chip ico-duck"     style="top:16px;left:220px;opacity:0.06;transform:rotate(-12deg);"></div>
+  <div class="icon-chip ico-rainbow"  style="bottom:24px;right:200px;opacity:0.06;transform:rotate(5deg);"></div>
   <div class="container">
     <div class="news-header">
       <div><span class="section-label" style="color:var(--fs-red)">News &amp; Happenings</span><h2 class="news-heading">Celebrations Across Our Campuses</h2></div>
-      <a href="news.html" class="see-all">View All →</a>
     </div>
     <!-- FEATURED CARD (image left + text right) -->
     <a href="news/celebrations.html#independence-day" class="hn-featured">
@@ -801,6 +846,11 @@ function generateMainHTML(d) {
 
 <!-- CONNECT / ENQUIRY SECTION -->
 <section class="connect-section" id="connect">
+  <div class="icon-chip ico-rainbow"  style="top:16px;left:16px;opacity:0.11;transform:rotate(-5deg);"></div>
+  <div class="icon-chip ico-duck"     style="bottom:20px;right:56px;opacity:0.09;transform:rotate(8deg);"></div>
+  <div class="icon-chip ico-gift"     style="top:42%;right:36%;opacity:0.06;transform:rotate(-18deg);"></div>
+  <div class="icon-chip ico-thought"  style="top:16px;right:220px;opacity:0.07;transform:rotate(10deg);"></div>
+  <div class="icon-chip ico-ball"     style="bottom:20px;left:220px;opacity:0.06;transform:rotate(-5deg);"></div>
   <div class="container">
     <div class="connect-inner">
       <div class="connect-info">
@@ -836,7 +886,7 @@ function generateMainHTML(d) {
             </div>
             <div class="form-group">
               <label>Child's Grade</label>
-              <select><option value="">Select Grade</option><option>Pre-Primary (EY)</option><option>Primary (PYP)</option><option>Middle School (MYP)</option><option>High School (DP)</option></select>
+              <select><option value="" disabled selected hidden>Select Grade</option><option>Pre-Primary (EY)</option><option>Primary (PYP)</option><option>Middle School (MYP)</option><option>High School (DP)</option></select>
             </div>
           </div>
           <div class="form-row">
@@ -902,7 +952,6 @@ function generateMainHTML(d) {
           <li><a href="#news">News</a></li>
           <li><a href="#accolades">Accolades</a></li>
           <li><a href="#connect">Contact</a></li>
-          <li><a href="careers.html">Careers</a></li>
         </ul>
       </div>
       <!-- Contact -->
@@ -924,7 +973,6 @@ function generateMainHTML(d) {
       <div class="footer-policies">
         <a href="policies/FSK Child Protection Policy.pdf" target="_blank">Child Protection Policy</a>
         <a href="#connect">Contact Us</a>
-        <a href="careers.html">Careers</a>
       </div>
     </div>
   </div>
